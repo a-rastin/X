@@ -262,7 +262,7 @@ function DemographicsForm({
   const [givenName, setGivenName] = useState(patient.given_name);
   const [familyName, setFamilyName] = useState(patient.family_name);
   const [sex, setSex] = useState(patient.sex);
-  const [age, setAge] = useState(String(patient.age));
+  const [age, setAge] = useState(String(patient.birth_year ?? patient.age));
   const [clinicalStatus, setClinicalStatus] = useState(patient.clinical_status);
   const [phone, setPhone] = useState(patient.phone ?? "");
   const [baseRevision, setBaseRevision] = useState(patient.revision);
@@ -280,7 +280,7 @@ function DemographicsForm({
     setGivenName(next.given_name);
     setFamilyName(next.family_name);
     setSex(next.sex);
-    setAge(String(next.age));
+    setAge(String(next.birth_year ?? next.age));
     setClinicalStatus(next.clinical_status);
     setPhone(next.phone ?? "");
     setBaseRevision(next.revision);
@@ -296,7 +296,7 @@ function DemographicsForm({
     givenName !== patient.given_name ||
     familyName !== patient.family_name ||
     sex !== patient.sex ||
-    age !== String(patient.age) ||
+    age !== String(patient.birth_year ?? patient.age) ||
     clinicalStatus !== patient.clinical_status ||
     phone !== (patient.phone ?? "");
 
@@ -319,9 +319,10 @@ function DemographicsForm({
       if (sex !== patient.sex) {
         patch.sex = sex;
       }
-      if (age !== String(patient.age)) {
+      if (age !== String(patient.birth_year ?? patient.age)) {
         const parsed = Number(age);
-        patch.age = Number.isInteger(parsed) ? parsed : (age as unknown as number);
+        if (patient.birth_year != null) patch.birth_year = Number.isInteger(parsed) ? parsed : (age as unknown as number);
+        else patch.age = Number.isInteger(parsed) ? parsed : (age as unknown as number);
       }
       if (clinicalStatus !== patient.clinical_status) {
         patch.clinical_status = clinicalStatus;
@@ -423,7 +424,7 @@ function DemographicsForm({
         </div>
         <div className="xi-field">
           <label className="xi-label" htmlFor="demo-age">
-            {t("age")}
+            {t(patient.birth_year != null ? "nc.birthYear" : "age")}
           </label>
           <input
             className="xi-input"

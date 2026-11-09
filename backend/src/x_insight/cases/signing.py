@@ -237,8 +237,11 @@ def safe_snapshot(row: Mapping[str, Any]) -> dict[str, Any]:
         "id": str(row.get("id")),
         "encounter_id": str(row.get("encounter_id")),
         "patient_id": str(row.get("patient_id")),
-        "batch_id": str(row.get("batch_id")),
-        "proposal_id": str(row.get("proposal_id")),
+        "batch_id": str(row["batch_id"]) if row.get("batch_id") else None,
+        "proposal_id": str(row["proposal_id"]) if row.get("proposal_id") else None,
+        "new_case_proposal_id": str(row["new_case_proposal_id"])
+        if row.get("new_case_proposal_id")
+        else None,
         "secondary_plan_revision": int(row.get("secondary_plan_revision", 1)),
         "secondary_plan_text": str(row.get("secondary_plan_text", "")),
         "snapshot": dict(row.get("snapshot") or {}),

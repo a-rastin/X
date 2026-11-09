@@ -83,7 +83,9 @@ def test_load_probe_records_measured_small_dataset(load_setup, monkeypatch) -> N
     monkeypatch.setattr(db_module, "get_engine", lambda: load_setup)
     admin = _login("admin", "admin", "admin")
     created = admin.request(
-        "POST", "/api/v1/physicians", json={"username": "dr_probe", "password": "pw123"}
+        "POST",
+        "/api/v1/physicians",
+        json={"name_en": "Synthetic probe physician", "username": "dr_probe", "password": "pw123"},
     )
     assert created.status_code == 201, created.text
 
@@ -151,7 +153,13 @@ def test_load_probe_skips_provider_phase_without_executor(load_setup) -> None:
 
     admin = _login("admin", "admin", "admin")
     created = admin.request(
-        "POST", "/api/v1/physicians", json={"username": "dr_probe_b", "password": "pw123"}
+        "POST",
+        "/api/v1/physicians",
+        json={
+            "name_en": "Synthetic probe physician",
+            "username": "dr_probe_b",
+            "password": "pw123",
+        },
     )
     assert created.status_code == 201, created.text
     report = probe_module.run_load(

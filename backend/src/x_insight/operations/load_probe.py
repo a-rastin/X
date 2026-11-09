@@ -489,7 +489,13 @@ def main(argv: list[str] | None = None) -> int:
     admin = ClientSession(admin_client, login.json()["csrf_token"], args.base_url)
     physician = f"{args.physician}-{os.getpid()}"
     created = admin.request(
-        "POST", "/api/v1/physicians", json={"username": physician, "password": "probe-only-x1"}
+        "POST",
+        "/api/v1/physicians",
+        json={
+            "name_en": "Synthetic probe physician",
+            "username": physician,
+            "password": "probe-only-x1",
+        },
     )
     if created.status_code not in (201, 409):
         print(f"physician setup failed: {created.status_code} {created.text}", file=sys.stderr)

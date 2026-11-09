@@ -154,6 +154,21 @@ secondary_plans = Table(
     ),
 )
 
+new_case_proposals = Table(
+    "new_case_proposals",
+    metadata,
+    Column("id", PG_UUID(as_uuid=True), primary_key=True),
+    Column("encounter_id", PG_UUID(as_uuid=True), ForeignKey("encounters.id"), nullable=False),
+    Column("author_id", PG_UUID(as_uuid=True), nullable=False),
+    Column("source_encounter_revision", Integer, nullable=False),
+    Column("input_hash", Text, nullable=False),
+    Column("content_hash", Text, nullable=False),
+    Column("model_version_id", PG_UUID(as_uuid=True), nullable=True),
+    Column("ddi_release_id", PG_UUID(as_uuid=True), nullable=False),
+    Column("payload", JSONB, nullable=False),
+    Column("created_at", DateTime(timezone=True), nullable=False),
+)
+
 signed_encounter_snapshots = Table(
     "signed_encounter_snapshots",
     metadata,
@@ -175,14 +190,15 @@ signed_encounter_snapshots = Table(
         "batch_id",
         PG_UUID(as_uuid=True),
         ForeignKey("generation_batches.id", ondelete="CASCADE"),
-        nullable=False,
+        nullable=True,
     ),
     Column(
         "proposal_id",
         PG_UUID(as_uuid=True),
         ForeignKey("proposal_snapshots.id", ondelete="CASCADE"),
-        nullable=False,
+        nullable=True,
     ),
+    Column("new_case_proposal_id", PG_UUID(as_uuid=True), ForeignKey("new_case_proposals.id")),
     Column("secondary_plan_revision", Integer, nullable=False),
     Column("secondary_plan_text", Text, nullable=False),
     Column("snapshot", JSONB, nullable=False),

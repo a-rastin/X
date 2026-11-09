@@ -17,6 +17,7 @@ export interface DemographicsFields {
   identifier: string;
   sex: "" | Sex;
   age: string;
+  birthYear?: string;
   clinicalStatus: "" | ClinicalStatus;
   phone: string;
 }
@@ -26,6 +27,7 @@ export type DemographicsField =
   | "familyName"
   | "identifier"
   | "sex"
+  | "birthYear"
   | "age"
   | "clinicalStatus"
   | "phone";
@@ -39,12 +41,14 @@ const AGE_RE = /^(1[89]|[2-8][0-9]|9[0-9])$/;
 
 export function isValidPersonName(value: string): boolean {
   const normalized = value.normalize("NFC");
-  return Array.from(normalized).length <= 100
-    && /^[\p{L} '\-]+$/u.test(normalized)
-    && /\p{L}/u.test(normalized)
-    && !normalized.startsWith(" ")
-    && !normalized.endsWith(" ")
-    && !normalized.includes("  ");
+  return (
+    Array.from(normalized).length <= 100 &&
+    /^[\p{L} '\-]+$/u.test(normalized) &&
+    /\p{L}/u.test(normalized) &&
+    !normalized.startsWith(" ") &&
+    !normalized.endsWith(" ") &&
+    !normalized.includes("  ")
+  );
 }
 
 export function isValidIdentifier(value: string): boolean {
@@ -58,16 +62,32 @@ export function isValidAge(value: string): boolean {
 const NAME_MESSAGE =
   "may contain letters, spaces, hyphens and apostrophes. Use 1–100 characters, with no leading, trailing or double spaces.";
 
-export function validateDemographics(fields: DemographicsFields): {
+export function validateDemographics(
+  fields: DemographicsFields,
+  registrationYear?: number,
+): {
   valid: boolean;
   errors: ClientFieldErrors;
 } {
   const errors: ClientFieldErrors = {};
-  if (!isValidPersonName(fields.givenName)) {
-    errors.givenName = `Given name ${NAME_MESSAGE}`;
+  const isNew =
+    fields.clinicalStatus === "first_time" && fields.birthYear !== undefined;
+  const validName = (value: string) =>
+    isNew
+      ? Array.from(value.normalize("NFC").replace(/^ +| +$/g, "")).length <=
+          100 &&
+        /^[\p{L} ]+$/u.test(value.normalize("NFC")) &&
+        /\p{L}/u.test(value)
+      : isValidPersonName(value);
+  if (!validName(fields.givenName)) {
+    errors.givenName = isNew
+      ? "Name must contain only letters and ordinary spaces."
+      : `Given name ${NAME_MESSAGE}`;
   }
-  if (!isValidPersonName(fields.familyName)) {
-    errors.familyName = `Family name ${NAME_MESSAGE}`;
+  if (!validName(fields.familyName)) {
+    errors.familyName = isNew
+      ? "Name must contain only letters and ordinary spaces."
+      : `Family name ${NAME_MESSAGE}`;
   }
   if (!isValidIdentifier(fields.identifier)) {
     errors.identifier = "Patient ID must be exactly 10 ASCII digits (0-9).";
@@ -75,10 +95,22 @@ export function validateDemographics(fields: DemographicsFields): {
   if (fields.sex !== "M" && fields.sex !== "F") {
     errors.sex = "Select M or F.";
   }
-  if (!isValidAge(fields.age)) {
+  if (isNew) {
+    const year = Number(fields.birthYear);
+    if (
+      !registrationYear ||
+      !/^[0-9]{4}$/.test(fields.birthYear ?? "") ||
+      registrationYear - year < 18 ||
+      registrationYear - year > 100
+    )
+      errors.birthYear = "Select a valid birth year.";
+  } else if (!isValidAge(fields.age)) {
     errors.age = "Age must be an integer 18-99.";
   }
-  if (fields.clinicalStatus !== "first_time" && fields.clinicalStatus !== "established") {
+  if (
+    fields.clinicalStatus !== "first_time" &&
+    fields.clinicalStatus !== "established"
+  ) {
     errors.clinicalStatus = "Select new case or known case.";
   }
   // Phone is optional free text with no format validation (plan §2.2).
@@ -95,7 +127,9 @@ export function toRegistrationPayload(
     given_name: fields.givenName,
     family_name: fields.familyName,
     sex: fields.sex as Sex,
-    age: Number.parseInt(fields.age.trim(), 10),
+    ...(fields.clinicalStatus === "first_time" && fields.birthYear !== undefined
+      ? { birth_year: Number(fields.birthYear) }
+      : { age: Number.parseInt(fields.age.trim(), 10) }),
     clinical_status: fields.clinicalStatus as ClinicalStatus,
   };
   if (fields.phone.trim() !== "") {
@@ -115,6 +149,8 @@ export function toClientField(field: string): DemographicsField | null {
       return "identifier";
     case "sex":
       return "sex";
+    case "birth_year":
+      return "birthYear";
     case "age":
       return "age";
     case "clinical_status":

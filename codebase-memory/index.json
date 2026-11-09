@@ -1078,6 +1078,17 @@
       "source_sha256": null
     },
     {
+      "path": "backend/src/x_insight/cases/new_case.py",
+      "labels": [
+        "backend",
+        "cases",
+        "new-case"
+      ],
+      "purpose": "Typed new-case state, pinned content, diagnosis assertion and deterministic preview; proposal persistence/signing remain absent.",
+      "summary": "files/backend/src/x_insight/cases/new_case.py.md",
+      "source_sha256": "64fdc6236dd720e079c444366cc9f57696b191668326962c38413619b577ed00"
+    },
+    {
       "path": "backend/src/x_insight/cases/patients.py",
       "labels": [
         "backend",

@@ -294,6 +294,7 @@ test("administrator creates a physician through the browser", async ({
   ).toBeVisible();
 
   const form = page.getByRole("form", { name: "Create physician" });
+  await form.getByLabel("Physician name in English").fill("Test physician");
   await form.getByLabel("Username").fill(username);
   await form.getByLabel("Password").fill("createdpass1");
   await form.getByRole("button", { name: "Create physician" }).click();
@@ -338,6 +339,7 @@ test("tabs keep mutation CSRF aligned with the shared session cookie", async ({
   const username = uniqueName("e2ecsrftab");
   await page.getByRole("link", { name: "Physicians" }).click();
   const form = page.getByRole("form", { name: "Create physician" });
+  await form.getByLabel("Physician name in English").fill("Test physician");
   await form.getByLabel("Username").fill(username);
   await form.getByLabel("Password").fill("createdpass1");
   await form.getByRole("button", { name: "Create physician" }).click();
@@ -619,6 +621,7 @@ test("administrator renames a physician through the browser", async ({
   await row.getByRole("button", { name: "Edit" }).click();
 
   const form = page.getByRole("form", { name: "Edit physician" });
+  await form.getByLabel("Physician name in English").fill("Test physician");
   await form.getByLabel("Username").fill(renamed);
   await form.getByRole("button", { name: "Save changes" }).click();
   await expect(page.getByText("Physician updated.")).toBeVisible();
@@ -765,6 +768,7 @@ test(`physician creation guards submissions and ignores older ${oldResponse}`, a
   await page.goto("/#/physicians");
   const form = page.getByRole("form", { name: "Create physician" });
   await expect(page.getByText("Showing 100 of 103")).toBeVisible();
+  await form.getByLabel("Physician name in English").fill("Test physician");
   await form.getByLabel("Username").fill("zfirst");
   await form.getByLabel("Password").fill("password123");
   await form.getByRole("button", { name: "Create physician" }).click();
@@ -778,6 +782,7 @@ test(`physician creation guards submissions and ignores older ${oldResponse}`, a
   await expect(page.getByRole("table", { name: "Physicians" }).getByText("zfirst")).toBeVisible();
   await expect.poll(() => gets).toBe(1);
   await expect(page.getByRole("status").filter({ hasText: "Physician created." })).toHaveCount(1);
+  await form.getByLabel("Physician name in English").fill("Test physician");
   await form.getByLabel("Username").fill("zsecond");
   await form.getByLabel("Password").fill("password123");
   await form.getByRole("button", { name: "Create physician" }).click();
@@ -788,6 +793,7 @@ test(`physician creation guards submissions and ignores older ${oldResponse}`, a
   await oldGetDone;
   await expect(page.getByRole("alert")).toHaveCount(0);
   await expect(page.getByRole("table", { name: "Physicians" }).getByText("zsecond")).toBeVisible();
+  await form.getByLabel("Physician name in English").fill("Test physician");
   await form.getByLabel("Username").fill("zthird");
   await form.getByLabel("Password").fill("password123");
   await form.getByRole("button", { name: "Create physician" }).click();
@@ -832,6 +838,7 @@ test("an off-page created physician refreshes after an edit conflict", async ({ 
   await page.goto("/#/physicians");
   await expect(page.getByText("Showing 100 of 101")).toBeVisible();
   const create = page.getByRole("form", { name: "Create physician" });
+  await create.getByLabel("Physician name in English").fill("Test physician");
   await create.getByLabel("Username").fill("zcreated");
   await create.getByLabel("Password").fill("password123");
   await create.getByRole("button", { name: "Create physician" }).click();

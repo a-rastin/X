@@ -95,7 +95,7 @@ def _physician_client(clean_all):
     username = f"doc_{os.getpid()}_{id(clean_all) % 100000}"
     created = admin_client.post(
         "/api/v1/physicians",
-        json={"username": username, "password": "secret123"},
+        json={"name_en": "Test physician", "username": username, "password": "secret123"},
         headers={"X-CSRF-Token": admin_csrf},
     )
     assert created.status_code == 201, created.text

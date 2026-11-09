@@ -19,9 +19,10 @@ built around a fixed, hash-pinned oral-antipsychotic ranking model (an exact,
 fully observed conditional-row lookup) and a pinned Lexicomp interaction dataset.
 It uses no LLM, provider call, background generation job or probability slider;
 the legacy LLM/CPT pipeline is retained unchanged for Known case and follow-up.
-New case is backend-only at present — see [New-case state](docs/new-case-state.md).
+New case now has a bilingual seven-step wizard, personal formulation settings,
+immutable proposals and v4 confirmation. See [New-case state](docs/new-case-state.md).
 
-The application has an English desktop interface for one administrator and a small
+The application has an English/Persian desktop interface for one administrator and a small
 physician team sharing a patient pool. It is designed for self-hosted Linux or VPS
 deployment.
 
@@ -38,7 +39,7 @@ deployment.
 | --- | --- |
 | Patient records | Registration, search, shared signed charts, follow-up encounters, and archival administration |
 | Assessments | Diagnosis, PANSS, C-SSRS, structured history, medications, and adverse-effect forms with explicit completeness states |
-| Drafts and working note | Autosave, resume/discard, author-only clinical draft access, and an editable working note on Register patient |
+| Drafts | Autosave, resume/discard and author-only clinical draft access |
 | Decision support | Versioned XMLBIF networks, scoped patient inputs through private MCP, queued CPT estimation, validation, deterministic inference, and templated proposals |
 | Probability review | Original/current CPT inspection, sliders with proportional redistribution, local recalculation, reset, comparison, and explicit result acceptance |
 | Signed plans | Physician-edited final plans, atomic signing, immutable snapshots, and attributed addenda |

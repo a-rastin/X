@@ -10,7 +10,7 @@ content. Expected literals are worked fixtures, never implementation output.
 
 Covers tasks.md S54 §§1-4 (FR-41–42; plan.md §§4.1, 10.2):
 
-- §1: backup zip holds manifest.json (backup-v1, 32-table inventory, hashes),
+- §1: backup zip holds manifest.json (backup-v1, 33-table inventory, hashes),
   database.json (users/patients/encounters+draft_data/notes/plans/snapshots/
   addenda/batches/runs/baselines/raw jobs/CPT revisions+resets/review states/
   results/acceptances/audit/DDI/models/idempotency), networks/*.xml exact
@@ -87,7 +87,7 @@ TWO_NODE_XML_V2 = (
 )
 NETWORK_HASH = hashlib.sha256(TWO_NODE_XML).hexdigest()
 
-# Independent spec inventory (plan.md §§4.1, 10.2 + backup docstring): 32
+# Independent spec inventory (plan.md §§4.1, 10.2 + backup docstring): 33
 # tables, sessions deliberately absent. Hardcoded here, never imported from
 # the implementation, so the test can disagree with the code.
 EXPECTED_TABLES: tuple[str, ...] = (
@@ -120,6 +120,7 @@ EXPECTED_TABLES: tuple[str, ...] = (
     "model_networks",
     "model_network_versions",
     "model_workflow_pointers",
+    "new_case_proposals",
     "idempotency_records",
     "backup_jobs",
     "alembic_version",
@@ -356,7 +357,8 @@ def _truncate(engine) -> None:
                 "notes, encounters, patients, idempotency_records, sessions, users, "
                 "audit_events, ddi_dataset_releases, ddi_source_documents, "
                 "ddi_concepts, ddi_interaction_evidence, model_networks, "
-                "model_network_versions, model_workflow_pointers, backup_jobs CASCADE"
+                "model_network_versions, model_workflow_pointers, backup_jobs, "
+                "provider_settings CASCADE"
             )
         )
 
@@ -413,7 +415,7 @@ def _new_physician(clean_registry, monkeypatch, username: str):
     assert login.status_code == 200, login.text
     created = admin.post(
         "/api/v1/physicians",
-        json={"username": username, "password": "pw123"},
+        json={"name_en": "Test physician", "username": username, "password": "pw123"},
         headers=_auth_headers(login.json()["csrf_token"]),
     )
     assert created.status_code == 201, created.text
@@ -667,7 +669,7 @@ def _signed_multi_encounter_setup(clean_registry, monkeypatch, tmp_path, usernam
     other_username = f"{username}_other"
     other_created = admin.post(
         "/api/v1/physicians",
-        json={"username": other_username, "password": "pw123"},
+        json={"name_en": "Test physician", "username": other_username, "password": "pw123"},
         headers=_auth_headers(admin_csrf),
     )
     assert other_created.status_code == 201, other_created.text
@@ -912,7 +914,7 @@ def _add_failed_revision(clean_registry, monkeypatch, username: str, identifier:
     assert login.status_code == 200, login.text
     created = admin.post(
         "/api/v1/physicians",
-        json={"username": username, "password": "pw123"},
+        json={"name_en": "Test physician", "username": username, "password": "pw123"},
         headers=_auth_headers(login.json()["csrf_token"]),
     )
     # Physician may already exist from the signed setup (same test reuses the
@@ -1100,13 +1102,13 @@ def test_backup_includes_full_snapshot_networks_and_policies(
 
     manifest, database, policies, networks = _parse_zip(blob)
 
-    # Manifest envelope: version, identity, inventory of exactly the 32 owned
+    # Manifest envelope: version, identity, inventory of exactly the 33 owned
     # tables (sessions never), per-file hashes, deployment + runtime.
     assert manifest["schema_version"] == "backup-v1"
     assert manifest["backup_id"] == backup_id
-    assert manifest["app_schema_version"] == "0030"
+    assert manifest["app_schema_version"] == "0031"
     assert set(manifest["inventory"].keys()) == set(EXPECTED_TABLES)
-    assert len(manifest["inventory"]) == 32
+    assert len(manifest["inventory"]) == 33
     assert "sessions" not in manifest["inventory"]
     for name, info in manifest["inventory"].items():
         assert isinstance(info.get("rows"), int), name
@@ -1126,7 +1128,7 @@ def test_backup_includes_full_snapshot_networks_and_policies(
     assert runtime["pinned"]["pgmpy"] and runtime["pinned"]["lxml"]
     assert any(k.startswith("lock_") for k in runtime), runtime.keys()
 
-    # database.json: same 32 tables, sessions absent, row counts match manifest.
+    # database.json: same 33 tables, sessions absent, row counts match manifest.
     tables = database["tables"]
     assert set(tables.keys()) == set(EXPECTED_TABLES)
     assert "sessions" not in tables

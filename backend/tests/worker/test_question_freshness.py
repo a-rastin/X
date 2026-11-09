@@ -297,7 +297,7 @@ def _new_two_question_setup(
     assert login.status_code == 200, login.text
     created = admin.post(
         "/api/v1/physicians",
-        json={"username": username, "password": "pw123"},
+        json={"name_en": "Test physician", "username": username, "password": "pw123"},
         headers=_auth_headers(login.json()["csrf_token"]),
     )
     assert created.status_code == 201, created.text
@@ -510,7 +510,7 @@ def test_affected_only_stale_and_acceptance_with_stranger_no_leak(
     assert login.status_code == 200, login.text
     created = admin.post(
         "/api/v1/physicians",
-        json={"username": "dr_s48d_stranger", "password": "pw123"},
+        json={"name_en": "Test physician", "username": "dr_s48d_stranger", "password": "pw123"},
         headers=_auth_headers(login.json()["csrf_token"]),
     )
     assert created.status_code == 201, created.text
@@ -680,7 +680,7 @@ def test_applicability_transition_refreshes_question_set(clean_registry, monkeyp
     assert login.status_code == 200, login.text
     created = admin.post(
         "/api/v1/physicians",
-        json={"username": "dr_s48d_s3a", "password": "pw123"},
+        json={"name_en": "Test physician", "username": "dr_s48d_s3a", "password": "pw123"},
         headers=_auth_headers(login.json()["csrf_token"]),
     )
     assert created.status_code == 201, created.text

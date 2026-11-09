@@ -28,3 +28,14 @@ test("Persian presentation leaves validation and ASCII payload contracts unchang
   assert.equal(present("fa", invalid.errors.age), "سن باید عدد صحیح بین ۱۸ تا ۹۹ باشد.");
   assert.equal(invalid.errors.age, "Age must be an integer 18-99.");
 });
+
+test("new-case birth-year variant uses strict names and frozen server year boundaries", () => {
+  const fields = {givenName:"  Ali  Reza  ", familyName:"رضایی", identifier:"0012345678", sex:"M", age:"", birthYear:"1926", clinicalStatus:"first_time", phone:""};
+  assert.equal(validateDemographics(fields, 2026).valid, true);
+  assert.equal(toRegistrationPayload(fields).birth_year, 1926);
+  assert.equal("age" in toRegistrationPayload(fields), false);
+  for (const name of ["Anne-Marie", "O'Neil", "Ali1", "Ali\tReza"]) assert.equal(validateDemographics({...fields,givenName:name},2026).valid,false);
+  assert.equal(validateDemographics({...fields,birthYear:"2008"},2026).valid,true);
+  for (const birthYear of ["1925","2009","","2008.0","۲۰۰۸"]) assert.equal(validateDemographics({...fields,birthYear},2026).valid,false);
+  assert.equal(validateDemographics(fields).valid,false);
+});

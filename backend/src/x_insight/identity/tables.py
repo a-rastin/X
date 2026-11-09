@@ -25,6 +25,7 @@ from sqlalchemy import (
     Table,
     Text,
 )
+from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 
 metadata = MetaData()
@@ -34,6 +35,9 @@ users = Table(
     metadata,
     Column("id", PG_UUID(as_uuid=True), primary_key=True),
     Column("username", Text, nullable=False),
+    Column("name_fa", Text, nullable=True),
+    Column("name_en", Text, nullable=True),
+    Column("unavailable_antipsychotics", JSONB, nullable=False, server_default="[]"),
     Column("role", Text, nullable=False),
     Column("active", Boolean, nullable=False, default=True),
     Column("password_hash", Text, nullable=False),
@@ -71,7 +75,7 @@ Index("ix_sessions_user_id", sessions.c.user_id)
 # S04 Slice 4: per-command idempotency store (migration 0003). Immutable
 # rows: actor/operation/key, canonical request hash, original response.
 # No UPDATE/DELETE helpers exist; replays read, first executions insert.
-from sqlalchemy.dialects.postgresql import JSONB  # noqa: E402
+
 
 idempotency_records = Table(
     "idempotency_records",

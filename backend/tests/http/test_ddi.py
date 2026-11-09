@@ -143,7 +143,7 @@ def clean_all(migrated_test_engine, monkeypatch):
         connection.execute(
             text(
                 "TRUNCATE ddi_interaction_evidence, ddi_concepts, "
-                "ddi_source_documents, ddi_dataset_releases"
+                "ddi_source_documents, ddi_dataset_releases CASCADE"
             )
         )
     identity_service.ensure_default_admin(migrated_test_engine)
@@ -155,7 +155,7 @@ def clean_all(migrated_test_engine, monkeypatch):
         connection.execute(
             text(
                 "TRUNCATE ddi_interaction_evidence, ddi_concepts, "
-                "ddi_source_documents, ddi_dataset_releases"
+                "ddi_source_documents, ddi_dataset_releases CASCADE"
             )
         )
     identity_service.ensure_default_admin(migrated_test_engine)
@@ -197,7 +197,7 @@ def _physician_client(clean_all):
     username = f"doc_{os.getpid()}_{id(clean_all) % 100000}"
     created = admin_client.post(
         "/api/v1/physicians",
-        json={"username": username, "password": "secret123"},
+        json={"name_en": "Test physician", "username": username, "password": "secret123"},
         headers={"X-CSRF-Token": admin_csrf},
     )
     assert created.status_code == 201, created.text

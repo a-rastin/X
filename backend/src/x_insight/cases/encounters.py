@@ -253,8 +253,8 @@ def _trusted_followup_medication_pin(
             "BASELINE_MEDICATIONS_MISMATCH",
             "Copied medications must match the referenced signed baseline.",
         )
-    dataset_version = section.get("dataset_version")
-    catalog_version = section.get("catalog_version")
+    dataset_version = section.get("selection_dataset_version") or section.get("dataset_version")
+    catalog_version = section.get("catalog_version") or section.get("selection_dataset_version")
     bundle = snapshot.get("pinned_bundle") or {}
     if not dataset_version and bundle.get("ddi_status") == "valid":
         dataset_version = bundle.get("ddi_dataset_version")
@@ -589,7 +589,7 @@ def require_author(encounter: dict[str, Any], user: dict[str, Any]) -> dict[str,
 def require_legacy_workflow(encounter: dict[str, Any]) -> None:
     if encounter.get("workflow_version") == "new-case-v1":
         raise contracts.ContractError(
-            409, "WRONG_WORKFLOW", "Use the deterministic new-case endpoints for this encounter."
+            409, "WORKFLOW_MISMATCH", "Use the deterministic new-case endpoints for this encounter."
         )
 
 
@@ -675,6 +675,40 @@ def create_open_draft(
                         and (answer != "unknown" or key in recorded_unknowns)
                     },
                 }
+    frozen_new_case = None
+    if validated_kind == "follow_up" and baseline is None:
+        previous = (
+            session.execute(
+                select(tables.signed_encounter_snapshots)
+                .where(
+                    tables.signed_encounter_snapshots.c.patient_id == patient_id,
+                    tables.signed_encounter_snapshots.c.new_case_proposal_id.is_not(None),
+                )
+                .order_by(tables.signed_encounter_snapshots.c.signed_at.desc())
+                .limit(1)
+            )
+            .mappings()
+            .first()
+        )
+        if previous:
+            from x_insight.assessments import cssrs, panss
+
+            frozen_new_case = previous["snapshot"]
+            frozen = frozen_new_case["draft_data"]
+            panss_result = panss.evaluate_answers(frozen["panss"]["answers"])
+            cssrs_result = cssrs.evaluate_answers(frozen["cssrs"]["answers"])
+            baseline_encounter_id = str(previous["encounter_id"])
+            baseline = {
+                "history_values": {},
+                "prior_scores": {
+                    "panss_total": panss_result.get("scores", {}).get("total"),
+                    "cssrs_severity": cssrs_result.get("scores", {}).get(
+                        "ideation_severity_recent"
+                    ),
+                },
+                "medications": frozen["medications"]["entries"],
+                "provenance_note": None,
+            }
     validated_baseline = validate_followup_baseline(baseline)
     if validated_kind != "follow_up" and (
         validated_baseline is not None or baseline_encounter_id is not None
@@ -731,6 +765,13 @@ def create_open_draft(
         )
     else:
         initial_body = {}
+    if frozen_new_case is not None:
+        initial_body[FOLLOWUP_BASELINE_KEY]["prior_plan"] = frozen_new_case["secondary_plan"][
+            "text"
+        ]
+        initial_body[FOLLOWUP_BASELINE_KEY]["prior_assessments"] = {
+            name: frozen_new_case["draft_data"][name] for name in ("panss", "cssrs")
+        }
     workflow = "legacy-v1"
     if (
         validated_kind == "registration"

@@ -1,5 +1,10 @@
 # X-INSIGHT — System Design
 
+Current extension (2026-11-09): New case uses a fixed oral BN and Lexicomp, with
+no LLM/CPT review; shared UI is English/Persian. The dated legacy inference rules
+below remain scoped to Known case/follow-up. See the
+[current workflow/API contract](../../docs/new-case-state.md).
+
 Revision: 2026-09-28. This document defines the application in technical detail; it is a design specification, not implementation code or a claim of completed testing.
 
 ## 1. Authority, scope, and confirmed decisions

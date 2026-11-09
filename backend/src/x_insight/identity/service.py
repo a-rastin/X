@@ -104,10 +104,9 @@ def get_user_by_username(session: Session, username: str) -> dict | None:
     return dict(row) if row is not None else None
 
 
-def get_user_by_id(session: Session, user_id: uuid.UUID) -> dict | None:
-    row = (
-        session.execute(select(tables.users).where(tables.users.c.id == user_id)).mappings().first()
-    )
+def get_user_by_id(session: Session, user_id: uuid.UUID, *, lock: bool = False) -> dict | None:
+    query = select(tables.users).where(tables.users.c.id == user_id)
+    row = session.execute(query.with_for_update() if lock else query).mappings().first()
     return dict(row) if row is not None else None
 
 
@@ -282,6 +281,8 @@ def safe_physician(user: dict) -> dict:
     return {
         "id": str(user["id"]),
         "username": user["username"],
+        "name_fa": user.get("name_fa"),
+        "name_en": user.get("name_en"),
         "role": user["role"],
         "active": bool(user.get("active", False)),
         "theme": user.get("theme", "light"),
@@ -328,14 +329,42 @@ def validate_new_password(password: str) -> str:
     return password
 
 
+def normalize_physician_names(name_fa: Any, name_en: Any) -> dict[str, str | None]:
+    values = {}
+    for key, value in (("name_fa", name_fa), ("name_en", name_en)):
+        if value is not None and (not isinstance(value, str) or len(value.strip()) > 150):
+            raise contracts.ContractError(
+                422,
+                "VALIDATION_FAILED",
+                "Invalid physician name.",
+                {key: ["Use at most 150 characters."]},
+            )
+        values[key] = value.strip() or None if isinstance(value, str) else None
+    if not any(values.values()):
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "At least one physician name is required.",
+            {"name_en": ["Enter a Persian or English name."]},
+        )
+    return values
+
+
 def create_physician(
-    session: Session, *, username: str, password: str, now: datetime | None = None
+    session: Session,
+    *,
+    username: str,
+    password: str,
+    name_fa: str | None = None,
+    name_en: str | None = None,
+    now: datetime | None = None,
 ) -> dict:
     """Create one active physician account (admin-only caller checks role).
 
     Raises 409 CONFLICT on duplicate username (normalized). Only the
     physician role is provisioned here; admin creation is denied.
     """
+    names = normalize_physician_names(name_fa, name_en)
     normalized = validate_new_username(username)
     validate_new_password(password)
     if get_user_by_username(session, normalized) is not None:
@@ -351,6 +380,7 @@ def create_physician(
         insert(tables.users).values(
             id=new_id,
             username=normalized,
+            **names,
             role=PHYSICIAN_ROLE,
             active=True,
             password_hash=passwords.hash_password(password),
@@ -401,6 +431,7 @@ def patch_physician(
     *,
     username: str | None = None,
     password: str | None = None,
+    names: dict[str, Any] | None = None,
     now: datetime | None = None,
 ) -> dict:
     """Edit physician credentials (admin-only caller checks role).
@@ -413,10 +444,17 @@ def patch_physician(
     - Every edit bumps users.revision (If-Match/ETag contract; the router
       enforces stale 412 when a precondition is supplied).
     """
-    target = get_user_by_id(session, target_id)
+    target = get_user_by_id(session, target_id, lock=True)
     if target is None:
         raise contracts.ContractError(404, "NOT_FOUND", "Physician not found.")
     values: dict = {}
+    if names is not None:
+        values.update(
+            normalize_physician_names(
+                names.get("name_fa", target.get("name_fa")),
+                names.get("name_en", target.get("name_en")),
+            )
+        )
     moment = now or contracts.utcnow()
     if username is not None:
         normalized = validate_new_username(username)

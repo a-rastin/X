@@ -329,7 +329,7 @@ def _new_physician_batch(clean_registry, monkeypatch, username: str, identifier:
     assert login.status_code == 200, login.text
     created = admin.post(
         "/api/v1/physicians",
-        json={"username": username, "password": "pw123"},
+        json={"name_en": "Test physician", "username": username, "password": "pw123"},
         headers=_auth_headers(login.json()["csrf_token"]),
     )
     assert created.status_code == 201, created.text
@@ -722,7 +722,7 @@ def _new_physician_batch_with_package(
     assert login.status_code == 200, login.text
     created = admin.post(
         "/api/v1/physicians",
-        json={"username": username, "password": "pw123"},
+        json={"name_en": "Test physician", "username": username, "password": "pw123"},
         headers=_auth_headers(login.json()["csrf_token"]),
     )
     assert created.status_code == 201, created.text
@@ -1199,7 +1199,7 @@ def test_deactivation_and_discard_prevent_late_publication(clean_registry, monke
     for username in ("dr_s48b_deact", "dr_s48b_disc"):
         created = admin.post(
             "/api/v1/physicians",
-            json={"username": username, "password": "pw123"},
+            json={"name_en": "Test physician", "username": username, "password": "pw123"},
             headers=_auth_headers(admin_csrf),
         )
         assert created.status_code == 201, created.text

@@ -18,13 +18,29 @@ import { useAuth } from "./auth";
 
 type LoadState =
   | { kind: "loading" }
-  | { kind: "refreshing"; items: SafePhysician[]; total: number; additional: boolean }
+  | {
+      kind: "refreshing";
+      items: SafePhysician[];
+      total: number;
+      additional: boolean;
+    }
   | { kind: "error"; message: string }
-  | { kind: "ready"; items: SafePhysician[]; total: number; additional: boolean };
+  | {
+      kind: "ready";
+      items: SafePhysician[];
+      total: number;
+      additional: boolean;
+    };
 
-function CreateForm({ onCreated }: { onCreated: (physician: SafePhysician) => void }) {
+function CreateForm({
+  onCreated,
+}: {
+  onCreated: (physician: SafePhysician) => void;
+}) {
   const { t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
+  const [nameFa, setNameFa] = useState("");
+  const [nameEn, setNameEn] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState<Record<string, string[]>>({});
@@ -42,7 +58,14 @@ function CreateForm({ onCreated }: { onCreated: (physician: SafePhysician) => vo
     setCreated(false);
     setBusy(true);
     try {
-      const physician = await createPhysician(username, password);
+      const physician = await createPhysician(
+        username,
+        password,
+        nameFa,
+        nameEn,
+      );
+      setNameFa("");
+      setNameEn("");
       setUsername("");
       setPassword("");
       setCreated(true);
@@ -57,7 +80,9 @@ function CreateForm({ onCreated }: { onCreated: (physician: SafePhysician) => vo
         setFormError(err.message);
         return;
       }
-      setFormError("Physician creation failed. Check the connection and retry.");
+      setFormError(
+        "Physician creation failed. Check the connection and retry.",
+      );
     } finally {
       inFlight.current = false;
       setBusy(false);
@@ -72,17 +97,47 @@ function CreateForm({ onCreated }: { onCreated: (physician: SafePhysician) => vo
       <h3 className="xi-section-title" id="create-physician-heading">
         {t("createPhysician")}
       </h3>
-      <form aria-label={t("createPhysician")} onSubmit={handleSubmit} noValidate>
+      <form
+        aria-label={t("createPhysician")}
+        onSubmit={handleSubmit}
+        noValidate
+      >
+        <fieldset>
+          <legend>
+            {t("nc.nameRequired")} <span className="nc-required">*</span>
+          </legend>
+          <label>
+            {t("nc.nameFa")}
+            <input
+              className="xi-input"
+              maxLength={150}
+              value={nameFa}
+              onChange={(e) => setNameFa(e.target.value)}
+            />
+          </label>
+          <label>
+            {t("nc.nameEn")}
+            <input
+              className="xi-input"
+              maxLength={150}
+              value={nameEn}
+              onChange={(e) => setNameEn(e.target.value)}
+            />
+          </label>
+        </fieldset>
         <div className="xi-field">
           <label className="xi-label" htmlFor="create-username">
-            {t("username")}</label>
+            {t("username")}
+          </label>
           <input
             className="xi-input"
             id="create-username"
             value={username}
             onChange={(event) => setUsername(event.target.value)}
             aria-invalid={usernameError !== null}
-            aria-describedby={usernameError ? "create-username-error" : undefined}
+            aria-describedby={
+              usernameError ? "create-username-error" : undefined
+            }
           />
           {usernameError !== null && (
             <p className="xi-field-error" id="create-username-error">
@@ -92,7 +147,8 @@ function CreateForm({ onCreated }: { onCreated: (physician: SafePhysician) => vo
         </div>
         <div className="xi-field">
           <label className="xi-label" htmlFor="create-password">
-            {t("password")}</label>
+            {t("password")}
+          </label>
           <input
             className="xi-input"
             id="create-password"
@@ -101,7 +157,9 @@ function CreateForm({ onCreated }: { onCreated: (physician: SafePhysician) => vo
             value={password}
             onChange={(event) => setPassword(event.target.value)}
             aria-invalid={passwordError !== null}
-            aria-describedby={passwordError ? "create-password-error" : undefined}
+            aria-describedby={
+              passwordError ? "create-password-error" : undefined
+            }
           />
           {passwordError !== null && (
             <p className="xi-field-error" id="create-password-error">
@@ -119,7 +177,11 @@ function CreateForm({ onCreated }: { onCreated: (physician: SafePhysician) => vo
             {t("physicianCreated")}
           </p>
         )}
-        <button className="xi-btn xi-btn-primary" type="submit" disabled={busy}>
+        <button
+          className="xi-btn xi-btn-primary"
+          type="submit"
+          disabled={busy || !(nameFa.trim() || nameEn.trim())}
+        >
           {busy ? t("creating") : t("createPhysician")}
         </button>
       </form>
@@ -140,6 +202,8 @@ function EditForm({
 }) {
   const { t, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
+  const [nameFa, setNameFa] = useState(physician.name_fa ?? "");
+  const [nameEn, setNameEn] = useState(physician.name_en ?? "");
   const [username, setUsername] = useState(physician.username);
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState<Record<string, string[]>>({});
@@ -152,7 +216,19 @@ function EditForm({
     setFormError(null);
     setBusy(true);
     try {
-      const patch: { username?: string; password?: string } = {};
+      const patch: {
+        username?: string;
+        password?: string;
+        name_fa?: string;
+        name_en?: string;
+      } = {};
+      if (
+        nameFa !== (physician.name_fa ?? "") ||
+        nameEn !== (physician.name_en ?? "")
+      ) {
+        patch.name_fa = nameFa;
+        patch.name_en = nameEn;
+      }
       if (username !== physician.username) {
         patch.username = username;
       }
@@ -176,9 +252,7 @@ function EditForm({
       }
       if (err instanceof ApiError && err.status === 412) {
         onStale();
-        setFormError(
-          "The account changed. Reload and reconcile your edits.",
-        );
+        setFormError("The account changed. Reload and reconcile your edits.");
         return;
       }
       if (err instanceof ApiError) {
@@ -197,20 +271,44 @@ function EditForm({
 
   return (
     <form aria-label={t("editPhysician")} onSubmit={handleSubmit} noValidate>
+      <label>
+        {t("nc.nameFa")}
+        <input
+          className="xi-input"
+          maxLength={150}
+          value={nameFa}
+          onChange={(e) => setNameFa(e.target.value)}
+        />
+      </label>
+      <label>
+        {t("nc.nameEn")}
+        <input
+          className="xi-input"
+          maxLength={150}
+          value={nameEn}
+          onChange={(e) => setNameEn(e.target.value)}
+        />
+      </label>
       <div className="xi-form-row">
         <div className="xi-field">
           <label className="xi-label" htmlFor={`edit-username-${physician.id}`}>
-            {t("username")}</label>
+            {t("username")}
+          </label>
           <input
             className="xi-input"
             id={`edit-username-${physician.id}`}
             value={username}
             onChange={(event) => setUsername(event.target.value)}
             aria-invalid={usernameError !== null}
-            aria-describedby={usernameError ? `edit-username-error-${physician.id}` : undefined}
+            aria-describedby={
+              usernameError ? `edit-username-error-${physician.id}` : undefined
+            }
           />
           {usernameError !== null && (
-            <p className="xi-field-error" id={`edit-username-error-${physician.id}`}>
+            <p
+              className="xi-field-error"
+              id={`edit-username-error-${physician.id}`}
+            >
               {errorText(usernameError)}
             </p>
           )}
@@ -227,10 +325,15 @@ function EditForm({
             value={password}
             onChange={(event) => setPassword(event.target.value)}
             aria-invalid={passwordError !== null}
-            aria-describedby={passwordError ? `edit-password-error-${physician.id}` : undefined}
+            aria-describedby={
+              passwordError ? `edit-password-error-${physician.id}` : undefined
+            }
           />
           {passwordError !== null && (
-            <p className="xi-field-error" id={`edit-password-error-${physician.id}`}>
+            <p
+              className="xi-field-error"
+              id={`edit-password-error-${physician.id}`}
+            >
               {errorText(passwordError)}
             </p>
           )}
@@ -250,7 +353,8 @@ function EditForm({
           type="button"
           onClick={onCancel}
         >
-          {t("cancel")}</button>
+          {t("cancel")}
+        </button>
       </div>
     </form>
   );
@@ -334,7 +438,11 @@ function DeactivateForm({
     setFormError(null);
     setBusy(true);
     try {
-      const result = await deactivatePhysician(physician.id, draftAction, draftRevision);
+      const result = await deactivatePhysician(
+        physician.id,
+        draftAction,
+        draftRevision,
+      );
       setDone(true);
       onDeactivated(
         result.draft_action === "discard"
@@ -372,7 +480,11 @@ function DeactivateForm({
   }
 
   return (
-    <form aria-label={t("deactivatePhysician")} onSubmit={handleSubmit} noValidate>
+    <form
+      aria-label={t("deactivatePhysician")}
+      onSubmit={handleSubmit}
+      noValidate
+    >
       <div data-testid={`deactivate-preview-${physician.id}`} role="status">
         {preview.kind === "loading" && (
           <p className="xi-hint">{t("loadingOpenDrafts")}</p>
@@ -393,9 +505,9 @@ function DeactivateForm({
         )}
         {preview.kind === "ready" && (
           <p className="xi-hint" style={{ marginBottom: 4 }}>
-            
-            {t("openDrafts")} {preview.preview.reviewed_drafts.length}  {t("setRevision")}{" "}
-            {preview.preview.draft_set_revision}{t("identifiersOnlyNoDraftContents")}{" "}
+            {t("openDrafts")} {preview.preview.reviewed_drafts.length}{" "}
+            {t("setRevision")} {preview.preview.draft_set_revision}
+            {t("identifiersOnlyNoDraftContents")}{" "}
             <button
               className="xi-btn xi-btn-secondary"
               type="button"
@@ -407,7 +519,11 @@ function DeactivateForm({
           </p>
         )}
       </div>
-      <div className="xi-radio-group" role="radiogroup" aria-label={t("draftHandling")}>
+      <div
+        className="xi-radio-group"
+        role="radiogroup"
+        aria-label={t("draftHandling")}
+      >
         <label htmlFor={`draft-retain-${physician.id}`}>
           <input
             id={`draft-retain-${physician.id}`}
@@ -432,7 +548,11 @@ function DeactivateForm({
         </label>
       </div>
       {needsReview && (
-        <div className="xi-notice" role="group" aria-label={t("confirmedDiscard")}>
+        <div
+          className="xi-notice"
+          role="group"
+          aria-label={t("confirmedDiscard")}
+        >
           <label htmlFor={`draft-reviewed-${physician.id}`}>
             <input
               id={`draft-reviewed-${physician.id}`}
@@ -440,9 +560,8 @@ function DeactivateForm({
               checked={reviewed}
               onChange={(event) => setReviewed(event.target.checked)}
             />
-            
-            {t("iReviewedTheCurrentSetOf")} {draftCount}  {t("openDraftSAtRevision")}{" "}
-            {draftRevision}  {t("identifiersOnly")}
+            {t("iReviewedTheCurrentSetOf")} {draftCount}{" "}
+            {t("openDraftSAtRevision")} {draftRevision} {t("identifiersOnly")}
           </label>
           <label htmlFor={`draft-confirm-discard-${physician.id}`}>
             <input
@@ -465,9 +584,7 @@ function DeactivateForm({
           {t("physicianDeactivated")}
         </p>
       )}
-      <p className="xi-hint">
-        {t("deactivationEffect")}
-      </p>
+      <p className="xi-hint">{t("deactivationEffect")}</p>
       <div className="xi-row-actions">
         <button
           className="xi-btn xi-btn-primary"
@@ -489,7 +606,7 @@ function DeactivateForm({
 }
 
 export function PhysiciansPanel() {
-  const { text: uiText, t, text } = useLanguage();
+  const { text: uiText, t, text, language } = useLanguage();
   const { sessionExpired } = useAuth();
   const [state, setState] = useState<LoadState>({ kind: "loading" });
   const [notice, setNotice] = useState<string | null>(null);
@@ -512,10 +629,16 @@ export function PhysiciansPanel() {
       const result = await listPhysicians();
       if (request !== latestReload.current) return;
       const created = createdPhysician.current;
-      const additional = created !== null && !result.items.some((item) => item.id === created.id);
+      const additional =
+        created !== null &&
+        !result.items.some((item) => item.id === created.id);
       const current = additional ? await getPhysician(created.id) : null;
       if (request !== latestReload.current) return;
-      const items = current ? [...result.items, current].sort((a, b) => a.username.localeCompare(b.username)) : result.items;
+      const items = current
+        ? [...result.items, current].sort((a, b) =>
+            a.username.localeCompare(b.username),
+          )
+        : result.items;
       setState({ kind: "ready", items, total: result.total, additional });
     } catch (err) {
       if (request !== latestReload.current) return;
@@ -581,9 +704,17 @@ export function PhysiciansPanel() {
           setNotice(null);
           createdPhysician.current = physician;
           setState((previous) => {
-            if (previous.kind !== "ready" && previous.kind !== "refreshing") return previous;
-            if (previous.items.some((item) => item.id === physician.id)) return previous;
-            return { ...previous, items: [...previous.items, physician].sort((a, b) => a.username.localeCompare(b.username)), additional: true };
+            if (previous.kind !== "ready" && previous.kind !== "refreshing")
+              return previous;
+            if (previous.items.some((item) => item.id === physician.id))
+              return previous;
+            return {
+              ...previous,
+              items: [...previous.items, physician].sort((a, b) =>
+                a.username.localeCompare(b.username),
+              ),
+              additional: true,
+            };
           });
           void reload();
         }}
@@ -594,12 +725,18 @@ export function PhysiciansPanel() {
           {(state.kind === "ready" || state.kind === "refreshing") &&
             ` (${state.total})`}
         </h3>
-        {(state.kind === "ready" || state.kind === "refreshing") && state.additional && (
-          <p className="xi-hint">{t("firstPageNewPhysician")}</p>
-        )}
+        {(state.kind === "ready" || state.kind === "refreshing") &&
+          state.additional && (
+            <p className="xi-hint">{t("firstPageNewPhysician")}</p>
+          )}
         {(state.kind === "ready" || state.kind === "refreshing") &&
           state.items.length < state.total && (
-            <p className="xi-hint">{t("showingValue1OfValue2", { value1: state.items.length, value2: state.total })}</p>
+            <p className="xi-hint">
+              {t("showingValue1OfValue2", {
+                value1: state.items.length,
+                value2: state.total,
+              })}
+            </p>
           )}
         {state.kind === "loading" && <p>{t("loadingPhysicians")}</p>}
         {state.kind === "error" && (
@@ -612,7 +749,8 @@ export function PhysiciansPanel() {
               type="button"
               onClick={() => void reload()}
             >
-              {t("retry")}</button>
+              {t("retry")}
+            </button>
           </div>
         )}
         {(state.kind === "ready" || state.kind === "refreshing") &&
@@ -630,7 +768,25 @@ export function PhysiciansPanel() {
               <tbody>
                 {state.items.map((physician) => (
                   <tr key={physician.id}>
-                    <td>{physician.username}</td>
+                    <td>
+                      <bdi>
+                        {(language === "fa"
+                          ? physician.name_fa || physician.name_en
+                          : physician.name_en || physician.name_fa) ||
+                          physician.username}
+                      </bdi>
+                      {((language === "fa"
+                        ? physician.name_fa || physician.name_en
+                        : physician.name_en || physician.name_fa) ||
+                        physician.username) !== physician.username && (
+                        <>
+                          <br />
+                          <small>
+                            <bdi>{physician.username}</bdi>
+                          </small>
+                        </>
+                      )}
+                    </td>
                     <td>
                       <span
                         className={

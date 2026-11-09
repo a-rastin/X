@@ -1,3 +1,4 @@
+import { UnavailableDrugsPage } from "../features/identity/UnavailableDrugsPage";
 import { LanguageButton, useLanguage } from "../shared/i18n";
 import React from "react";
 import { useAuth } from "../features/identity/auth";
@@ -141,7 +142,7 @@ function ReportRoute() {
 }
 
 export function App() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { status, user, warningAcked, logout } = useAuth();
   const [hashRoute, navigate] = useRoute();
   const previousStatus = React.useRef(status);
@@ -220,6 +221,7 @@ export function App() {
               <NavLink route="status" current={route} navigate={navigate}>
                 {t("status")}</NavLink>
             )}
+            {user.role === "physician" && <NavLink route="unavailable-drugs" current={route} navigate={navigate}>{t("nc.unavailableDrugs")}</NavLink>}
             <NavLink route="account" current={route} navigate={navigate}>
               {t("account")}</NavLink>
           </nav>
@@ -227,7 +229,7 @@ export function App() {
         {user !== null && (
           <div className="xi-header-meta">
             <span className="xi-identity">
-              <bdi className="xi-identity-name">{user.username}</bdi>
+              <bdi className="xi-identity-name">{(language === "fa" ? user.name_fa || user.name_en : user.name_en || user.name_fa) || user.username}</bdi>
               <span className="xi-identity-role">{t(user.role === "admin" ? "administrator" : "physician")}</span>
             </span>
             <ThemeToggle />
@@ -273,6 +275,7 @@ export function App() {
             )}
             {!showWarningGate && route === "status" && <StatusRoutePage />}
             {!showWarningGate && route === "report" && <ReportRoute />}
+            {!showWarningGate && route === "unavailable-drugs" && <UnavailableDrugsPage />}
             {!showWarningGate && route === "account" && <AccountPage />}
           </>
         )}

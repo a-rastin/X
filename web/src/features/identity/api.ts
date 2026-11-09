@@ -15,6 +15,8 @@ export type Theme = "light" | "dark";
 export interface PublicUser {
   id: string;
   username: string;
+  name_fa?: string | null;
+  name_en?: string | null;
   role: Role;
   theme: Theme;
 }
@@ -22,6 +24,8 @@ export interface PublicUser {
 export interface SafePhysician {
   id: string;
   username: string;
+  name_fa?: string | null;
+  name_en?: string | null;
   role: string;
   active: boolean;
   theme: Theme;
@@ -95,7 +99,7 @@ interface RequestOptions {
   headers?: Record<string, string>;
 }
 
-async function request<T>(path: string, options: RequestOptions = {}): Promise<T> {
+export async function request<T>(path: string, options: RequestOptions = {}): Promise<T> {
   const headers: Record<string, string> = {
     "Content-Type": "application/json",
     ...(options.headers ?? {}),
@@ -287,19 +291,20 @@ export async function getPhysician(id: string): Promise<SafePhysician> {
 export async function createPhysician(
   username: string,
   password: string,
+  name_fa: string, name_en: string,
 ): Promise<SafePhysician> {
   const result = await request<{ user: SafePhysician }>("/physicians", {
     method: "POST",
     csrf: true,
     headers: { "Idempotency-Key": idempotencyKey() },
-    body: { username, password },
+    body: { username, password, name_fa, name_en },
   });
   return result.user;
 }
 
 export async function patchPhysician(
   id: string,
-  patch: { username?: string; password?: string },
+  patch: { username?: string; password?: string; name_fa?: string; name_en?: string },
   revision: number,
 ): Promise<SafePhysician> {
   const result = await request<{ user: SafePhysician }>(`/physicians/${id}`, {

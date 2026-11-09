@@ -132,14 +132,15 @@ export interface SignedSnapshotRow {
   id: string;
   encounter_id: string;
   patient_id: string;
-  batch_id: string;
-  proposal_id: string;
+  batch_id: string | null;
+  proposal_id: string | null;
+  new_case_proposal_id?: string | null;
   secondary_plan_revision: number;
   secondary_plan_text: string;
   snapshot: {
     questions?: SignedQuestionFrozen[];
     secondary_plan?: { revision: number; text: string; clozapine_included?: ClozapineIncluded };
-    signer?: { signer_id: string; signer_username: string; signed_at: string };
+    signer?: { signer_id: string; signer_username: string; signed_at: string; name_fa?: string|null; name_en?: string|null };
     [key: string]: unknown;
   };
   snapshot_hash: string;

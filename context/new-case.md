@@ -32,9 +32,10 @@ estimate a CPT (rejected — no LLM, provider or job exists in this workflow);
 treating the four movement-disorder factors as examined negative clinical
 findings (rejected — they are explicit `No` workflow defaults, not measurements).
 
-The bounded loader, exact row query and ranking module are implemented and
-hash-pinned in `models/oral_antipsychotic.py`; connecting that ranking to a
-proposal/generation route is Package F work.
+The bounded loader and ranking module are hash-pinned in
+`models/oral_antipsychotic.py`. `cases/new_case_plans.py` now connects the exact
+row to immutable proposals, personal availability and candidate-only Lexicomp
+evidence without creating a legacy batch or provider request.
 
 ## New case signatures add a v4 shape without rewriting historical snapshots
 
@@ -66,6 +67,9 @@ signing (rejected — the deterministic path has none, so those references would
 be invented); relaxing the generic model admission bound to accommodate the
 large asset (rejected — the trusted model uses a dedicated bounded loader).
 
-This records the intended compatibility contract, not a shipped feature:
-immutable proposal persistence, v4 signing, and the signed chart/report and
-follow-up readers (Packages F/G) are not yet implemented.
+Migration `0031` and `cases/new_case_plans.py` implement this additive contract,
+including immutable proposals, atomic v4 signing, signed chart/report rendering
+and legacy follow-up compatibility. A mixed DDInter/Lexicomp/model/proposal/v4
+archive was restored on an isolated database with its signed JSON and hash
+unchanged. See `docs/new-case-state.md` and the dated implementation checkpoint
+for verification scope; integration remains distinct from clinical validation.

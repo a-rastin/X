@@ -132,7 +132,7 @@ def test_cross_patient_adjustments_bind_correct_revisions(clean_registry, monkey
     assert login.status_code == 200, login.text
     made = admin.post(
         "/api/v1/physicians",
-        json={"username": "dr_s58_cross", "password": "pw123"},
+        json={"name_en": "Test physician", "username": "dr_s58_cross", "password": "pw123"},
         headers=_auth_headers(login.json()["csrf_token"]),
     )
     assert made.status_code == 201, made.text

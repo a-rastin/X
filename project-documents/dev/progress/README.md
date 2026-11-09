@@ -1,5 +1,9 @@
 # X-INSIGHT progress tracker
 
+[New case implementation (2026-11-09)](new-case-implementation-2026-11-09.md): packages A–H complete and committed; seven-step bilingual wizard, immutable proposals, v4 signing, schema 0031, mixed-data restore. `make check`, 22 web tests and 12/12 New case browser journeys pass; stale export probes and the C-SSRS tooltip duplicate fixed. Pre-existing legacy browser probes remain recorded, not regressions.
+
+[New case plan audit (2026-11-09)](new-case-plan-audit-2026-11-09.md): 321 backend tests (including recovery), 20 web tests and static/packaging checks pass; B/F/G/H remain incomplete and registration-name validation is defective.
+
 [New case Package H checkpoint (2026-11-09)](new-case-package-h-2026-11-09.md): packaging/startup/backup verified; raised the 256→512 MiB per-file bound; follow-up fixes the ruff and stale BN-schema-path blockers so `make check` and recovery pass. F/G and full acceptance remain open.
 
 [New case Package G partial checkpoint (2026-11-09)](new-case-package-g-2026-11-09.md): workflow identity fails closed; new wizard and B/F prerequisites remain open.

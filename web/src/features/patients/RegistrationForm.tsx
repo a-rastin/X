@@ -12,6 +12,7 @@ import { useLanguage } from "../../shared/i18n";
  */
 
 import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
+import { newCaseConfig } from "../new-case/api";
 import { ApiError } from "../identity/api";
 import { useAuth } from "../identity/auth";
 import { createPatient } from "./api";
@@ -32,6 +33,7 @@ const EMPTY: DemographicsFields = {
   identifier: "",
   sex: "",
   age: "",
+  birthYear: "",
   clinicalStatus: "",
   phone: "",
 };
@@ -61,6 +63,14 @@ export function RegistrationPage() {
 function RegistrationForm() {
   const { t, text, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
+  const [registrationYear, setRegistrationYear] = useState<number>();
+  useEffect(() => {
+    void newCaseConfig()
+      .then((c) => setRegistrationYear(c.registration_year))
+      .catch(() =>
+        setFormError("Registration configuration unavailable. Retry."),
+      );
+  }, []);
   const [fields, setFields] = useState<DemographicsFields>(EMPTY);
   const [touched, setTouched] = useState<Touched>({});
   const [serverErrors, setServerErrors] = useState<ClientFieldErrors>({});
@@ -69,8 +79,8 @@ function RegistrationForm() {
   const summaryRef = useRef<HTMLParagraphElement>(null);
 
   const { valid: clientValid, errors: clientErrors } = useMemo(
-    () => validateDemographics(fields),
-    [fields],
+    () => validateDemographics(fields, registrationYear),
+    [fields, registrationYear],
   );
 
   // Keyboard focus follows the error summary once it commits: server
@@ -169,7 +179,10 @@ function RegistrationForm() {
     }
   }
 
-  function describedBy(field: DemographicsField, error: string | null): string | undefined {
+  function describedBy(
+    field: DemographicsField,
+    error: string | null,
+  ): string | undefined {
     return error !== null ? `${field}-error` : undefined;
   }
 
@@ -180,12 +193,35 @@ function RegistrationForm() {
   const ageError = errorFor("age");
   const clinicalStatusError = errorFor("clinicalStatus");
   const phoneError = errorFor("phone");
+  const registrationSteps =
+    fields.clinicalStatus === "first_time"
+      ? [
+          { id: "register", label: t("registerPatient") },
+          ...[
+            "diagnosis",
+            "panss",
+            "harm",
+            "history",
+            "medications",
+            "considerations",
+          ].map((id) => ({
+            id,
+            label: t(
+              ("nc." + id) as import("../../shared/messages").MessageKey,
+            ),
+          })),
+        ]
+      : REGISTRATION_WIZARD_STEPS;
 
   return (
     <div>
       <h2 className="xi-page-title">{t("addPatient")}</h2>
-      <nav className="xi-wizard-nav" aria-label={t("encounterPages")} id="wizard-pages">
-        {REGISTRATION_WIZARD_STEPS.map((item, index) => {
+      <nav
+        className="xi-wizard-nav"
+        aria-label={t("encounterPages")}
+        id="wizard-pages"
+      >
+        {registrationSteps.map((item, index) => {
           const current = item.id === "register";
           return (
             <a
@@ -206,224 +242,298 @@ function RegistrationForm() {
         className="xi-wizard-page"
         id="wizard-page"
         role="region"
-        aria-label={t("registerPatientStep1OfValue1", { value1: REGISTRATION_WIZARD_STEPS.length })}
+        aria-label={t("registerPatientStep1OfValue1", {
+          value1: REGISTRATION_WIZARD_STEPS.length,
+        })}
       >
-      <section className="xi-card" aria-labelledby="demographics-heading">
-        <h3 className="xi-section-title" id="demographics-heading">
-          {t("stepDemographics")}
-        </h3>
-        <p className="xi-hint">
-          {t("registrationRules")}
-        </p>
-        <form
-          className="xi-form-grid"
-          aria-label={t("registerPatient")}
-          onSubmit={handleSubmit}
-          noValidate
-        >
-          <div className="xi-field">
-            <label className="xi-label" htmlFor="reg-given-name">
-              {t("givenName")}
-            </label>
-            <input dir="auto"
-              className="xi-input"
-              id="reg-given-name"
-              autoComplete="off"
-              value={fields.givenName}
-              onChange={(event) => setField("givenName", event.target.value)}
-              aria-invalid={givenNameError !== null}
-              aria-describedby={describedBy("givenName", givenNameError)}
-            />
-            {givenNameError !== null && (
-              <p className="xi-field-error" id="givenName-error">
-                {errorText(givenNameError)}
-              </p>
-            )}
-          </div>
-          <div className="xi-field">
-            <label className="xi-label" htmlFor="reg-family-name">
-              {t("familyName")}
-            </label>
-            <input dir="auto"
-              className="xi-input"
-              id="reg-family-name"
-              autoComplete="off"
-              value={fields.familyName}
-              onChange={(event) => setField("familyName", event.target.value)}
-              aria-invalid={familyNameError !== null}
-              aria-describedby={describedBy("familyName", familyNameError)}
-            />
-            {familyNameError !== null && (
-              <p className="xi-field-error" id="familyName-error">
-                {errorText(familyNameError)}
-              </p>
-            )}
-          </div>
-          <div className="xi-field">
-            <label className="xi-label" htmlFor="reg-identifier">
-              {t("patientId")}
-            </label>
-            <input dir="ltr"
-              className="xi-input xi-mono"
-              id="reg-identifier"
-              inputMode="numeric"
-              autoComplete="off"
-              maxLength={10}
-              value={fields.identifier}
-              onChange={(event) => setField("identifier", event.target.value)}
-              aria-invalid={identifierError !== null}
-              aria-describedby={describedBy("identifier", identifierError)}
-            />
-            {identifierError !== null && (
-              <p className="xi-field-error" id="identifier-error">
-                {errorText(identifierError)}
-              </p>
-            )}
-          </div>
-          <fieldset
-            className="xi-field"
-            aria-describedby={sexError ? "sex-error" : undefined}
+        <section className="xi-card" aria-labelledby="demographics-heading">
+          <h3 className="xi-section-title" id="demographics-heading">
+            {t("stepDemographics")}
+          </h3>
+          <p className="xi-hint">{t("registrationRules")}</p>
+          <form
+            className="xi-form-grid"
+            aria-label={t("registerPatient")}
+            onSubmit={handleSubmit}
+            noValidate
           >
-            <legend className="xi-label">{t("sex")}</legend>
-            <div className="xi-radio-group" role="radiogroup" aria-label={t("sex")}>
-              <label htmlFor="reg-sex-m">
-                <input
-                  id="reg-sex-m"
-                  type="radio"
-                  name="sex"
-                  value="M"
-                  checked={fields.sex === "M"}
-                  onChange={() => setField("sex", "M")}
-                />
-                M
+            <div className="xi-field">
+              <label className="xi-label" htmlFor="reg-given-name">
+                {t("givenName")}{" "}
+                <span className="nc-required" aria-label={t("nc.required")}>
+                  *
+                </span>
               </label>
-              <label htmlFor="reg-sex-f">
-                <input
-                  id="reg-sex-f"
-                  type="radio"
-                  name="sex"
-                  value="F"
-                  checked={fields.sex === "F"}
-                  onChange={() => setField("sex", "F")}
-                />
-                F
-              </label>
+              <input
+                dir="auto"
+                className="xi-input"
+                id="reg-given-name"
+                autoComplete="off"
+                required
+                value={fields.givenName}
+                onChange={(event) => setField("givenName", event.target.value)}
+                aria-invalid={givenNameError !== null}
+                aria-describedby={describedBy("givenName", givenNameError)}
+              />
+              {givenNameError !== null && (
+                <p className="xi-field-error" id="givenName-error">
+                  {errorText(givenNameError)}
+                </p>
+              )}
             </div>
-            {sexError !== null && (
-              <p className="xi-field-error" id="sex-error">
-                {errorText(sexError)}
-              </p>
-            )}
-          </fieldset>
-          <div className="xi-field">
-            <label className="xi-label" htmlFor="reg-age">
-              {t("age")}
-            </label>
-            <input
-              className="xi-input"
-              id="reg-age"
-              inputMode="numeric"
-              autoComplete="off"
-              value={fields.age}
-              onChange={(event) => setField("age", event.target.value)}
-              aria-invalid={ageError !== null}
-              aria-describedby={describedBy("age", ageError)}
-            />
-            {ageError !== null && (
-              <p className="xi-field-error" id="age-error">
-                {errorText(ageError)}
-              </p>
-            )}
-          </div>
-          <fieldset
-            className="xi-field"
-            aria-describedby={
-              clinicalStatusError ? "clinicalStatus-error" : undefined
-            }
-          >
-            <legend className="xi-label">{t("clinicalStatus")}</legend>
-            <div
-              className="xi-radio-group"
-              role="radiogroup"
-              aria-label={t("clinicalStatus")}
-            >
-              <label htmlFor="reg-status-first">
-                <input
-                  id="reg-status-first"
-                  type="radio"
-                  name="clinical_status"
-                  value="first_time"
-                  checked={fields.clinicalStatus === "first_time"}
-                  onChange={() => setField("clinicalStatus", "first_time")}
-                />
-                {t("newCase")}
+            <div className="xi-field">
+              <label className="xi-label" htmlFor="reg-family-name">
+                {t("familyName")}{" "}
+                <span className="nc-required" aria-label={t("nc.required")}>
+                  *
+                </span>
               </label>
-              <label htmlFor="reg-status-established">
-                <input
-                  id="reg-status-established"
-                  type="radio"
-                  name="clinical_status"
-                  value="established"
-                  checked={fields.clinicalStatus === "established"}
-                  onChange={() => setField("clinicalStatus", "established")}
-                />
-                {t("knownCase")}
-              </label>
+              <input
+                dir="auto"
+                className="xi-input"
+                id="reg-family-name"
+                autoComplete="off"
+                required
+                value={fields.familyName}
+                onChange={(event) => setField("familyName", event.target.value)}
+                aria-invalid={familyNameError !== null}
+                aria-describedby={describedBy("familyName", familyNameError)}
+              />
+              {familyNameError !== null && (
+                <p className="xi-field-error" id="familyName-error">
+                  {errorText(familyNameError)}
+                </p>
+              )}
             </div>
-            {clinicalStatusError !== null && (
-              <p className="xi-field-error" id="clinicalStatus-error">
-                {errorText(clinicalStatusError)}
+            <div className="xi-field">
+              <label className="xi-label" htmlFor="reg-identifier">
+                {t("patientId")}{" "}
+                <span className="nc-required" aria-label={t("nc.required")}>
+                  *
+                </span>
+              </label>
+              <input
+                dir="ltr"
+                className="xi-input xi-mono"
+                id="reg-identifier"
+                inputMode="numeric"
+                autoComplete="off"
+                maxLength={10}
+                required
+                value={fields.identifier}
+                onChange={(event) => setField("identifier", event.target.value)}
+                aria-invalid={identifierError !== null}
+                aria-describedby={describedBy("identifier", identifierError)}
+              />
+              {identifierError !== null && (
+                <p className="xi-field-error" id="identifier-error">
+                  {errorText(identifierError)}
+                </p>
+              )}
+            </div>
+            <fieldset
+              className="xi-field"
+              aria-describedby={sexError ? "sex-error" : undefined}
+            >
+              <legend className="xi-label">
+                {t("sex")}{" "}
+                <span className="nc-required" aria-label={t("nc.required")}>
+                  *
+                </span>
+              </legend>
+              <div
+                className="xi-radio-group"
+                role="radiogroup"
+                aria-label={t("sex")}
+              >
+                <label htmlFor="reg-sex-m">
+                  <input
+                    id="reg-sex-m"
+                    type="radio"
+                    name="sex"
+                    value="M"
+                    checked={fields.sex === "M"}
+                    onChange={() => setField("sex", "M")}
+                  />
+                  M
+                </label>
+                <label htmlFor="reg-sex-f">
+                  <input
+                    id="reg-sex-f"
+                    type="radio"
+                    name="sex"
+                    value="F"
+                    checked={fields.sex === "F"}
+                    onChange={() => setField("sex", "F")}
+                  />
+                  F
+                </label>
+              </div>
+              {sexError !== null && (
+                <p className="xi-field-error" id="sex-error">
+                  {errorText(sexError)}
+                </p>
+              )}
+            </fieldset>
+            {fields.clinicalStatus === "first_time" ? (
+              <div className="xi-field">
+                <label className="xi-label" htmlFor="reg-birth-year">
+                  {t("nc.birthYear")}{" "}
+                  <span className="nc-required" aria-label={t("nc.required")}>
+                    *
+                  </span>
+                </label>
+                <select
+                  id="reg-birth-year"
+                  className="xi-input"
+                  required
+                  value={fields.birthYear}
+                  onChange={(e) => setField("birthYear", e.target.value)}
+                  aria-invalid={errorFor("birthYear") !== null}
+                >
+                  <option value="">—</option>
+                  {registrationYear &&
+                    Array.from(
+                      { length: 83 },
+                      (_, i) => registrationYear - 18 - i,
+                    ).map((year) => (
+                      <option key={year} value={year}>
+                        {year}
+                      </option>
+                    ))}
+                </select>
+                {fields.birthYear && registrationYear && (
+                  <p>
+                    {t("age")}:{" "}
+                    <bdi>{registrationYear - Number(fields.birthYear)}</bdi>
+                  </p>
+                )}
+                {errorFor("birthYear") && (
+                  <p role="alert">
+                    {t("nc.birthYear")}: {t("nc.required")}
+                  </p>
+                )}
+              </div>
+            ) : (
+              <div className="xi-field">
+                <label className="xi-label" htmlFor="reg-age">
+                  {t("age")}
+                </label>
+                <input
+                  className="xi-input"
+                  id="reg-age"
+                  inputMode="numeric"
+                  autoComplete="off"
+                  value={fields.age}
+                  onChange={(event) => setField("age", event.target.value)}
+                  aria-invalid={ageError !== null}
+                  aria-describedby={describedBy("age", ageError)}
+                />
+                {ageError !== null && (
+                  <p className="xi-field-error" id="age-error">
+                    {errorText(ageError)}
+                  </p>
+                )}
+              </div>
+            )}
+            <fieldset
+              className="xi-field"
+              aria-describedby={
+                clinicalStatusError ? "clinicalStatus-error" : undefined
+              }
+            >
+              <legend className="xi-label">
+                {t("clinicalStatus")}{" "}
+                <span className="nc-required" aria-label={t("nc.required")}>
+                  *
+                </span>
+              </legend>
+              <div
+                className="xi-radio-group"
+                role="radiogroup"
+                aria-label={t("clinicalStatus")}
+              >
+                <label htmlFor="reg-status-first">
+                  <input
+                    id="reg-status-first"
+                    type="radio"
+                    name="clinical_status"
+                    value="first_time"
+                    checked={fields.clinicalStatus === "first_time"}
+                    onChange={() => setField("clinicalStatus", "first_time")}
+                  />
+                  {t("newCase")}
+                </label>
+                <label htmlFor="reg-status-established">
+                  <input
+                    id="reg-status-established"
+                    type="radio"
+                    name="clinical_status"
+                    value="established"
+                    checked={fields.clinicalStatus === "established"}
+                    onChange={() => setField("clinicalStatus", "established")}
+                  />
+                  {t("knownCase")}
+                </label>
+              </div>
+              {clinicalStatusError !== null && (
+                <p className="xi-field-error" id="clinicalStatus-error">
+                  {errorText(clinicalStatusError)}
+                </p>
+              )}
+            </fieldset>
+            <div className="xi-field">
+              <label className="xi-label" htmlFor="reg-phone">
+                {t("optionalPhone")}
+              </label>
+              <input
+                dir="ltr"
+                className="xi-input"
+                id="reg-phone"
+                type="tel"
+                autoComplete="off"
+                value={fields.phone}
+                onChange={(event) => setField("phone", event.target.value)}
+                aria-invalid={phoneError !== null}
+                aria-describedby={describedBy("phone", phoneError)}
+              />
+              {phoneError !== null && (
+                <p className="xi-field-error" id="phone-error">
+                  {errorText(phoneError)}
+                </p>
+              )}
+            </div>
+            {formError !== null && (
+              <p
+                className="xi-form-error"
+                role="alert"
+                id="registration-error"
+                tabIndex={-1}
+                ref={summaryRef}
+              >
+                {errorText(formError)}
               </p>
             )}
-          </fieldset>
-          <div className="xi-field">
-            <label className="xi-label" htmlFor="reg-phone">
-              {t("optionalPhone")}
-            </label>
-            <input dir="ltr"
-              className="xi-input"
-              id="reg-phone"
-              type="tel"
-              autoComplete="off"
-              value={fields.phone}
-              onChange={(event) => setField("phone", event.target.value)}
-              aria-invalid={phoneError !== null}
-              aria-describedby={describedBy("phone", phoneError)}
-            />
-            {phoneError !== null && (
-              <p className="xi-field-error" id="phone-error">
-                {errorText(phoneError)}
-              </p>
-            )}
-          </div>
-          {formError !== null && (
-            <p
-              className="xi-form-error"
-              role="alert"
-              id="registration-error"
-              tabIndex={-1}
-              ref={summaryRef}
-            >
-              {errorText(formError)}
-            </p>
-          )}
-          <div className="xi-row-actions">
-            <button
-              className="xi-btn xi-btn-primary"
-              type="submit"
-              disabled={!clientValid || busy}
-            >
-              {busy ? t("registering") : t("register")}
-            </button>
-          </div>
-        </form>
-      </section>
+            <div className="xi-row-actions">
+              <button
+                className="xi-btn xi-btn-primary"
+                type="submit"
+                disabled={!clientValid || busy}
+              >
+                {busy ? t("registering") : t("register")}
+              </button>
+            </div>
+          </form>
+        </section>
       </div>
     </div>
   );
 }
 
-function holdStep(event: MouseEvent<HTMLAnchorElement>, current: boolean): void {
+function holdStep(
+  event: MouseEvent<HTMLAnchorElement>,
+  current: boolean,
+): void {
   if (
     event.metaKey ||
     event.ctrlKey ||

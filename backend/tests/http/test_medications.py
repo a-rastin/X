@@ -160,7 +160,7 @@ def clean_all(migrated_test_engine, monkeypatch):
             connection.execute(
                 text(
                     "TRUNCATE ddi_interaction_evidence, ddi_concepts, "
-                    "ddi_source_documents, ddi_dataset_releases"
+                    "ddi_source_documents, ddi_dataset_releases CASCADE"
                 )
             )
         except Exception:
@@ -188,7 +188,7 @@ def clean_all(migrated_test_engine, monkeypatch):
             connection.execute(
                 text(
                     "TRUNCATE ddi_interaction_evidence, ddi_concepts, "
-                    "ddi_source_documents, ddi_dataset_releases"
+                    "ddi_source_documents, ddi_dataset_releases CASCADE"
                 )
             )
         except Exception:
@@ -233,7 +233,7 @@ def _login(username="admin", password="admin", role="admin"):
 def _make_physician(admin_client, admin_csrf, username, password="pw123"):
     created = admin_client.post(
         "/api/v1/physicians",
-        json={"username": username, "password": password},
+        json={"name_en": "Test physician", "username": username, "password": password},
         headers={"X-CSRF-Token": admin_csrf},
     )
     assert created.status_code == 201, created.text
@@ -1305,7 +1305,7 @@ def test_report_error_when_dataset_unavailable_never_stale(clean_all, tmp_path) 
         connection.execute(
             text(
                 "TRUNCATE ddi_interaction_evidence, ddi_concepts, "
-                "ddi_source_documents, ddi_dataset_releases"
+                "ddi_source_documents, ddi_dataset_releases CASCADE"
             )
         )
     errored = _get_report(client, encounter_id).json()

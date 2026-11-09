@@ -56,6 +56,7 @@ PATIENT_CSV_HEADERS = [
     "family_name",
     "sex",
     "age",
+    "birth_year",
     "clinical_status",
     "phone",
     "archived",
@@ -66,6 +67,8 @@ PATIENT_CSV_HEADERS = [
 PHYSICIAN_CSV_HEADERS = [
     "physician_id",
     "username",
+    "name_fa",
+    "name_en",
     "role",
     "active",
     "theme",
@@ -110,6 +113,7 @@ def patient_csv_row(patient: Mapping[str, Any]) -> list[str]:
         neutralize_cell(patient.get("family_name", "")),
         str(patient.get("sex", "")),
         str(int(patient.get("age", 0))),
+        str(patient["birth_year"]) if patient.get("birth_year") is not None else "",
         str(patient.get("clinical_status", "")),
         neutralize_cell("" if phone is None else phone),
         _bool_text(patient.get("archived", False)),
@@ -123,6 +127,8 @@ def physician_csv_row(user: Mapping[str, Any]) -> list[str]:
     return [
         str(user.get("id", "")),
         neutralize_cell(user.get("username", "")),
+        neutralize_cell(user.get("name_fa")),
+        neutralize_cell(user.get("name_en")),
         str(user.get("role", "")),
         _bool_text(user.get("active", False)),
         neutralize_cell(user.get("theme", "")),
@@ -363,6 +369,7 @@ def build_patient_report_html(data: dict[str, Any], *, generated_at: str) -> str
         "family_name",
         "sex",
         "age",
+        "birth_year",
         "clinical_status",
         "phone",
         "archived",
@@ -402,9 +409,13 @@ def build_patient_report_html(data: dict[str, Any], *, generated_at: str) -> str
         enc_id = str(snap.get("encounter_id", ""))
         out.append('<div class="encounter">')
         out.append(f"<h2>Signed encounter {_e(enc_id)}</h2>")
+        signer = _as_dict(inner.get("signer"))
+        signer_name = (
+            signer.get("name_en") or signer.get("name_fa") or snap.get("signer_username", "")
+        )
         out.append(
             f"<p>Kind: {_e(encounter.get('kind', ''))} | "
-            f"Signer: {_e(snap.get('signer_username', ''))} "
+            f"Signer: {_e(signer_name)} "
             f"({_e(snap.get('signer_id', ''))}) at {_e(snap.get('signed_at', ''))} | "
             f"Snapshot: {_e(snap.get('snapshot_hash', ''))} | "
             f"Encounter revision: {_e(snap.get('encounter_revision', ''))}</p>"
@@ -414,8 +425,57 @@ def build_patient_report_html(data: dict[str, Any], *, generated_at: str) -> str
             f"<pre>{_e(snap.get('secondary_plan_text', ''))}</pre>"
         )
         out.append("<h3>Original proposal</h3>")
+        if inner.get("schema_version") == "signed-encounter-v4":
+            original = _as_dict(proposal.get("payload"))
+            out.append("<h4>Deterministic new-case proposal</h4>")
+            for key, section in _as_dict(original.get("sections")).items():
+                if key in ("antipsychotic_candidates", "drug_interactions"):
+                    continue
+                value = section.get("value")
+                if isinstance(value, bool):
+                    value = "Yes" if value else "No"
+                elif isinstance(value, list):
+                    value = ", ".join(str(v) for v in value)
+                out.append(f"<h4>{_e(key.replace('_', ' ').capitalize())}</h4><p>{_e(value)}</p>")
+                for reason in section.get("reasons", []):
+                    out.append(f"<p>{_e(str(reason).replace('_', ' '))}</p>")
+                for action in section.get("actions", []):
+                    out.append(f"<p>{_e(str(action).replace('_', ' '))}</p>")
+                if section.get("must_not_delay_treatment"):
+                    out.append("<p>Starting treatment must not wait for imaging.</p>")
+            ranking = _as_dict(original.get("ranking"))
+            out.append("<h4>Antipsychotic candidates</h4>")
+            if ranking.get("status") == "model_unavailable":
+                out.append("<p>No LAI recommendation model is available.</p>")
+            elif not ranking.get("candidates"):
+                out.append("<p>No eligible oral candidates remain after filtering.</p>")
+            for candidate in ranking.get("candidates", []):
+                percentage = f"{100 * float(candidate['probability']):.2f}%"
+                out.append(f"<p>{_e(candidate['name'])}: {_e(percentage)}</p>")
+            out.append("<p>Model ranking share / fit; not treatment-success probability.</p>")
+            report = _as_dict(original.get("candidate_interactions"))
+            names = {
+                r["catalog_drug_id"]: r["canonical_name"]
+                for r in report.get("resolved_medications", [])
+            }
+            out.append("<h4>Original candidate interaction evidence</h4>")
+            for pair in report.get("pairs", []):
+                rating = pair.get("risk_rating") or "Coverage unavailable"
+                out.append(
+                    f"<h5>{_e(names.get(pair['drug_a'], pair['drug_a']))} / "
+                    f"{_e(names.get(pair['drug_b'], pair['drug_b']))}: {_e(rating)}</h5>"
+                )
+                for evidence in pair.get("evidence", []):
+                    out.append(f"<pre>{_e(evidence.get('raw_text', ''))}</pre>")
+            out.append(
+                "<p>Interaction evidence applies to the original candidates; "
+                "edited free text is not a checked regimen.</p>"
+            )
+            out.append("<details><summary>Frozen source references</summary>")
+            out.append(f"<pre>{_e(json.dumps(original.get('versions'), ensure_ascii=False))}</pre>")
+            out.append("</details>")
         sections = _as_list(proposal.get("sections"))
-        if not sections:
+        if not sections and inner.get("schema_version") != "signed-encounter-v4":
             out.append("<p>No proposal sections recorded.</p>")
         for section in sections:
             if not isinstance(section, dict):

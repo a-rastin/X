@@ -1,133 +1,135 @@
-# New-case state and validation API
+# New-case workflow and API
 
-This is the backend-only `new-case-v1` contract. Proposal persistence/signing
-(Package F), physician unavailable-drug settings and the new wizard (Package G)
-are not implemented by this change; packaging, startup compatibility and final
-verification (Package H) are recorded below. The clinical content is
-experimental, not clinical approval. The existing age-based UI continues to
-create legacy drafts.
+New registrations entered as **New case** use the deterministic `new-case-v1`
+wizard. Known case and follow-up keep the legacy workflow. The fixed oral model
+and clinical reference content are experimental; integration is not clinical validation.
 
-## Installation and identity
+Normal migration/startup applies schema **0031**, installs the pinned Lexicomp
+release beside historical DDInter, and stores the fixed oral XML in the model
+registry. This path needs no provider credential, capability check, LLM, worker,
+private MCP grant, generated CPT or probability acceptance.
 
-Run the normal backend migration setup (`python -m x_insight.operations.migrate`
-from `backend/`) to apply schema `0030` and install the bundled Lexicomp release
-and fixed oral model. New-case creation fails closed if their immutable identities
-do not match `content/new-case/v1/manifest.json`.
+## Registration and physician settings
 
-`POST /api/v1/patients` accepts the existing demographics with `birth_year` in
-place of `age`, `clinical_status: "first_time"`, and sex `M` or `F`. The server
-computes age as UTC registration year minus birth year, accepts 18–100 inclusive,
-and atomically creates the patient and `new-case-v1` registration draft. Supplying
-both birth year and age is invalid. Existing age-only requests remain legacy and
-retain their 18–99 contract. Existing rows migrate to `legacy-v1`, with no inferred
-birth year or fabricated clinical answers. Workflow identity cannot be updated.
+`GET /api/v1/new-case/config` returns the server registration year, clinical
+reference definitions, formulation inventory and pinned medication names.
+`POST /api/v1/patients` accepts `birth_year` instead of `age` for New case:
+integer age is the frozen UTC encounter year minus Gregorian birth year,
+18–100 inclusive. Names are NFC-normalized, outer ordinary spaces are trimmed,
+and only letters/ordinary spaces are accepted. Identifiers remain ten ASCII
+digits. Existing age-only clients retain the legacy contract; the browser sends
+the new birth-year variant for New case. Historical records receive no inferred
+birth year and keep `legacy-v1` workflow identity.
 
-The registration draft freezes its UTC creation year and pins the workflow
-manifest, laboratory/BP/formulation content hashes, assessment versions, exact
-model version/hash and Lexicomp release/version/content hash. Updating patient
-status does not change an existing draft's workflow. A new registration for a
-birth-year patient uses the new workflow only while their status is `first_time`.
+A recorded birth year can be corrected through patient PATCH with its patient
+revision; age is recomputed using the registration year. Independent age edits
+on these records are rejected. Signed snapshots retain their original demographics.
 
-## Read and autosave
+New physician accounts require `name_fa` and/or `name_en` (trimmed, at most 150
+characters each). Existing unnamed users remain valid. Explicit name edits also
+require at least one name. Preferred-language display falls back to the other
+name, then username. Credential/session behavior remains separate.
 
-- `GET /api/v1/content/new-case` returns authenticated versioned content and
-  provenance, including source-retrieval limitations.
-- `GET /api/v1/encounters/{id}` returns the full raw draft, revision and workflow.
-- `PATCH /api/v1/encounters/{id}` retains the existing author, CSRF, quoted
-  `If-Match` and optional `Idempotency-Key` contract. Send the full `draft_data`
-  returned by the server, not a sparse new-case object. Stale revisions return
-  `412`; structural validation failures return `422` with field errors.
+Physician-only `GET /api/v1/me/unavailable-drugs` returns `catalog`, `selected_ids`
+and profile `revision`. PATCH accepts `{"selected_ids":["oral:haloperidol"]}`,
+with CSRF, `If-Match` and optional `Idempotency-Key`. The session determines the
+physician; unknown IDs and cross-user payload fields are rejected. Injectable
+IDs are distinct and cannot exclude oral outcomes. Stale writes return 412.
 
-Fresh new-case drafts have empty diagnosis/PANSS, five explicit recent C-SSRS
-`no` answers, and explicit defaults for the new-case namespace. Autosave permits
-incomplete assessments and conditionally incomplete steps; completion is a
-separate operation. Measurements become finite nonnegative decimal strings;
-height/weight must be positive and differential percentages must be 0–100.
-Zero remains distinct from missing. Selected medications must belong to the
-pinned Lexicomp release; duplicate IDs are removed by the medication owner.
+## Saved inputs and validation
 
-Each condition and orthostatic-risk override has `manual: null | true | false`.
-Null means automatic; either Boolean overrides suggestions. Changing an override
-records server actor/time. Changing its source measurements or medications does
-not erase it. Returning to automatic clears attribution. Clients cannot forge
-attribution, identity, pins, registration year or diagnosis assertion records.
+Raw state is stored under `draft_data.new_case`, with the existing diagnosis,
+PANSS, C-SSRS and medications slices. The initial state explicitly stores all
+workflow defaults, five C-SSRS No answers, empty diagnosis/PANSS, frozen year
+and exact model/release/assessment/content pins. Encounter workflow identity
+cannot be changed by PATCH or SQL UPDATE.
 
-## Validation and diagnosis
+Generic encounter PATCH retains author access, CSRF, quoted `If-Match`, optional
+idempotency, payload bounds and save-conflict behavior. It accepts incomplete
+states for autosave, but rejects unknown new-case fields, invalid measurements,
+unknown catalog IDs and forged pins/attribution/assertion records. Measurements
+are canonical finite decimal strings; blank is null, zero is distinct, differential
+percentages are 0–100, and height/weight must be positive.
 
-`GET /api/v1/encounters/{id}/new-case/preview` is author-only and returns the
-saved revision as an ETag, canonical raw inputs, effective flags, lab warnings,
-triggering values/units/sources, six-step errors and completion flags, the exact
-16 oral factors with provenance, and deterministic proposal-section decisions.
-It does not save, call a provider, create interactions or generate candidates.
+Manual answers use `manual: null | true | false`. Null means automatic; explicit
+booleans survive reloads and later source edits. Only the server stamps actor/time.
+Returning to automatic clears that attribution. Disabled sources and male-only
+hidden pregnancy/lactation data never activate a rule. Movement factors are
+explicit modeling defaults, not examined negative findings.
 
-`POST /api/v1/encounters/{id}/new-case/validate` accepts
-`{"destination":"considerations"}` with CSRF and a quoted `If-Match` revision.
-Destinations are `diagnosis`, `panss`, `harm`, `history`, `medications`,
-`considerations`, or `proposal`. It evaluates the saved draft and returns
-`can_navigate` plus prerequisite `navigation_errors`; it does not autosave.
-The field error contract is `field`, stable `code`, and bilingual `message_key`.
+- `GET /encounters/{id}/new-case` returns authoritative evaluated state, step
+  errors, BMI, effective flags, all triggering findings, evidence, rule sections
+  and the latest proposal/freshness. The `/new-case/preview` alias remains supported.
+- `POST /encounters/{id}/new-case/validate-step`, body `{"step":"history"}`,
+  validates earlier prerequisites after acknowledged autosave; CSRF and encounter
+  `If-Match` are required. The `/validate` destination-based alias remains supported.
+- `POST /encounters/{id}/new-case/diagnosis-confirmation`, body `{"confirm":true}`,
+  records the attributed physician assertion. Nonpositive/partial/unknown active
+  answers are cleared; positive answers remain. Later edits invalidate the assertion.
+  CSRF, encounter revision and optional idempotency apply. The `/diagnosis-assertion`
+  alias remains supported. Ordinary continuation requires positive criteria.
 
-Ordinary progression past diagnosis requires a complete criteria-satisfied
-evaluation. Negative, partial and unknown results are blocked. The explicit
-physician action is
-`POST /api/v1/encounters/{id}/new-case/diagnosis-assertion` with
-`{"confirm":true}`, CSRF, quoted `If-Match`, and optional `Idempotency-Key`.
-It stamps actor/time/assessment version/answer hash/source revision, records an
-audit and advances the shared encounter revision. For nonpositive evaluations,
-it clears active diagnosis answers; positive answers are retained. Later answer
-edits invalidate the assertion; unrelated saves preserve it. Existing diagnosis
-reads expose the same authoritative gate. Legacy acknowledgment/bypass routes
-cannot bypass this new workflow.
+Incomplete PANSS is allowed. Conditional selections, at least one entered lab
+when lab reporting is Yes, and an effective BMI category are validated before
+forward navigation, generation and signing. Direct hashes do not waive validation.
 
-## Projection and downstream boundaries
+## Proposals, final text and confirmation
 
-Hidden or disabled inputs never activate a rule. Female-only pregnancy and
-breastfeeding are ignored for males; disabled lab and substance sections cannot
-trigger findings. Orthostatic suggestions combine heart failure with exact
-catalog membership from the pinned BP classification. No suffix stripping or
-free-text drug-name guessing is used. BMI supports calculated and explicit
-manual-category modes. Four movement-disorder factors are explicit workflow
-false defaults, not measurements. Contraception recommendations for valproate
-and childbearing potential remain separate outputs.
+All paths below are under `/api/v1/encounters/{id}/new-case` and author-only:
 
-Oral candidate and interaction sections report `not_generated`. LAI candidates
-report `model_unavailable`, rather than misusing the oral model. Legacy medication
-strict-save, reasoning generation and signing routes refuse new-case drafts;
-the generic typed PATCH is the supported edit path until Package F exists.
+| Method/path | Contract |
+| --- | --- |
+| POST `/proposals` | Empty body, CSRF, encounter `If-Match`, optional idempotency. Validate and generate, or reuse identical immutable inputs/content. |
+| GET `/proposals/latest` | Latest stored proposal and independently calculated freshness, or null. |
+| GET `/proposals/{proposal_id}` | A proposal belonging to this encounter and its freshness. |
+| POST `/sign` | Body `{proposal_id, expected_plan_revision}`, CSRF, encounter `If-Match`, optional idempotency. Atomic confirmation. |
 
-Backup archives include identity, raw state and pins through existing tables.
-Restore validates new-case structure, frozen year, attribution, diagnosis record,
-catalog membership and content relationships. Only the exact bundled oral-model
-SHA uses its bounded dedicated validator; uploaded profile metadata cannot grant
-that exception. Older archives retain legacy defaults on import.
+`new_case_proposals` freezes canonical fingerprints, effective demographics,
+raw/effective inputs and override provenance, all 22 probabilities, filtered
+candidates, candidate/current-medication interactions, availability revision/IDs,
+source references, lab/BP/formulation definitions, factor mapping and rule identifiers.
+The model source remains in the registry. Interaction letters annotate candidates;
+they never remove or rerank them. Missing coverage is distinct from an explicit A.
 
-## Packaging, startup compatibility and verification (Package H)
+Oral calculation selects the fully observed 22-value CPT row, filters zero and
+unavailable oral IDs before taking five, and preserves original percentages/tie
+order. LAI returns an explicit `model_unavailable` result and no candidates, while
+all remaining rule sections still generate. A missing/corrupt oral model is a
+retryable operation failure, not a supported empty LAI result.
 
-The app image copies `content/new-case/` and `content/ddi/lexicomp/` and sets
-`X_INSIGHT_CONTENT_DIR` (plus `X_INSIGHT_ASSESSMENTS_DIR` for assessment JSON).
-Every content reader — `models/workflow_release.content_root`,
-`ddi/lexicomp.content_directory`, `ddi/bootstrap.bundled_directory`,
-`models/registry.install_bundled_oral_model` and `cases/new_case` — resolves
-through that one variable, falling back to the repository `content/` directory
-for local `make dev`. The packing self-check asserts these copies and the env var.
+The browser reuses secondary-plan GET/PATCH storage and its separate revision.
+It seeds the text once, preserves edited text across regeneration/language changes,
+and offers explicit replacement. Unacknowledged text is retained locally for
+session/reload recovery; 412 reconciliation keeps the editor until an explicit choice.
+Navigation and confirmation flush both input and plan saves.
 
-Normal `make dev` / production `migrate` runs
-`python -m x_insight.operations.migrate`: Alembic head `0030`, the owner-approved
-DDInter release, the pinned Lexicomp release, the SHA-256-pinned oral model and
-the deployment encryption key, all idempotently. Lexicomp and the oral model are
-installed unconditionally — they do not depend on `DDI_DEFAULT_DATASET_VERSION`,
-a provider API key, an endpoint/model, or a successful capability check. Missing
-credentials for the optional legacy provider therefore cannot block the
-deterministic New case path; `PROVIDER_NOT_CONFIGURED` remains a legacy-only,
-job-time failure. New case readiness is gated only on the pinned model and
-dataset identities (`NEW_CASE_CONTENT_UNAVAILABLE`).
+Signing locks/rechecks encounter, patient, physician and plan, validates diagnosis
+and required inputs, recomputes proposal/settings freshness and requires nonblank
+final text. Stale requests fail without partial signing. Concurrent identical
+confirmations and lost-response replays return one snapshot. The transaction writes
+`signed-encounter-v4`, releases the open-draft slot and audits. It references the
+new proposal, with null legacy batch/proposal FKs; the database enforces exactly
+one signed-reference variant. Legacy generate/sign/diagnosis-acknowledgment paths
+refuse new-case drafts, and new-case commands refuse legacy drafts.
 
-Full backups carry the new bytes through existing tables (the oral XML in
-`model_network_versions`, the Lexicomp CSV/evidence in `ddi_source_documents` and
-`ddi_interaction_evidence`), so the 16 MB model and 25 MB CSV are not omitted to
-fit an archive. Restore keeps historical DDInter and signed bytes readable, uses
-`signed-encounter-v4` only for New case signatures, and preserves previous
-archive versions. Measured archive sizes and the exact checks are recorded in the
-Package H progress checkpoint. New case proposal rows and v4 signed snapshots,
-and restore-over-live, remain unverified until Packages F/G are implemented; no
-archive bound was relaxed to force those not-yet-existing rows to fit.
+Charts and printable reports retain the original deterministic proposal and final
+physician text separately. Notes are escaped plain text. Original interaction
+evidence does not certify drugs typed into the final text. Existing addenda remain
+append-only. Follow-up keeps its existing form, carries the explicit medication
+pin, shows historical assessment data and the prior final plan, and does not invent
+legacy History answers from new-case conditions.
+
+## Packaging and recovery
+
+Deployment ships `content/new-case/`, `content/ddi/lexicomp/` and the generic XML
+schema, using `X_INSIGHT_CONTENT_DIR` consistently. Source hashes remain fixed.
+Backups include 33 tables, ordered with model/DDI parents before proposals before
+signatures. Restore accepts older archive schemas with nullable/legacy defaults;
+new proposals/signatures receive FK, fingerprint, variant and source-hash checks.
+Only the independently trusted oral XML hash uses its dedicated bounded loader.
+Uploaded profile metadata cannot grant larger generic XML admission.
+
+A real mixed-data archive with both DDI releases, model, proposal and v4 signature
+was backed up, staged and restored on an isolated database; signed JSON and hash
+were unchanged. See the [implementation checkpoint](../project-documents/dev/progress/new-case-implementation-2026-11-09.md)
+for exact measurements, verification results and remaining limitations.

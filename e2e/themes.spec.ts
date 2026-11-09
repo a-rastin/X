@@ -119,7 +119,8 @@ test("theme toggle is keyboard-focusable, operable, and visibly focused", async 
   await loginAs(page, "physician", username, "secret123");
   await acknowledgeWarning(page);
 
-  // Pure keyboard path: skip, language, Dashboard, Patients, Account, theme.
+  // Pure keyboard path: skip, language, Dashboard, Patients,
+  // Unavailable drugs, Account, theme.
   await page.reload();
   await expect(page.getByRole("alertdialog")).toHaveCount(0);
   // Wait for the authenticated header before tabbing: the toggle only
@@ -134,6 +135,7 @@ test("theme toggle is keyboard-focusable, operable, and visibly focused", async 
   await expect(page.getByRole("button", { name: "Switch to Persian" })).toBeFocused();
   await page.keyboard.press("Tab"); // Dashboard
   await page.keyboard.press("Tab"); // Patients (S06 directory navigation)
+  await page.keyboard.press("Tab"); // Unavailable drugs (physician settings)
   await page.keyboard.press("Tab"); // Account
   await page.keyboard.press("Tab"); // theme toggle
   await expect(toggle).toBeFocused();

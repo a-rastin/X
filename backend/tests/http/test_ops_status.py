@@ -125,7 +125,7 @@ def _make_batch(ops_client, monkeypatch, username: str, identifier: str) -> tupl
     admin = ops_client["client"]
     created = admin.post(
         "/api/v1/physicians",
-        json={"username": username, "password": "pw123"},
+        json={"name_en": "Test physician", "username": username, "password": "pw123"},
         headers=_auth_headers(ops_client["csrf"]),
     )
     assert created.status_code in (201, 409), created.text
@@ -200,7 +200,7 @@ def test_ops_status_denies_non_admin(ops_client, monkeypatch) -> None:
     """S58 §3: physicians cannot read operational status; anonymous is unauthenticated."""
     created = ops_client["client"].post(
         "/api/v1/physicians",
-        json={"username": "dr_ops_denied", "password": "pw123"},
+        json={"name_en": "Test physician", "username": "dr_ops_denied", "password": "pw123"},
         headers=_auth_headers(ops_client["csrf"]),
     )
     assert created.status_code == 201, created.text

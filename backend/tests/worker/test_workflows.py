@@ -405,7 +405,7 @@ def _auth_headers(csrf: str) -> dict[str, str]:
 def _make_physician(admin_client: TestClient, admin_csrf: str, username: str) -> None:
     created = admin_client.post(
         "/api/v1/physicians",
-        json={"username": username, "password": "pw123"},
+        json={"name_en": "Test physician", "username": username, "password": "pw123"},
         headers=_auth_headers(admin_csrf),
     )
     assert created.status_code == 201, created.text

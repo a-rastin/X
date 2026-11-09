@@ -116,6 +116,8 @@ def read_followup_baseline_for_author(
             "medications": [dict(entry) for entry in (baseline.get("medications") or [])],
             "provenance_note": baseline.get("provenance_note"),
             "baseline_encounter_id": baseline.get("baseline_encounter_id"),
+            "prior_plan": baseline.get("prior_plan"),
+            "prior_assessments": baseline.get("prior_assessments"),
         },
         "reconciliation": reconciliation,
         "prior_scores_display": {

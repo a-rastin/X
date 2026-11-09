@@ -166,7 +166,7 @@ def test_physician_create_then_login_immediate_over_real_http(_live_server, clea
             username = f"dr_s60_vis_{index}_{int(time.monotonic() * 1000) % 100000:05d}"
             created = client.post(
                 "/api/v1/physicians",
-                json={"username": username, "password": "pw123"},
+                json={"name_en": "Test physician", "username": username, "password": "pw123"},
                 headers={"X-CSRF-Token": admin_csrf},
             )
             assert created.status_code == 201, created.text

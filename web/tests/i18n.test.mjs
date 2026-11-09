@@ -132,3 +132,11 @@ test('retained async sentences translate without changing their interpolated ide
   assert.equal(message('fa', 'addValue1', { value1: 'Clozapine نام mixed' }), 'افزودن Clozapine نام mixed');
   assert.equal(present('fa', 'Patient-owned prose: Saved (revision 123)'), 'Patient-owned prose: Saved (revision 123)');
 });
+
+test("new-case server error and section keys have both language entries", () => {
+  for (const key of ["new_case.errors.diagnosis_not_positive", "new_case.errors.bmi_category_required", "new_case.sections.care_setting", "new_case.sections.antipsychotic_candidates"]) {
+    assert.ok(en[key]?.trim(), key);
+    assert.ok(fa[key]?.trim(), key);
+    assert.notEqual(en[key], fa[key], key);
+  }
+});

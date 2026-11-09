@@ -27,4 +27,6 @@ setup. Repeats reuse the release, and existing custom releases are preserved.
 For schema-only installations, `uv run python -m x_insight.ddi bootstrap` performs
 the explicit data step using `DATABASE_URL`; see the runbook for default-selection
 rules and failure recovery. New candidates still require their own owner review.
-Current schema head is `0022`; no new release tables were added.
+DDInter was introduced at schema `0022`. Current schema head is `0031`,
+including new-case proposals and v4 signed references; see
+[the new-case contract](../docs/new-case-state.md).

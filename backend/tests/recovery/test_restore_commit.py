@@ -133,7 +133,7 @@ def _truncate(engine) -> None:
                 "audit_events, ddi_dataset_releases, ddi_source_documents, "
                 "ddi_concepts, ddi_interaction_evidence, model_networks, "
                 "model_network_versions, model_workflow_pointers, backup_jobs, "
-                "restore_jobs CASCADE"
+                "restore_jobs, provider_settings CASCADE"
             )
         )
 
@@ -200,7 +200,7 @@ def _new_physician(clean_registry, monkeypatch, username: str):
     assert login.status_code == 200, login.text
     created = admin.post(
         "/api/v1/physicians",
-        json={"username": username, "password": "pw123"},
+        json={"name_en": "Test physician", "username": username, "password": "pw123"},
         headers=_auth_headers(login.json()["csrf_token"]),
     )
     assert created.status_code == 201, created.text

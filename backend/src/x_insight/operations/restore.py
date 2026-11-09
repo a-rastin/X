@@ -153,6 +153,7 @@ SUPPORTED_APP_SCHEMA_VERSIONS = frozenset(
         "0028",
         "0029",
         "0030",
+        "0031",
     }
 )
 
@@ -492,18 +493,21 @@ def _check_provider_approvals(tables: dict[str, Any], app_schema: str) -> str | 
         if not isinstance(row, dict):
             return "Provider endpoint approval row is malformed."
         for field in fields:
-            if app_schema in ("0024", "0025", "0026", "0027", "0028", "0029", "0030"):
+            if app_schema in ("0024", "0025", "0026", "0027", "0028", "0029", "0030", "0031"):
                 if type(row.get(field)) is not bool:
                     return "Provider endpoint approvals must be explicit JSON booleans."
             elif field in row and row[field] is not False:
                 return "Legacy provider archives cannot grant endpoint approvals."
         mode = row.get("capability_mode")
-        if app_schema in ("0027", "0028", "0029", "0030") and mode not in ("schema", "json"):
+        if app_schema in ("0027", "0028", "0029", "0030", "0031") and mode not in (
+            "schema",
+            "json",
+        ):
             return "Provider capability_mode must be schema or json."
-        if app_schema not in ("0027", "0028", "0029", "0030") and mode is not None:
+        if app_schema not in ("0027", "0028", "0029", "0030", "0031") and mode is not None:
             return "Legacy provider archives cannot set capability_mode."
         detected = row.get("detected_capability_mode")
-        if app_schema in ("0028", "0029", "0030"):
+        if app_schema in ("0028", "0029", "0030", "0031"):
             if "detected_capability_mode" not in row or detected not in (None, "schema", "json"):
                 return "Provider detected_capability_mode must be null, schema or json."
         elif detected is not None:
@@ -531,7 +535,7 @@ def _check_research_warning_acknowledgements(tables: dict[str, Any], app_schema:
     for row in tables.get("users") or []:
         if not isinstance(row, dict):
             return "User rows are malformed."
-        if app_schema in ("0029", "0030"):
+        if app_schema in ("0029", "0030", "0031"):
             value = row.get(field)
             if field not in row or (value is not None and not isinstance(value, str)):
                 return "User research-warning acknowledgement must be null or text."
@@ -622,7 +626,7 @@ def _check_new_case_state(tables: dict[str, Any], app_schema: str) -> str | None
         if not isinstance(encounter, dict):
             return "Encounter row is malformed."
         workflow = encounter.get("workflow_version", "legacy-v1")
-        if app_schema == "0030" and "workflow_version" not in encounter:
+        if app_schema in ("0030", "0031") and "workflow_version" not in encounter:
             return "New-case workflow identity is missing."
         if workflow not in ("legacy-v1", new_case.WORKFLOW):
             return "Unknown encounter workflow identity."
@@ -633,7 +637,7 @@ def _check_new_case_state(tables: dict[str, Any], app_schema: str) -> str | None
             if "new_case" in draft:
                 return "Legacy encounters cannot carry new-case state."
             continue
-        if app_schema != "0030" or encounter.get("kind") != "registration":
+        if app_schema not in ("0030", "0031") or encounter.get("kind") != "registration":
             return "Invalid new-case workflow assignment."
         try:
             normalized = new_case.structural_draft(draft)
@@ -743,6 +747,21 @@ def _check_references(tables: dict[str, Any]) -> str | None:
             return "database content malformed: encounters.lifecycle is unknown"
 
     for table, field, target, label in (
+        ("new_case_proposals", "encounter_id", encounter_ids, "new_case_proposals.encounter_id"),
+        ("new_case_proposals", "author_id", user_ids, "new_case_proposals.author_id"),
+        ("new_case_proposals", "model_version_id", version_ids, "new_case_proposals.model"),
+        (
+            "new_case_proposals",
+            "ddi_release_id",
+            _ids("ddi_dataset_releases"),
+            "new_case_proposals.ddi",
+        ),
+        (
+            "signed_encounter_snapshots",
+            "new_case_proposal_id",
+            _ids("new_case_proposals"),
+            "signed.new_case_proposal_id",
+        ),
         ("notes", "encounter_id", encounter_ids, "notes.encounter_id"),
         ("notes", "author_id", user_ids, "notes.author_id"),
         ("secondary_plans", "encounter_id", encounter_ids, "secondary_plans.encounter_id"),
@@ -793,6 +812,79 @@ def _check_references(tables: dict[str, Any]) -> str | None:
                 continue
             if want not in target:
                 return f"staged references broken: {label} has no staged target"
+    proposal_rows = tables.get("new_case_proposals", [])
+    if not isinstance(proposal_rows, list) or any(
+        not isinstance(r, dict) or not isinstance(r.get("id"), str) for r in proposal_rows
+    ):
+        return "Malformed new-case proposal rows."
+    proposals = {r["id"]: r for r in proposal_rows}
+    encounters_by_id = {r["id"]: r for r in encounters}
+    for row in proposals.values():
+        encounter = encounters_by_id.get(row.get("encounter_id"), {})
+        payload = row.get("payload", {})
+        if not isinstance(payload, dict) or not isinstance(payload.get("versions"), dict):
+            return "Malformed new-case proposal payload."
+        fingerprint = payload.get("fingerprint_payload")
+        if not isinstance(fingerprint, dict) or contracts.canonical_hash(fingerprint) != row.get(
+            "input_hash"
+        ):
+            return "Invalid new-case proposal input hash."
+        if (
+            fingerprint.get("draft") != payload.get("raw_inputs")
+            or fingerprint.get("availability") != payload.get("availability_snapshot")
+            or fingerprint.get("evidence") != payload.get("bn_evidence")
+            or fingerprint.get("effective_inputs") != payload.get("effective_inputs")
+            or fingerprint.get("content_hash") != row.get("content_hash")
+        ):
+            return "New-case proposal fingerprint content differs."
+        if (
+            encounter.get("workflow_version") != "new-case-v1"
+            or row.get("author_id") != encounter.get("author_id")
+            or payload.get("input_hash") != row.get("input_hash")
+            or payload.get("schema_version") != "new-case-proposal-v1"
+            or contracts.canonical_hash(payload.get("content_snapshot", {}).get("manifest"))
+            != row.get("content_hash")
+        ):
+            return "Invalid new-case proposal identity or content."
+        pins = payload.get("versions", {})
+        models_by_id = {r["id"]: r for r in tables.get("model_network_versions", [])}
+        releases_by_id = {r["id"]: r for r in tables.get("ddi_dataset_releases", [])}
+        raw_pins = payload.get("raw_inputs", {}).get("new_case", {}).get("content_pins")
+        release = releases_by_id.get(row.get("ddi_release_id"), {})
+        if (
+            raw_pins != pins
+            or pins.get("workflow_manifest_hash") != row.get("content_hash")
+            or release.get("content_hash") != pins.get("lexicomp_content_hash")
+        ):
+            return "New-case proposal source pins differ from its inputs."
+        if row.get("model_version_id") is not None and models_by_id.get(
+            row["model_version_id"], {}
+        ).get("source_hash") != pins.get("model_sha256"):
+            return "New-case proposal model source hash mismatch."
+        if pins.get("lexicomp_release_id") != row.get("ddi_release_id"):
+            return "New-case proposal release mismatch."
+        lai = payload.get("effective_inputs", {}).get("lai")
+        if (row.get("model_version_id") is None) != (lai is True):
+            return "New-case proposal model variant mismatch."
+        if not lai and row.get("model_version_id") != pins.get("model_version_id"):
+            return "New-case proposal model mismatch."
+    for row in tables.get("signed_encounter_snapshots", []):
+        new_id = row.get("new_case_proposal_id")
+        legacy = row.get("batch_id") is not None and row.get("proposal_id") is not None
+        new = row.get("batch_id") is None and row.get("proposal_id") is None and new_id is not None
+        if not ((legacy and new_id is None) or new):
+            return "Invalid signed-reference variant."
+        if new:
+            proposal = proposals.get(new_id, {})
+            payload = row.get("snapshot", {})
+            if (
+                proposal.get("encounter_id") != row.get("encounter_id")
+                or proposal.get("author_id") != row.get("signer_id")
+                or payload.get("schema_version") != "signed-encounter-v4"
+                or payload.get("proposal", {}).get("payload") != proposal.get("payload")
+                or contracts.canonical_hash(payload) != row.get("snapshot_hash")
+            ):
+                return "Invalid new-case signed snapshot."
     # Nullable self-links with explicit targets.
     revisions = tables.get("cpt_revisions")
     if isinstance(revisions, list):
@@ -1065,10 +1157,10 @@ def validate_archive_bytes(blob: bytes) -> dict[str, Any]:
             network_blobs[entry] = raw
         try:
             database = json.loads(handle.read("database.json").decode("utf-8"))
-        except Exception:
+        except Exception as exc:
             return {
                 "ok": False,
-                "errors": ["database.json unreadable: invalid JSON"],
+                "errors": [f"database.json unreadable: {type(exc).__name__}"],
                 "warnings": [],
             }
         db_tables = database.get("tables") if isinstance(database, dict) else None
@@ -1101,6 +1193,9 @@ def validate_archive_bytes(blob: bytes) -> dict[str, Any]:
                 }
         for name in backup_module.BACKUP_TABLES:
             if name not in db_tables:
+                if name == "new_case_proposals" and app_schema != "0031":
+                    db_tables[name] = []
+                    continue
                 if name == "provider_settings" and app_schema in ("0017", "0018"):
                     continue
                 return {"ok": False, "errors": [f"missing staged table: {name}"], "warnings": []}

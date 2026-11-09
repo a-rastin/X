@@ -141,12 +141,25 @@ def validate_registration_payload(
         normalized["identifier"] = validate_identifier(identifier)
     except contracts.ContractError as exc:
         errors.update(exc.field_errors)
+
+    def registration_name(value: Any, field: str) -> str:
+        if birth_year is None:
+            return normalize_person_name(value, field)
+        from x_insight.cases.new_case_demographics import normalize_name
+
+        try:
+            return normalize_name(value)
+        except ValueError as exc:
+            raise contracts.ContractError(
+                422, "VALIDATION_FAILED", str(exc), {field: [str(exc)]}
+            ) from exc
+
     try:
-        normalized["given_name"] = normalize_person_name(given_name, "given_name")
+        normalized["given_name"] = registration_name(given_name, "given_name")
     except contracts.ContractError as exc:
         errors.update(exc.field_errors)
     try:
-        normalized["family_name"] = normalize_person_name(family_name, "family_name")
+        normalized["family_name"] = registration_name(family_name, "family_name")
     except contracts.ContractError as exc:
         errors.update(exc.field_errors)
     if sex not in SEXES:
@@ -649,8 +662,71 @@ def update_patient_demographics(
             "STALE_REVISION",
             "The patient changed. Reload and reconcile your edits.",
         )
-    normalized = validate_patch_fields(fields)
-    if patient.get("birth_year") is not None and "age" in normalized:
+    fields = dict(fields)
+    if not fields:
+        validate_patch_fields(fields)
+    if "birth_year" in fields and fields["birth_year"] is None:
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Birth year must be an integer.",
+            {"birth_year": ["Must be an integer."]},
+        )
+    corrected_birth_year = fields.pop("birth_year", None)
+    if corrected_birth_year is not None and patient.get("birth_year") is None:
+        raise contracts.ContractError(
+            422, "VALIDATION_FAILED", "Only recorded birth years can be corrected."
+        )
+    if patient.get("birth_year") is not None:
+        from x_insight.cases.new_case_demographics import normalize_name
+
+        name_fields: dict[str, Any] = {
+            k: fields.pop(k) for k in ("given_name", "family_name") if k in fields
+        }
+    else:
+        name_fields = {}
+    normalized = validate_patch_fields(fields) if fields else {}
+    fields.update(name_fields)
+    if patient.get("birth_year") is not None:
+        from x_insight.cases.new_case_demographics import age_at_registration, normalize_name
+
+        for field in ("given_name", "family_name"):
+            if field in fields:
+                try:
+                    normalized[field] = normalize_name(fields[field])
+                except ValueError as exc:
+                    raise contracts.ContractError(
+                        422, "VALIDATION_FAILED", str(exc), {field: [str(exc)]}
+                    ) from exc
+        if corrected_birth_year is not None:
+            registration = (
+                session.execute(
+                    select(tables.encounters)
+                    .where(
+                        tables.encounters.c.patient_id == want,
+                        tables.encounters.c.workflow_version == "new-case-v1",
+                    )
+                    .order_by(tables.encounters.c.created_at.desc())
+                    .limit(1)
+                )
+                .mappings()
+                .first()
+            )
+            year = (
+                registration["draft_data"]["new_case"]["registration_year"]
+                if registration
+                else contracts.utcnow().year
+            )
+            try:
+                normalized.update(
+                    birth_year=corrected_birth_year,
+                    age=age_at_registration(corrected_birth_year, year),
+                )
+            except ValueError as exc:
+                raise contracts.ContractError(
+                    422, "VALIDATION_FAILED", str(exc), {"birth_year": [str(exc)]}
+                ) from exc
+    if patient.get("birth_year") is not None and "age" in fields:
         raise contracts.ContractError(
             422,
             "VALIDATION_FAILED",

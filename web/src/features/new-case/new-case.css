@@ -1,0 +1,75 @@
+.nc-required {
+  color: var(--danger, #b42318);
+}
+.nc-answer {
+  margin-block: 1rem;
+  border: 0;
+  padding: 0;
+}
+.nc-choice {
+  display: inline-flex;
+  gap: 0.5rem;
+  margin: 0.5rem;
+}
+.nc-labs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-block: 1rem;
+}
+.nc-category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-block: 1rem;
+}
+.nc-category label {
+  border: 1px solid var(--border);
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+}
+.nc-category label:has(:checked) {
+  outline: 2px solid var(--accent, #376b55);
+}
+.nc-plan textarea {
+  width: 100%;
+  min-height: 20rem;
+}
+.nc-plan pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.nc-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-block: 1rem;
+}
+.nc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block: 1rem;
+}
+
+.nc-magnifier {
+  position: relative;
+  display: inline-block;
+}
+.nc-magnifier [role="tooltip"] {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  inset-inline-start: 0;
+  top: 100%;
+  width: min(20rem, 75vw);
+  padding: 0.75rem;
+  color: var(--text);
+  background: var(--canvas);
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+}
+.nc-magnifier:hover [role="tooltip"],
+.nc-magnifier:focus-within [role="tooltip"] {
+  display: block;
+}

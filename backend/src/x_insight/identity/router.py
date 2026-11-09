@@ -86,6 +86,8 @@ def _public_user(user: dict[str, Any]) -> dict[str, Any]:
     return {
         "id": str(user["id"]),
         "username": user["username"],
+        "name_fa": user.get("name_fa"),
+        "name_en": user.get("name_en"),
         "role": user["role"],
         "theme": user["theme"],
     }
@@ -362,7 +364,7 @@ def change_password(
             "New password must not be empty.",
             {"new_password": ["Must not be empty."]},
         )
-    fresh = service.get_user_by_id(session, uuid.UUID(str(user["id"])))
+    fresh = service.get_user_by_id(session, uuid.UUID(str(user["id"])), lock=True)
     if fresh is None or not fresh.get("active", False):
         return error_response(401, "UNAUTHENTICATED", _GENERIC_LOGIN_MESSAGE, request_id)
     if not passwords.verify_password(payload.current_password, str(fresh.get("password_hash", ""))):
@@ -433,7 +435,7 @@ def update_preferences(
             {"theme": ["Must be 'light' or 'dark'."]},
         )
     now = contracts.utcnow()
-    fresh = service.get_user_by_id(session, uuid.UUID(str(user["id"])))
+    fresh = service.get_user_by_id(session, uuid.UUID(str(user["id"])), lock=True)
     if fresh is None:
         return error_response(401, "UNAUTHENTICATED", "Authentication required.", request_id)
     session.execute(
@@ -466,12 +468,16 @@ def update_preferences(
 
 
 class PhysicianCreateRequest(BaseModel):
+    name_fa: str | None = None
+    name_en: str | None = None
     username: str = Field(min_length=0, max_length=150)
     password: str = Field(min_length=0, max_length=500)
     role: str | None = Field(default=None, max_length=20)
 
 
 class PhysicianPatchRequest(BaseModel):
+    name_fa: str | None = None
+    name_en: str | None = None
     username: str | None = Field(default=None, max_length=150)
     password: str | None = Field(default=None, max_length=500)
 
@@ -581,7 +587,7 @@ def create_physician(
             "Only physician accounts can be created here.",
             {"role": ["Must be 'physician'."]},
         )
-    body = {"username": payload.username, "password": payload.password}
+    body = payload.model_dump(exclude_unset=True)
     if payload.role is not None:
         body["role"] = payload.role
     key = _idempotency_key_or_none(request)
@@ -596,7 +602,11 @@ def create_physician(
                 return _idempotency_conflict(request_id)
             return _idempotency_replay(stored)
     created = service.create_physician(
-        session, username=payload.username, password=payload.password
+        session,
+        username=payload.username,
+        password=payload.password,
+        name_fa=payload.name_fa,
+        name_en=payload.name_en,
     )
     audit_module.record_audit(
         session,
@@ -653,14 +663,14 @@ def patch_physician(
     if isinstance(admin, JSONResponse):
         return admin
     assert isinstance(admin, dict)
-    if payload.username is None and payload.password is None:
+    if not payload.model_fields_set:
         raise contracts.ContractError(
             422,
             "VALIDATION_FAILED",
             "Nothing to update.",
             {"request": ["Provide username and/or password."]},
         )
-    target = service.get_user_by_id(session, user_id)
+    target = service.get_user_by_id(session, user_id, lock=True)
     if target is None:
         return error_response(404, "NOT_FOUND", "Physician not found.", request_id)
     # Optimistic revision: a supplied If-Match that mismatches is 412;
@@ -674,7 +684,7 @@ def patch_physician(
             "The account changed. Reload and reconcile your edits.",
             request_id,
         )
-    body: dict[str, Any] = {}
+    body: dict[str, Any] = payload.model_dump(exclude_unset=True)
     if payload.username is not None:
         body["username"] = payload.username
     if payload.password is not None:
@@ -691,7 +701,13 @@ def patch_physician(
                 return _idempotency_conflict(request_id)
             return _idempotency_replay(stored)
     updated = service.patch_physician(
-        session, user_id, username=payload.username, password=payload.password
+        session,
+        user_id,
+        username=payload.username,
+        password=payload.password,
+        names={k: v for k, v in body.items() if k in ("name_fa", "name_en")}
+        if payload.model_fields_set & {"name_fa", "name_en"}
+        else None,
     )
     audit_module.record_audit(
         session,
@@ -877,3 +893,103 @@ def reactivate_physician(
     response = JSONResponse(status_code=200, content=response_body)
     response.headers["ETag"] = contracts.format_etag(int(safe["revision"]))
     return response
+
+
+class UnavailableDrugsRequest(BaseModel):
+    selected_ids: list[str]
+    model_config = {"extra": "forbid", "strict": True}
+
+
+def _availability(session: Session, user: dict[str, Any]) -> dict[str, Any]:
+    from x_insight.cases.new_case import clinical_content
+
+    fresh = service.get_user_by_id(session, user["id"])
+    assert fresh is not None
+    return {
+        "catalog": clinical_content()["antipsychotic-formulations.json"]["entries"],
+        "selected_ids": fresh["unavailable_antipsychotics"],
+        "revision": fresh["revision"],
+    }
+
+
+@router.get("/me/unavailable-drugs")
+def unavailable_drugs(request: Request, session: Session = Depends(get_session)) -> JSONResponse:
+    user = _require_user(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    if user["role"] != "physician":
+        raise contracts.ContractError(403, "FORBIDDEN", "Physician access required.")
+    body = _availability(session, user)
+    return JSONResponse(content=body, headers={"ETag": contracts.format_etag(body["revision"])})
+
+
+@router.patch("/me/unavailable-drugs")
+def save_unavailable_drugs(
+    payload: UnavailableDrugsRequest, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    from sqlalchemy import select
+
+    from x_insight.cases.encounters import require_if_match_revision
+
+    user = _check_csrf(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    if user["role"] != "physician":
+        raise contracts.ContractError(403, "FORBIDDEN", "Physician access required.")
+    expected = require_if_match_revision(request.headers.get("If-Match"))
+    key = _idempotency_key_or_none(request)
+    digest = service.idempotency_request_hash({**payload.model_dump(), "revision": expected})
+    fresh = (
+        session.execute(
+            select(tables.users).where(tables.users.c.id == user["id"]).with_for_update()
+        )
+        .mappings()
+        .one()
+    )
+    if key:
+        stored = service.lookup_idempotency(
+            session, operation="availability.save", actor_id=user["id"], key=key
+        )
+        if stored:
+            if stored["request_hash"] != digest:
+                return _idempotency_conflict(get_request_id(request))
+            return JSONResponse(content=stored["response_body"])
+    if fresh["revision"] != expected:
+        raise contracts.ContractError(412, "STALE_REVISION", "Reload and reconcile settings.")
+    catalog = _availability(session, user)["catalog"]
+    selected = list(dict.fromkeys(payload.selected_ids))
+    if set(selected) - {entry["id"] for entry in catalog}:
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Unknown formulation.",
+            {"selected_ids": ["Choose supported formulation IDs."]},
+        )
+    session.execute(
+        update(tables.users)
+        .where(tables.users.c.id == user["id"])
+        .values(
+            unavailable_antipsychotics=selected,
+            revision=expected + 1,
+            updated_at=contracts.utcnow(),
+        )
+    )
+    body = _availability(session, user)
+    audit_module.record_audit(
+        session,
+        operation="availability.save.success",
+        actor=user["username"],
+        request_id=get_request_id(request),
+        details={"revision": expected + 1},
+    )
+    if key:
+        service.store_idempotency(
+            session,
+            operation="availability.save",
+            actor_id=user["id"],
+            key=key,
+            request_hash=digest,
+            response_status=200,
+            response_body=body,
+        )
+    return JSONResponse(content=body, headers={"ETag": contracts.format_etag(expected + 1)})

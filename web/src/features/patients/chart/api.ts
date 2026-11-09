@@ -41,6 +41,8 @@ export interface ChartResponse {
 }
 
 export interface FollowupBaseline {
+  prior_plan?: string | null;
+  prior_assessments?: Record<string,unknown> | null;
   history_values: Record<string, unknown>;
   medications: Array<{ catalog_drug_id: string }>;
   provenance_note: string | null;

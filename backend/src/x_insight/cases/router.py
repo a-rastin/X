@@ -350,6 +350,7 @@ class PatientPatchRequest(BaseModel):
     given_name: str | None = None
     family_name: str | None = None
     sex: Literal["M", "F"] | None = None
+    birth_year: StrictInt | None = None
     age: StrictInt | None = Field(default=None, ge=18, le=99)
     clinical_status: Literal["first_time", "established"] | None = None
     phone: str | None = None
@@ -922,6 +923,7 @@ class NewCaseAssertionRequest(BaseModel):
     confirm: bool
 
 
+@router.get("/new-case/config")
 @router.get("/content/new-case")
 def get_new_case_content(request: Request, session: Session = Depends(get_session)) -> JSONResponse:
     from x_insight.cases import new_case
@@ -930,11 +932,24 @@ def get_new_case_content(request: Request, session: Session = Depends(get_sessio
     if isinstance(user, JSONResponse):
         return user
     content = new_case.clinical_content()
+    content["registration_year"] = contracts.utcnow().year
+    from sqlalchemy import text
+
+    content["medication_names"] = dict(
+        session.execute(
+            text(
+                "SELECT c.catalog_drug_id, c.canonical_name FROM ddi_concepts c "
+                "JOIN ddi_dataset_releases r ON r.id=c.release_id WHERE r.version=:version"
+            ),
+            {"version": content["manifest"]["lexicomp_version"]},
+        ).all()
+    )
     return JSONResponse(
         content={key: value for key, value in content.items() if key != "oral-model-manifest.json"}
     )
 
 
+@router.get("/encounters/{encounter_id}/new-case")
 @router.get("/encounters/{encounter_id}/new-case/preview")
 def preview_new_case(
     encounter_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
@@ -945,6 +960,9 @@ def preview_new_case(
     if isinstance(user, JSONResponse):
         return user
     state = new_case.preview(session, encounter_id, user)
+    from x_insight.cases.new_case_plans import read_proposal
+
+    state["proposal"] = read_proposal(session, user, encounter_id)
     response = JSONResponse(content=state)
     response.headers["ETag"] = contracts.format_etag(state["revision"])
     return response
@@ -972,6 +990,7 @@ def validate_new_case(
     )
 
 
+@router.post("/encounters/{encounter_id}/new-case/diagnosis-confirmation")
 @router.post("/encounters/{encounter_id}/new-case/diagnosis-assertion")
 def assert_new_case_diagnosis(
     encounter_id: uuid.UUID,
@@ -1919,4 +1938,160 @@ def create_addendum(
         )
     return _addendum_response(
         addendum, encounter, status_code=201, server_timestamp=server_timestamp
+    )
+
+
+class NewCaseProposalRequest(BaseModel):
+    model_config = {"extra": "forbid"}
+
+
+class NewCaseSignRequest(BaseModel):
+    expected_plan_revision: StrictInt = Field(ge=1)
+    proposal_id: uuid.UUID
+    model_config = {"extra": "forbid"}
+
+
+class NewCaseStepRequest(BaseModel):
+    step: Literal[
+        "diagnosis", "panss", "harm", "history", "medications", "considerations", "proposal"
+    ]
+    model_config = {"extra": "forbid"}
+
+
+@router.post("/encounters/{encounter_id}/new-case/validate-step")
+def validate_new_case_step(
+    encounter_id: uuid.UUID,
+    payload: NewCaseStepRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    return validate_new_case(
+        encounter_id, NewCaseValidationRequest(destination=payload.step), request, session
+    )
+
+
+def _new_case_command(
+    session: Session,
+    request: Request,
+    author: dict[str, Any],
+    encounter_id: uuid.UUID,
+    operation: str,
+    payload: dict[str, Any],
+    expected: int,
+) -> JSONResponse:
+    from sqlalchemy import text
+
+    from x_insight.cases import new_case_plans
+
+    key = _idempotency_key_or_none(request)
+    digest = contracts.canonical_hash(
+        {"encounter_id": str(encounter_id), "revision": expected, "payload": payload}
+    )
+    if key:
+        session.execute(
+            text("SELECT pg_advisory_xact_lock(hashtextextended(:key,0))"),
+            {"key": f"{author['id']}:{operation}:{key}"},
+        )
+        stored = identity_service.lookup_idempotency(
+            session, operation=operation, actor_id=author["id"], key=key
+        )
+        if stored:
+            if stored["request_hash"] != digest:
+                return _idempotency_conflict(get_request_id(request))
+            return JSONResponse(content=stored["response_body"])
+    if operation == "new_case.generate":
+        body = {
+            "proposal": new_case_plans.generate_proposal(
+                session, author, encounter_id, expected, get_request_id(request)
+            )
+        }
+    else:
+        body = {
+            "snapshot": new_case_plans.sign(
+                session,
+                author,
+                encounter_id,
+                expected,
+                payload["expected_plan_revision"],
+                uuid.UUID(payload["proposal_id"]),
+                get_request_id(request),
+            )
+        }
+    if key:
+        identity_service.store_idempotency(
+            session,
+            operation=operation,
+            actor_id=author["id"],
+            key=key,
+            request_hash=digest,
+            response_status=200,
+            response_body=body,
+        )
+    return JSONResponse(content=body)
+
+
+@router.post("/encounters/{encounter_id}/new-case/proposals")
+def generate_new_case(
+    encounter_id: uuid.UUID,
+    payload: NewCaseProposalRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    author = _require_physician_mutation(request, session)
+    if isinstance(author, JSONResponse):
+        return author
+    expected = encounters_service.require_if_match_revision(request.headers.get("If-Match"))
+    return _new_case_command(
+        session, request, author, encounter_id, "new_case.generate", {}, expected
+    )
+
+
+@router.get("/encounters/{encounter_id}/new-case/proposals/latest")
+def latest_new_case_proposal(
+    encounter_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    from x_insight.cases.new_case_plans import read_proposal
+
+    author = _require_user(request, session)
+    if isinstance(author, JSONResponse):
+        return author
+    return JSONResponse(content={"proposal": read_proposal(session, author, encounter_id)})
+
+
+@router.get("/encounters/{encounter_id}/new-case/proposals/{proposal_id}")
+def get_new_case_proposal(
+    encounter_id: uuid.UUID,
+    proposal_id: uuid.UUID,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    from x_insight.cases.new_case_plans import read_proposal
+
+    author = _require_user(request, session)
+    if isinstance(author, JSONResponse):
+        return author
+    return JSONResponse(
+        content={"proposal": read_proposal(session, author, encounter_id, proposal_id)}
+    )
+
+
+@router.post("/encounters/{encounter_id}/new-case/sign")
+def sign_new_case(
+    encounter_id: uuid.UUID,
+    payload: NewCaseSignRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    author = _require_physician_mutation(request, session)
+    if isinstance(author, JSONResponse):
+        return author
+    expected = encounters_service.require_if_match_revision(request.headers.get("If-Match"))
+    return _new_case_command(
+        session,
+        request,
+        author,
+        encounter_id,
+        "new_case.sign",
+        payload.model_dump(mode="json"),
+        expected,
     )

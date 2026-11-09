@@ -1,3 +1,4 @@
+import { NewCaseWizard } from "../new-case/NewCaseWizard";
 import { useLanguage } from "../../shared/i18n";
 /* Draft wizard page with autosave (S07, plan.md §§2.3, 9; FR-16, NFR-04).
  *
@@ -381,6 +382,10 @@ export function EncounterPage({ encounterId }: { encounterId: string }) {
         </p>
       </div>
     );
+  }
+
+  if (load.encounter.workflow_version === "new-case-v1") {
+    return <NewCaseWizard key={encounterId} encounter={load.encounter} initialData={load.initialData} initialRevision={load.initialRevision}/>;
   }
 
   if (!supportsLegacyWizard(load.encounter.workflow_version)) {

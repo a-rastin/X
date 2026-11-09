@@ -1,5 +1,10 @@
 # X-INSIGHT — System Architecture
 
+The `new-case-v1` registration branch uses a pinned fixed oral BN and Lexicomp
+without the legacy LLM/CPT pipeline. Schema `0031` adds personal physician
+availability, immutable proposals and v4 signatures. Known case/follow-up retain
+their clinical workflow. See [the current new-case contract](../../docs/new-case-state.md).
+
 Revision: 2026-09-28. Basis: the supplied `user_requirements.md` and the project owner's subsequent clarifications. This document describes the highest-level software structure. Technical data models, algorithms, API contracts and deployment proposals belong in `system-design.md`.
 
 ## 1. Purpose and vocabulary

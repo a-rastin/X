@@ -672,7 +672,7 @@ def _admin(_clean, monkeypatch):
 def _physician(_admin, _clean, monkeypatch, username: str):
     created = _admin["client"].post(
         "/api/v1/physicians",
-        json={"username": username, "password": "pw123"},
+        json={"name_en": "Test physician", "username": username, "password": "pw123"},
         headers={"X-CSRF-Token": _admin["csrf"]},
     )
     assert created.status_code == 201, created.text
@@ -728,7 +728,7 @@ def test_deactivated_session_cannot_read_definitions(_admin, _clean, monkeypatch
         _admin["client"]
         .post(
             "/api/v1/physicians",
-            json={"username": "dr_temp", "password": "pw123"},
+            json={"name_en": "Test physician", "username": "dr_temp", "password": "pw123"},
             headers={"X-CSRF-Token": _admin["csrf"]},
         )
         .json()["user"]["id"]

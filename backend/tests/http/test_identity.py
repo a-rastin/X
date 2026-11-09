@@ -186,6 +186,8 @@ def test_login_and_me_flow(clean_identity, monkeypatch) -> None:
         "username": "admin",
         "role": "admin",
         "theme": "light",
+        "name_fa": None,
+        "name_en": None,
     }
     uuid.UUID(body["user"]["id"])
     assert body["csrf_token"]
@@ -508,7 +510,7 @@ def _pending() -> dict:
 def _create_physician(admin: dict, username: str, password: str = "secret123") -> dict:
     created = admin["client"].post(
         "/api/v1/physicians",
-        json={"username": username, "password": password},
+        json={"name_en": "Test physician", "username": username, "password": password},
         headers=_auth_headers(admin["csrf"]),
     )
     assert created.status_code == 201, created.text

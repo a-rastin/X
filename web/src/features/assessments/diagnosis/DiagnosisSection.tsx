@@ -60,6 +60,7 @@ type AutosaveApi = ReturnType<typeof useAutosave>;
 
 interface DiagnosisSectionProps {
   encounterId: string;
+  newCase?: boolean;
   autosave: AutosaveApi;
   onSessionExpired: () => void;
   /** 1-based wizard index (registration 2, follow-up 1). */
@@ -134,6 +135,7 @@ const CRITERION_TITLES: Record<string, string> = {
 
 export function DiagnosisSection({
   encounterId,
+  newCase = false,
   autosave,
   onSessionExpired,
   stepNumber,
@@ -249,7 +251,7 @@ export function DiagnosisSection({
   const answers = section.answers;
   const latestDataRef = useRef(autosave.localData);
   latestDataRef.current = autosave.localData;
-  const needsDefaults = definition !== null && !hasLegacyState(section) &&
+  const needsDefaults = !newCase && definition !== null && !hasLegacyState(section) &&
     definition.items.some((item) => !Object.prototype.hasOwnProperty.call(answers, item.id));
   const answersPending =
     preview !== null && !sameAnswers(answers, preview.answers);
@@ -263,7 +265,7 @@ export function DiagnosisSection({
   }, [definition, needsDefaults, onInitializationReady]);
 
   useEffect(() => {
-    if (definition === null || locked || busy !== null ||
+    if (newCase || definition === null || locked || busy !== null ||
         autosave.saveState.kind === "failed" || autosave.saveState.kind === "conflict") {
       return;
     }
@@ -280,7 +282,7 @@ export function DiagnosisSection({
     // the just-queued defaults before React renders the autosave update.
     latestDataRef.current = { ...latestDataRef.current, diagnosis: next };
     autosave.setDraftValue("diagnosis", next);
-  }, [definition, needsDefaults, locked, busy, autosave.saveState.kind, autosave.setDraftValue]);
+  }, [newCase, definition, needsDefaults, locked, busy, autosave.saveState.kind, autosave.setDraftValue]);
 
   function setAnswer(itemId: string, value: DiagnosisAnswer): void {
     if (busy !== null || locked) return;
@@ -288,7 +290,7 @@ export function DiagnosisSection({
     if (current.answers[itemId] === value) return;
     setActionError(null);
     setNotice(null);
-    const merged = definition === null ? current.answers : withDefaults(current, definition);
+    const merged = newCase || definition === null ? current.answers : withDefaults(current, definition);
     const raw = latestDataRef.current["diagnosis"];
     const next = {
       ...(typeof raw === "object" && raw !== null ? raw : {}),
@@ -468,7 +470,7 @@ export function DiagnosisSection({
                                 type="radio"
                                 name={`diagnosis-${item.id}`}
                                 value={option.value}
-                                checked={answers[item.id] === option.value}
+                                checked={(answers[item.id] ?? (newCase ? "unknown" : undefined)) === option.value}
                                 onChange={() => setAnswer(item.id, option.value)}
                                 aria-invalid={itemErrors[item.id] !== undefined || undefined}
                                 aria-describedby={itemErrors[item.id] !== undefined ? `diag-${item.id}-error` : undefined}

@@ -46,7 +46,7 @@ export function ThemeToggle() {
         type="button"
         onClick={handleToggle}
         disabled={busy}
-        aria-label={t(theme === "dark" ? "switchLight" : "switchDark")}
+        aria-label={`${t(theme === "dark" ? "dark" : "light")}: ${t(theme === "dark" ? "switchLight" : "switchDark")}`}
       >
         <span aria-hidden="true">{theme === "dark" ? t("dark") : t("light")}</span>
       </button>{" "}

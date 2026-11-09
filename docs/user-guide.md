@@ -9,7 +9,7 @@ X-INSIGHT is a research workspace for recording patient encounters, completing s
 - [Sign in and manage your account](#sign-in-and-manage-your-account)
 - [Find a patient and open their chart](#find-a-patient-and-open-their-chart)
 - [Register a new patient](#register-a-new-patient)
-- [New case (experimental, backend-only)](#new-case-experimental-backend-only)
+- [New case (experimental, deterministic)](#new-case-experimental-deterministic)
 - [Complete the registration assessments](#complete-the-registration-assessments)
 - [Select medications and review interactions](#select-medications-and-review-interactions)
 - [Generate and review a proposal](#generate-and-review-a-proposal)
@@ -85,34 +85,63 @@ Use the numbered wizard links or **Back to…** and **Continue to…** controls 
 
 The **Working note** becomes editable once a draft exists and autosaves. It is a workspace note: its text does not enter proposal prompts, probability estimation, inference, applicability decisions, or interaction checking. Enter information needed for those functions in the corresponding structured fields.
 
-## New case (experimental, backend-only)
+## New case (experimental, deterministic)
 
-The registration form described above is the current physician workflow: it uses
-age 18–99 and creates the legacy registration draft. A separate `new-case-v1`
-workflow for a first registration with clinical status **New case** (`first_time`)
-is being implemented in stages and is **not yet available as a physician wizard**.
-Until its dedicated UI, proposal persistence and confirmation routes are finished,
-continue to use the documented legacy flow above; a `new-case-v1` draft opened in
-the application shows an explicit unavailable message rather than legacy controls.
+Select **New case** when registering a patient. Enter the patient's given/family
+names, ten-digit identifier, sex and Gregorian birth year. The year list comes
+from the server and permits ages 18–100. Required items have a red asterisk.
+Known case continues to use the existing age-based workflow.
 
-Where it is implemented, the New case workflow is deliberately different from the
-legacy pipeline described in this guide:
+The New case wizard has seven input steps: registration, diagnosis, PANSS,
+self/other harm, medical history/examination, current medications and treatment
+considerations. The following page shows the original proposal and a separately
+editable **Final treatment plan**.
 
-- It does **not** call an LLM, a provider, a background generation job, a private
-  MCP projection, or a probability slider. There is no CPT estimation, no
-  per-question probability acceptance and no worker dependency.
-- Oral antipsychotic ranking uses a fixed, hash-pinned Bayesian network through an
-  exact fully observed conditional-row lookup; interaction annotations come from
-  the pinned Lexicomp dataset, where a missing pair is reported as unavailable
-  coverage rather than "no interaction".
-- Its clinical content is experimental and not clinically validated. The supplied
-  medical reference values are versioned, source-backed defaults, not diagnostic
-  thresholds.
+- Ordinary diagnosis continuation requires positive criteria. **Diagnosis is
+  definite** is the explicit physician alternative: nonpositive/unknown answers
+  are cleared and only the attributed assertion is recorded. The patient and
+  draft remain when ordinary continuation is blocked.
+- PANSS may remain wholly or partly unanswered. Missing ratings are never scored
+  as minimum values. Self-harm and harm-to-others questions are independent;
+  the magnifier opens C-SSRS without inferring its answers.
+- Lab reporting requires at least one result when enabled. Units and reference
+  bounds are fixed and sourced. Warnings do not reject legitimate critical
+  results. Manual Yes/No overrides survive reloads and source edits; use
+  **Return to automatic** to restore suggestions. BMI requires a calculation
+  or an explicit category; choosing a category preserves manual mode.
+- Medication search starts at three characters. Select a catalog result or clear
+  unmatched text. An empty list is valid. Interactions appear with the original
+  proposed candidates, rather than in this input step.
+- **Generate proposed plan** uses the supplied fixed oral network, with no LLM,
+  provider, worker, generated CPT or probability-acceptance step. Percentages are
+  model ranking shares/fit, not measured treatment-success probabilities.
+- LAI selection produces no medication candidates and explicitly says its model
+  is unavailable. Other plan sections still generate; the physician can edit
+  and confirm the final plan. A corrupt oral model instead requires repair/retry.
 
-The backend state/validation API, content pins, startup installation and
-backup/restore behavior are documented in [New-case state](new-case-state.md).
-The legacy LLM/CPT workflow, probability review and signing described in the rest
-of this guide remain unchanged for Known case and follow-up.
+Use **Unavailable drugs** in physician navigation to exclude personal formulation
+IDs. Oral and injectable selections are separate. Save the settings explicitly;
+a revision conflict requires reconciliation. Exclusions are applied before taking
+five candidates, without renormalizing percentages. All candidates may be excluded.
+Lexicomp A/B/C/D/X ratings annotate candidates without reranking them. Missing
+pairs mean unavailable coverage, not “no known interaction.” Source notes retain
+their formulation qualifications.
+
+Final text is seeded once and saved separately. Changing language or regenerating
+does not replace an edited plan; **Replace with current proposal** does so explicitly.
+Input/settings changes require regeneration before confirmation. **Confirm and
+sign final plan** creates an immutable record with original proposal, final text,
+inputs, sources and signer. The original interaction evidence does not certify
+free-text medication changes. Corrections after signing use append-only addenda.
+
+New physician accounts require at least one Persian or English display name.
+Existing unnamed accounts fall back to username. Follow-up keeps its original
+form and uses prior New case values only as historical assessments/plan and the
+explicit medication release pin; absent legacy History values remain unknown.
+
+The clinical content remains experimental and is not clinically validated.
+[The workflow API and recovery contract](new-case-state.md) documents implementation
+boundaries. The LLM/CPT steps below apply to the legacy workflow.
 
 ## Complete the registration assessments
 

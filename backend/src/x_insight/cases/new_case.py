@@ -56,6 +56,7 @@ class NewCaseState(TypedDict):
     evidence: dict[str, bool]
     evidence_sources: dict[str, str]
     sections: dict[str, Any]
+    proposal: NotRequired[dict[str, Any] | None]
     revision: NotRequired[int]
     can_navigate: NotRequired[bool]
     navigation_errors: NotRequired[list[FieldError]]
@@ -817,8 +818,22 @@ def evaluate_new_case(
         "can_complete": not any(errors.values()),
         "evidence": evidence,
         "evidence_sources": {
-            name: "workflow_default"
-            for name in ("Tardive_Dyskinesia", "Dystonia", "Parkinsonism", "Akathisia")
+            "Smoking": "new_case.tobacco",
+            "Marijuana_Smoking": "new_case.substances.present AND marijuana",
+            "Hepatic_Failure": "flags.hepatic_failure.effective",
+            "Renal_Failure": "flags.renal_failure.effective",
+            "Sedative_Effects_Concern": "new_case.considerations.avoid_sedation",
+            "Seizure_Risk": "new_case.considerations.seizure_risk",
+            "Glucose_Abnormalities": "flags.glucose_abnormality.effective",
+            "Hyperlipidemia": "flags.hyperlipidemia.effective",
+            "Weight_Gain_Risk": "effective BMI category overweight or obesity",
+            "QTc_Prolongation_Risk": "new_case.considerations.qtc_risk",
+            "Orthostatic_Hypotension_Risk": "flags.orthostatic_risk.effective",
+            "Hyperprolactinemia": "flags.hyperprolactinemia.effective",
+            **{
+                name: "workflow_default"
+                for name in ("Tardive_Dyskinesia", "Dystonia", "Parkinsonism", "Akathisia")
+            },
         },
         "sections": sections,
     }

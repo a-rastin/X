@@ -25,6 +25,7 @@ export interface Patient {
   family_name: string;
   sex: Sex;
   age: number;
+  birth_year?: number | null;
   clinical_status: ClinicalStatus;
   phone: string | null;
   archived: boolean;
@@ -64,7 +65,8 @@ export interface RegistrationPayload {
   given_name: string;
   family_name: string;
   sex: Sex;
-  age: number;
+  age?: number;
+  birth_year?: number;
   clinical_status: ClinicalStatus;
   /** Omitted when the optional phone is blank. */
   phone?: string;
@@ -172,6 +174,7 @@ export async function createPatient(
  * draft content, so this route grants no draft access. `identifier` and
  * `archived` travel via their own routes (never sent here). */
 export interface DemographicsPatch {
+  birth_year?: number;
   given_name?: string;
   family_name?: string;
   sex?: Sex;
@@ -190,7 +193,7 @@ export interface PatientMutationResult {
  * clinical_status stale affected results; names/phone do not. */
 export function isRelevantDemographicsEdit(patch: DemographicsPatch): boolean {
   return (
-    patch.age !== undefined || patch.sex !== undefined || patch.clinical_status !== undefined
+    patch.age !== undefined || patch.birth_year !== undefined || patch.sex !== undefined || patch.clinical_status !== undefined
   );
 }
 

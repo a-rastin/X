@@ -128,7 +128,7 @@ def clean_ddi(migrated_test_engine):
         connection.execute(
             text(
                 "TRUNCATE ddi_interaction_evidence, ddi_concepts, "
-                "ddi_source_documents, ddi_dataset_releases"
+                "ddi_source_documents, ddi_dataset_releases CASCADE"
             )
         )
     yield migrated_test_engine
@@ -136,7 +136,7 @@ def clean_ddi(migrated_test_engine):
         connection.execute(
             text(
                 "TRUNCATE ddi_interaction_evidence, ddi_concepts, "
-                "ddi_source_documents, ddi_dataset_releases"
+                "ddi_source_documents, ddi_dataset_releases CASCADE"
             )
         )
 

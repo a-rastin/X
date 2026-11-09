@@ -28,7 +28,7 @@ export async function ensurePhysician(
   const post = (csrfToken: string, idempotencyKey: string) =>
     request.post("/api/v1/physicians", {
       headers: { "X-CSRF-Token": csrfToken, "Idempotency-Key": idempotencyKey },
-      data: { username, password },
+      data: { username, password, name_en: username },
     });
   const loginAdmin = async (): Promise<string> => {
     const login = await request.post("/api/v1/auth/login", {

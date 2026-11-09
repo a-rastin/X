@@ -2,8 +2,9 @@
 
 X-INSIGHT is a **research prototype** (not clinically validated, release gate open) for
 exploring schizophrenia treatment options: structured assessments → versioned Bayesian
-networks → LLM-estimated CPTs → deterministic inference → physician review and signed plans.
-Self-hosted, English desktop UI, one admin + a small physician team sharing a patient pool.
+networks → LLM-estimated CPTs → deterministic inference → physician review and signed plans
+(Known case/follow-up); New case instead uses a fixed, hash-pinned oral BN with no LLM.
+Self-hosted, English/Persian desktop UI, one admin + a small physician team sharing a patient pool.
 
 ## Stack and entry points
 
@@ -18,7 +19,7 @@ Self-hosted, English desktop UI, one admin + a small physician team sharing a pa
   hand-rolled hash router in `web/src/app/router.ts`.
 - **DB**: PostgreSQL 16 (roles `x_insight_app` / `x_insight_migrate` / `x_insight_readonly`),
   Alembic migrations, SQLAlchemy Core DML. Schema head pinned as
-  `db.EXPECTED_SCHEMA_VERSION = "0030"` in the current working tree.
+  `db.EXPECTED_SCHEMA_VERSION = "0031"` in the current working tree.
 - **Commands**: all in `Makefile` — `make dev`, `make check`, `make test-backend`,
   `make test-e2e`, `make test-recovery`, `make verify`, `make prod-up`.
 
@@ -44,12 +45,14 @@ Self-hosted, English desktop UI, one admin + a small physician team sharing a pa
   module's public functions. Migrations own DDL.
 - **Legacy inference runs with empty evidence**; its patient projections are provenance
   only. The separate SHA-pinned `models/oral_antipsychotic.py` path accepts all 16
-  observed factors for exact row lookup; new-case preview projects those factors
-  but does not yet generate/persist proposals or sign them.
+  observed factors for exact row lookup,
+  and `cases/new_case_plans.py` persists deterministic proposals and atomic v4
+  signatures. The dedicated bilingual wizard lives in `features/new-case/`.
 - **Immutability by convention:** baselines, snapshots, revisions, releases are SELECT+INSERT;
   staleness is derived by recomputing hashes, never an UPDATE.
 - **Three independent revision namespaces**: encounter `revision`, `secondary_plans.revision`,
-  `question_review_states.review_revision`. Signing checks all three plus `patients.revision`.
+  `question_review_states.review_revision`. Legacy signing checks all three;
+  new-case signing checks encounter/plan and the physician availability snapshot.
 - Frontend has ~15 near-duplicated `request<T>` fetch wrappers, one per `features/*/api.ts`;
   the canonical one is `features/identity/api.ts` (API error, CSRF in `localStorage`,
   `Idempotency-Key`, `If-Match`). No toast framework — inline `role="status"`/`role="alert"`.

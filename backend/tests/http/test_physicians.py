@@ -132,7 +132,12 @@ def test_admin_creates_and_retrieves_physician_safe_fields(admin_client) -> None
     csrf = admin_client["csrf"]
     created = client.post(
         "/api/v1/physicians",
-        json={"username": "dr_jones", "password": "secret123", "role": "physician"},
+        json={
+            "name_en": "Test physician",
+            "username": "dr_jones",
+            "password": "secret123",
+            "role": "physician",
+        },
         headers=_auth_headers(csrf),
     )
     assert created.status_code == 201, created.text
@@ -172,7 +177,7 @@ def test_list_contains_only_physicians_before_pagination(admin_client) -> None:
     for username in ("aaa_physician", "zzz_physician"):
         response = client.post(
             "/api/v1/physicians",
-            json={"username": username, "password": "secret123"},
+            json={"name_en": "Test physician", "username": username, "password": "secret123"},
             headers=headers,
         )
         assert response.status_code == 201, response.text
@@ -206,7 +211,7 @@ def test_admin_edits_physician_preserves_stable_id(admin_client) -> None:
     csrf = admin_client["csrf"]
     created = client.post(
         "/api/v1/physicians",
-        json={"username": "dr_house", "password": "initial"},
+        json={"name_en": "Test physician", "username": "dr_house", "password": "initial"},
         headers=_auth_headers(csrf),
     ).json()["user"]
     original_id = created["id"]
@@ -245,7 +250,7 @@ def test_admin_username_immutable(admin_client) -> None:
     # Role elevation is denied: physician stays physician.
     created = client.post(
         "/api/v1/physicians",
-        json={"username": "dr_noelev", "password": "x"},
+        json={"name_en": "Test physician", "username": "dr_noelev", "password": "x"},
         headers=_auth_headers(csrf),
     ).json()["user"]
     elevated = client.patch(
@@ -264,7 +269,7 @@ def test_physician_cannot_manage_accounts_or_elevate(
     admin_csrf = admin_client["csrf"]
     admin_http.post(
         "/api/v1/physicians",
-        json={"username": "dr_limited", "password": "pw123"},
+        json={"name_en": "Test physician", "username": "dr_limited", "password": "pw123"},
         headers=_auth_headers(admin_csrf),
     )
     phys_client, phys_csrf, _ = _physician_client(
@@ -274,7 +279,7 @@ def test_physician_cannot_manage_accounts_or_elevate(
     assert (
         phys_client.post(
             "/api/v1/physicians",
-            json={"username": "dr_other", "password": "x"},
+            json={"name_en": "Test physician", "username": "dr_other", "password": "x"},
             headers=_auth_headers(phys_csrf),
         ).status_code
         == 403
@@ -299,7 +304,7 @@ def test_unauthenticated_physician_routes_401(clean_identity, monkeypatch) -> No
     client = TestClient(app)
     assert client.get("/api/v1/physicians").status_code == 401
     assert client.post(
-        "/api/v1/physicians", json={"username": "x", "password": "y"}
+        "/api/v1/physicians", json={"name_en": "Test physician", "username": "x", "password": "y"}
     ).status_code in (
         401,
         403,
@@ -319,7 +324,7 @@ def test_password_reset_revokes_sessions_immediately(
     admin_csrf = admin_client["csrf"]
     created = admin_http.post(
         "/api/v1/physicians",
-        json={"username": "dr_reset", "password": "old_secret"},
+        json={"name_en": "Test physician", "username": "dr_reset", "password": "old_secret"},
         headers=_auth_headers(admin_csrf),
     ).json()["user"]
     phys_client, phys_csrf, _ = _physician_client(
@@ -356,7 +361,7 @@ def test_deactivation_revokes_and_blocks_inactive_reactivation_restores(
     admin_csrf = admin_client["csrf"]
     created = admin_http.post(
         "/api/v1/physicians",
-        json={"username": "dr_sleep", "password": "awake123"},
+        json={"name_en": "Test physician", "username": "dr_sleep", "password": "awake123"},
         headers=_auth_headers(admin_csrf),
     ).json()["user"]
     phys_client, _, _ = _physician_client(clean_identity, monkeypatch, "dr_sleep", "awake123")
@@ -395,7 +400,7 @@ def test_patch_stale_revision_412_and_etag(admin_client) -> None:
     csrf = admin_client["csrf"]
     created = client.post(
         "/api/v1/physicians",
-        json={"username": "dr_stale", "password": "x"},
+        json={"name_en": "Test physician", "username": "dr_stale", "password": "x"},
         headers=_auth_headers(csrf),
     ).json()["user"]
     revision = created["revision"]
@@ -421,7 +426,7 @@ def test_deactivation_requires_admin_role(admin_client, clean_identity, monkeypa
     admin_csrf = admin_client["csrf"]
     created = admin_http.post(
         "/api/v1/physicians",
-        json={"username": "dr_guard", "password": "pw"},
+        json={"name_en": "Test physician", "username": "dr_guard", "password": "pw"},
         headers=_auth_headers(admin_csrf),
     ).json()["user"]
     phys_client, phys_csrf, _ = _physician_client(clean_identity, monkeypatch, "dr_guard", "pw")
@@ -457,7 +462,7 @@ def test_deactivation_requires_explicit_retain_or_discard(admin_client) -> None:
     csrf = admin_client["csrf"]
     created = client.post(
         "/api/v1/physicians",
-        json={"username": "dr_choice", "password": "x"},
+        json={"name_en": "Test physician", "username": "dr_choice", "password": "x"},
         headers=_auth_headers(csrf),
     ).json()["user"]
     # Missing choice → 422; invented choice → 422; no silent default.
@@ -481,7 +486,7 @@ def test_deactivation_requires_explicit_retain_or_discard(admin_client) -> None:
     for action in ("retain", "discard"):
         target = client.post(
             "/api/v1/physicians",
-            json={"username": f"dr_{action}_ok", "password": "x"},
+            json={"name_en": "Test physician", "username": f"dr_{action}_ok", "password": "x"},
             headers=_auth_headers(csrf),
         ).json()["user"]
         response = client.post(
@@ -502,7 +507,7 @@ def test_deactivation_stale_draft_set_revision_conflicts(admin_client) -> None:
     csrf = admin_client["csrf"]
     created = client.post(
         "/api/v1/physicians",
-        json={"username": "dr_draftrev", "password": "x"},
+        json={"name_en": "Test physician", "username": "dr_draftrev", "password": "x"},
         headers=_auth_headers(csrf),
     ).json()["user"]
     # Reviewed revision 0 (empty) is current; any other revision is stale.
@@ -514,7 +519,7 @@ def test_deactivation_stale_draft_set_revision_conflicts(admin_client) -> None:
     assert ok.status_code == 200
     other = client.post(
         "/api/v1/physicians",
-        json={"username": "dr_draftrev2", "password": "x"},
+        json={"name_en": "Test physician", "username": "dr_draftrev2", "password": "x"},
         headers=_auth_headers(csrf),
     ).json()["user"]
     stale = client.post(
@@ -562,7 +567,7 @@ def test_idempotent_create_replays_same_body_conflicts_changed_body(admin_client
     headers = {**_auth_headers(csrf), "Idempotency-Key": "create-replay-001"}
     first = client.post(
         "/api/v1/physicians",
-        json={"username": "dr_idem", "password": "secret"},
+        json={"name_en": "Test physician", "username": "dr_idem", "password": "secret"},
         headers=headers,
     )
     assert first.status_code == 201, first.text
@@ -570,7 +575,7 @@ def test_idempotent_create_replays_same_body_conflicts_changed_body(admin_client
     # Same key + same body replays the original result (no duplicate).
     replay = client.post(
         "/api/v1/physicians",
-        json={"username": "dr_idem", "password": "secret"},
+        json={"name_en": "Test physician", "username": "dr_idem", "password": "secret"},
         headers=headers,
     )
     assert replay.status_code == 201, replay.text
@@ -578,7 +583,7 @@ def test_idempotent_create_replays_same_body_conflicts_changed_body(admin_client
     # Same key + changed body is 409 (not a silent second account).
     conflict = client.post(
         "/api/v1/physicians",
-        json={"username": "dr_idem", "password": "different"},
+        json={"name_en": "Test physician", "username": "dr_idem", "password": "different"},
         headers=headers,
     )
     assert conflict.status_code == 409, conflict.text
@@ -590,7 +595,7 @@ def test_idempotent_deactivate_replay_and_conflict(admin_client) -> None:
     csrf = admin_client["csrf"]
     created = client.post(
         "/api/v1/physicians",
-        json={"username": "dr_idem_deact", "password": "x"},
+        json={"name_en": "Test physician", "username": "dr_idem_deact", "password": "x"},
         headers=_auth_headers(csrf),
     ).json()["user"]
     headers = {**_auth_headers(csrf), "Idempotency-Key": "deact-replay-001"}
@@ -621,14 +626,14 @@ def test_duplicate_username_conflicts_without_idempotency(admin_client) -> None:
     assert (
         client.post(
             "/api/v1/physicians",
-            json={"username": "dr_dup", "password": "a"},
+            json={"name_en": "Test physician", "username": "dr_dup", "password": "a"},
             headers=_auth_headers(csrf),
         ).status_code
         == 201
     )
     duplicate = client.post(
         "/api/v1/physicians",
-        json={"username": "DR_DUP", "password": "b"},
+        json={"name_en": "Test physician", "username": "DR_DUP", "password": "b"},
         headers=_auth_headers(csrf),
     )
     assert duplicate.status_code == 409, duplicate.text
@@ -641,7 +646,7 @@ def test_audit_safe_attributed_events_no_secrets(admin_client) -> None:
     engine = admin_client["engine"]
     created = client.post(
         "/api/v1/physicians",
-        json={"username": "dr_audited", "password": "s3cret!"},
+        json={"name_en": "Test physician", "username": "dr_audited", "password": "s3cret!"},
         headers=_auth_headers(csrf),
     ).json()["user"]
     etag = f'"{created["revision"]}"'
@@ -691,7 +696,7 @@ def test_no_hash_or_password_in_any_physician_response(admin_client) -> None:
     csrf = admin_client["csrf"]
     created = client.post(
         "/api/v1/physicians",
-        json={"username": "dr_clean", "password": "topsecret123"},
+        json={"name_en": "Test physician", "username": "dr_clean", "password": "topsecret123"},
         headers=_auth_headers(csrf),
     )
     assert created.status_code == 201
@@ -721,7 +726,7 @@ def test_physician_list_pagination_bounds(admin_client) -> None:
     for i in range(3):
         client.post(
             "/api/v1/physicians",
-            json={"username": f"dr_page_{i}", "password": "x"},
+            json={"name_en": "Test physician", "username": f"dr_page_{i}", "password": "x"},
             headers=_auth_headers(csrf),
         )
     defaulted = client.get("/api/v1/physicians")
@@ -750,7 +755,7 @@ def test_physician_create_rejects_empty_fields_and_admin_role(admin_client) -> N
     # Empty password is 422 verbatim (no silent accept; S03 no-trim rule carries).
     empty_pw = client.post(
         "/api/v1/physicians",
-        json={"username": "dr_empty_pw", "password": ""},
+        json={"name_en": "Test physician", "username": "dr_empty_pw", "password": ""},
         headers=headers,
     )
     assert empty_pw.status_code == 422, empty_pw.text
@@ -758,14 +763,14 @@ def test_physician_create_rejects_empty_fields_and_admin_role(admin_client) -> N
     # Blank username is 422.
     blank_user = client.post(
         "/api/v1/physicians",
-        json={"username": "   ", "password": "x"},
+        json={"name_en": "Test physician", "username": "   ", "password": "x"},
         headers=headers,
     )
     assert blank_user.status_code == 422, blank_user.text
     # Second admin via role=admin is denied (singleton admin, plan §2.1).
     second_admin = client.post(
         "/api/v1/physicians",
-        json={"username": "admin2", "password": "x", "role": "admin"},
+        json={"name_en": "Test physician", "username": "admin2", "password": "x", "role": "admin"},
         headers=headers,
     )
     assert second_admin.status_code == 422, second_admin.text
@@ -782,14 +787,14 @@ def test_physician_mutations_require_csrf(admin_client) -> None:
     client = admin_client["client"]  # holds the admin session cookie
     created = client.post(
         "/api/v1/physicians",
-        json={"username": "dr_csrf", "password": "x"},
+        json={"name_en": "Test physician", "username": "dr_csrf", "password": "x"},
         headers=_auth_headers(admin_client["csrf"]),
     ).json()["user"]
     # Same session but missing/wrong CSRF → 403 on every physician mutation.
     assert (
         client.post(
             "/api/v1/physicians",
-            json={"username": "dr_csrf2", "password": "x"},
+            json={"name_en": "Test physician", "username": "dr_csrf2", "password": "x"},
         ).status_code
         == 403
     )
@@ -826,7 +831,7 @@ def test_physician_cannot_read_single_physician(admin_client, clean_identity, mo
     admin_csrf = admin_client["csrf"]
     target = admin_http.post(
         "/api/v1/physicians",
-        json={"username": "dr_private", "password": "pw123"},
+        json={"name_en": "Test physician", "username": "dr_private", "password": "pw123"},
         headers=_auth_headers(admin_csrf),
     ).json()["user"]
     phys_client, _, _ = _physician_client(clean_identity, monkeypatch, "dr_private", "pw123")

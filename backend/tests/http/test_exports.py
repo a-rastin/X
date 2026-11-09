@@ -85,10 +85,10 @@ ADDENDUM_EVIL = (
 )
 
 EXPECTED_PATIENT_HEADERS = (
-    "patient_id,identifier,given_name,family_name,sex,age,"
+    "patient_id,identifier,given_name,family_name,sex,age,birth_year,"
     "clinical_status,phone,archived,created_at,updated_at"
 )
-EXPECTED_PHYSICIAN_HEADERS = "physician_id,username,role,active,theme"
+EXPECTED_PHYSICIAN_HEADERS = "physician_id,username,name_fa,name_en,role,active,theme"
 
 _FORBIDDEN_SECRET_TOKENS = (
     "password",
@@ -324,7 +324,7 @@ def _new_physician(clean_registry, monkeypatch, username: str):
     assert login.status_code == 200, login.text
     created = admin.post(
         "/api/v1/physicians",
-        json={"username": username, "password": "pw123"},
+        json={"name_en": "Test physician", "username": username, "password": "pw123"},
         headers=_auth_headers(login.json()["csrf_token"]),
     )
     assert created.status_code == 201, created.text
@@ -543,7 +543,7 @@ def _signed_multi_encounter_setup(clean_registry, monkeypatch, tmp_path, usernam
     other_username = f"{username}_other"
     other_created = admin.post(
         "/api/v1/physicians",
-        json={"username": other_username, "password": "pw123"},
+        json={"name_en": "Test physician", "username": other_username, "password": "pw123"},
         headers=_auth_headers(admin_csrf),
     )
     assert other_created.status_code == 201, other_created.text
@@ -853,8 +853,8 @@ def test_patients_csv_stable_headers_utf8_identifier_bytes(clean_registry, monke
     assert by_identifier["0012345678"][2] == "Émile"
     assert by_identifier["0012345678"][3] == "Müller"
     # "+" leads a spreadsheet formula, so the phone carries the "'" prefix.
-    assert by_identifier["0012345678"][7] == "'+43 699 123456"
-    assert by_identifier["0012345678"][8] == "false"
+    assert by_identifier["0012345678"][8] == "'+43 699 123456"
+    assert by_identifier["0012345678"][9] == "false"
 
 
 def test_physicians_csv_safe_fields_excludes_non_physicians(clean_registry, monkeypatch) -> None:
@@ -862,7 +862,7 @@ def test_physicians_csv_safe_fields_excludes_non_physicians(clean_registry, monk
     admin, admin_csrf = _new_physician(clean_registry, monkeypatch, "dr_s53_list_a")
     second = admin.post(
         "/api/v1/physicians",
-        json={"username": "dr_s53_list_b", "password": "pw123"},
+        json={"name_en": "Test physician", "username": "dr_s53_list_b", "password": "pw123"},
         headers=_auth_headers(admin_csrf),
     )
     assert second.status_code == 201, second.text
@@ -888,10 +888,10 @@ def test_physicians_csv_safe_fields_excludes_non_physicians(clean_registry, monk
     by_username = {row[1]: row for row in rows[1:]}
     assert set(by_username) == {"dr_s53_list_a", "dr_s53_list_b"}
     assert "admin" not in by_username
-    assert all(row[2] == "physician" for row in by_username.values())
-    assert by_username["dr_s53_list_a"][3] == "true"
-    assert by_username["dr_s53_list_b"][3] == "false"
-    assert all(row[4] in ("light", "dark") for row in by_username.values())
+    assert all(row[4] == "physician" for row in by_username.values())
+    assert by_username["dr_s53_list_a"][5] == "true"
+    assert by_username["dr_s53_list_b"][5] == "false"
+    assert all(row[6] in ("light", "dark") for row in by_username.values())
 
 
 def test_csvs_contain_no_credentials_or_hashes(clean_registry, monkeypatch) -> None:
@@ -932,7 +932,7 @@ def test_patients_csv_neutralizes_formula_like_text_without_wrappers(
     rows = list(csv.reader(io.StringIO(text)))
     by_identifier = {row[1]: row for row in rows[1:]}
     for identifier, phone in zip(identifiers, phones, strict=True):
-        assert by_identifier[identifier][7] == "'" + phone, (identifier, phone)
+        assert by_identifier[identifier][8] == "'" + phone, (identifier, phone)
     # Identifiers stay exact raw bytes (neutralization never wraps them).
     for identifier in identifiers:
         assert identifier.encode("utf-8") in response.content
@@ -950,7 +950,7 @@ def test_patients_csv_quotes_and_newlines_round_trip(clean_registry, monkeypatch
     assert response.status_code == 200, response.text
     rows = list(csv.reader(io.StringIO(response.content.decode("utf-8"))))
     by_identifier = {row[1]: row for row in rows[1:]}
-    assert by_identifier["0012345678"][7] == tricky
+    assert by_identifier["0012345678"][8] == tricky
 
 
 # --- S53 §3: escaped signed HTML with complete per-question content ---

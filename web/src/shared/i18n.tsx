@@ -29,7 +29,7 @@ export function LanguageButton() {
     <button
       type="button"
       className="xi-btn xi-btn-secondary xi-language-button"
-      aria-label={t(language === "en" ? "switchToPersian" : "switchToEnglish")}
+      aria-label={`${language === "en" ? "فارسی" : "English"}: ${t(language === "en" ? "switchToPersian" : "switchToEnglish")}`}
       onClick={() => setLanguage(language === "en" ? "fa" : "en")}
       lang={language === "en" ? "fa" : "en"}
       dir={language === "en" ? "rtl" : "ltr"}

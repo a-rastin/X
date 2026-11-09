@@ -162,6 +162,7 @@ export function FollowupBaselinePanel({
         <code>copied_baseline</code>  {t("provenancePanssAndCSsrsAlwaysStart")}
       </p>
 
+      {baseline?.prior_plan && <section><h4>{t("nc.finalPlan")}</h4><pre style={{whiteSpace:"pre-wrap"}}>{baseline.prior_plan}</pre></section>}
       {baseline === null ? (
         <p className="xi-hint" role="status">
           

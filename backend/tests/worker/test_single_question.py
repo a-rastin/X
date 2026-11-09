@@ -350,7 +350,7 @@ def _new_physician_batch(clean_registry, monkeypatch, username: str, identifier:
     assert login.status_code == 200, login.text
     created = admin.post(
         "/api/v1/physicians",
-        json={"username": username, "password": "pw123"},
+        json={"name_en": "Test physician", "username": username, "password": "pw123"},
         headers=_auth_headers(login.json()["csrf_token"]),
     )
     assert created.status_code == 201, created.text
@@ -592,7 +592,7 @@ def test_review_permissions_immutability_and_fresh_batch(clean_registry, monkeyp
     for username in ("dr_s45_own", "dr_s45_other"):
         created = admin.post(
             "/api/v1/physicians",
-            json={"username": username, "password": "pw123"},
+            json={"name_en": "Test physician", "username": username, "password": "pw123"},
             headers=_auth_headers(login.json()["csrf_token"]),
         )
         assert created.status_code == 201, created.text

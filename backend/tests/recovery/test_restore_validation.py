@@ -85,6 +85,7 @@ SUPPORTED_APP_SCHEMAS = frozenset(
         "0028",
         "0029",
         "0030",
+        "0031",
     }
 )
 
@@ -185,7 +186,7 @@ def _new_physician(clean_registry, monkeypatch, username: str):
     assert login.status_code == 200, login.text
     created = admin.post(
         "/api/v1/physicians",
-        json={"username": username, "password": "pw123"},
+        json={"name_en": "Test physician", "username": username, "password": "pw123"},
         headers=_auth_headers(login.json()["csrf_token"]),
     )
     assert created.status_code == 201, created.text
@@ -1102,7 +1103,7 @@ def test_new_backup_restores_acknowledged_and_open_accounts(clean_registry, monk
     admin, csrf = _admin_client(clean_registry, monkeypatch)
     blob, _ = _make_valid_blob(admin, csrf)
     job = _commit_blob(admin, csrf, blob)
-    assert job["app_schema_version"] == "0030"
+    assert job["app_schema_version"] == "0031"
 
     assert _warning_after_sign_in(clean_registry, monkeypatch, "dr_ack_keep") == {
         "research_warning": None,

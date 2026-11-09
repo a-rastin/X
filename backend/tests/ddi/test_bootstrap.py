@@ -150,7 +150,7 @@ def test_existing_custom_release_preserved_unless_bundle_explicitly_configured(
     )
     assert "SKIPPED: existing DDI release preserved" in capsys.readouterr().out
     assert checker.latest_release_version(clean_ddi) == original["version"]
-    assert len(publish.list_releases(clean_ddi)) == 1
+    assert len(publish.list_releases(clean_ddi)) == 2
     # Public publication supplies an independent release identity for the explicit pin.
     staged = tmp_path / "build/candidate"
     expected = publish.publish_release(staged, approval, clean_ddi)
@@ -186,7 +186,7 @@ def test_existing_custom_release_preserved_unless_bundle_explicitly_configured(
     assert added["version"] == expected["version"]
     assert not added["skipped"] and not added["reused"]
     assert checker.latest_release_version(clean_ddi) == expected["version"]
-    assert len(publish.list_releases(clean_ddi)) == 2
+    assert len(publish.list_releases(clean_ddi)) == 3
     assert publish.get_release(clean_ddi, original["version"])["evidence_count"] == 5
 
 
@@ -214,6 +214,9 @@ def test_explicit_migration_provisions_blank_database_then_reuses(tmp_path, clea
     target = content / "ddi/ddinter/2026-10-21"
     target.parent.mkdir(parents=True)
     shutil.copytree(bundle, target)
+    shipped = Path(__file__).resolve().parents[3] / "content"
+    shutil.copytree(shipped / "new-case", content / "new-case")
+    shutil.copytree(shipped / "ddi/lexicomp", content / "ddi/lexicomp")
     database = "ddi_bootstrap_" + uuid.uuid4().hex
     admin = db.build_engine(clean_ddi.url)
     fresh_url = clean_ddi.url.set(database=database)
@@ -243,7 +246,7 @@ def test_explicit_migration_provisions_blank_database_then_reuses(tmp_path, clea
         )
         assert second.returncode == 0, second.stdout + second.stderr
         assert "reused=True" in second.stdout
-        assert len(publish.list_releases(engine)) == 1
+        assert len(publish.list_releases(engine)) == 2
         # A broken source-only deployment must fail setup, even after valid schema migration.
         (target / "owner-reviewed-manifest.json").unlink()
         failed = subprocess.run(

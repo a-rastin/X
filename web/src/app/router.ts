@@ -4,6 +4,7 @@ export type Route =
   | "login"
   | "dashboard"
   | "physicians"
+  | "unavailable-drugs"
   | "account"
   | "patients"
   | "patients-new"
@@ -23,6 +24,7 @@ const HASHES: Record<string, Route> = {
   "#/dashboard": "dashboard",
   "#/physicians": "physicians",
   "#/account": "account",
+  "#/unavailable-drugs": "unavailable-drugs",
   "#/patients": "patients",
   "#/patients/new": "patients-new",
   "#/networks": "networks",
@@ -39,6 +41,7 @@ const ROUTE_HASHES: Record<Exclude<Route, "encounter" | "chart" | "report">, str
   dashboard: "#/dashboard",
   physicians: "#/physicians",
   account: "#/account",
+  "unavailable-drugs": "#/unavailable-drugs",
   patients: "#/patients",
   "patients-new": "#/patients/new",
   networks: "#/networks",
