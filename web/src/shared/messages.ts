@@ -1,6 +1,7 @@
 export type Language = "en" | "fa";
 
 export const en = {
+  encounterWorkflowUnavailable: "This draft uses a workflow that this version of the interface cannot open. Its saved data has not been changed.",
   effectStatusLabel: "{effect} status",
   failedAttemptsWithDiagnostic: "Failed after {attempt} of {maximum} attempts. Last error: {diagnostic}.",
   failedAttemptsWaiting: "Failed after {attempt} of {maximum} attempts. Later questions wait.",
@@ -1545,6 +1546,7 @@ export const en = {
 export type MessageKey = keyof typeof en;
 
 export const fa: Record<MessageKey, string> = {
+  encounterWorkflowUnavailable: "این پیش‌نویس از روندی استفاده می‌کند که این نسخه از رابط کاربری نمی‌تواند آن را باز کند. داده‌های ذخیره‌شده تغییر نکرده‌اند.",
   effectStatusLabel: "وضعیت {effect}",
   failedAttemptsWithDiagnostic: "پس از {attempt} از {maximum} تلاش شکست خورد. آخرین خطا: {diagnostic}.",
   failedAttemptsWaiting: "پس از {attempt} از {maximum} تلاش شکست خورد. پرسش‌های بعدی منتظر می‌مانند.",

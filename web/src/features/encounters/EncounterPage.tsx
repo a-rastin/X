@@ -60,6 +60,7 @@ import { MedicationsSection } from "../medications/MedicationsSection";
 import { ProposalReviewPanel } from "../reasoning/ProposalReviewPanel";
 import { FollowupBaselinePanel } from "../patients/chart/FollowupBaselinePanel";
 import { useAutosave } from "./useAutosave";
+import { supportsLegacyWizard } from "./workflow";
 import {
   DraftSaveStatus,
   registrationNoticeFor,
@@ -378,6 +379,18 @@ export function EncounterPage({ encounterId }: { encounterId: string }) {
           <a className="xi-btn xi-btn-secondary" href="#/patients">
             {t("backToDirectory")}</a>
         </p>
+      </div>
+    );
+  }
+
+  if (!supportsLegacyWizard(load.encounter.workflow_version)) {
+    return (
+      <div>
+        <h2 className="xi-page-title">{t("encounterDraft")}</h2>
+        <p className="xi-form-error" role="alert" data-testid="encounter-workflow-unavailable">
+          {t("encounterWorkflowUnavailable")}
+        </p>
+        <p><a className="xi-btn xi-btn-secondary" href="#/patients">{t("backToDirectory")}</a></p>
       </div>
     );
   }

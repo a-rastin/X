@@ -36,6 +36,7 @@ export interface EncounterReference {
   id: string;
   patient_id: string;
   kind: string;
+  workflow_version: string;
   author_id: string;
   lifecycle: EncounterLifecycle;
   revision: number;

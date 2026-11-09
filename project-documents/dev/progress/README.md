@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[New case Package G partial checkpoint (2026-11-09)](new-case-package-g-2026-11-09.md): workflow identity fails closed; new wizard and B/F prerequisites remain open.
+
 [New case Package F partial checkpoint (2026-11-09)](new-case-package-f-2026-11-09.md): candidate calculation seam tested; settings prerequisite, persistence, signing and integration remain open.
 
 [New case Package E checkpoint (2026-11-09)](new-case-package-e-2026-11-09.md): typed state, content pins, autosave, diagnosis gates and previews wired; focused checks pass; remaining B settings and F/G work are separate.
