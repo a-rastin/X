@@ -189,13 +189,14 @@ def install(engine: Any, content: Path | None = None) -> dict[str, Any]:
     return {"version": version, "content_hash": digest, "reused": False}
 
 
-def current_version() -> str:
+def current_content_hash() -> str:
     manifest = json.loads(
         (content_directory() / "ddi/lexicomp/v1/manifest.json").read_text(encoding="utf-8")
     )
-    return (
-        "ddi-"
-        + canonical_hash(
-            {"manifest": manifest, "parser": PARSER, "normalization": "NFKC-trim-casefold/1"}
-        )[:12]
+    return canonical_hash(
+        {"manifest": manifest, "parser": PARSER, "normalization": "NFKC-trim-casefold/1"}
     )
+
+
+def current_version() -> str:
+    return "ddi-" + current_content_hash()[:12]

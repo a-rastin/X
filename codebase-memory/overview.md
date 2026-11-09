@@ -18,13 +18,16 @@ Self-hosted, English desktop UI, one admin + a small physician team sharing a pa
   hand-rolled hash router in `web/src/app/router.ts`.
 - **DB**: PostgreSQL 16 (roles `x_insight_app` / `x_insight_migrate` / `x_insight_readonly`),
   Alembic migrations, SQLAlchemy Core DML. Schema head pinned as
-  `db.EXPECTED_SCHEMA_VERSION = "0029"` in the current working tree.
+  `db.EXPECTED_SCHEMA_VERSION = "0030"` in the current working tree.
 - **Commands**: all in `Makefile` — `make dev`, `make check`, `make test-backend`,
   `make test-e2e`, `make test-recovery`, `make verify`, `make prod-up`.
 
 ## Major modules (`backend/src/x_insight/`)
 
 - `cases/` — patients, author-owned drafts, signing, chart, reporting (largest HTTP surface).
+  `new_case.py` owns typed new-case autosave, immutable content pins, attributed
+  diagnosis assertion, step validation and deterministic projection; pure plan
+  rules are in `new_case_rules.py`. See `docs/new-case-state.md` for API boundaries.
 - `assessments/` — declarative assessment engine + diagnosis / PANSS / C-SSRS.
 - `reasoning/` — batch/run/job queue, coordinator pipeline, provider (LLM), snapshots, readiness.
 - `models/` — XMLBIF validation, CPT validation, bounded inference, bundles, workflow release.
@@ -39,7 +42,10 @@ Self-hosted, English desktop UI, one admin + a small physician team sharing a pa
   owns the transaction, so audit + mutation stay atomic.
 - **Each module owns its `tables.py` read model;** cross-module work goes through the owning
   module's public functions. Migrations own DDL.
-- **Inference always runs with empty evidence**; patient projections are provenance only.
+- **Legacy inference runs with empty evidence**; its patient projections are provenance
+  only. The separate SHA-pinned `models/oral_antipsychotic.py` path accepts all 16
+  observed factors for exact row lookup; new-case preview projects those factors
+  but does not yet generate/persist proposals or sign them.
 - **Immutability by convention:** baselines, snapshots, revisions, releases are SELECT+INSERT;
   staleness is derived by recomputing hashes, never an UPDATE.
 - **Three independent revision namespaces**: encounter `revision`, `secondary_plans.revision`,

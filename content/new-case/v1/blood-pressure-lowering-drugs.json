@@ -1,0 +1,424 @@
+{
+  "version": "new-case-bp-v1",
+  "terminology_aliases": {"Chlorthalidone":"WHO chlortalidone","Methyldopa":"WHO levorotatory/racemic methyldopa","Nitroglycerin":"WHO glyceryl trinitrate"},
+  "provenance": "Exact membership from the authorized 2026-11-09 plan, matched against pinned Lexicomp; no qualifier stripping. Not clinical validation.",
+  "aliases": {
+    "Olmesartan": "olmesartan medoxomil",
+    "Azilsartan medoxomil": "azilsartan medoxomil"
+  },
+  "entries": [
+    {
+      "catalog_drug_id": "lex-14f879f19d01d90c9647937e7251d4c83bba60abbbf4c9534c6c00d22881342b",
+      "name": "Captopril",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C09AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-bde6a813b6cab1a759b48e9c6b0d5cb90bcc33d27108935cf10d590af7bdf03b",
+      "name": "Enalapril",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C09AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-78c50fa41383eee71291d6296a27b1711588aac97bb56e880777644ba39001a4",
+      "name": "Lisinopril",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C09AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-5678143a954a9c524633ca08be8c6ab8ecfae1459b85a780fb92e5fd83165594",
+      "name": "Perindopril",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C09AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-957a9afd92adfbcb91f194b54efc6006930c35f141bb05d7d984cf34253bd8f8",
+      "name": "Ramipril",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C09AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-4b0151b3bc960f717ab3e3b5e45aafa68f5483a69453b4fca61bd63b81878f4d",
+      "name": "Quinapril",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C09AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-2c909140f2f50ec6b766a1c0f8d81e794f8435ec0332ddf1d38b994e6ebd34b9",
+      "name": "Benazepril",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C09AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-1c4b9879eb129fba3c9e1e88adf3fd5e52d1ae862da1bdb37e96102be6a91994",
+      "name": "Fosinopril",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C09AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-812755f92c06cd67e198abbf41a6afbabb80db9606e3e2db3218658345082f55",
+      "name": "Trandolapril",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C09AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-ef2db8aec11066c6edb5ef57ffdd491ad6ee2e218dbc6bfba333ac3999b97a5d",
+      "name": "Moexipril",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C09AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-e5eac43e2df2946f206c5193af86a14aad7a081c1c62694a08bda870b5fe2742",
+      "name": "Losartan",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C09CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-9539734f2df153bef8684b3932fae64d0f229a549e979a977c4f8f9cb0c1f437",
+      "name": "Eprosartan",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C09CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-c4ce21da0a54a8256714194fab9bbdb808cdf82a481fbc67c2db7785d00fed78",
+      "name": "Valsartan",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C09CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-be42aa66ac6fb0e0e52d595229dabac1dcbd9315e2f7e5909bd7d0e777ba01c7",
+      "name": "Irbesartan",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C09CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-65aeaf9dda5b365d81866cf9fb91197454fa4c8ef1d5efeadc0fa019c43d6213",
+      "name": "Telmisartan",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C09CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-e3ff23afcf2414947217e9db7ea4a594e13cece56118ae511b3229ad3fbb7492",
+      "name": "Azilsartan medoxomil",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C09CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-e09cb619915bc1a1694f8f36a5ecb55a6f64f343558835756daadb5ccb31e7fb",
+      "name": "Aliskiren",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C09XA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-4c57dc957b1d3103e476f4a9b5c8b5f0890285cc66bbdd872682f1b51e82bc70",
+      "name": "Acebutolol",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C07AB&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-669592addb2ff5f0c706556237c78a6b9cd37d025f1aacd8378abb3e5bf70fed",
+      "name": "Atenolol",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C07AB&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-b7ea277a4cb6fc8980e78d1c812ca3d6e59e64f2088a01197387946f3a7757a7",
+      "name": "Betaxolol",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C07AB&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-a2417211d4965ab78dd8bb284ad1fea1be56244c45fb3fe61277219e41e9c770",
+      "name": "Bisoprolol",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C07AB&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-bddcbf947dcbe134794add09268c6310506d688efbec1cece77c82acf20c74a6",
+      "name": "Esmolol",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C07AB&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-f7666d3b93278ecec721e0106821daaec7a3b476af92e89bfc63ebe55f4e44e6",
+      "name": "Metoprolol",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C07AB&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-61916606b681f357a4cd197c015ca8b1ff50e3727bd091b95e2606bad5a5138e",
+      "name": "Nebivolol",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C07AB&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-50792f186c8bc29c9d6aa3c42859b0c03408bee69dc4e4e491984e3136541ff9",
+      "name": "Carteolol",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C07AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-9f219f7e21736a24feaddf3c2a21e539e68e0168f218a76c47c4d04419b61f21",
+      "name": "Nadolol",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C07AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-46ae65eeb14c95cad57df304da9516201fc9cd2e05611919316e633d331c6787",
+      "name": "Penbutolol",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C07AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-2650de4c4934a74d06d48ccbe749e8041568e687d26ed612aa1c0ecae643bea9",
+      "name": "Pindolol",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C07AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-f801c521a6037534d76ba62a7c0cb70249cd7a796e068759a174f44d19e3a96f",
+      "name": "Propranolol",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C07AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-5114cb92cf9eafdced823c136a8dabe3a4d6891dc57e4cbec19f5d7372f2c9f0",
+      "name": "Sotalol",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C07AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-5f78b04a6e7972201aea8ac4b885d47c4fa36bffaa79af1aad084ae0fa4bf3cf",
+      "name": "Timolol",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C07AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-a3a5a34d4db3d6fde2b3255ce8a2679193b5a006ad6a6e830f54ae6b49b6224b",
+      "name": "Carvedilol",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C07AG&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-5cee6b7aa2fcb727ca0ea8df11898b779ba0d3425767b7911d6117c51adc6d77",
+      "name": "Labetalol",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C07AG&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-aba1054d29473b2023cbe91606cfa557b18f22314d5b4f42401cf7dd692ae120",
+      "name": "Amlodipine",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C08CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-5abdfe8a74e53084c1be8989cf9e5c3ba044521ba4fe0f34f05c613906227942",
+      "name": "Clevidipine",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C08CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-b46e3f876c23ccb0a5db330619afb2e5201a81c9b53c7ab823ec1b7f71f5da62",
+      "name": "Felodipine",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C08CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-ed3d5017d36451341a7fdc7760a07797b50c2281135bfd58056244b681985f2e",
+      "name": "Isradipine",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C08CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-91233fdf97ff9e995e954fff408e60298e6e7fb88fbe2a963680f2b01e4e5745",
+      "name": "Levamlodipine",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C08CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-9093963a1da05289ca5243ec3f59238d7d0f31896a2be200d39272888f7f8be8",
+      "name": "Nicardipine",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C08CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-cc990d839e8da3633d696e367d304cd727fffc0c65e415345ceead169ef76864",
+      "name": "Nifedipine",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C08CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-2adbce713c43dfddb04cbb7183c1b5e84d45a55b5dcd6473668136854e3b3723",
+      "name": "Nimodipine",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C08CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-1f1afb89d03142fcaa2195fd35f0d93fbf2e5874cbc3d29426f6ce8f393cd26b",
+      "name": "Nisoldipine",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C08CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-6db8325921ed304edc6d34c127ee0ce36befff637b7cd3b5526d82a163150f6c",
+      "name": "Verapamil",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C08DA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-3c884926a90c01150cb6c3762c4a7f16bc11897105f5a1b72abba54f65c85a96",
+      "name": "Diltiazem",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C08DB&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-9f6ab380c26a8ec8b0cce9f33f1fe9fe6b71d647b3da5b06685cf1f217df97c6",
+      "name": "Bendroflumethiazide",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C03AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-b308a047e2ab43bc7e12c64695061c0d1155dd2f8c5153cd8d84778f14fa9499",
+      "name": "Chlorothiazide",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C03AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-c587ceab445a4ceb38bab721de8e2a68487efc10c657edc8a6b0e8b38ddd003e",
+      "name": "Hydrochlorothiazide",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C03AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-e4dead7659826ca92be4d2c3bb30ee10df97a95989718c80f13b9fcfbe03c910",
+      "name": "Hydroflumethiazide",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C03AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-268d7056094135e911567e1a7a4a0b733c6d1c34e03dab22dfff6eaf0c8f6284",
+      "name": "Polythiazide",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C03AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-ad55af0ca1664ee9be24e383f49616585149d46ecf00c6360cdf6d9e4b727961",
+      "name": "Indapamide",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C03BA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-cd0d49e1dc0edbe0a7e51567f8f11b285b2faefd24cacc68a0b09db238055d91",
+      "name": "Metolazone",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C03BA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-84f2c157996b529d356abbab4eb93b33cfe00600fa565d31a82166f03180849b",
+      "name": "Chlorthalidone",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C03BA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-ac80acec7061cd2e1d9f5dbe068276770d7026114d80d1f026980b87803082af",
+      "name": "Bumetanide",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C03CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-7ae669b86fba6d9a9d8bf892aadf5855d24acc0ff4d1a4cd2fbb8b2b9cf7f554",
+      "name": "Furosemide",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C03CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-7dadbe23dd5765de84b75fbe970d8f4e079fd2e2b4760e2cc7d6b5a4be488f17",
+      "name": "Torasemide",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C03CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-f11de8adaaabd22ac5421f301b2410e80d17ffda27abb6c34af6439d07abdc51",
+      "name": "Etacrynic acid",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C03CC&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-f3f77bd2c8bd98171101447705d8b1bdce6e118408fe442f8ac03f82702e5235",
+      "name": "Eplerenone",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C03DA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-580d66f414c7c9a7d477dab4e520fcef2774fb140f903b8ea9691939770a7bf7",
+      "name": "Spironolactone",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C03DA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-25e3ad36f8fb5a698cf05c2674ab95de6ae540ac41023c28b834171494c7729e",
+      "name": "Amiloride",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C03DB&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-e4080c130ddc818ed4b220c92cbdd6ca6c656a3f38dd14302f8c08b25ab95771",
+      "name": "Triamterene",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C03DB&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-6875a5f3a5d3bd7fe0c7fac0c24c517b61d5a2414475756a3bc13de44a85c550",
+      "name": "Methyldopa",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C02AB&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-d65cbd1008a5d13c2e38c7654f10fe5d7378876cbbc80ae82b52d1862c8b6456",
+      "name": "Clonidine",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C02AC&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-38c369ce8a9e2aabe10494bc113312d9948e9839f3dcbc1bde715b9dd733c753",
+      "name": "Guanfacine",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C02AC&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-b4ea2ac89eb178310b96596a300bb1cd4d7704a26fa30412312a01a067bd8bb8",
+      "name": "Reserpine",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C02AA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-8b3025b31833c4fc23dda6c4438a5d531780d3d1a2efbb30c3e669390eca368b",
+      "name": "Guanethidine",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C02CC&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-f78a6a6e38b62a6af98e9e9ab33a90397475fb1f28f8c0b0b5f0fb1c99abc7d3",
+      "name": "Prazosin",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C02CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-5f3a1b0a19903d6f1c29ab7996c9246bcd34b5833d3132dc482cf1449d09e2f8",
+      "name": "Doxazosin",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C02CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-8b3e5cba9d45e8f48cfffac4d0ac4154054486ae1440f2353b4de047aa23bdcf",
+      "name": "Terazosin",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C02CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-53fbc2b0a7b43f91d48dadc429b50ce7f96b66810625bc9e44bd1cb993113afe",
+      "name": "Alfuzosin",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=G04CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-c0c0d10e4e07911ebe635d5d16f38ae952b146efba7fd9d3b33b1a629ea3f71d",
+      "name": "Tamsulosin",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=G04CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-a498b279b5e98dd9842cbbf6133553c740cdcb0a22deaf488739cd1ef273a8b7",
+      "name": "Silodosin",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=G04CA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-9f79995ed07140176b2143916a19d505968c6d147829f68d24c4b97323c4498a",
+      "name": "Hydralazine",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C02DB&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-70be10e6d87ae8aced58fe31e239a46234059262172f339d1a63e837dbcb80e4",
+      "name": "Minoxidil",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C02DC&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-c0daf2a7f0e5ebe09840992ada3b6576941203630ea435321695dda324a6e9b5",
+      "name": "Diazoxide",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C02DA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-1286b30dd0bc3c02f32e4f1be637acb9b99f839e4e244c04d3f605204068f70f",
+      "name": "Nitroprusside",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C02DD&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-d24de352bacf06fde7e3d7cfc373e9b8dd4081b6ed9aea93b6ea80f698f1033e",
+      "name": "Isosorbide dinitrate",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C01DA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-b77321a9fc1f281e7aa2c53bdd51d8ab967d5536ce54ba148ebeeb688353a80e",
+      "name": "Isosorbide mononitrate",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C01DA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-32cc576002135ea107522224cc3c4b67ecb631d6364d0e74015ced9f7910b144",
+      "name": "Nitroglycerin",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=C01DA&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-2af14e3dcf910b24565bb9191af44bd2eedfb6415e1d1622845a8714ec06f67f",
+      "name": "Avanafil",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=G04BE&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-b6bbe058481c83f9067ab47bd853f1115be62aa9e42aff3e6f3d1231c38922b6",
+      "name": "Sildenafil",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=G04BE&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-a3ec9f9c5217a876c61e36d0f3325e97e94f9799f725ae4297f94133e0eb14fa",
+      "name": "Tadalafil",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=G04BE&showdescription=yes"
+    },
+    {
+      "catalog_drug_id": "lex-ca8343fca14eacd63a30ff0b747376ba262eb9392c9fd2a8e49a87baa465c482",
+      "name": "Vardenafil",
+      "source": "https://atcddd.fhi.no/atc_ddd_index/?code=G04BE&showdescription=yes"
+    }
+  ],
+  "absent_catalog_names": [
+    "Olmesartan"
+  ]
+}

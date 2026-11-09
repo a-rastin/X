@@ -529,6 +529,7 @@ def sign_encounter(
         raise contracts.ContractError(409, "ALREADY_SIGNED", "Encounter is already signed.")
     encounters_service.require_draft_lifecycle(encounter)
     encounters_service.require_author(encounter, author)
+    encounters_service.require_legacy_workflow(encounter)
     if int(encounter["revision"]) != int(expected_encounter_revision):
         raise contracts.ContractError(
             412,

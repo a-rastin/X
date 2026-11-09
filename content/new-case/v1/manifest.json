@@ -1,0 +1,22 @@
+{
+  "workflow_version": "new-case-v1",
+  "factor_mapping_version": "new-case-factors-v1",
+  "recommendation_rule_version": "new-case-rules-v1",
+  "files": {
+    "labs.json": "2b68c86fcede0f9113f5ce50f31e39083c7b108618235ae36c49842d52b8dea1",
+    "blood-pressure-lowering-drugs.json": "17de590307638e6aef35b6e50278dedaf697dc8b979d26a8f75599a19ba8d92e",
+    "antipsychotic-formulations.json": "85fe3edef55f46770ea505f1f1958b6e8917128af487170ee5b97ac237545e50",
+    "oral-antipsychotic.xml": "f2f68f970b2fd13ec9ec14bc7d6163dbf859c43d2ba379b7543563bce530b18a",
+    "oral-model-manifest.json": "4d4694424f817d9a439ef797c6e22a73b1045064a35205e70c5ca81975860656"
+  },
+  "lexicomp_version": "ddi-2adbb775258d",
+  "lexicomp_sha256": "31ce2fb78b0bbf364786e25b2c5f26ccca29ea50657f7faba02bb9fd18828255",
+  "assessment_versions": {
+    "diagnosis": "v1",
+    "panss": "v1",
+    "cssrs": "v2"
+  },
+  "authorization": "2026-11-09 user-requested experimental integration; not clinical validation",
+  "lexicomp_content_hash": "2adbb775258d83c222bfbba1c6958723655abf746465282b014dceb417645c36",
+  "lexicomp_parser_version": "lexicomp-csv/1"
+}

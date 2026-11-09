@@ -84,6 +84,7 @@ SUPPORTED_APP_SCHEMAS = frozenset(
         "0027",
         "0028",
         "0029",
+        "0030",
     }
 )
 
@@ -1101,7 +1102,7 @@ def test_new_backup_restores_acknowledged_and_open_accounts(clean_registry, monk
     admin, csrf = _admin_client(clean_registry, monkeypatch)
     blob, _ = _make_valid_blob(admin, csrf)
     job = _commit_blob(admin, csrf, blob)
-    assert job["app_schema_version"] == "0029"
+    assert job["app_schema_version"] == "0030"
 
     assert _warning_after_sign_in(clean_registry, monkeypatch, "dr_ack_keep") == {
         "research_warning": None,

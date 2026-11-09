@@ -152,6 +152,7 @@ SUPPORTED_APP_SCHEMA_VERSIONS = frozenset(
         "0027",
         "0028",
         "0029",
+        "0030",
     }
 )
 
@@ -491,18 +492,18 @@ def _check_provider_approvals(tables: dict[str, Any], app_schema: str) -> str | 
         if not isinstance(row, dict):
             return "Provider endpoint approval row is malformed."
         for field in fields:
-            if app_schema in ("0024", "0025", "0026", "0027", "0028", "0029"):
+            if app_schema in ("0024", "0025", "0026", "0027", "0028", "0029", "0030"):
                 if type(row.get(field)) is not bool:
                     return "Provider endpoint approvals must be explicit JSON booleans."
             elif field in row and row[field] is not False:
                 return "Legacy provider archives cannot grant endpoint approvals."
         mode = row.get("capability_mode")
-        if app_schema in ("0027", "0028", "0029") and mode not in ("schema", "json"):
+        if app_schema in ("0027", "0028", "0029", "0030") and mode not in ("schema", "json"):
             return "Provider capability_mode must be schema or json."
-        if app_schema not in ("0027", "0028", "0029") and mode is not None:
+        if app_schema not in ("0027", "0028", "0029", "0030") and mode is not None:
             return "Legacy provider archives cannot set capability_mode."
         detected = row.get("detected_capability_mode")
-        if app_schema in ("0028", "0029"):
+        if app_schema in ("0028", "0029", "0030"):
             if "detected_capability_mode" not in row or detected not in (None, "schema", "json"):
                 return "Provider detected_capability_mode must be null, schema or json."
         elif detected is not None:
@@ -530,7 +531,7 @@ def _check_research_warning_acknowledgements(tables: dict[str, Any], app_schema:
     for row in tables.get("users") or []:
         if not isinstance(row, dict):
             return "User rows are malformed."
-        if app_schema == "0029":
+        if app_schema in ("0029", "0030"):
             value = row.get(field)
             if field not in row or (value is not None and not isinstance(value, str)):
                 return "User research-warning acknowledgement must be null or text."
@@ -600,6 +601,101 @@ def _check_patient_shape(tables: dict[str, Any]) -> str | None:
         if identifier in seen:
             return "database content malformed: duplicate patient identifier"
         seen.add(identifier)
+    return None
+
+
+def _check_new_case_state(tables: dict[str, Any], app_schema: str) -> str | None:
+    from x_insight.cases import new_case
+
+    patients = {row.get("id"): row for row in tables.get("patients", []) if isinstance(row, dict)}
+    releases = {
+        row.get("id"): row
+        for row in tables.get("ddi_dataset_releases", [])
+        if isinstance(row, dict)
+    }
+    models = {
+        row.get("id"): row
+        for row in tables.get("model_network_versions", [])
+        if isinstance(row, dict)
+    }
+    for encounter in tables.get("encounters", []):
+        if not isinstance(encounter, dict):
+            return "Encounter row is malformed."
+        workflow = encounter.get("workflow_version", "legacy-v1")
+        if app_schema == "0030" and "workflow_version" not in encounter:
+            return "New-case workflow identity is missing."
+        if workflow not in ("legacy-v1", new_case.WORKFLOW):
+            return "Unknown encounter workflow identity."
+        draft = encounter.get("draft_data") or {}
+        if not isinstance(draft, dict):
+            return "Encounter draft must be an object."
+        if workflow == "legacy-v1":
+            if "new_case" in draft:
+                return "Legacy encounters cannot carry new-case state."
+            continue
+        if app_schema != "0030" or encounter.get("kind") != "registration":
+            return "Invalid new-case workflow assignment."
+        try:
+            normalized = new_case.structural_draft(draft)
+            raw = normalized["new_case"]
+            if (
+                not isinstance(encounter.get("created_at"), str)
+                or raw["registration_year"] != contracts.parse_utc(encounter["created_at"]).year
+            ):
+                return "New-case registration year differs from creation year."
+            patient = patients[encounter["patient_id"]]
+            new_case.age_at_registration(patient.get("birth_year"), raw["registration_year"])
+            content = new_case.clinical_content()
+            pins = raw["content_pins"]
+            model = models[pins["model_version_id"]]
+            release = releases[pins["lexicomp_release_id"]]
+            files = content["manifest"]["files"]
+            if (
+                pins["workflow_manifest_hash"] != content["hash"]
+                or pins["model_sha256"] != files["oral-antipsychotic.xml"]
+                or model["source_hash"] != pins["model_sha256"]
+                or release["version"] != pins["lexicomp_version"]
+                or release["content_hash"] != pins["lexicomp_content_hash"]
+                or pins["lexicomp_content_hash"] != content["manifest"]["lexicomp_content_hash"]
+                or release["terminology_checksum"] != content["manifest"]["lexicomp_sha256"]
+                or pins["lexicomp_version"] != content["manifest"]["lexicomp_version"]
+                or pins["assessment_versions"] != content["manifest"]["assessment_versions"]
+                or pins["lab_content_hash"] != files["labs.json"]
+                or pins["bp_classification_hash"] != files["blood-pressure-lowering-drugs.json"]
+                or pins["formulation_content_hash"] != files["antipsychotic-formulations.json"]
+                or normalized["medications"]["selection_dataset_version"]
+                != pins["lexicomp_version"]
+            ):
+                return "New-case content pins do not match immutable content."
+            known_ids = {
+                row["catalog_drug_id"]
+                for row in tables.get("ddi_concepts", [])
+                if row.get("release_id") == pins["lexicomp_release_id"]
+            }
+            if any(
+                entry["catalog_drug_id"] not in known_ids
+                for entry in normalized["medications"]["entries"]
+            ):
+                return "New-case medication selection is outside its pinned release."
+            for answer in (*raw["conditions"].values(), raw["considerations"]["orthostatic_risk"]):
+                if answer["manual"] is not None:
+                    if answer["manual_actor_id"] != encounter["author_id"]:
+                        return "New-case override actor differs from its author."
+                    if not isinstance(answer["manual_recorded_at"], str):
+                        return "Manual override timestamp is missing."
+                    contracts.parse_utc(answer["manual_recorded_at"])
+                elif (
+                    answer["manual_actor_id"] is not None
+                    or answer["manual_recorded_at"] is not None
+                ):
+                    return "Automatic answers cannot carry manual attribution."
+            assertion = normalized["diagnosis"].get("new_case_assertion")
+            if assertion is not None and not new_case.assertion_valid(
+                assertion, normalized["diagnosis"]["answers"], encounter["author_id"]
+            ):
+                return "New-case diagnosis assertion is invalid."
+        except (KeyError, TypeError, ValueError, contracts.ContractError):
+            return "New-case draft or content identity is invalid."
     return None
 
 
@@ -775,14 +871,24 @@ def _check_model_artifacts(tables: dict[str, Any], network_blobs: dict[str, byte
         row = by_id.get(version_id)
         if row is None:
             return f"model consistency broken: {name} has no staged version row"
-        try:
-            document = validation_module.validate(raw)
-        except validation_module.XmlValidationError as exc:
-            return f"model consistency broken: {name} unsafe/malformed ({exc.code})"
-        if document.source_sha256 != hashlib.sha256(raw).hexdigest():
-            return f"model consistency broken: {name} hash drifted"
+        source_hash = hashlib.sha256(raw).hexdigest()
+        trusted_oral_hash = "f2f68f970b2fd13ec9ec14bc7d6163dbf859c43d2ba379b7543563bce530b18a"
+        if source_hash == trusted_oral_hash:
+            from x_insight.models.oral_antipsychotic import load_model
+
+            try:
+                load_model(raw, trusted_oral_hash)
+            except ValueError:
+                return f"model consistency broken: {name} invalid trusted oral model"
+        else:
+            try:
+                document = validation_module.validate(raw)
+            except validation_module.XmlValidationError as exc:
+                return f"model consistency broken: {name} unsafe/malformed ({exc.code})"
+            if document.source_sha256 != source_hash:
+                return f"model consistency broken: {name} hash drifted"
         staged_hash = str(row.get("source_hash") or "")
-        if staged_hash != document.source_sha256:
+        if staged_hash != source_hash:
             return f"model consistency broken: {name} source_hash differs from staged row"
         staged_bytes = _decode_bytes_cell(row.get("source_bytes"))
         if staged_bytes is None or staged_bytes != raw:
@@ -1017,6 +1123,9 @@ def validate_archive_bytes(blob: bytes) -> dict[str, Any]:
         if problem is not None:
             return {"ok": False, "errors": [problem], "warnings": []}
         problem = _check_patient_shape(db_tables)
+        if problem is not None:
+            return {"ok": False, "errors": [problem], "warnings": []}
+        problem = _check_new_case_state(db_tables, str(app_schema))
         if problem is not None:
             return {"ok": False, "errors": [problem], "warnings": []}
         problem = _check_references(db_tables)
@@ -1872,6 +1981,9 @@ def commit_restore(
         )
 
     staged_tables = _load_staged_tables(job_id)
+    problem = _check_new_case_state(staged_tables, str(job.get("app_schema_version")))
+    if problem is not None:
+        raise contracts.ContractError(409, "RESTORE_NEW_CASE_INVALID", problem)
     problem = _check_provider_approvals(staged_tables, str(job.get("app_schema_version")))
     if problem is not None:
         raise contracts.ContractError(409, "RESTORE_PROVIDER_APPROVAL_INVALID", problem)

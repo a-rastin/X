@@ -1,5 +1,8 @@
 # Proposal generation
 
+This page describes the legacy workflow. For `new-case-v1` raw state, validation,
+diagnosis and preview contracts, see [New-case state](new-case-state.md).
+
 Step 7 checks the saved draft's proposal readiness before creating a generation
 batch. Core History completion covers only the applicable fields from the seven-field
 inventory below; it does not establish that the proposal-context answers are ready.

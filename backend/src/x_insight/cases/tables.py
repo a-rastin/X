@@ -49,7 +49,8 @@ patients = Table(
     Column("revision", Integer, nullable=False, default=1),
     CheckConstraint("identifier ~ '^[0-9]{10}$'", name="ck_patients_identifier"),
     CheckConstraint("sex IN ('M', 'F')", name="ck_patients_sex"),
-    CheckConstraint("age BETWEEN 18 AND 99", name="ck_patients_age"),
+    Column("birth_year", Integer, nullable=True),
+    CheckConstraint("age BETWEEN 18 AND 100", name="ck_patients_age"),
     CheckConstraint(
         "clinical_status IN ('first_time', 'established')",
         name="ck_patients_clinical_status",
@@ -67,6 +68,7 @@ encounters = Table(
         nullable=False,
     ),
     Column("kind", Text, nullable=False, default="registration"),
+    Column("workflow_version", Text, nullable=False, server_default="legacy-v1"),
     Column(
         "author_id",
         PG_UUID(as_uuid=True),

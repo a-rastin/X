@@ -107,9 +107,10 @@ def validate_registration_payload(
     given_name: Any,
     family_name: Any,
     sex: Any,
-    age: Any,
+    age: Any = None,
     clinical_status: Any,
     phone: Any = None,
+    birth_year: Any = None,
 ) -> dict[str, Any]:
     """Validate + normalize one registration body (422 with field_errors).
 
@@ -119,6 +120,23 @@ def validate_registration_payload(
     """
     errors: dict[str, list[str]] = {}
     normalized: dict[str, Any] = {}
+    if birth_year is not None:
+        from x_insight.cases.new_case_demographics import age_at_registration
+
+        try:
+            computed_age = age_at_registration(birth_year, contracts.utcnow().year)
+        except ValueError as exc:
+            raise contracts.ContractError(
+                422, "VALIDATION_FAILED", str(exc), {"birth_year": [str(exc)]}
+            ) from exc
+        if clinical_status != "first_time" or age is not None:
+            raise contracts.ContractError(
+                422,
+                "VALIDATION_FAILED",
+                "Birth-year registration requires New case without a supplied age.",
+            )
+        normalized["birth_year"] = birth_year
+        normalized["age"] = computed_age
     try:
         normalized["identifier"] = validate_identifier(identifier)
     except contracts.ContractError as exc:
@@ -137,10 +155,11 @@ def validate_registration_payload(
         normalized["sex"] = sex
     # Bool is an int subclass but never a valid age; floats/strings are
     # rejected even when they look whole (30.0 is a decimal age, "30" is text).
-    if isinstance(age, bool) or not isinstance(age, int) or not 18 <= age <= 99:
-        errors["age"] = ["Must be an integer 18-99."]
-    else:
-        normalized["age"] = age
+    if birth_year is None:
+        if isinstance(age, bool) or not isinstance(age, int) or not 18 <= age <= 99:
+            errors["age"] = ["Must be an integer 18-99."]
+        else:
+            normalized["age"] = age
     if clinical_status not in CLINICAL_STATUSES:
         errors["clinical_status"] = ["Must be 'first_time' or 'established'."]
     else:
@@ -180,6 +199,7 @@ def safe_patient(row: dict[str, Any]) -> dict[str, Any]:
         "family_name": row["family_name"],
         "sex": row["sex"],
         "age": int(row["age"]),
+        "birth_year": row.get("birth_year"),
         "clinical_status": row["clinical_status"],
         "phone": row["phone"],
         "archived": bool(row["archived"]),
@@ -195,6 +215,7 @@ def safe_encounter(row: dict[str, Any]) -> dict[str, Any]:
         "id": str(row["id"]),
         "patient_id": str(row["patient_id"]),
         "kind": row["kind"],
+        "workflow_version": row.get("workflow_version", "legacy-v1"),
         "author_id": str(row["author_id"]),
         "lifecycle": row["lifecycle"],
         "revision": int(row["revision"]),
@@ -241,6 +262,16 @@ def create_patient_with_draft(
     moment = contracts.utcnow()
     patient_id = uuid.uuid4()
     encounter_id = uuid.uuid4()
+    workflow = "legacy-v1"
+    initial_draft: dict[str, Any] = {}
+    if fields.get("birth_year") is not None:
+        from x_insight.cases import new_case
+
+        workflow = new_case.WORKFLOW
+        initial_draft = new_case.fresh_draft(
+            moment.year, new_case.resolve_pins(session, new_case.clinical_content())
+        )
+        fields = {**fields, "age": new_case.age_at_registration(fields["birth_year"], moment.year)}
     try:
         session.execute(
             insert(tables.patients).values(
@@ -250,6 +281,7 @@ def create_patient_with_draft(
                 family_name=fields["family_name"],
                 sex=fields["sex"],
                 age=fields["age"],
+                birth_year=fields.get("birth_year"),
                 clinical_status=fields["clinical_status"],
                 phone=fields["phone"],
                 archived=False,
@@ -263,6 +295,8 @@ def create_patient_with_draft(
                 id=encounter_id,
                 patient_id=patient_id,
                 kind=REGISTRATION_KIND,
+                workflow_version=workflow,
+                draft_data=initial_draft,
                 author_id=author["id"],
                 lifecycle=DRAFT_LIFECYCLE,
                 revision=1,
@@ -616,6 +650,13 @@ def update_patient_demographics(
             "The patient changed. Reload and reconcile your edits.",
         )
     normalized = validate_patch_fields(fields)
+    if patient.get("birth_year") is not None and "age" in normalized:
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "New-case age is computed from its birth year.",
+            {"age": ["Cannot override computed age."]},
+        )
     moment = contracts.utcnow()
     session.execute(
         update(tables.patients)

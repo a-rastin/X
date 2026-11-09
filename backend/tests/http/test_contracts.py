@@ -258,7 +258,7 @@ def test_ready_ok_against_real_database(
     payload = response.json()
     assert payload["status"] == "ready"
     assert payload["service"] == "x-insight"
-    assert payload["schema_version"] == db_module.EXPECTED_SCHEMA_VERSION == "0029"
+    assert payload["schema_version"] == db_module.EXPECTED_SCHEMA_VERSION == "0030"
     moment = contracts.parse_utc(payload["checked_at"])
     assert moment.tzinfo is not None
     assert response.headers["x-request-id"] == sent

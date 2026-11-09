@@ -217,6 +217,10 @@ def compute_diagnosis_state(draft_data: Any, *, author_id: str, revision: int) -
 
 
 def _with_diagnosis_section(draft_data: dict[str, Any], section: dict[str, Any]) -> dict[str, Any]:
+    if "new_case" in draft_data:
+        raise contracts.ContractError(
+            409, "WRONG_WORKFLOW", "Use the new-case definite-diagnosis assertion command."
+        )
     updated = dict(draft_data)
     updated[DIAGNOSIS_KEY] = section
     return updated
@@ -232,6 +236,14 @@ def read_diagnosis_for_author(
         author_id=str(encounter["author_id"]),
         revision=int(encounter["revision"]),
     )
+    if encounter.get("workflow_version") == "new-case-v1":
+        from x_insight.cases import new_case
+
+        preview = new_case.preview(session, encounter_id, user)
+        state["can_proceed"] = preview["can_complete_step"]["diagnosis"]
+        state["requires_acknowledgment"] = False
+        state["proceed_via"] = "new_case_diagnosis" if state["can_proceed"] else None
+        state["new_case_assertion"] = encounter["draft_data"]["diagnosis"].get("new_case_assertion")
     return encounter, state
 
 

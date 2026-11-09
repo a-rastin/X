@@ -217,6 +217,8 @@ def _diagnosis_response(
     }
     if server_timestamp is not None:
         content["server_timestamp"] = server_timestamp
+    if "new_case_assertion" in state:
+        content["new_case_assertion"] = state["new_case_assertion"]
     response = JSONResponse(status_code=status_code, content=content)
     response.headers["ETag"] = contracts.format_etag(int(content["revision"]))
     return response

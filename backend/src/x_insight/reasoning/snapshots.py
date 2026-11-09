@@ -945,6 +945,7 @@ def start_generation_batch(
     encounter = dict(row)
     encounters_service.require_draft_lifecycle(encounter)
     encounters_service.require_author(encounter, author)
+    encounters_service.require_legacy_workflow(encounter)
     # S51 §1+§4: fence archived (409, no leak) + inactive author (403) inside
     # the tx; serialize with archive/demographics via patient lock.
     from x_insight.identity import service as _identity

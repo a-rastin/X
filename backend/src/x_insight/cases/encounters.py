@@ -480,6 +480,7 @@ def safe_encounter_reference(row: dict[str, Any]) -> dict[str, Any]:
         "id": str(row["id"]),
         "patient_id": str(row["patient_id"]),
         "kind": row["kind"],
+        "workflow_version": row.get("workflow_version", "legacy-v1"),
         "author_id": str(row["author_id"]),
         "lifecycle": row["lifecycle"],
         "revision": int(row["revision"]),
@@ -505,6 +506,11 @@ def safe_draft_for_author(row: dict[str, Any]) -> dict[str, Any]:
     """Author-only draft shape: reference fields plus the private body."""
     reference = safe_encounter_reference(row)
     body = row.get("draft_data")
+    if row.get("workflow_version") == "new-case-v1":
+        from copy import deepcopy
+
+        reference["draft_data"] = deepcopy(body)
+        return reference
     from x_insight.assessments import cssrs as cssrs_service
     from x_insight.cases import history as history_service
 
@@ -578,6 +584,13 @@ def require_author(encounter: dict[str, Any], user: dict[str, Any]) -> dict[str,
             403, "FORBIDDEN", "Only the draft author can access this draft."
         )
     return encounter
+
+
+def require_legacy_workflow(encounter: dict[str, Any]) -> None:
+    if encounter.get("workflow_version") == "new-case-v1":
+        raise contracts.ContractError(
+            409, "WRONG_WORKFLOW", "Use the deterministic new-case endpoints for this encounter."
+        )
 
 
 def read_draft_for_author(
@@ -718,6 +731,24 @@ def create_open_draft(
         )
     else:
         initial_body = {}
+    workflow = "legacy-v1"
+    if (
+        validated_kind == "registration"
+        and patient_row.get("birth_year") is not None
+        and patient_row.get("clinical_status") == "first_time"
+    ):
+        from x_insight.cases import new_case
+
+        workflow = new_case.WORKFLOW
+        try:
+            new_case.age_at_registration(patient_row["birth_year"], moment.year)
+        except ValueError as exc:
+            raise contracts.ContractError(
+                422, "VALIDATION_FAILED", str(exc), {"birth_year": [str(exc)]}
+            ) from exc
+        initial_body = new_case.fresh_draft(
+            moment.year, new_case.resolve_pins(session, new_case.clinical_content())
+        )
     from x_insight.cases import history as history_service
     from x_insight.cases.signing import established_clozapine_eligible
 
@@ -738,6 +769,7 @@ def create_open_draft(
                 id=encounter_id,
                 patient_id=patient_id,
                 kind=validated_kind,
+                workflow_version=workflow,
                 author_id=author["id"],
                 lifecycle=DRAFT_LIFECYCLE,
                 draft_data=initial_body,
@@ -869,9 +901,25 @@ def patch_draft(
             "STALE_REVISION",
             "The draft changed. Reload and reconcile your edits.",
         )
-    if encounter.get("kind") == "registration" and isinstance(draft_data, dict):
+    is_new_case = encounter.get("workflow_version") == "new-case-v1"
+    if is_new_case and isinstance(draft_data, dict):
+        from x_insight.cases import new_case
+
+        validate_draft_data(draft_data)
+        draft_data = new_case.prepare_autosave(
+            encounter["draft_data"],
+            draft_data,
+            actor_id=str(author["id"]),
+            recorded_at=contracts.serialize_utc(contracts.utcnow()),
+        )
+        new_case.validate_pins(session, draft_data, new_case.clinical_content())
+    elif isinstance(draft_data, dict) and "new_case" in draft_data:
+        raise contracts.ContractError(
+            422, "WRONG_WORKFLOW", "Legacy encounters cannot acquire new-case state."
+        )
+    if not is_new_case and encounter.get("kind") == "registration" and isinstance(draft_data, dict):
         draft_data = registration_effects_for_save(encounter.get("draft_data"), draft_data)
-    if isinstance(draft_data, dict):
+    if not is_new_case and isinstance(draft_data, dict):
         from x_insight.assessments import cssrs as cssrs_service
         from x_insight.cases import history as history_service
         from x_insight.cases import medications as medications_service

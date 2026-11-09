@@ -1,0 +1,227 @@
+{
+  "version": "new-case-formulations-v1",
+  "authorization": "Inventory transcribed from the authorized 2026-11-09 plan; not an assertion of local market availability.",
+  "sources": [
+    "https://cpd.mhra.gov.uk/antipsychotics/CON155606_35/",
+    "https://manual.jointcommission.org/releases/TJC2025B/AppendixCTJC.html"
+  ],
+  "entries": [
+    {
+      "id": "oral:chlorpromazine",
+      "catalog_drug_id": "lex-2ce34460c7f59e1a6538549ce3f973a7af40d0a672bdb06dbe47fe708ad712fc",
+      "name": "Chlorpromazine",
+      "group": "oral"
+    },
+    {
+      "id": "oral:fluphenazine",
+      "catalog_drug_id": "lex-d4f6f2e0f697ce6b743ce673bfe4acec54554767d4997a5df1f5585470813a71",
+      "name": "Fluphenazine",
+      "group": "oral"
+    },
+    {
+      "id": "oral:haloperidol",
+      "catalog_drug_id": "lex-4b2e5d23df6206100e42662ef3691cd144015ef93b4bef73a41e287c94ca1528",
+      "name": "Haloperidol",
+      "group": "oral"
+    },
+    {
+      "id": "oral:loxapine",
+      "catalog_drug_id": "lex-e69e7e62882ab342cb2e22720be190b54d7cb0acc16653da49a9288690a5907c",
+      "name": "Loxapine",
+      "group": "oral"
+    },
+    {
+      "id": "oral:molindone",
+      "catalog_drug_id": "lex-102191d02e34891060c7e8d676695a8e7cd2013b33e533d7fb969f9ed8d16118",
+      "name": "Molindone",
+      "group": "oral"
+    },
+    {
+      "id": "oral:perphenazine",
+      "catalog_drug_id": "lex-695d9e7197c8c4fee824867c045004c245b736753909b3ca4a75385de09c57f1",
+      "name": "Perphenazine",
+      "group": "oral"
+    },
+    {
+      "id": "oral:pimozide",
+      "catalog_drug_id": "lex-d85d8a8655bb93d67b189117438dc2ae19054e10aa5f30c1e60dbb1ba8fc79cb",
+      "name": "Pimozide",
+      "group": "oral"
+    },
+    {
+      "id": "oral:thioridazine",
+      "catalog_drug_id": "lex-d073be0c7cbbbaad8ad73e3d174907174f65a49f2d04c95d39c00ba2fbd26020",
+      "name": "Thioridazine",
+      "group": "oral"
+    },
+    {
+      "id": "oral:thiothixene",
+      "catalog_drug_id": "lex-a49f227895e01a2d86ea53ff81bec07f2b76c58183a3556a18b7b243b20cd03b",
+      "name": "Thiothixene",
+      "group": "oral"
+    },
+    {
+      "id": "oral:trifluoperazine",
+      "catalog_drug_id": "lex-8a9648941c825a4c3b36b687bb239b05116affeb9ec3cb0397f46326bf394131",
+      "name": "Trifluoperazine",
+      "group": "oral"
+    },
+    {
+      "id": "oral:aripiprazole",
+      "catalog_drug_id": "lex-3c6a160033d0b7432efb3efedce958c53a8f816c5ae0f70ce9e81d637087a7ef",
+      "name": "Aripiprazole",
+      "group": "oral"
+    },
+    {
+      "id": "oral:asenapine",
+      "catalog_drug_id": "lex-313f2131aea8787b243a024590dfd82c9b464081583398305357aa1e7c4c747c",
+      "name": "Asenapine",
+      "group": "oral"
+    },
+    {
+      "id": "oral:brexpiprazole",
+      "catalog_drug_id": "lex-0b5279b99ed88c966f0885fc4c554ff428f744eb39c4e5777ea095cbaed6a691",
+      "name": "Brexpiprazole",
+      "group": "oral"
+    },
+    {
+      "id": "oral:cariprazine",
+      "catalog_drug_id": "lex-ada9cdb5d50fd342ed2b69655a72f49d7c700428a2ae003b87608770274b5c62",
+      "name": "Cariprazine",
+      "group": "oral"
+    },
+    {
+      "id": "oral:clozapine",
+      "catalog_drug_id": "lex-a670530567194409c154c89f76df0a614f51f0d45013c2bda38fbef204f78e6f",
+      "name": "Clozapine",
+      "group": "oral"
+    },
+    {
+      "id": "oral:iloperidone",
+      "catalog_drug_id": "lex-22a358316bc589a74c26d4d11f8d036804c3969196b79818058ea69f1c32c071",
+      "name": "Iloperidone",
+      "group": "oral"
+    },
+    {
+      "id": "oral:lurasidone",
+      "catalog_drug_id": "lex-58df414aabb4d52f2e4673ccf9e3a4c9273fc12fe95a4b5d89806e0eefe25000",
+      "name": "Lurasidone",
+      "group": "oral"
+    },
+    {
+      "id": "oral:olanzapine",
+      "catalog_drug_id": "lex-1468a294ab0dcd6bd0e97fd9a6ef177cff668048a0adb6385fc8d9ef0a7195da",
+      "name": "Olanzapine",
+      "group": "oral"
+    },
+    {
+      "id": "oral:paliperidone",
+      "catalog_drug_id": "lex-6b7532577609ce6faad8a4efd4283046822e3107f7a83f0ba12f14224342c8b7",
+      "name": "Paliperidone",
+      "group": "oral"
+    },
+    {
+      "id": "oral:quetiapine",
+      "catalog_drug_id": "lex-8398e180a8f1f838e3e28562d4e7dadc9aa03e1d33fdad9fde6b4ebf5b2a0a4a",
+      "name": "Quetiapine",
+      "group": "oral"
+    },
+    {
+      "id": "oral:risperidone",
+      "catalog_drug_id": "lex-fcf9a0f0f1a11ef6e124660b37fec6cda31e0963d625e294da693db842fb5a9d",
+      "name": "Risperidone",
+      "group": "oral"
+    },
+    {
+      "id": "oral:ziprasidone",
+      "catalog_drug_id": "lex-281918cfed8a743ef4d418a06c27519a7031fe2b91f7bfdd18255ec9c6f5c170",
+      "name": "Ziprasidone",
+      "group": "oral"
+    },
+    {
+      "id": "lai:aripiprazole",
+      "name": "aripiprazole",
+      "group": "lai"
+    },
+    {
+      "id": "lai:fluphenazine",
+      "name": "fluphenazine",
+      "group": "lai"
+    },
+    {
+      "id": "lai:haloperidol",
+      "name": "haloperidol",
+      "group": "lai"
+    },
+    {
+      "id": "lai:olanzapine",
+      "name": "olanzapine",
+      "group": "lai"
+    },
+    {
+      "id": "lai:paliperidone",
+      "name": "paliperidone",
+      "group": "lai"
+    },
+    {
+      "id": "lai:risperidone",
+      "name": "risperidone",
+      "group": "lai"
+    },
+    {
+      "id": "lai:flupentixol",
+      "name": "flupentixol",
+      "group": "lai"
+    },
+    {
+      "id": "lai:zuclopenthixol",
+      "name": "zuclopenthixol",
+      "group": "lai"
+    },
+    {
+      "id": "lai:pipotiazine-palmitate",
+      "name": "pipotiazine-palmitate",
+      "group": "lai"
+    },
+    {
+      "id": "short-injection:aripiprazole",
+      "name": "aripiprazole",
+      "group": "short-injection"
+    },
+    {
+      "id": "short-injection:chlorpromazine",
+      "name": "chlorpromazine",
+      "group": "short-injection"
+    },
+    {
+      "id": "short-injection:fluphenazine",
+      "name": "fluphenazine",
+      "group": "short-injection"
+    },
+    {
+      "id": "short-injection:haloperidol",
+      "name": "haloperidol",
+      "group": "short-injection"
+    },
+    {
+      "id": "short-injection:olanzapine",
+      "name": "olanzapine",
+      "group": "short-injection"
+    },
+    {
+      "id": "short-injection:prochlorperazine",
+      "name": "prochlorperazine",
+      "group": "short-injection"
+    },
+    {
+      "id": "short-injection:ziprasidone",
+      "name": "ziprasidone",
+      "group": "short-injection"
+    },
+    {
+      "id": "intermediate-injection:zuclopenthixol-acetate",
+      "name": "zuclopenthixol-acetate",
+      "group": "intermediate-injection"
+    }
+  ]
+}

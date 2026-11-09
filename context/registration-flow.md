@@ -147,7 +147,7 @@ historical snapshot rewrite was established.
 **Source:** product instruction, 2026-10-23
 **Revisit when:** the live C-SSRS item set changes
 
-Registration step 4 and the follow-up C-SSRS section collect five recent
+Legacy registration step 4 and the follow-up C-SSRS section collect five recent
 ideation items (`css_i1_recent` through `css_i5_recent`). Each answer is Yes,
 No, or Unknown, and the default is Unknown. Lifetime ideation, intensity,
 behavior, and lethality are not collected.
@@ -156,3 +156,46 @@ behavior, and lethality are not collected.
 for the cut was stated, so that reason is unknown.
 
 **Alternatives:** unknown — no competing clinical alternative was stated.
+
+## New-case identity and defaults do not rewrite legacy evidence
+
+**Id:** cf51258c-59c4-4f6f-a0c0-d5fb26acb97d
+**Type:** decision
+**Status:** active
+**Evidence:** confirmed
+**Revisit when:** a migration of legacy clinical evidence is explicitly authorized
+
+The versioned new-case workflow starts only from explicit birth-year New case
+registration. Existing encounters stay legacy; no birth year is reverse-calculated
+from stored age, and no legacy Unknown answer becomes No. The new-case registration
+year and content identities are frozen independently of later patient status.
+New-case C-SSRS defaults to five No answers under the requested new contract;
+the legacy Unknown defaults described above are not changed.
+
+**Reason:** the November 9 new-case requirements distinguish a new workflow's
+deliberate defaults from historical observations. Retrofitting them would fabricate
+evidence and make saved results depend on mutable content or calendar year.
+
+**Rejected alternative:** branch existing drafts on the patient's current status,
+or derive birth year from age. Both lose the original registration identity.
+
+## Source suggestions do not erase explicit clinical overrides
+
+**Id:** 835151e2-e7ed-472e-8268-58c9e420d266
+**Type:** decision
+**Status:** active
+**Evidence:** confirmed
+**Revisit when:** override or recommendation semantics change
+
+New-case manual Yes and No remain independently attributed even after source
+measurements or selected medications change. Automatic mode is a separate explicit
+choice. The valproate-specific contraception recommendation and the independent
+childbearing-potential recommendation remain separate outputs.
+
+**Reason:** the requested new-case contract gives the physician control over an
+effective answer while preserving its automatic suggestion and provenance.
+Merging the contraception outputs would suppress an independently applicable
+recommendation when only one of its conditions changes.
+
+**Rejected alternative:** overwrite a manual answer on each recomputation, or use
+one shared contraception flag. Both collapse explicitly distinct clinical inputs.

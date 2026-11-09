@@ -65,7 +65,7 @@
 
 ## R
 
-- [registration-flow.md](registration-flow.md) — Wizard entry, follow-up-only adverse effects, working-note retention, historical page-note compatibility, and the recent-ideation-only C-SSRS step.
+- [registration-flow.md](registration-flow.md) — Wizard entry, legacy compatibility, recent-ideation C-SSRS, frozen new-case identity and persistent clinical overrides.
 
 ## S
 

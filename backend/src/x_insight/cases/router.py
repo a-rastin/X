@@ -127,7 +127,8 @@ class PatientCreateRequest(BaseModel):
     given_name: str
     family_name: str
     sex: Literal["M", "F"]
-    age: StrictInt = Field(ge=18, le=99)
+    age: StrictInt | None = Field(default=None, ge=18, le=99)
+    birth_year: StrictInt | None = None
     clinical_status: Literal["first_time", "established"]
     phone: str | None = None
 
@@ -269,6 +270,7 @@ def create_patient(
         age=payload.age,
         clinical_status=payload.clinical_status,
         phone=payload.phone,
+        birth_year=payload.birth_year,
     )
     key = _idempotency_key_or_none(request)
     request_hash: str | None = None
@@ -906,6 +908,120 @@ def patch_encounter(
     return _draft_response(
         encounter, status_code=200, include_body=True, server_timestamp=server_timestamp
     )
+
+
+class NewCaseValidationRequest(BaseModel):
+    model_config = {"extra": "forbid"}
+    destination: Literal[
+        "diagnosis", "panss", "harm", "history", "medications", "considerations", "proposal"
+    ]
+
+
+class NewCaseAssertionRequest(BaseModel):
+    model_config = {"extra": "forbid", "strict": True}
+    confirm: bool
+
+
+@router.get("/content/new-case")
+def get_new_case_content(request: Request, session: Session = Depends(get_session)) -> JSONResponse:
+    from x_insight.cases import new_case
+
+    user = _require_user(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    content = new_case.clinical_content()
+    return JSONResponse(
+        content={key: value for key, value in content.items() if key != "oral-model-manifest.json"}
+    )
+
+
+@router.get("/encounters/{encounter_id}/new-case/preview")
+def preview_new_case(
+    encounter_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    from x_insight.cases import new_case
+
+    user = _require_user(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    state = new_case.preview(session, encounter_id, user)
+    response = JSONResponse(content=state)
+    response.headers["ETag"] = contracts.format_etag(state["revision"])
+    return response
+
+
+@router.post("/encounters/{encounter_id}/new-case/validate")
+def validate_new_case(
+    encounter_id: uuid.UUID,
+    payload: NewCaseValidationRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    from x_insight.cases import new_case
+
+    user = _require_physician_mutation(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    expected = encounters_service.require_if_match_revision(
+        request.headers.get(contracts.IF_MATCH_HEADER)
+    )
+    return JSONResponse(
+        content=new_case.preview(
+            session, encounter_id, user, expected_revision=expected, destination=payload.destination
+        )
+    )
+
+
+@router.post("/encounters/{encounter_id}/new-case/diagnosis-assertion")
+def assert_new_case_diagnosis(
+    encounter_id: uuid.UUID,
+    payload: NewCaseAssertionRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    from x_insight.cases import new_case
+
+    user = _require_physician_mutation(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    if not payload.confirm:
+        new_case.fail("confirm", "Explicit confirmation is required")
+    expected = encounters_service.require_if_match_revision(
+        request.headers.get(contracts.IF_MATCH_HEADER)
+    )
+    key = _idempotency_key_or_none(request)
+    operation = "new_case.diagnosis_assertion"
+    digest = encounters_service.idempotency_request_hash(
+        {"expected_revision": expected, "confirm": True}, encounter_id
+    )
+    if key is not None:
+        stored = identity_service.lookup_idempotency(
+            session, operation=operation, actor_id=user["id"], key=key
+        )
+        if stored is not None:
+            if stored["request_hash"] != digest:
+                return _idempotency_conflict(get_request_id(request))
+            return _draft_idempotency_replay(stored)
+    encounter, stamp = new_case.assert_diagnosis(
+        session, encounter_id, user, expected, get_request_id(request)
+    )
+    body = {
+        "encounter": encounters_service.safe_encounter_reference(encounter),
+        "draft_data": encounter["draft_data"],
+        "revision": encounter["revision"],
+        "server_timestamp": stamp,
+    }
+    if key is not None:
+        identity_service.store_idempotency(
+            session,
+            operation=operation,
+            actor_id=user["id"],
+            key=key,
+            request_hash=digest,
+            response_status=200,
+            response_body=body,
+        )
+    return _draft_response(encounter, status_code=200, include_body=True, server_timestamp=stamp)
 
 
 @router.post("/encounters/{encounter_id}/discard")
