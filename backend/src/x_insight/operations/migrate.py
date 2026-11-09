@@ -12,10 +12,16 @@ def main() -> int:
     command.upgrade(Config("alembic.ini"), "head")
     result = ddi_main(["bootstrap"])
     if result == 0:
+        from sqlalchemy.orm import Session
+
         from x_insight.db import get_engine
+        from x_insight.models.registry import install_bundled_oral_model
         from x_insight.reasoning.provider_key import initialize_key
 
-        initialize_key(get_engine())
+        engine = get_engine()
+        with Session(engine) as session, session.begin():
+            install_bundled_oral_model(session)
+        initialize_key(engine)
     return result
 
 

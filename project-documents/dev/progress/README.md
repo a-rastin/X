@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[New case Package D checkpoint (2026-11-09)](new-case-package-d-2026-11-09.md): fixed oral-model lookup and immutable registry bootstrap implemented; integration and legacy schema-path issue remain open.
+
 [New case Package C checkpoint (2026-11-09)](new-case-package-c-2026-11-09.md): Lexicomp import and profile-aware lookup implemented; new-case integration and full acceptance remain open.
 
 [New case packages A/B checkpoint (2026-11-09)](new-case-package-a-2026-11-09.md): SQLAlchemy and pytest installed; patient baseline passes; Package B remains incomplete.

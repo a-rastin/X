@@ -1,0 +1,7 @@
+{
+  "name": "new-case-oral-antipsychotic-v1",
+  "source": "oral-antipsychotic.xml",
+  "sha256": "f2f68f970b2fd13ec9ec14bc7d6163dbf859c43d2ba379b7543563bce530b18a",
+  "execution_profile": "fully-observed-oral-row-lookup/1",
+  "authorization": "2026-11-09 new-case integration request; experimental, not clinically validated"
+}

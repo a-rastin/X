@@ -34,8 +34,11 @@ Bounds are engineering limits (``MAX_*``), not clinical thresholds.
 from __future__ import annotations
 
 import hashlib
+import json
+import os
 import uuid
 from datetime import datetime
+from pathlib import Path
 from typing import Any
 
 from sqlalchemy import text
@@ -54,6 +57,86 @@ MAX_BUNDLE_SELECTIONS = 32
 MAX_VERSIONS_PER_NETWORK = 256
 SUPPORTED_WORKFLOWS = frozenset({"registration", "followup"})
 SUPPORTED_REVIEW_DECISIONS = frozenset({"draft", "awaiting_review", "approved"})
+
+
+def install_bundled_oral_model(session: Session) -> dict[str, Any]:
+    """Install the dedicated experimental model without changing workflow pointers."""
+    from x_insight.models.oral_antipsychotic import MAX_BYTES, load_model
+
+    content = os.environ.get("X_INSIGHT_CONTENT_DIR")
+    root = (
+        (Path(content) if content else Path(__file__).resolve().parents[4] / "content")
+        / "new-case"
+        / "v1"
+    )
+    manifest = json.loads((root / "oral-model-manifest.json").read_text(encoding="utf-8"))
+    expected = "f2f68f970b2fd13ec9ec14bc7d6163dbf859c43d2ba379b7543563bce530b18a"
+    name = "new-case-oral-antipsychotic-v1"
+    profile = "fully-observed-oral-row-lookup/1"
+    if (
+        manifest.get("name") != name
+        or manifest.get("sha256") != expected
+        or manifest.get("source") != "oral-antipsychotic.xml"
+        or manifest.get("execution_profile") != profile
+    ):
+        raise ValueError("Invalid bundled oral model manifest")
+    with (root / "oral-antipsychotic.xml").open("rb") as model_file:
+        source = model_file.read(MAX_BYTES + 1)
+    load_model(source, expected)
+    manifest_hash = contracts.canonical_hash(manifest)
+    session.execute(text("SELECT pg_advisory_xact_lock(hashtext(:name))"), {"name": name})
+    existing = (
+        session.execute(
+            text(
+                "SELECT v.id, v.source_hash, v.source_bytes, v.review, v.status "
+                "FROM model_networks n "
+                "JOIN model_network_versions v ON v.network_id = n.id "
+                "WHERE n.name = :name AND v.version_number = 1"
+            ),
+            {"name": name},
+        )
+        .mappings()
+        .first()
+    )
+    if existing:
+        review = existing["review"]
+        if (
+            existing["source_hash"] != expected
+            or bytes(existing["source_bytes"]) != source
+            or existing["status"] != "awaiting_review"
+            or review.get("manifest_hash") != manifest_hash
+            or review.get("execution_profile") != profile
+        ):
+            raise ValueError("Existing bundled oral model does not match manifest")
+        return {"version_id": str(existing["id"]), "source_hash": expected, "reused": True}
+    network_id, version_id = uuid.uuid4(), uuid.uuid4()
+    session.execute(
+        text("INSERT INTO model_networks (id, name) VALUES (:id, :name)"),
+        {"id": network_id, "name": name},
+    )
+    review = {
+        "decision": "awaiting_review",
+        "reviewer": "",
+        "date": "",
+        "manifest_hash": manifest_hash,
+        "execution_profile": profile,
+        "provenance": manifest.get("authorization"),
+    }
+    session.execute(
+        text(
+            "INSERT INTO model_network_versions (id, network_id, version_number, source_bytes, "
+            "source_hash, status, review) VALUES (:id, :network_id, 1, :source, :hash, "
+            "'awaiting_review', CAST(:review AS JSONB))"
+        ),
+        {
+            "id": version_id,
+            "network_id": network_id,
+            "source": source,
+            "hash": expected,
+            "review": json.dumps(review),
+        },
+    )
+    return {"version_id": str(version_id), "source_hash": expected, "reused": False}
 
 
 def _clip(message: str) -> str:
