@@ -1,5 +1,9 @@
 # X-INSIGHT progress tracker
 
+[Academic UI implementation (2026-11-11)](ui-implementation-2026-11-11.md): approved Astryx direction applied; `make check`, 22 web tests and focused Chromium workflows pass; broader browser/deployment acceptance remains open.
+
+[UI/UX wireframe (2026-11-11)](ui-wireframe-2026-11-11.md): Astryx design proposal with seven views, light/dark and Persian RTL; isolated prototype only, awaiting user confirmation.
+
 [New case implementation (2026-11-09)](new-case-implementation-2026-11-09.md): packages A–H complete and committed; seven-step bilingual wizard, immutable proposals, v4 signing, schema 0031, mixed-data restore. `make check`, 22 web tests and 12/12 New case browser journeys pass; stale export probes and the C-SSRS tooltip duplicate fixed. Pre-existing legacy browser probes remain recorded, not regressions.
 
 [New case plan audit (2026-11-09)](new-case-plan-audit-2026-11-09.md): 321 backend tests (including recovery), 20 web tests and static/packaging checks pass; B/F/G/H remain incomplete and registration-name validation is defective.

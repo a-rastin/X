@@ -1,0 +1,51 @@
+import { defineTheme } from "@astryxdesign/core/theme";
+import { neutralTheme } from "@astryxdesign/theme-neutral/built";
+export default defineTheme({
+  name: "academic",
+  extends: neutralTheme,
+  typography: {
+    scale: { base: 14, ratio: 1.2 },
+    body: { family: "Arial", fallbacks: "Tahoma, sans-serif" },
+    heading: { family: "Georgia", fallbacks: "Tahoma, serif" },
+  },
+  radius: { base: 4, multiplier: 1 },
+  tokens: {
+    "--color-accent": ["#06786D", "#2DD4BF"],
+    "--color-on-accent": ["#FFFFFF", "#04211D"],
+    "--color-text-primary": ["#172D3B", "#E5EDF4"],
+    "--color-text-secondary": ["#536776", "#AFBFCD"],
+    "--color-background-page": ["#F4F7F9", "#101C27"],
+    "--color-background-surface": ["#FFFFFF", "#172634"],
+    "--color-background-card": ["#FFFFFF", "#172634"],
+    "--color-background-wash": ["#EDF2F5", "#12212E"],
+    "--color-border": ["#D3DEE5", "#405260"],
+    "--xi-teal-surface": ["#E7F3F1", "#143D3B"],
+    "--xi-teal-ink": ["#065F57", "#6AE0CF"],
+    "--xi-warning-surface": ["#FFF7E6", "#3C301B"],
+    "--xi-warning-ink": ["#79500A", "#F5D38D"],
+    "--xi-slate": ["#304C60", "#C2D6E5"],
+    "--xi-rail-width": "184px",
+    "--xi-content-width": "1280px",
+    "--xi-line": "1px",
+    "--xi-row-height": "68px",
+    "--xi-type-title": "28px",
+    "--xi-type-section": "19px",
+    "--xi-type-small": "12px",
+    "--xi-type-base": "14px",
+    "--xi-page-min-height": "760px",
+    "--xi-icon-size": "30px",
+    "--xi-field-width": "260px",
+    "--xi-reading-width": "68ch",
+    "--xi-auth-width": "460px",
+    "--xi-review-width": "320px",
+  } as Parameters<typeof defineTheme>[0]["tokens"],
+  components: {
+    button: {
+      "variant:primary": {
+        backgroundColor: "var(--color-accent)",
+        color: "var(--color-on-accent)",
+      },
+    },
+    heading: { base: { letterSpacing: "normal" } },
+  },
+});

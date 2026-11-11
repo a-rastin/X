@@ -647,8 +647,8 @@ export function MedicationsSection({
     setOptions([]);
   };
   return (
-    <section>
-      <ul>
+    <section className="nc-medications">
+      <ul className="nc-medication-list">
         {ids.map((id) => (
           <li key={id}>
             <bdi>{names[id] ?? id}</bdi>{" "}

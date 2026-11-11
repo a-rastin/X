@@ -1,6 +1,6 @@
 # web/src/app/App.tsx
 
-Source SHA-256: 5767b78e8810a001a8a1d409ceaad79d0fe13eb1c8d845d0bbf6a61b8982e8b6
+Source SHA-256: 1e23fac6dee06150a743d379f0b70747c8ec0cefbd759c8001e25ac68ef83b5a
 
 ## Purpose
 Root component: resolves the hash route, guards roles, renders role-scoped navigation and the
@@ -12,7 +12,7 @@ page switch, and wraps the parametric routes.
   `ResearchWarningGate` mounts and every page stays hidden behind `!showWarningGate`.
 - `warningAcked` from `useAuth()` — true when the server reports no pending warning text for
   the session user (`researchWarning === null`).
-- `NavLink` — plain hash navigation; the unsaved-changes barrier lives in
+- `NavLink` — Astryx `SideNavItem` links preserve hash navigation; the unsaved-changes barrier lives in
   `saveBeforeNavigation()` (`app/navigationGuard.ts`), not in the link.
 - Sign-out flushes via `saveBeforeNavigation()` first so draft edits are not stranded.
 - Admin-only nav links: physicians, networks, audit, exports, backups, restores,
@@ -21,6 +21,8 @@ page switch, and wraps the parametric routes.
   `hashchange` listener and uses `key={id}` so switching ids remounts cleanly.
 
 ## Behavior and Constraints
+- `Theme` uses the built academic Astryx theme and follows the session user’s persisted theme.
+- The shared CSS makes navigation a desktop rail and wraps it on narrow screens; the language switch remains physically top-left.
 - Route guards complement the server checks: anonymous users always land on login,
   authenticated users never sit on it. Authority stays server-side; these only choose what
   to render.

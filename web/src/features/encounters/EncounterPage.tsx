@@ -1,3 +1,4 @@
+import { Text } from "@astryxdesign/core/Text";
 import { NewCaseWizard } from "../new-case/NewCaseWizard";
 import { useLanguage } from "../../shared/i18n";
 /* Draft wizard page with autosave (S07, plan.md §§2.3, 9; FR-16, NFR-04).
@@ -809,7 +810,7 @@ function EncounterWizard({
             aria-current={item.id === currentStep.id ? "page" : undefined}
             onClick={followStepLink}
           >
-            {index + 1}. {text(item.label)}
+            <Text className="xi-wizard-number" type="inherit">{index + 1}.</Text>{" "}{text(item.label)}
           </a>
         ))}
       </nav>

@@ -13,6 +13,7 @@ const NAV_LINKS = [
   "Exports",
   "Backups",
   "Restores",
+  "Provider",
   "Status",
   "Account",
 ] as const;
@@ -66,7 +67,7 @@ test("S61 200% zoom keeps every admin nav link on screen", async ({ page }) => {
     "Sign out",
   );
 
-  for (const name of ["Provider", "API settings", "Provider settings"] as const) {
+  for (const name of ["API settings", "Provider settings"] as const) {
     await expect(nav.getByRole("link", { name, exact: true })).toHaveCount(0);
   }
 });

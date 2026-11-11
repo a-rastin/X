@@ -1,6 +1,9 @@
 import { UnavailableDrugsPage } from "../features/identity/UnavailableDrugsPage";
 import { LanguageButton, useLanguage } from "../shared/i18n";
 import React from "react";
+import { SideNavItem } from "@astryxdesign/core/SideNav";
+import { Theme } from "@astryxdesign/core/theme";
+import { academicTheme } from "../shared/astryx/built/academic.js";
 import { useAuth } from "../features/identity/auth";
 import { LoginPage } from "../features/identity/LoginPage";
 import { ResearchWarningGate } from "../features/identity/ResearchWarning";
@@ -42,19 +45,22 @@ function NavLink({
   route: Exclude<Route, "encounter" | "chart" | "report">;
   current: Route;
   navigate: (route: Exclude<Route, "encounter" | "chart" | "report">) => void;
-  children: React.ReactNode;
+  children: string;
 }) {
   return (
-    <a
+    <SideNavItem
+      label={children}
       href={routeToHash(route)}
-      aria-current={current === route ? "page" : undefined}
+      isSelected={
+        current === route ||
+        (route === "patients" &&
+          ["patients-new", "encounter", "chart", "report"].includes(current))
+      }
       onClick={(event) => {
         event.preventDefault();
         navigate(route);
       }}
-    >
-      {children}
-    </a>
+    />
   );
 }
 
@@ -171,11 +177,12 @@ export function App() {
     status === "ready" && user !== null && !warningAcked;
 
   return (
+    <Theme theme={academicTheme} mode={user?.theme ?? "light"}>
     <div className={user === null ? "xi-shell xi-shell-gate" : "xi-shell"}>
       <a className="xi-skip-link" href="#main-content">
         {t("skipToContent")}</a>
+      <div className="xi-header-language"><LanguageButton /></div>
       <header className="xi-header">
-        <div className="xi-header-language"><LanguageButton /></div>
         <h1 className="xi-wordmark">
           <span className="xi-mark" aria-hidden="true">X</span>
           <span className="xi-brand-copy">
@@ -281,5 +288,6 @@ export function App() {
         )}
       </main>
     </div>
+    </Theme>
   );
 }

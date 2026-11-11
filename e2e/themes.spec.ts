@@ -96,7 +96,7 @@ test("both themes load with distinct canvas surfaces", async ({
   await expect.poll(() => themeOf(page)).toBe("dark");
   const darkCanvas = await canvasColor(page);
   expect(darkCanvas).not.toBe("rgb(255, 255, 255)");
-  await expect.poll(() => canvasColor(page)).toBe("rgb(11, 18, 32)");
+  await expect.poll(() => canvasColor(page)).toBe("rgb(16, 28, 39)");
 });
 
 test("primary action uses the accessible darker teal fill on light theme", async ({
@@ -251,6 +251,7 @@ test("S61 light-theme success and active text meets 4.5:1", async ({ page }) => 
 
   await page.getByRole("link", { name: "Physicians" }).click();
   const form = page.getByRole("form", { name: "Create physician" });
+  await form.getByLabel("Physician name in English").fill("Test Physician");
   await form.locator("#create-username").fill(username);
   await form.locator("#create-password").fill("secret123");
   await form.getByRole("button", { name: "Create physician" }).click();
@@ -287,6 +288,7 @@ test("S61 dark-theme success and active text meets 4.5:1", async ({ page }) => {
 
   await page.getByRole("link", { name: "Physicians" }).click();
   const form = page.getByRole("form", { name: "Create physician" });
+  await form.getByLabel("Physician name in English").fill("Test Physician");
   await form.locator("#create-username").fill(username);
   await form.locator("#create-password").fill("secret123");
   await form.getByRole("button", { name: "Create physician" }).click();

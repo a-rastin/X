@@ -1,5 +1,8 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import "@astryxdesign/core/reset.css";
+import "@astryxdesign/core/astryx.css";
+import "./shared/astryx/built/academic.css";
 import "./shared/theme.css";
 import { AuthProvider } from "./features/identity/auth";
 import { App } from "./app/App";

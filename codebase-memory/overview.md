@@ -17,6 +17,7 @@ Self-hosted, English/Persian desktop UI, one admin + a small physician team shar
   `python -m x_insight.mcp_server`.
 - **Web**: React 19 + Vite, `web/src/main.tsx` → `App.tsx`. **No router library** —
   hand-rolled hash router in `web/src/app/router.ts`.
+  The shared shell uses Astryx navigation and a built academic theme; `web/src/shared/theme.css` carries responsive workspace and clinical tokens.
 - **DB**: PostgreSQL 16 (roles `x_insight_app` / `x_insight_migrate` / `x_insight_readonly`),
   Alembic migrations, SQLAlchemy Core DML. Schema head pinned as
   `db.EXPECTED_SCHEMA_VERSION = "0031"` in the current working tree.

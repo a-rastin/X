@@ -4,7 +4,7 @@
 
 **Id:** d0f8140f-8e7d-4200-af91-c9c72ab68fd8
 **Type:** constraint
-**Status:** active
+**Status:** needs-review
 **Evidence:** confirmed
 **Source:** ui-context.md, 2026-10-03; [S05 progress report](../project-documents/dev/progress/s05.md), 2026-10-04
 **Revisit when:** the palette or theme tokens change

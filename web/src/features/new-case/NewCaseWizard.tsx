@@ -3,7 +3,8 @@ import { useAuth } from "../identity/auth";
 import { ApiError, newIdempotencyKey } from "../identity/api";
 import { useAutosave } from "../encounters/useAutosave";
 import { type DraftData, type EncounterReference } from "../encounters/api";
-import { getPatient } from "../patients/api";
+import { getPatient, type Patient } from "../patients/api";
+import { useLanguage } from "../../shared/i18n";
 import { DiagnosisSection } from "../assessments/diagnosis/DiagnosisSection";
 import { PanssSection } from "../assessments/panss/PanssSection";
 import { registerUnsavedGuard } from "../../app/navigationGuard";
@@ -49,6 +50,7 @@ export function NewCaseWizard({
   initialRevision: number;
 }) {
   const n = useNewCaseText();
+  const { t } = useLanguage();
   const { sessionExpired } = useAuth();
   const id = encounter.id;
   const autosave = useAutosave({
@@ -59,6 +61,7 @@ export function NewCaseWizard({
   });
   const [content, setContent] = useState<ClinicalContent | null>(null);
   const [sex, setSex] = useState("");
+  const [patient, setPatient] = useState<Patient | null>(null);
   const [step, setStep] = useState("diagnosis");
   const stepRef = useRef("diagnosis");
   const [state, setState] = useState<State | null>(null);
@@ -96,6 +99,7 @@ export function NewCaseWizard({
         if (cancelled) return;
         setContent(c);
         setSex(p.sex);
+        setPatient(p);
         setProposal(r.proposal);
       })
       .catch(fail);
@@ -293,7 +297,14 @@ export function NewCaseWizard({
   const index = steps.indexOf(step as (typeof steps)[number]);
   return (
     <div>
-      <h2>{n(step)}</h2>
+      {patient && (
+        <p className="nc-patient-context">
+          <strong><bdi>{patient.given_name} {patient.family_name}</bdi></strong>
+          <bdi dir="ltr">{patient.identifier}</bdi>
+          <small>{t("newCase")}</small>
+        </p>
+      )}
+      <h2 className="xi-page-title">{n(step)}</h2>
       <nav className="nc-steps" aria-label={n("proposal")}>
         {steps.map((s) => (
           <button

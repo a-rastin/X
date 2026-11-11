@@ -1,4 +1,5 @@
 import { useLanguage } from "../../shared/i18n";
+import { HStack } from "@astryxdesign/core/Stack";
 /* Shared patient directory (S06, plan.md §§2.2-2.3, FR-23).
  *
  * Search by name/ID substring plus clinical-status filter with bounded
@@ -144,10 +145,17 @@ export function PatientDirectory() {
 
   return (
     <section className="xi-card" aria-labelledby={`${uid}-heading`}>
-      <h3 className="xi-section-title" id={`${uid}-heading`}>
-        {t("patientDirectory")}
-        {data !== null && ` (${data.total})`}
-      </h3>
+      <HStack className="xi-directory-heading" gap={4} hAlign="between" vAlign="center" wrap="wrap">
+        <h3 className="xi-section-title" id={`${uid}-heading`}>
+          {t("patientDirectory")}
+          {data !== null && ` (${data.total})`}
+        </h3>
+        {canRegister && (
+          <a className="xi-btn xi-btn-primary" href="#/patients/new">
+            {t("registerNewPatient")}
+          </a>
+        )}
+      </HStack>
       <form
         aria-label={t("searchPatients")}
         onSubmit={(event) => {
@@ -312,13 +320,7 @@ export function PatientDirectory() {
             </div>
           </div>
         ))}
-      {canRegister ? (
-        <p style={{ marginBottom: 0 }}>
-          <a className="xi-btn xi-btn-primary" href="#/patients/new">
-            {t("registerNewPatient")}
-          </a>
-        </p>
-      ) : (
+      {!canRegister && (
         <p className="xi-hint" style={{ marginBottom: 0 }}>
           {t("adminReadOnly")}
         </p>

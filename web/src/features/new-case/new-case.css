@@ -73,3 +73,119 @@
 .nc-magnifier:focus-within [role="tooltip"] {
   display: block;
 }
+
+/* The encounter identity and step track stay visible together as the work changes. */
+.nc-patient-context {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  margin: 0 0 var(--space-5);
+  border-bottom: 1px solid var(--border);
+  color: var(--ink-muted);
+  font-size: 13px;
+}
+.nc-patient-context strong { color: var(--ink); }
+.nc-patient-context small {
+  padding: var(--space-1) var(--space-2);
+  color: var(--selected-nav-ink);
+  background: var(--selected-nav-bg);
+  border-radius: var(--radius-sm);
+}
+.nc-steps {
+  counter-reset: nc-step;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  margin-block: var(--space-5);
+}
+.nc-steps button {
+  counter-increment: nc-step;
+  min-width: 0;
+  min-height: 76px;
+  padding: var(--space-2) var(--space-1);
+  flex-direction: column;
+  gap: var(--space-2);
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  font-size: 12px;
+  white-space: normal;
+}
+.nc-steps button::before {
+  content: counter(nc-step);
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  font-variant-numeric: tabular-nums;
+}
+.nc-steps button[aria-current="step"] {
+  color: var(--selected-nav-ink);
+  background: var(--selected-nav-bg);
+  border-bottom-color: var(--primary-action);
+}
+.nc-steps button[aria-current="step"]::before {
+  color: var(--on-action);
+  background: var(--primary-action);
+  border-color: var(--primary-action);
+}
+.nc-plan:has(> .nc-plan) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-4) var(--space-6);
+  align-items: start;
+}
+.nc-plan:has(> .nc-plan) > .nc-plan { grid-column: 1; margin: 0; background: var(--surface-1); }
+.nc-plan:has(> .nc-plan) > .xi-card:not(.nc-plan) { grid-column: 2; grid-row: 1 / span 3; margin: 0; }
+.nc-plan:has(> .nc-plan) > .nc-actions,
+.nc-plan:has(> .nc-plan) > [role="alert"] { grid-column: 1; margin: 0; }
+.nc-plan > .xi-card > label { display: block; margin-block: var(--space-3); }
+@media (max-width: 900px) {
+  .nc-plan:has(> .nc-plan) { display: block; }
+  .nc-plan:has(> .nc-plan) > .xi-card { margin-bottom: var(--space-4); }
+  .nc-plan:has(> .nc-plan) > .nc-actions { margin-block: var(--space-4); }
+}
+@media (max-width: 760px) {
+  .nc-steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 440px) {
+  .nc-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.nc-medications {
+  max-width: 68ch;
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--canvas);
+}
+.nc-medications > label { display: block; margin-bottom: var(--space-2); font-weight: 600; }
+.nc-medication-list { list-style: none; padding: 0; margin: 0 0 var(--space-5); }
+.nc-medication-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--border);
+}
+#nc-drug-options { list-style: none; margin: 0; padding: 0; }
+#nc-drug-options button {
+  width: 100%;
+  text-align: start;
+  font: inherit;
+  color: var(--ink);
+  background: var(--canvas);
+  border: 1px solid var(--border);
+  padding: var(--space-3);
+  cursor: pointer;
+}
+#nc-drug-options [aria-selected="true"] button { background: var(--selected-nav-bg); }
+.nc-plan pre { font: inherit; line-height: 1.65; }

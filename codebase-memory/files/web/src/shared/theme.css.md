@@ -1,11 +1,13 @@
 # web/src/shared/theme.css
 
-Source SHA-256: 0167351d6f09ce23ff6c1645e95db49f93d367160d2e7f33e995bab35123c977
+Source SHA-256: 855007467fa5cc287e633d8bb302bd870df805a2bafaa76b0bec18e5c48a0b53
 
 ## Purpose
 Defines semantic light/dark theme tokens and the shared `.xi-*` UI classes. This summary covers the research disclaimer styling investigated during the 2026-10-29 redesign.
 
 ## Behavior and Constraints
+- The academic workspace rules near the end define the desktop navigation rail, narrow wrapped navigation, shared typography and wizard progress track; clinical feature CSS supplies the assessment and medication layouts.
+- Application colors remain semantic shared tokens, with the Astryx theme defined separately in `web/src/shared/astryx/academic.ts`.
 - `.xi-research-dialog[open]` uses a vertical flex layout, capped at 720px wide and the dynamic viewport height minus outer margins; its native backdrop dims the surrounding workspace.
 - Header and footer do not shrink. `.xi-research-body` has `min-height: 0` and independent vertical scrolling, keeping acknowledgment visible on short screens.
 - `.xi-research-limitation` uses warning background/border tokens while preserving ink text; the document icon uses the accessible primary-action token.

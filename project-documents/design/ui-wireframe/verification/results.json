@@ -1,0 +1,237 @@
+[
+  {
+    "width": 1440,
+    "view": "patients",
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "view": "assessment",
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "view": "medications",
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "view": "proposal",
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "view": "chart",
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "view": "admin",
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "view": "login",
+    "overflow": false
+  },
+  {
+    "width": 728,
+    "view": "patients",
+    "overflow": false
+  },
+  {
+    "width": 728,
+    "view": "assessment",
+    "overflow": false
+  },
+  {
+    "width": 728,
+    "view": "medications",
+    "overflow": false
+  },
+  {
+    "width": 728,
+    "view": "proposal",
+    "overflow": false
+  },
+  {
+    "width": 728,
+    "view": "chart",
+    "overflow": false
+  },
+  {
+    "width": 728,
+    "view": "admin",
+    "overflow": false
+  },
+  {
+    "width": 728,
+    "view": "login",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "view": "patients",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "view": "assessment",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "view": "medications",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "view": "proposal",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "view": "chart",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "view": "admin",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "view": "login",
+    "overflow": false
+  },
+  {
+    "view": "patients",
+    "axe": []
+  },
+  {
+    "view": "assessment",
+    "axe": []
+  },
+  {
+    "view": "proposal",
+    "axe": []
+  },
+  {
+    "view": "login",
+    "axe": []
+  },
+  {
+    "width": 1440,
+    "view": "patients",
+    "mode": "dark-fa",
+    "overflow": false
+  },
+  {
+    "view": "patients",
+    "mode": "dark-fa",
+    "axe": []
+  },
+  {
+    "width": 1440,
+    "view": "assessment",
+    "mode": "dark-fa",
+    "overflow": false
+  },
+  {
+    "view": "assessment",
+    "mode": "dark-fa",
+    "axe": []
+  },
+  {
+    "width": 1440,
+    "view": "proposal",
+    "mode": "dark-fa",
+    "overflow": false
+  },
+  {
+    "view": "proposal",
+    "mode": "dark-fa",
+    "axe": []
+  },
+  {
+    "width": 1440,
+    "view": "admin",
+    "mode": "dark-fa",
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "view": "login",
+    "mode": "dark-fa",
+    "overflow": false
+  },
+  {
+    "view": "login",
+    "mode": "dark-fa",
+    "axe": []
+  },
+  {
+    "width": 728,
+    "view": "patients",
+    "mode": "dark-fa",
+    "overflow": false
+  },
+  {
+    "width": 728,
+    "view": "assessment",
+    "mode": "dark-fa",
+    "overflow": false
+  },
+  {
+    "width": 728,
+    "view": "proposal",
+    "mode": "dark-fa",
+    "overflow": false
+  },
+  {
+    "width": 728,
+    "view": "admin",
+    "mode": "dark-fa",
+    "overflow": false
+  },
+  {
+    "width": 728,
+    "view": "login",
+    "mode": "dark-fa",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "view": "patients",
+    "mode": "dark-fa",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "view": "assessment",
+    "mode": "dark-fa",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "view": "proposal",
+    "mode": "dark-fa",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "view": "admin",
+    "mode": "dark-fa",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "view": "login",
+    "mode": "dark-fa",
+    "overflow": false
+  },
+  {
+    "pageErrors": [],
+    "externalRequests": []
+  }
+]

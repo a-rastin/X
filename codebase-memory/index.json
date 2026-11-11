@@ -8262,7 +8262,7 @@
       ],
       "purpose": "Root component: route guards, nav, warning gate, parametric wrappers.",
       "summary": "files/web/src/app/App.tsx.md",
-      "source_sha256": "5767b78e8810a001a8a1d409ceaad79d0fe13eb1c8d845d0bbf6a61b8982e8b6"
+      "source_sha256": "1e23fac6dee06150a743d379f0b70747c8ec0cefbd759c8001e25ac68ef83b5a"
     },
     {
       "path": "web/src/app/navigationGuard.ts",
@@ -8745,6 +8745,17 @@
       "source_sha256": null
     },
     {
+      "path": "web/src/features/new-case/NewCaseWizard.tsx",
+      "labels": [
+        "frontend",
+        "new-case",
+        "wizard"
+      ],
+      "purpose": "Coordinate the New case wizard and proposal/signing transitions.",
+      "summary": "files/web/src/features/new-case/NewCaseWizard.tsx.md",
+      "source_sha256": "7a386c4a71cc48947ff6c9080ccb367a4bedcc0a1d75bf784f091f792a5e149b"
+    },
+    {
       "path": "web/src/features/patients/DirectoryPage.tsx",
       "labels": [
         "frontend",
@@ -8922,7 +8933,7 @@
       ],
       "purpose": "Semantic light/dark tokens and shared UI styles, including the responsive clinical disclaimer.",
       "summary": "files/web/src/shared/theme.css.md",
-      "source_sha256": "0167351d6f09ce23ff6c1645e95db49f93d367160d2e7f33e995bab35123c977"
+      "source_sha256": "855007467fa5cc287e633d8bb302bd870df805a2bafaa76b0bec18e5c48a0b53"
     },
     {
       "path": "web/src/vite-env.d.ts",
