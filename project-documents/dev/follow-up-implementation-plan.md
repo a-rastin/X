@@ -8,14 +8,18 @@ The [follow-up specification](follow-up-specification.md) is the behavioral
 authority. Read it in full, the [source archive](../changes/follow-up-2026-11-12/README.md),
 the [analysis checkpoint](progress/follow-up-planning-2026-11-12.md), and current
 source before editing. Product questions are reconciled; this plan specifies the
-implementation choices. Source/clinical validation is distinct from product agreement.
+implementation choices. The specification's [research development policy](follow-up-specification.md#research-development-policy)
+applies to every package: no legal confirmation, author evidence submission,
+source attestation, medical/clinical approval or reviewer sign-off is a prerequisite
+to implementing or changing the app or its medical knowledge. Older content-review
+instructions do not add those prerequisites to this work.
 
 ## 1. Entry procedure and scope
 
 1. Follow root `AGENTS.md`, Keep the Why and the progress handoffs. Inspect Git
    status and preserve unrelated work. This planning session did not implement
    application code or migrate a database.
-2. Confirm the current migration head and source symbols. If implementation starts
+2. Inspect the current migration head and source symbols. If implementation starts
    after another migration, use the next additive revision rather than creating a
    second `0032` head. Do not assume old checkpoint “next session” instructions
    describe current work.
@@ -24,7 +28,14 @@ implementation choices. Source/clinical validation is distinct from product agre
 4. Execute packages A–H below in dependency order. Update this plan's package
    status and the dated progress report with actual checks, failures and remaining
    work. No package is complete solely because its files exist.
-5. Reuse existing model, DDI checker, autosave, final-plan revision storage,
+5. Do not request approval, evidence dossiers, source confirmation or medical
+   validation before implementing a package or changing a medical rule. Use the
+   specified behavior and automated engineering checks. Missing bibliographic or
+   approval metadata is not a development or runtime blocker. Reused content
+   loaders must not impose human-review status gates on `follow-up-v1`; keep
+   structural/hash checks and historical approval metadata without fabricating
+   approvals or changing old workflow behavior.
+6. Reuse existing model, DDI checker, autosave, final-plan revision storage,
    assessment engine, permissions and UI theme. Add no runtime dependency or
    generalized workflow framework for this change. Do not rewrite the legacy
    worker/CPT pipeline or New case clinical behavior.
@@ -186,7 +197,7 @@ Read: specification §§1, 3–7; `content/new-case/v1/{manifest,labs,antipsycho
 
 Write: `content/follow-up/v1/manifest.json`, explicit rule/factor/source-map JSON
 and LAI-equivalence content; proposed `BT/models/test_follow_up_sources.py`.
-Reference existing trusted oral bytes and lab/formulation content by hash/path;
+Reference existing oral bytes and lab/formulation content by hash/path;
 do not duplicate the XML or change New case hashes.
 
 1. Record the agreed decision/rule IDs and every source/overlay. Preserve the
@@ -196,17 +207,25 @@ do not duplicate the XML or change New case hashes.
    from registration and no invented anticholinergic model parent.
 3. Build explicit supported oral-to-LAI mappings from the existing inventory;
    distinguish depot from short/intermediate injection. Validate source/catalog
-   links. If an ingredient has no supported Lexicomp identity, retain visible
+   links mechanically against the existing inventory; no source-owner or medical
+   confirmation is required. If an ingredient has no supported Lexicomp identity, retain visible
    coverage-unavailable rather than manufacturing one.
 4. Include precise lab hash, model hash, assessment versions, Lexicomp source
    release and formulation inventory hashes. New follow-up content has its own
-   version/hash and does not claim independent clinical validation.
+   version/hash. Source references are descriptive; absent bibliographic or review
+   metadata does not prevent building, loading or using a structurally valid
+   package. Do not add legal, author-evidence or clinical-approval fields as
+   required activation conditions.
 5. Check source-path resolution from a packaged working directory and modified
    content rejection. Test all graph terminals are represented and the unsupported
    current-LAI terminal is deliberate, with no generic LAI-network execution.
+   Test that valid content with no human approval or source-attestation record
+   loads and generates proposals, while malformed or hash-mismatched content
+   still fails the normal integrity checks.
 
 Exit: content is loadable offline; hashes validate; graph rules/overlays and 16
-sources are complete, with all source limitations explicit.
+factor mappings are complete, with available reference notes retained and no
+human approval/evidence/source-confirmation gate.
 
 ## 5. Package B — Add versioned persistence and mixed-record recovery
 
@@ -487,12 +506,16 @@ credential or real patient is needed. Use existing documented startup commands;
 do not expose service secrets in logs or source-controlled reports.
 
 Exit: agreed behavior passes public interfaces, mixed recovery is proven, old
-workflows/signatures remain valid, and residual release/clinical limitations are
-explicit. This does not establish clinical validation or authorize deployment.
+workflows/signatures remain valid, and engineering limitations are explicit.
+No legal, author-evidence, source-confirmation or medical-approval step is part
+of acceptance.
 
 ## 12. Acceptance and handoff checklist
 
-- [ ] A: immutable source manifest, rules, factor map and LAI equivalences verified.
+- [ ] No package, content activation or proposal requires legal confirmation,
+  author evidence submission, source attestation or external medical approval.
+- [ ] A: immutable source manifest, rules, factor map and LAI equivalences verified
+  mechanically; content works without human approval metadata.
 - [ ] B: additive schema, three signature variants, old archive compatibility.
 - [ ] C: latest signed source across variants, frozen summary, typed autosave,
   exact defaults, missing-value/provenance/conditional validation.

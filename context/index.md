@@ -39,7 +39,7 @@
 
 ## F
 
-- [follow-up.md](follow-up.md) — Planned follow-up versioning preserves old evidence; replacement checks retain the outgoing antipsychotic because overlap may occur.
+- [follow-up.md](follow-up.md) — Planned follow-up preserves historical records and outgoing-drug interaction checks; research development requires no legal, evidence, source or medical approval.
 
 ## G
 

@@ -9,6 +9,13 @@ mandatory effect questionnaires, LLM/CPT and empty-evidence rules **only for
 newly created follow-ups after implementation**. Existing open drafts stay legacy;
 New case registration keeps its [implemented contract](../../docs/new-case-state.md).
 Do not implement this extension by changing shared legacy rules globally.
+The follow-up [research development policy](follow-up-specification.md#research-development-policy)
+removes legal confirmation, author evidence submission, source confirmation and
+external medical/clinical approval requirements for implementing or changing this
+workflow and its medical content. Older approval/dossier instructions do not gate
+this work. Required visit inputs and final-plan signing retain their specified
+application behavior.
+
 The older numbered plan below remains the legacy implementation/historical plan;
 shared privacy, single-draft, concurrency, signing and recovery invariants still apply.
 

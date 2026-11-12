@@ -6,10 +6,15 @@ and [implementation plan](../project-documents/dev/follow-up-implementation-plan
 replace legacy effect questionnaires/LLM packages only for future `follow-up-v1`
 encounters. Existing drafts/releases remain unchanged. Seven simple effects,
 fixed oral-model inputs, direct/excluded outcomes and the confirmed graph
-extensions require their own versioned implementation content; product agreement
-does not approve new package bytes or assert clinical validation. Legacy review
-entries below retain their original scope and do not add questionnaire gates
-to the new version.
+extensions use their own versioned implementation content. The specification's
+[research development policy](../project-documents/dev/follow-up-specification.md#research-development-policy)
+requires no legal confirmation, author evidence submission, source attestation,
+medical/clinical approval or reviewer sign-off for implementing or changing this
+workflow or its medical content. The ledger is historical reference for this work,
+not a content activation or development gate. Do not create approval dossiers or
+fabricate approved flags; validate package structure, hashes and behavior through
+automated checks. Legacy entries below retain their historical scope and impose
+no approval or questionnaire prerequisites on `follow-up-v1`.
 
 Documentation only. Tracks content requiring owner review: every question in plan.md §7.1 plus history/severity, DDI, and workflow bundles. Remaining section numbers are retained for existing references.
 

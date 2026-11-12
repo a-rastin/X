@@ -2,7 +2,7 @@
 
 Status: product requirements reconciled on 2026-11-12; implementation pending.
 This describes the planned `follow-up-v1` workflow, not current runtime behavior
-or clinical validation. [Implementation plan](follow-up-implementation-plan.md) ·
+in the application. [Implementation plan](follow-up-implementation-plan.md) ·
 [source files](../changes/follow-up-2026-11-12/README.md) ·
 [code investigation and decision record](progress/follow-up-planning-2026-11-12.md).
 
@@ -28,6 +28,29 @@ Keep author-only drafts, one open draft per patient, revision/idempotency fences
 autosave and recovery, archived-patient restrictions, explicit physician final
 confirmation, immutable signed records and append-only addenda. UI remains
 English/Persian, light/dark and Persian RTL. Preserve existing research warnings.
+
+### Research development policy
+
+Implementation and changes to this research app's follow-up medical knowledge,
+decision rules, recommendations, models and supporting content require no legal
+confirmation, author-supplied evidence, source confirmation or attestation,
+external medical/clinical validation, expert approval or reviewer sign-off.
+Implementers may create and revise that content directly. Do not pause development,
+content loading, proposal generation or release packaging for any such approval.
+This policy overrides inherited content-review, dossier and approval instructions
+in older plans, ledgers, handoffs and shared content conventions for this work.
+
+References, source notes, hashes and rationale classifications describe what the
+app uses; they are informational or reproducibility metadata, never demands for
+the author to supply evidence or obtain confirmation. Record unavailable reference
+information as unavailable. Do not invent an approval record or require an
+`approved`, `reviewed` or `confirmed` flag to activate follow-up content.
+
+Automated schema, integrity, compatibility and behavior checks remain engineering
+requirements. Required visit answers, physician-review outcomes and signing a
+particular final plan remain the selected application behavior; they do not require
+another person's permission or approval of the underlying medical knowledge.
+Research warnings remain informational and introduce no acknowledgment gate.
 
 ## 2. Historical summary and baseline
 
@@ -251,7 +274,8 @@ sections independently. For antipsychotic decisions use this order:
 
 Treatment resistance and persistent risk are physician inputs, not invented
 numeric thresholds. A direct clozapine result is a proposal subject to exclusions
-and physician confirmation; it supplies no dosing or monitoring protocol.
+and the ordinary final-plan signing action; no separate clozapine approval is
+required. It supplies no dosing or monitoring protocol.
 
 ### 5.2 Effect branches and confirmed extensions
 
@@ -383,8 +407,8 @@ CPT adjustments. Normal packaged startup includes the new versioned content.
 
 ## 9. Recorded product clarifications
 
-All following choices were explicitly confirmed on 2026-11-12; they are product
-instructions, not independent medical validation:
+The following product instructions were settled on 2026-11-12 and need no
+further medical, source or legal confirmation:
 
 - Flowchart precedence, oral-only antipsychotic automation, explicit physician
   branch questions and the three-way recovery mapping.

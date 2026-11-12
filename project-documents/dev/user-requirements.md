@@ -12,6 +12,13 @@ X-INSIGHT is a research prototype helping physicians/psychiatrists explore treat
 
 **Planned follow-up flow:** Historical summary → optional PANSS → self/other harm with nested C-SSRS → history/examination → medications and main antipsychotic/formulation → seven simple adverse effects → treatment considerations and conditional physician decisions → deterministic proposed plan → edit and explicitly confirm/sign the physician plan. No diagnosis step, LLM or probability sliders in `follow-up-v1`. Existing legacy drafts retain their older flow.
 
+The follow-up [research development policy](follow-up-specification.md#research-development-policy)
+removes legal confirmation, author evidence submission, source confirmation and
+external medical/clinical approval requirements for implementing or changing this
+workflow and its medical content. Older approval/dossier instructions do not gate
+this work. Required visit inputs and final-plan signing retain their specified
+application behavior.
+
 ### Terminology
 
 - **Initial treatment proposal:** The system-generated proposal incorporating drug–drug interaction findings and Bayesian-network recommendations.

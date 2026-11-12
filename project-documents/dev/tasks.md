@@ -11,6 +11,13 @@ contracts and exit checks. Existing S00–S62 IDs/reports remain historical and 
 not renumbered or marked complete by this planning work. Legacy follow-up task
 instructions below do not override the new version's agreed requirements.
 
+The follow-up [research development policy](follow-up-specification.md#research-development-policy)
+removes legal confirmation, author evidence submission, source confirmation and
+external medical/clinical approval requirements for implementing or changing this
+workflow and its medical content. Older approval/dossier instructions do not gate
+this work. Required visit inputs and final-plan signing retain their specified
+application behavior.
+
 Aligned 2026-10-03 to [user-requirements.md](user-requirements.md), [system-design.md](system-design.md), and [system-architecture.md](system-architecture.md), with implementation detail in [plan.md](plan.md). Sessions and checks are future work, not completed implementation. Stack/test seams/numerical limits remain proposals; carry forward the unresolved policies in system-design.md §15 rather than claiming approval.
 
 Path shorthand: `B/` = `backend/src/x_insight/`, `BT/` = `backend/tests/`, `W/` = `web/src/`. Project documents are under `project-documents/dev/`. Medical/BN paths, counts, and named-source examples below are inherited drafting leads: verify actual supplied content before use. They are not findings established by this document review.

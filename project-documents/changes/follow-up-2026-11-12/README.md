@@ -12,6 +12,11 @@ records code findings and the product clarifications. The
 | [follow-up.extracted.txt](follow-up.extracted.txt) | Supplied text extraction; trailing whitespace normalized | See original DOCX for source authority |
 | [decision-flow.original.mmd](decision-flow.original.mmd) | Original Persian decision graph, unchanged | `a2ace28013c72a24d90fd9037e1f92869dfe25948ecbf5ba6721603cae02c40a` |
 
+The attachments are preserved reference material. They impose no legal, evidence,
+source-confirmation or medical-approval prerequisite on development; the
+[research development policy](../../dev/follow-up-specification.md#research-development-policy)
+governs implementation and later medical-content changes.
+
 Authority: explicit product clarifications recorded in the specification override
 the attachments; the flowchart governs antipsychotic decisions and the Word
 document governs forms and other recommendations. The original LAI node is a

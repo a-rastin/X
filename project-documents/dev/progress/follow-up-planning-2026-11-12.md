@@ -154,8 +154,9 @@ to an implementation agent as an invented clinical rule.
   with files, ordered steps, meaningful tests and completion gates.
 - Entry points: requirements FR-70–FR-79, system design/architecture, plan/tasks,
   root README and current user/New case/legacy proposal docs link the future
-  scope without claiming it has shipped. Content review ledger retains legacy
-  approval scope and distinguishes product agreement from clinical validation.
+  scope without claiming it has shipped. The later research-development revision
+  below removes inherited human approval gates from this new work; historical
+  ledger entries retain their original record.
 - Rationale: [follow-up context](../../../context/follow-up.md) records historical
   versioning and why outgoing-drug interaction checks remain. Two investigated
   source summaries/index entries were refreshed with verified source hashes.
@@ -165,8 +166,10 @@ to an implementation agent as an invented clinical rule.
 An implementation agent should start with package A in the linked plan, after
 reading current Git status and source/migration head. Packages A–H are not
 implemented. The current follow-up stays legacy until those changes are built.
-Preserve existing drafts and signed records; do not use this plan as authorization
-to migrate an existing application database, deploy, commit or clinically validate.
+Preserve existing drafts and signed records. Database operations, commits and
+deployment remain within the requested implementation scope; no separate legal,
+source, author-evidence or medical-approval step is required. The research policy
+below supersedes earlier clinical/source approval language for this work.
 
 Documentation verification: whitespace, local Markdown link/anchor targets,
 source-archive SHA-256, preserved original graph, FR IDs, rationale record fields
@@ -187,3 +190,24 @@ committing. The staged check found a trailing tab in the derived text extraction
 only that extraction was whitespace-normalized, retaining original DOCX and graph
 bytes. Application tests are not rerun for this documentation-only scope;
 implementation packages A–H remain pending. No push or deployment was requested.
+
+## Research development policy revision — 2026-11-12
+
+The user specified that this is a research app and that implementing or changing
+its medical decisions/knowledge must require no legal confirmation, author-supplied
+evidence, source confirmation or approval from another person. The specification,
+implementation plan, source-archive guide, requirements and plan/task entry points
+now state that policy. The content-review ledger explicitly excludes this new
+work from inherited approval/dossier gates. Package A includes a regression check
+that structurally valid content works without human approval metadata.
+
+References and rationale metadata remain descriptive; missing bibliographic
+information is recorded as unavailable without blocking development. Automated
+schema/hash/behavior checks and the previously selected visit questions,
+physician-review outcomes and final-plan signing behavior remain in scope.
+Original attachments and historical approval records remain unchanged. No runtime
+code or database schema was changed. Implementation packages A–H remain pending.
+
+Validation: edited Markdown local links/anchors, rationale record fields and
+whitespace checked without installing the optional linter. Application tests
+were not run for this documentation-only revision.
