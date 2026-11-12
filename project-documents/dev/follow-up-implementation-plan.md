@@ -231,7 +231,7 @@ human approval/evidence/source-confirmation gate.
 
 ## 5. Package B — Add versioned persistence and mixed-record recovery
 
-Depends: A for identities. Status: pending.
+Depends: A for identities. Status: partial — additive schema and compatibility groundwork; follow-up archive validation and mixed-record recovery remain open. See [Package B checkpoint](progress/follow-up-package-b-2026-11-12.md).
 
 Files: next `backend/migrations/versions/*`; `B/cases/tables.py`, `B/db.py`;
 `B/operations/{backup,restore}.py`; recovery schema/inventory fixtures.

@@ -153,6 +153,7 @@ BACKUP_TABLES: tuple[str, ...] = (
     "model_network_versions",
     "model_workflow_pointers",
     "new_case_proposals",
+    "follow_up_proposals",
     "signed_encounter_snapshots",
     "idempotency_records",
     "backup_jobs",

@@ -154,6 +154,7 @@ SUPPORTED_APP_SCHEMA_VERSIONS = frozenset(
         "0029",
         "0030",
         "0031",
+        "0032",
     }
 )
 
@@ -493,21 +494,31 @@ def _check_provider_approvals(tables: dict[str, Any], app_schema: str) -> str | 
         if not isinstance(row, dict):
             return "Provider endpoint approval row is malformed."
         for field in fields:
-            if app_schema in ("0024", "0025", "0026", "0027", "0028", "0029", "0030", "0031"):
+            if app_schema in (
+                "0024",
+                "0025",
+                "0026",
+                "0027",
+                "0028",
+                "0029",
+                "0030",
+                "0031",
+                "0032",
+            ):
                 if type(row.get(field)) is not bool:
                     return "Provider endpoint approvals must be explicit JSON booleans."
             elif field in row and row[field] is not False:
                 return "Legacy provider archives cannot grant endpoint approvals."
         mode = row.get("capability_mode")
-        if app_schema in ("0027", "0028", "0029", "0030", "0031") and mode not in (
+        if app_schema in ("0027", "0028", "0029", "0030", "0031", "0032") and mode not in (
             "schema",
             "json",
         ):
             return "Provider capability_mode must be schema or json."
-        if app_schema not in ("0027", "0028", "0029", "0030", "0031") and mode is not None:
+        if app_schema not in ("0027", "0028", "0029", "0030", "0031", "0032") and mode is not None:
             return "Legacy provider archives cannot set capability_mode."
         detected = row.get("detected_capability_mode")
-        if app_schema in ("0028", "0029", "0030", "0031"):
+        if app_schema in ("0028", "0029", "0030", "0031", "0032"):
             if "detected_capability_mode" not in row or detected not in (None, "schema", "json"):
                 return "Provider detected_capability_mode must be null, schema or json."
         elif detected is not None:
@@ -535,7 +546,7 @@ def _check_research_warning_acknowledgements(tables: dict[str, Any], app_schema:
     for row in tables.get("users") or []:
         if not isinstance(row, dict):
             return "User rows are malformed."
-        if app_schema in ("0029", "0030", "0031"):
+        if app_schema in ("0029", "0030", "0031", "0032"):
             value = row.get(field)
             if field not in row or (value is not None and not isinstance(value, str)):
                 return "User research-warning acknowledgement must be null or text."
@@ -626,7 +637,7 @@ def _check_new_case_state(tables: dict[str, Any], app_schema: str) -> str | None
         if not isinstance(encounter, dict):
             return "Encounter row is malformed."
         workflow = encounter.get("workflow_version", "legacy-v1")
-        if app_schema in ("0030", "0031") and "workflow_version" not in encounter:
+        if app_schema in ("0030", "0031", "0032") and "workflow_version" not in encounter:
             return "New-case workflow identity is missing."
         if workflow not in ("legacy-v1", new_case.WORKFLOW):
             return "Unknown encounter workflow identity."
@@ -637,7 +648,7 @@ def _check_new_case_state(tables: dict[str, Any], app_schema: str) -> str | None
             if "new_case" in draft:
                 return "Legacy encounters cannot carry new-case state."
             continue
-        if app_schema not in ("0030", "0031") or encounter.get("kind") != "registration":
+        if app_schema not in ("0030", "0031", "0032") or encounter.get("kind") != "registration":
             return "Invalid new-case workflow assignment."
         try:
             normalized = new_case.structural_draft(draft)
@@ -812,6 +823,10 @@ def _check_references(tables: dict[str, Any]) -> str | None:
                 continue
             if want not in target:
                 return f"staged references broken: {label} has no staged target"
+    # Follow-up payload validation is implemented with its state/proposal contract.
+    # Fail closed until that contract is available.
+    if tables.get("follow_up_proposals"):
+        return "Follow-up proposals are not yet supported by restore."
     proposal_rows = tables.get("new_case_proposals", [])
     if not isinstance(proposal_rows, list) or any(
         not isinstance(r, dict) or not isinstance(r.get("id"), str) for r in proposal_rows
@@ -869,6 +884,8 @@ def _check_references(tables: dict[str, Any]) -> str | None:
         if not lai and row.get("model_version_id") != pins.get("model_version_id"):
             return "New-case proposal model mismatch."
     for row in tables.get("signed_encounter_snapshots", []):
+        if row.get("follow_up_proposal_id") is not None:
+            return "Follow-up signatures are not yet supported by restore."
         new_id = row.get("new_case_proposal_id")
         legacy = row.get("batch_id") is not None and row.get("proposal_id") is not None
         new = row.get("batch_id") is None and row.get("proposal_id") is None and new_id is not None
@@ -1193,7 +1210,9 @@ def validate_archive_bytes(blob: bytes) -> dict[str, Any]:
                 }
         for name in backup_module.BACKUP_TABLES:
             if name not in db_tables:
-                if name == "new_case_proposals" and app_schema != "0031":
+                if (name == "new_case_proposals" and app_schema not in ("0031", "0032")) or (
+                    name == "follow_up_proposals" and app_schema != "0032"
+                ):
                     db_tables[name] = []
                     continue
                 if name == "provider_settings" and app_schema in ("0017", "0018"):

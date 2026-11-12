@@ -242,6 +242,9 @@ def safe_snapshot(row: Mapping[str, Any]) -> dict[str, Any]:
         "new_case_proposal_id": str(row["new_case_proposal_id"])
         if row.get("new_case_proposal_id")
         else None,
+        "follow_up_proposal_id": str(row["follow_up_proposal_id"])
+        if row.get("follow_up_proposal_id")
+        else None,
         "secondary_plan_revision": int(row.get("secondary_plan_revision", 1)),
         "secondary_plan_text": str(row.get("secondary_plan_text", "")),
         "snapshot": dict(row.get("snapshot") or {}),

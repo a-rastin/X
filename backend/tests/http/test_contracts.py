@@ -258,7 +258,7 @@ def test_ready_ok_against_real_database(
     payload = response.json()
     assert payload["status"] == "ready"
     assert payload["service"] == "x-insight"
-    assert payload["schema_version"] == db_module.EXPECTED_SCHEMA_VERSION == "0031"
+    assert payload["schema_version"] == db_module.EXPECTED_SCHEMA_VERSION == "0032"
     moment = contracts.parse_utc(payload["checked_at"])
     assert moment.tzinfo is not None
     assert response.headers["x-request-id"] == sent
@@ -578,6 +578,7 @@ def test_migrated_schema_table_inventory(migrated_test_engine) -> None:
         "ddi_source_documents",
         "encounter_addenda",
         "encounters",
+        "follow_up_proposals",
         "generation_batches",
         "idempotency_records",
         "model_network_versions",

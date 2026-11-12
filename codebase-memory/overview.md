@@ -20,7 +20,7 @@ Self-hosted, English/Persian desktop UI, one admin + a small physician team shar
   The shared shell uses Astryx navigation and a built academic theme; `web/src/shared/theme.css` carries responsive workspace and clinical tokens.
 - **DB**: PostgreSQL 16 (roles `x_insight_app` / `x_insight_migrate` / `x_insight_readonly`),
   Alembic migrations, SQLAlchemy Core DML. Schema head pinned as
-  `db.EXPECTED_SCHEMA_VERSION = "0031"` in the current working tree.
+  `db.EXPECTED_SCHEMA_VERSION = "0032"` in the current working tree.
 - **Commands**: all in `Makefile` — `make dev`, `make check`, `make test-backend`,
   `make test-e2e`, `make test-recovery`, `make verify`, `make prod-up`.
 
