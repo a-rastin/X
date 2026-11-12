@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[Follow-up Package D partial checkpoint (2026-11-12)](follow-up-package-d-2026-11-12.md): pure decisions, factor mapping and independent sections added; focused checks pass, exhaustive matrix and E/F integration remain open.
+
 [Follow-up Package C partial checkpoint (2026-11-12)](follow-up-package-c-2026-11-12.md): typed state, latest-signed-source adapters, strict autosave and config/preview/validate-step APIs added and tested; creation stays gated off until F/G, and full race/compatibility acceptance remains open.
 
 [Follow-up Package B partial checkpoint (2026-11-12)](follow-up-package-b-2026-11-12.md): additive schema and archive compatibility groundwork; follow-up validation and mixed-record recovery remain open.

@@ -271,6 +271,7 @@ def test_reached_questions_recompute_from_current_sources():
     draft = _complete()
     fu = draft["follow_up"]
     assert f.reached_questions(draft) == []  # no main drug => physician review
+    draft["medications"]["entries"] = [{"catalog_drug_id": "oral:x"}]
     fu["treatment"] = {"main_catalog_drug_id": "oral:x", "formulation": "oral"}
     assert "switch_needed" in f.reached_questions(draft)
     fu["treatment"] = {"main_catalog_drug_id": "oral:x", "formulation": "lai"}

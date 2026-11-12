@@ -303,7 +303,7 @@ round-trip without changed defaults, questionnaire gates or signed bytes.
 
 ## 7. Package D — Implement pure decisions and recommendation rules
 
-Depends: A, C. Status: pending.
+Depends: A, C. Status: partial — pure decisions, factor mapping and independent sections implemented; exhaustive matrix and E/F integration remain open. See [Package D checkpoint](progress/follow-up-package-d-2026-11-12.md).
 
 Files: proposed `B/cases/follow_up_rules.py`; `BT/assessments/test_follow_up_rules.py`.
 

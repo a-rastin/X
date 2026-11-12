@@ -4,10 +4,9 @@ Package C (see ``project-documents/dev/follow-up-implementation-plan.md`` §6).
 The state lives under ``draft_data.follow_up``; the shared ``panss``/``cssrs``/
 ``medications`` sections keep their existing shapes. This module owns the raw/
 effective state contract that packages B (restore validation) and F (proposal
-fingerprint) must agree with. It deliberately contains no decision engine:
-drug recommendations, the decision trace, proposals and signing belong to
-D/E/F. ``preview`` and ``validate-step`` here resolve *required inputs* and
-*reached questions* without ever creating a proposal.
+fingerprint) must agree with. Pure decision rules and independent sections are
+in ``follow_up_rules``; medication ranking, proposals and signing belong to E/F. ``preview`` and
+``validate-step`` resolve inputs and decisions without creating a proposal.
 
 Reuse: finite-decimal parsing, BMI categories, lab bounds and the override
 primitive come from ``new_case`` / ``new_case_rules``; the registration-only
@@ -29,7 +28,7 @@ from sqlalchemy.orm import Session
 from x_insight import contracts
 from x_insight.assessments.engine import evaluate
 from x_insight.assessments.released import get_released_definition
-from x_insight.cases import follow_up_content
+from x_insight.cases import follow_up_content, follow_up_rules
 from x_insight.cases.medications import validate_entries_structure
 from x_insight.cases.new_case import _critical, _outside, decimal_text
 from x_insight.cases.new_case_rules import bmi_category, override
@@ -136,6 +135,9 @@ class FollowUpState(TypedDict):
     reached_questions: list[str]
     steps: list[str]
     proposal: None
+    decision: dict[str, Any]
+    model_factors: dict[str, Any]
+    sections: dict[str, Any]
     revision: NotRequired[int]
     can_navigate: NotRequired[bool]
     navigation_errors: NotRequired[list[FieldError]]
@@ -506,40 +508,13 @@ def intervention_effects(effects: dict[str, Any]) -> tuple[str, ...]:
 
 
 def reached_questions(state: dict[str, Any]) -> list[str]:
-    """Which branch answers the *current* inputs reach (completeness mask).
-
-    This is a pure function of current state: source changes recompute it, so a
-    stale answer cannot silently activate a different branch. Package D owns
-    the authoritative decision trace; this only names the required inputs.
-    """
-    fu = state["follow_up"]
-    considerations = fu["considerations"]
-    treatment = fu["treatment"]
-    branches = fu["branches"]
-    recovery = considerations["recovery"]
-    if recovery is None or treatment["main_catalog_drug_id"] is None:
-        return []
-    if treatment["formulation"] == "lai":
-        return []  # physician review: no automated branch questions
-    effects = fu["effects"]
-    reached: list[str] = []
-    if effects["acute_dystonia"]:
-        reached.append("dystonia_resolved")
-        if branches["dystonia_resolved"] is True:
-            reached.append("dose_reduction_possible")
-    if not intervention_effects(effects):
-        if recovery == "controlled":
-            reached.append("switch_needed")
-            if branches["switch_needed"] is False:
-                reached.append("dose_reduction_possible")
-        elif recovery == "partial":
-            if considerations["adherence"]:
-                reached.append("persistent_harm_risk")
-        elif recovery == "none_or_worse":
-            reached.append("treatment_resistant")
-            if branches["treatment_resistant"] is False and considerations["adherence"]:
-                reached.append("persistent_harm_risk")
-    return sorted(set(reached))
+    """Return the authoritative decision path's active branch questions."""
+    assets = verified_content()["assets"]
+    return follow_up_rules.decision(
+        state,
+        assets["follow-up/v1/lai-equivalences.json"]["equivalences"],
+        assets["new-case/v1/antipsychotic-formulations.json"]["entries"],
+    )["reached_questions"]
 
 
 def evaluate_state(draft: dict[str, Any], patient: dict[str, Any]) -> FollowUpState:
@@ -609,6 +584,8 @@ def evaluate_state(draft: dict[str, Any], patient: dict[str, Any]) -> FollowUpSt
             effective = answer["manual"]
         elif findings[name]:
             effective = True
+        elif name == "pregnant" and raw["pregnant"] is not None:
+            effective = raw["pregnant"]
         elif answer["inherited"] is not None:
             effective = bool(answer["inherited"])
         else:
@@ -622,6 +599,7 @@ def evaluate_state(draft: dict[str, Any], patient: dict[str, Any]) -> FollowUpSt
             answer["manual"] is not None
             or bool(findings[name])
             or answer["inherited"] is not None
+            or (name == "pregnant" and raw["pregnant"] is not None)
             or (name == "hyperprolactinemia" and "prolactin" in measurements)
         )
         flags[name] = {
@@ -716,7 +694,7 @@ def evaluate_state(draft: dict[str, Any], patient: dict[str, Any]) -> FollowUpSt
         if fu["branches"][name] is None:
             required("considerations", "follow_up.branches." + name, "branch_answer_required")
 
-    return {
+    result: FollowUpState = {
         "raw": state,
         "age": age,
         "visit_year": fu["visit_year"],
@@ -731,7 +709,27 @@ def evaluate_state(draft: dict[str, Any], patient: dict[str, Any]) -> FollowUpSt
         "reached_questions": reached,
         "steps": list(STEPS),
         "proposal": None,  # F owns proposals; reading never creates one.
+        "decision": {},
+        "model_factors": {},
+        "sections": {},
     }
+    assets = verified_content()["assets"]
+    decision = follow_up_rules.decision(
+        state,
+        assets["follow-up/v1/lai-equivalences.json"]["equivalences"],
+        assets["new-case/v1/antipsychotic-formulations.json"]["entries"],
+    )
+    factors = follow_up_rules.model_factors(result)
+    if decision["terminal"] == "oral_replacement":
+        for name, factor in factors.items():
+            if factor["value"] is None:
+                required("considerations", "model_factors." + name, "model_factor_required")
+    result["decision"] = decision
+    result["model_factors"] = factors
+    result["sections"] = follow_up_rules.sections(result, sex, decision)
+    result["can_complete_step"] = {name: not values for name, values in errors.items()}
+    result["can_complete"] = not any(errors.values())
+    return result
 
 
 def preview(
