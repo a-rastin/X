@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[Follow-up Package F partial checkpoint (2026-11-13)](follow-up-package-f-2026-11-13.md): internal fingerprint and pin verification added; proposal persistence, signing and acceptance remain open.
+
 [Follow-up Package E partial checkpoint (2026-11-12)](follow-up-package-e-2026-11-12.md): ranking and D/X policy added with focused tests; public integration and full acceptance remain open.
 
 [Follow-up Package D partial checkpoint (2026-11-12)](follow-up-package-d-2026-11-12.md): pure decisions, factor mapping and independent sections added; focused checks pass, exhaustive matrix and E/F integration remain open.

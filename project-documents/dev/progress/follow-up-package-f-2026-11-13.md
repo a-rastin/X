@@ -1,0 +1,7 @@
+# Follow-up Package F partial checkpoint — 2026-11-13
+
+Package F remains **incomplete**. Base revision `5e622d61d1b51803f31ab613a95f6187f8ba147c`. Added an internal `follow_up_plans.verified_inputs` boundary that re-hashes packaged content and installed model bytes, verifies draft manifest pins, assessment versions, model execution profile and manifest identity, DDI release identity and selected catalog IDs, and derives a canonical fingerprint from saved raw/effective state, demographics, installed identities and physician availability. It is not wired to public routes or signing. Follow-up creation remains gated off.
+
+Verification: `cd backend && .venv/bin/pytest -q tests/assessments/test_follow_up_plan_inputs.py` passed (1 test; synthetic database responses and actual packaged model/content). Ruff check and mypy passed for the new module. No database was migrated; no public HTTP, transaction or concurrency acceptance was run.
+
+Handoff: finish the fingerprint contract, including exact assessment definition identity and validation against the specification; persist and deduplicate immutable proposals; add author-owned reads/freshness, final-plan integration, replay-safe v5 signing and audit; audit every legacy command guard; test public interfaces, races and unchanged historical signatures. Package B recovery, C/D/E acceptance, G UI and H end-to-end work remain open. Do not enable creation or call this package complete. No deployment was made.
