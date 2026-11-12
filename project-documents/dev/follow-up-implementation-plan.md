@@ -258,7 +258,11 @@ remain byte/hash-identical. Full mixed-data public recovery drill occurs in H.
 
 ## 6. Package C — Build signed baselines, typed state and autosave
 
-Depends: A, B. Status: pending.
+Depends: A, B. Status: partial — backend state contract implemented and tested
+(latest signed source across variants, v1–v5 adapters/frozen summary, typed
+defaults/normalization/autosave, config/preview/validate-step); `follow-up-v1`
+creation stays gated off until F/G. See
+[Package C checkpoint](progress/follow-up-package-c-2026-11-12.md).
 
 Files: proposed baseline/state modules; `B/cases/{encounters,chart,router}.py`;
 `BT/http/test_follow_up_state.py`; relevant `BT/assessments/` pure-state tests.

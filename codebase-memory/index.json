@@ -1055,7 +1055,7 @@
       ],
       "purpose": "Encounter creation, workflow dispatch, author-only autosave and single-draft enforcement; legacy follow-up baseline copying.",
       "summary": "files/backend/src/x_insight/cases/encounters.py.md",
-      "source_sha256": "b00be57fc9e60a2d8fea133999f5083447b46dea5470c25af93ee355698e77c0"
+      "source_sha256": "39f28e0c6af857f4f31972541b9ac8e4fa2e6a2f706526da79021da6c7579973"
     },
     {
       "path": "backend/src/x_insight/cases/history.py",

@@ -66,6 +66,12 @@ KINDS = ("registration", "follow_up")
 DRAFT_LIFECYCLE = "draft"
 DISCARDED_LIFECYCLE = "discarded"
 
+# ponytail: one gate instead of a rollout framework. follow-up-v1 creation is
+# fully built and tested but stays off until packages F (v5 signing/proposals)
+# and G (versioned UI dispatch) land; flipping it now would hand physicians a
+# draft the running wizard cannot render or sign. Flip to True in F/G.
+FOLLOWUP_V1_ACTIVE = False
+
 # Autosave body bounds: generous for wizard pages, small enough to keep the
 # 1 MiB edge cap irrelevant. Depth/node limits stop pathological nesting.
 MAX_DRAFT_TOP_KEYS = 100
@@ -350,6 +356,36 @@ def build_followup_draft_data(
     }
 
 
+def _new_follow_up_body(
+    session: Session, patient_id: uuid.UUID, patient_row: dict[str, Any], visit_year: int
+) -> dict[str, Any]:
+    """Build the typed follow-up-v1 body from the latest signed source.
+
+    Called only while the patient row is locked by :func:`create_open_draft`,
+    so the resolved source cannot be a stale snapshot from a sign/create race.
+    """
+    from x_insight.cases import follow_up, follow_up_baseline
+
+    loaded = follow_up.verified_content()
+    manifest = loaded["manifest"]
+    source = follow_up_baseline.latest_signed_source(session, patient_id)
+    baseline = follow_up_baseline.project_baseline(
+        session, source, patient_row, lexicomp_version=manifest["lexicomp_version"]
+    )
+    pins = {
+        "workflow_manifest_hash": loaded["hash"],
+        "lexicomp_version": manifest["lexicomp_version"],
+        "lexicomp_content_hash": manifest["lexicomp_content_hash"],
+        "assessment_versions": manifest["assessment_versions"],
+        "model_sha256": manifest["files"]["new-case/v1/oral-antipsychotic.xml"],
+        "lab_content_hash": manifest["files"]["new-case/v1/labs.json"],
+        "formulation_content_hash": manifest["files"][
+            "new-case/v1/antipsychotic-formulations.json"
+        ],
+    }
+    return follow_up.fresh_draft(visit_year, pins, baseline)
+
+
 def _check_draft_nodes(value: Any, depth: int, counter: list[int]) -> None:
     """Recurse the draft body enforcing depth/node/JSON-type bounds."""
     counter[0] += 1
@@ -506,7 +542,7 @@ def safe_draft_for_author(row: dict[str, Any]) -> dict[str, Any]:
     """Author-only draft shape: reference fields plus the private body."""
     reference = safe_encounter_reference(row)
     body = row.get("draft_data")
-    if row.get("workflow_version") == "new-case-v1":
+    if row.get("workflow_version") in {"new-case-v1", "follow-up-v1"}:
         from copy import deepcopy
 
         reference["draft_data"] = deepcopy(body)
@@ -587,9 +623,9 @@ def require_author(encounter: dict[str, Any], user: dict[str, Any]) -> dict[str,
 
 
 def require_legacy_workflow(encounter: dict[str, Any]) -> None:
-    if encounter.get("workflow_version") == "new-case-v1":
+    if encounter.get("workflow_version", "legacy-v1") != "legacy-v1":
         raise contracts.ContractError(
-            409, "WORKFLOW_MISMATCH", "Use the deterministic new-case endpoints for this encounter."
+            409, "WORKFLOW_MISMATCH", "This operation requires a legacy encounter."
         )
 
 
@@ -604,7 +640,10 @@ def read_draft_for_author(
     require_author(encounter, user)
     from x_insight.cases.history import draft_for_encounter
 
-    encounter["draft_data"] = draft_for_encounter(session, encounter)
+    # Typed follow-up state is served verbatim; legacy history/cssrs
+    # normalization must not rewrite the strict raw shape.
+    if encounter.get("workflow_version") != "follow-up-v1":
+        encounter["draft_data"] = draft_for_encounter(session, encounter)
     return encounter
 
 
@@ -638,7 +677,63 @@ def create_open_draft(
             "Baseline encounter reference is invalid.",
             {"baseline_encounter_id": ["Must be text or null."]},
         )
-    if validated_kind == "follow_up" and baseline_encounter_id and isinstance(baseline, dict):
+    patient_row = (
+        session.execute(
+            select(tables.patients).where(tables.patients.c.id == patient_id).with_for_update()
+        )
+        .mappings()
+        .first()
+    )
+    if patient_row is None:
+        raise contracts.ContractError(404, "NOT_FOUND", "Patient not found.")
+    # S51 §1 provisional: archived patients are read-only (409, no content leak).
+    if bool(dict(patient_row).get("archived", False)):
+        raise contracts.ContractError(
+            409,
+            "PATIENT_ARCHIVED",
+            "Patient is archived and read-only.",
+            {"patient_id": ["Patient is archived."]},
+        )
+    # S51 §4: inactive authors cannot create (route already 401/403; inside-tx
+    # recheck closes the sign/deactivation race window).
+    from x_insight.identity import service as _identity
+
+    _author_row = _identity.get_user_by_id(session, author["id"])
+    if _author_row is None or not bool(_author_row.get("active", False)):
+        raise contracts.ContractError(403, "FORBIDDEN", "Author is inactive.")
+    occupying = get_open_draft_for_patient(session, patient_id)
+    if occupying is not None:
+        raise contracts.ContractError(
+            409,
+            "OPEN_DRAFT_EXISTS",
+            "An open draft already exists for this patient.",
+            {"patient_id": ["An open draft already exists for this patient."]},
+        )
+    # New-version follow-ups resolve their own signed baseline server-side; a
+    # client inline baseline could forge provenance and is refused (plan §3.2).
+    new_follow_up = (
+        FOLLOWUP_V1_ACTIVE
+        and validated_kind == "follow_up"
+        and baseline is None
+        and baseline_encounter_id is None
+    )
+    if (
+        FOLLOWUP_V1_ACTIVE
+        and validated_kind == "follow_up"
+        and (baseline is not None or baseline_encounter_id is not None)
+    ):
+        raise contracts.ContractError(
+            422,
+            "VALIDATION_FAILED",
+            "Follow-up-v1 resolves its baseline server-side; inline baselines are not accepted.",
+            {"baseline": ["Do not supply a baseline for this workflow."]},
+        )
+    if (
+        validated_kind == "follow_up"
+        and not new_follow_up
+        and baseline_encounter_id
+        and isinstance(baseline, dict)
+    ):
         # Only a matching frozen signed copy may use the legacy read contract.
         # New inline baselines still use strict validation below.
         from x_insight.cases import history as history_service
@@ -676,7 +771,7 @@ def create_open_draft(
                     },
                 }
     frozen_new_case = None
-    if validated_kind == "follow_up" and baseline is None:
+    if validated_kind == "follow_up" and baseline is None and not new_follow_up:
         previous = (
             session.execute(
                 select(tables.signed_encounter_snapshots)
@@ -709,7 +804,7 @@ def create_open_draft(
                 "medications": frozen["medications"]["entries"],
                 "provenance_note": None,
             }
-    validated_baseline = validate_followup_baseline(baseline)
+    validated_baseline = None if new_follow_up else validate_followup_baseline(baseline)
     if validated_kind != "follow_up" and (
         validated_baseline is not None or baseline_encounter_id is not None
     ):
@@ -719,41 +814,11 @@ def create_open_draft(
             "Baseline copy applies to follow-up drafts only.",
             {"kind": ["Baseline copy requires kind 'follow_up'."]},
         )
-    patient_row = (
-        session.execute(
-            select(tables.patients).where(tables.patients.c.id == patient_id).with_for_update()
-        )
-        .mappings()
-        .first()
-    )
-    if patient_row is None:
-        raise contracts.ContractError(404, "NOT_FOUND", "Patient not found.")
-    # S51 §1 provisional: archived patients are read-only (409, no content leak).
-    if bool(dict(patient_row).get("archived", False)):
-        raise contracts.ContractError(
-            409,
-            "PATIENT_ARCHIVED",
-            "Patient is archived and read-only.",
-            {"patient_id": ["Patient is archived."]},
-        )
-    # S51 §4: inactive authors cannot create (route already 401/403; inside-tx
-    # recheck closes the sign/deactivation race window).
-    from x_insight.identity import service as _identity
-
-    _author_row = _identity.get_user_by_id(session, author["id"])
-    if _author_row is None or not bool(_author_row.get("active", False)):
-        raise contracts.ContractError(403, "FORBIDDEN", "Author is inactive.")
-    occupying = get_open_draft_for_patient(session, patient_id)
-    if occupying is not None:
-        raise contracts.ContractError(
-            409,
-            "OPEN_DRAFT_EXISTS",
-            "An open draft already exists for this patient.",
-            {"patient_id": ["An open draft already exists for this patient."]},
-        )
     moment = contracts.utcnow()
     encounter_id = uuid.uuid4()
-    if validated_kind == "follow_up":
+    if new_follow_up:
+        initial_body = _new_follow_up_body(session, patient_id, dict(patient_row), moment.year)
+    elif validated_kind == "follow_up":
         initial_body = build_followup_draft_data(
             author_id=str(author["id"]),
             baseline=validated_baseline,
@@ -773,7 +838,11 @@ def create_open_draft(
             name: frozen_new_case["draft_data"][name] for name in ("panss", "cssrs")
         }
     workflow = "legacy-v1"
-    if (
+    if new_follow_up:
+        from x_insight.cases import follow_up
+
+        workflow = follow_up.WORKFLOW
+    elif (
         validated_kind == "registration"
         and patient_row.get("birth_year") is not None
         and patient_row.get("clinical_status") == "first_time"
@@ -793,7 +862,7 @@ def create_open_draft(
     from x_insight.cases import history as history_service
     from x_insight.cases.signing import established_clozapine_eligible
 
-    if not established_clozapine_eligible(
+    if not new_follow_up and not established_clozapine_eligible(
         session,
         {
             "id": encounter_id,
@@ -942,8 +1011,17 @@ def patch_draft(
             "STALE_REVISION",
             "The draft changed. Reload and reconcile your edits.",
         )
-    is_new_case = encounter.get("workflow_version") == "new-case-v1"
+    workflow = encounter.get("workflow_version", "legacy-v1")
+    if workflow not in {"legacy-v1", "new-case-v1", "follow-up-v1"}:
+        raise contracts.ContractError(409, "WORKFLOW_MISMATCH", "Unsupported encounter workflow.")
+    is_new_case = workflow == "new-case-v1"
+    is_follow_up = workflow == "follow-up-v1"
+    typed = is_new_case or is_follow_up
     if is_new_case and isinstance(draft_data, dict):
+        if "follow_up" in draft_data:
+            raise contracts.ContractError(
+                422, "WRONG_WORKFLOW", "This encounter cannot acquire state from another workflow."
+            )
         from x_insight.cases import new_case
 
         validate_draft_data(draft_data)
@@ -954,13 +1032,27 @@ def patch_draft(
             recorded_at=contracts.serialize_utc(contracts.utcnow()),
         )
         new_case.validate_pins(session, draft_data, new_case.clinical_content())
-    elif isinstance(draft_data, dict) and "new_case" in draft_data:
-        raise contracts.ContractError(
-            422, "WRONG_WORKFLOW", "Legacy encounters cannot acquire new-case state."
+    elif is_follow_up and isinstance(draft_data, dict):
+        if "new_case" in draft_data:
+            raise contracts.ContractError(
+                422, "WRONG_WORKFLOW", "This encounter cannot acquire state from another workflow."
+            )
+        from x_insight.cases import follow_up
+
+        validate_draft_data(draft_data)
+        draft_data = follow_up.prepare_autosave(
+            encounter["draft_data"],
+            draft_data,
+            actor_id=str(author["id"]),
+            recorded_at=contracts.serialize_utc(contracts.utcnow()),
         )
-    if not is_new_case and encounter.get("kind") == "registration" and isinstance(draft_data, dict):
+    elif isinstance(draft_data, dict) and ("new_case" in draft_data or "follow_up" in draft_data):
+        raise contracts.ContractError(
+            422, "WRONG_WORKFLOW", "This encounter cannot acquire state from another workflow."
+        )
+    if not typed and encounter.get("kind") == "registration" and isinstance(draft_data, dict):
         draft_data = registration_effects_for_save(encounter.get("draft_data"), draft_data)
-    if not is_new_case and isinstance(draft_data, dict):
+    if not typed and isinstance(draft_data, dict):
         from x_insight.assessments import cssrs as cssrs_service
         from x_insight.cases import history as history_service
         from x_insight.cases import medications as medications_service

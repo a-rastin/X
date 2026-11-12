@@ -693,6 +693,9 @@ def save_history(
     encounter = dict(row)
     encounters_service.require_draft_lifecycle(encounter)
     encounters_service.require_author(encounter, author)
+    # Strict typed workflows have their own autosave; a legacy history command
+    # must never rewrite a follow-up-v1/new-case-v1 body (plan §6.6).
+    encounters_service.require_legacy_workflow(encounter)
     from x_insight.cases import patients as _patients
 
     _patients.require_encounter_mutable(session, encounter, author)

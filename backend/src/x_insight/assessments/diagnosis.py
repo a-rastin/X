@@ -278,6 +278,8 @@ def acknowledge_below_threshold(
     encounter = dict(row)
     encounters_service.require_draft_lifecycle(encounter)
     encounters_service.require_author(encounter, author)
+    # Legacy diagnosis commands must not rewrite a strict typed body (plan §6.6).
+    encounters_service.require_legacy_workflow(encounter)
     if int(encounter["revision"]) != expected_revision:
         raise contracts.ContractError(
             412,
@@ -386,6 +388,8 @@ def bypass_diagnosis(
     encounter = dict(row)
     encounters_service.require_draft_lifecycle(encounter)
     encounters_service.require_author(encounter, author)
+    # Legacy diagnosis commands must not rewrite a strict typed body (plan §6.6).
+    encounters_service.require_legacy_workflow(encounter)
     if int(encounter["revision"]) != expected_revision:
         raise contracts.ContractError(
             412,

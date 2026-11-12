@@ -1,7 +1,6 @@
 # backend/src/x_insight/cases/encounters.py
 
-Source SHA-256: b00be57fc9e60a2d8fea133999f5083447b46dea5470c25af93ee355698e77c0
-Source commit: b153b7b32f624a0c907362a7fe0bac7a6a67b181
+Source SHA-256: 39f28e0c6af857f4f31972541b9ac8e4fa2e6a2f706526da79021da6c7579973
 
 ## Purpose
 Encounter drafts: creation, author-only access, patching with revision fencing, discard, and
@@ -22,12 +21,16 @@ follow-up baseline reads. Owns the "at most one open draft per patient" rule.
   as answers**.
 
 ## Behavior and Constraints
-- Current follow-ups remain `legacy-v1`. With no supplied baseline, creation selects the
-  latest signed **New case** snapshot only, before acquiring the patient lock; it can miss a
-  newer signed legacy follow-up. It carries the prior medication pin/plan/assessments but
-  does not translate New case conditions into legacy History answers.
+- `FOLLOWUP_V1_ACTIVE = False` gates typed `follow-up-v1` creation. When on, creation
+  resolves the latest signed source across all variants under the patient lock, refuses
+  client inline baselines, and builds a strict typed draft. Off (default) keeps legacy
+  follow-up behavior byte-identical: with no supplied baseline it selects the latest
+  signed **New case** snapshot only, which can miss a newer signed legacy follow-up.
 - New case registration with birth year uses `new-case-v1`; PATCH applies typed state,
-  content-pin and attributed-override checks. Legacy drafts cannot acquire that state.
+  content-pin and attributed-override checks. `follow-up-v1` PATCH routes through
+  `cases/follow_up.prepare_autosave` (rejects forged version/pins/baseline/provenance).
+  Legacy drafts cannot acquire New case or follow-up state; unsupported workflows fail
+  closed on PATCH, and legacy history/effects write commands call `require_legacy_workflow`.
 - Registration drafts cannot capture adverse effects: `registration_effects_for_save` accepts
   only a byte-identical round-trip or omission, rejecting add/change/delete with 422.
 - `draft_data` bounds: ≤100 top keys, ≤128-char keys, depth ≤6, ≤1000 nodes, ≤200 000 bytes.

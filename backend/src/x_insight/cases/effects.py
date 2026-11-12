@@ -565,6 +565,8 @@ def set_effect_status(
     encounter = dict(row)
     encounters_service.require_draft_lifecycle(encounter)
     encounters_service.require_author(encounter, author)
+    # Strict typed workflows have their own autosave (plan §6.6).
+    encounters_service.require_legacy_workflow(encounter)
     from x_insight.cases import patients as _patients
 
     _patients.require_encounter_mutable(session, encounter, author)

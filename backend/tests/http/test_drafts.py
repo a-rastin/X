@@ -696,3 +696,20 @@ def test_unknown_encounter_is_not_found(admin_client, clean_registry, monkeypatc
         == 404
     )
     assert TestClient(app).get(f"/api/v1/encounters/{missing}").status_code == 401
+
+
+def test_legacy_workflow_guard_and_forged_follow_up_state(
+    admin_client, clean_registry, monkeypatch
+) -> None:
+    encounters_service.require_legacy_workflow({"workflow_version": "legacy-v1"})
+    for version in ("new-case-v1", "follow-up-v1", "unknown"):
+        with pytest.raises(contracts.ContractError) as error:
+            encounters_service.require_legacy_workflow({"workflow_version": version})
+        assert error.value.code == "WORKFLOW_MISMATCH"
+
+    _make_physician(admin_client, "dr_workflow_guard")
+    client, csrf, _ = _physician_client(clean_registry, monkeypatch, "dr_workflow_guard", "pw123")
+    encounter_id = _create_patient(client, csrf)["draft"]["id"]
+    response = _save(client, csrf, encounter_id, {"follow_up": {}}, 1)
+    assert response.status_code == 422
+    assert client.get(f"/api/v1/encounters/{encounter_id}").json()["revision"] == 1

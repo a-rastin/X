@@ -836,6 +836,13 @@ def get_followup_baseline(
         return user
     assert isinstance(user, dict)
     encounter, state = chart_service.read_followup_baseline_for_author(session, encounter_id, user)
+    if encounter.get("workflow_version") == "follow-up-v1":
+        return error_response(
+            409,
+            "WRONG_WORKFLOW",
+            "Use /encounters/{id}/follow-up for this version.",
+            get_request_id(request),
+        )
     content: dict[str, Any] = {
         "encounter": encounters_service.safe_encounter_reference(encounter),
         "revision": int(encounter["revision"]),
@@ -2094,4 +2101,87 @@ def sign_new_case(
         "new_case.sign",
         payload.model_dump(mode="json"),
         expected,
+    )
+
+
+# --- Package C: follow-up-v1 config, preview and navigation validation ---
+# Reads never create a proposal (F owns generation/signing). These routes are
+# reachable once FOLLOWUP_V1_ACTIVE is flipped in encounters.create_open_draft.
+
+
+class FollowUpStepRequest(BaseModel):
+    model_config = {"extra": "forbid"}
+    destination: Literal[
+        "panss",
+        "harm",
+        "history",
+        "medications",
+        "effects",
+        "considerations",
+        "proposal",
+    ]
+
+
+@router.get("/follow-up/config")
+def get_follow_up_config(request: Request, session: Session = Depends(get_session)) -> JSONResponse:
+    """Physician read: versioned labels/definitions, hashes, LAI equivalences.
+
+    No credentials, no provider, no dependency on installed model bytes.
+    """
+    from x_insight.cases import follow_up
+
+    user = _require_user(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    if user.get("role") != "physician":
+        return error_response(
+            403, "FORBIDDEN", "Physician access required.", get_request_id(request)
+        )
+    return JSONResponse(content=follow_up.config())
+
+
+@router.get("/encounters/{encounter_id}/follow-up")
+def preview_follow_up(
+    encounter_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    """Author-only typed state preview (ETag = encounter revision)."""
+    from x_insight.cases import follow_up
+
+    user = _require_user(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    state = follow_up.preview(session, encounter_id, user)
+    response = JSONResponse(content=state)
+    response.headers["ETag"] = contracts.format_etag(state["revision"])
+    return response
+
+
+@router.post("/encounters/{encounter_id}/follow-up/validate-step")
+def validate_follow_up_step(
+    encounter_id: uuid.UUID,
+    payload: FollowUpStepRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    """Validate prerequisites through the step before ``destination``.
+
+    No state change and no inferred answers; a read that reports
+    ``can_navigate`` plus field errors from the current saved inputs.
+    """
+    from x_insight.cases import follow_up
+
+    user = _require_physician_mutation(request, session)
+    if isinstance(user, JSONResponse):
+        return user
+    expected = encounters_service.require_if_match_revision(
+        request.headers.get(contracts.IF_MATCH_HEADER)
+    )
+    return JSONResponse(
+        content=follow_up.preview(
+            session,
+            encounter_id,
+            user,
+            expected_revision=expected,
+            destination=payload.destination,
+        )
     )
