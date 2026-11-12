@@ -50,6 +50,12 @@ replaces the two-note-box behavior.
 **Revisit when:** the registration or follow-up wizard step list changes
 **See:** registration-flow.md#registration-opens-on-the-wizard — c6dd360a-d80a-45a2-aa17-7239c4368829 — as of 2026-10-18
 
+Scope rechecked 2026-11-12: this remains the `legacy-v1` contract. The confirmed
+new follow-up design changes ordering and effects only for future `follow-up-v1`
+encounters; existing drafts retain this behavior. See the
+[planned specification](../project-documents/dev/follow-up-specification.md).
+The registration/follow-up separation and fresh-effect principle remain active.
+
 Adverse effects are recorded on a follow-up encounter, not while adding
 a new patient. The registration wizard is Register patient, Diagnosis,
 PANSS, C-SSRS, History, Medications, Proposal review. Follow-up keeps

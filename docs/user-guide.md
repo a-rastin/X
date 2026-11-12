@@ -2,6 +2,11 @@
 
 Last updated: 2026-11-09. This guide describes the current application for physicians and administrators. For installation and startup, use the [Installation and Running Guide](installation.md).
 
+Planning note (2026-11-12): the [reconciled follow-up redesign](../project-documents/dev/follow-up-specification.md)
+and [implementation plan](../project-documents/dev/follow-up-implementation-plan.md)
+are future work. The follow-up instructions in this guide describe current
+runtime behavior; the redesigned seven-step workflow is not available yet.
+
 X-INSIGHT is a research workspace for recording patient encounters, completing structured assessments, reviewing medication interactions, generating proposals, and signing physician plans. Its research status and clinical-content review limitations still apply; a generated proposal requires physician review. This guide explains application controls and does not provide treatment advice.
 
 ## Contents

@@ -1,5 +1,16 @@
 # Content review ledger (S00, 2026-10-04)
 
+**Planned follow-up scope (2026-11-12):** the
+[reconciled follow-up specification](../project-documents/dev/follow-up-specification.md)
+and [implementation plan](../project-documents/dev/follow-up-implementation-plan.md)
+replace legacy effect questionnaires/LLM packages only for future `follow-up-v1`
+encounters. Existing drafts/releases remain unchanged. Seven simple effects,
+fixed oral-model inputs, direct/excluded outcomes and the confirmed graph
+extensions require their own versioned implementation content; product agreement
+does not approve new package bytes or assert clinical validation. Legacy review
+entries below retain their original scope and do not add questionnaire gates
+to the new version.
+
 Documentation only. Tracks content requiring owner review: every question in plan.md §7.1 plus history/severity, DDI, and workflow bundles. Remaining section numbers are retained for existing references.
 
 - **Reviewer for §§2–7:** content owner. All 11 concrete question packages in §§4–5 are **reviewed and confirmed / approved** by explicit owner instruction on 2026-10-09. The resolved assessment item has been removed from this review ledger.

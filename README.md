@@ -50,6 +50,13 @@ every acceptance check has passed. See the current boundaries below.
 
 ## Current engineering status
 
+The [2026-11-12 follow-up redesign](project-documents/dev/follow-up-specification.md)
+is reconciled and **awaiting implementation**. Its
+[step-by-step agent plan](project-documents/dev/follow-up-implementation-plan.md)
+covers versioned baselines/forms, deterministic decisions, D/X exclusions,
+signing and mixed-history recovery. Current follow-up runtime remains legacy;
+this planning work does not claim the new workflow is available.
+
 The [Issue 20 Status follow-up](project-documents/dev/progress/s58.md#follow-up-2026-11-02--issue-20-implementation)
 adds a terminal-generation-failure alert and distinguishes provider and Bayesian
 inference timeouts; live browser and deployed acceptance remain open.
@@ -380,6 +387,7 @@ Makefile             Development, verification, and deployment commands
 | Product scope and requirements | [User requirements](project-documents/dev/user-requirements.md) |
 | Behavior and architectural contracts | [System design](project-documents/dev/system-design.md), [system architecture](project-documents/dev/system-architecture.md) |
 | Implementation policy and scheduled work | [Plan](project-documents/dev/plan.md), [tasks](project-documents/dev/tasks.md) |
+| Agreed follow-up redesign and agent implementation handoff | [Specification](project-documents/dev/follow-up-specification.md), [implementation plan](project-documents/dev/follow-up-implementation-plan.md), [source files](project-documents/changes/follow-up-2026-11-12/README.md) |
 | Clinical asset review and approval | [Content review ledger](content/review-ledger.md) |
 | Installation, upgrades, and recovery | [Operator runbook](deploy/README.md) |
 | DDInter build, review, publish, and default rollback | [DDInter operations](docs/ddinter-operations.md) |

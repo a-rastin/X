@@ -8,9 +8,9 @@ X-INSIGHT is a research prototype helping physicians/psychiatrists explore treat
 
 **New case physician flow:** Register patient → establish diagnosis → optionally complete PANSS → assess self/other harm → enter medical history/examination → select current medications → enter treatment considerations → generate proposed plan → review and edit physician plan → explicitly confirm, save, and sign final plan.
 
-**Revision scope (2026-11-09):** The revised clinical workflow applies only to **New case registration**. Known case registration and follow-up retain their existing clinical behavior. Shared language support, physician names, and physician-specific unavailable-drug settings are included. The New case requirements take precedence over legacy LLM, CPT-slider, and registration requirements. Existing signed records, historical datasets, and legacy runs remain readable and unchanged.
+**Revision scope (2026-11-12; follow-up implementation pending):** New case registration uses its implemented `new-case-v1` contract. Newly created follow-ups will use the reconciled `follow-up-v1` contract in FR-70–FR-79 and the [follow-up specification](follow-up-specification.md); see the [implementation plan](follow-up-implementation-plan.md). Until implemented, runtime follow-up remains legacy. Known case registration and existing open legacy follow-up drafts retain their workflow. Existing signed records, historical datasets and legacy runs remain readable and unchanged. The version-specific requirements take precedence over legacy LLM, CPT-slider and questionnaire rules within their scopes.
 
-**Follow-up flow:** Re-assess → review the initial proposal and its Bayesian-network probabilities → optionally adjust probabilities and compare recalculated results → finalize and sign the secondary treatment plan.
+**Planned follow-up flow:** Historical summary → optional PANSS → self/other harm with nested C-SSRS → history/examination → medications and main antipsychotic/formulation → seven simple adverse effects → treatment considerations and conditional physician decisions → deterministic proposed plan → edit and explicitly confirm/sign the physician plan. No diagnosis step, LLM or probability sliders in `follow-up-v1`. Existing legacy drafts retain their older flow.
 
 ### Terminology
 
@@ -23,7 +23,7 @@ X-INSIGHT is a research prototype helping physicians/psychiatrists explore treat
 
 For New case, the application supplies patient data directly to the fixed oral-antipsychotic Bayesian network and obtains its results. There is no LLM, generated CPT, MCP reasoning request, or physician probability-slider adjustment. The physician edits final-plan text, not network probabilities. The generated proposal remains separate from the confirmed physician plan.
 
-For unchanged Known case and follow-up workflows, MCP provides the tool-access environment and the LLM estimates CPT values; the application validates those values and executes the Bayesian networks. The legacy requirements below remain scoped to those workflows.
+For Known case registration and existing `legacy-v1` follow-up drafts, MCP provides the tool-access environment and the LLM estimates CPT values; the application validates those values and executes the Bayesian networks. The legacy requirements below remain scoped to those workflows.
 
 ## Functional Requirements
 
@@ -39,7 +39,7 @@ For unchanged Known case and follow-up workflows, MCP provides the tool-access e
 
 **FR-05 — Shared language support:** Labels, validation messages, help text, and new plan sections support Persian and English. English is the default. A language-switch button remains at the upper left in either language. Persian uses right-to-left layout, with readable drug names, lab abbreviations, units, numeric values, and IDs. User-entered names remain as entered; source Lexicomp notes retain their original text.
 
-**FR-06 — Unavailable drugs:** Add an “Unavailable drugs” physician settings section listing oral and injectable antipsychotic formulations. The physician may mark formulations that must not be recommended. Settings are persistent, physician-specific, and formulation-specific; excluding an injectable formulation does not automatically exclude its oral counterpart. Apply these settings to New case recommendations without redesigning legacy clinical workflows.
+**FR-06 — Unavailable drugs:** Add an “Unavailable drugs” physician settings section listing oral and injectable antipsychotic formulations. The physician may mark formulations that must not be recommended. Settings are persistent, physician-specific, and formulation-specific; excluding an injectable formulation does not automatically exclude its oral counterpart. Apply these settings to New case and planned `follow-up-v1` new antipsychotic recommendations. Existing legacy clinical workflows are unchanged.
 
 ### New Case Registration
 
@@ -74,21 +74,45 @@ Retained hidden/disabled conditional values do not affect calculations or impose
 
 **FR-18 — Review/edit/confirm:** Present the original generated proposal separately from an editable physician plan. The physician can modify proposed content, then explicitly confirm the final text. Only after confirmation save the immutable signed final plan. Keep the original proposal, final edits, physician identity, and timestamps distinguishable. New case requires neither CPT-slider acceptance nor a provider API key. Relevant input/availability changes make an unsigned proposal stale and require regeneration before confirmation; language changes and final-text edits do not. Preserve edits on failure.
 
-**FR-19 — Compatibility:** Do not call the legacy LLM coordinator, start LLM jobs, estimate CPTs, or expose sliders for New case. Keep Known case/follow-up clinical behavior. Readers and reports support both legacy and new signatures without rewriting historical records or inventing old questionnaire answers from new data.
+**FR-19 — Compatibility:** Do not call the legacy LLM coordinator, start LLM jobs, estimate CPTs, or expose sliders for New case. Keep Known case registration and existing legacy follow-up behavior. New follow-up scope is defined in FR-70–FR-79. Readers and reports support both legacy and new signatures without rewriting historical records or inventing old questionnaire answers from new data.
 
 ### Follow-up and Records
 
-**FR-20:** A follow-up encounter allows the physician to update the phone number, re-assess severity and suicide, update history and medications, record adverse effects, review the initial proposal, inspect and adjust CPT values, edit the plan, and sign the secondary treatment plan. The encounter is logged.
+**FR-20 — Existing legacy follow-up:** A `legacy-v1` follow-up encounter allows the physician to update the phone number, re-assess severity and suicide, update history and medications, record adverse effects, review the initial proposal, inspect and adjust CPT values, edit the plan, and sign the secondary treatment plan. The encounter is logged.
 
-**FR-21:** Adverse effects include tardive dyskinesia, akathisia, parkinsonism, and acute dystonia. Each supports present, absent, and not-assessed states, plus severity. Require the full adverse-effect questionnaire only when its corresponding effect is present, with versioned item responses, completeness and source-defined scoring. Instrument forms, administration requirements and mappings to network variables require review; incomplete/not-assessed responses do not produce guessed scores. The acute-dystonia form is named “Acute Dystonia Dx Criteria”; concrete form/severity mappings and the complete AIMS source remain subject to review in `content/review-ledger.md` §2. Absent/not-assessed effects do not require questionnaire completion.
+**FR-21 — Existing legacy follow-up effects:** Adverse effects include tardive dyskinesia, akathisia, parkinsonism, and acute dystonia. Each supports present, absent, and not-assessed states, plus severity. Require the full adverse-effect questionnaire only when its corresponding effect is present, with versioned item responses, completeness and source-defined scoring. Instrument forms, administration requirements and mappings to network variables require review; incomplete/not-assessed responses do not produce guessed scores. The acute-dystonia form is named “Acute Dystonia Dx Criteria”; concrete form/severity mappings and the complete AIMS source remain subject to review in `content/review-ledger.md` §2. Absent/not-assessed effects do not require questionnaire completion.
 
 **FR-22:** Any physician may create encounters and update demographics. Only the draft author may edit or sign that draft, including changing its CPT sliders, resetting its probabilities, or accepting its results. Signed encounters are immutable, including their accepted CPT values and network results. Corrections use dated, attributed addenda; follow-ups are new encounters.
 
 **FR-23:** The patient list supports search by name or Patient ID and filtering by clinical status. The administrator can archive and unarchive patients. Permanent deletion is unavailable in v1.
 
-### Legacy Reasoning Pipeline — Known Case and Follow-up
+### New Follow-up — Reconciled 2026-11-12, Implementation Pending
 
-FR-30–FR-36 apply to the unchanged legacy pipeline, **not New case registration**. FR-37 remains shared administrator network management; physician CPT adjustments remain legacy-only.
+The [follow-up specification](follow-up-specification.md) is the complete normative contract; the following IDs provide requirement traceability. Explicit product clarifications override the attachments, then the flowchart controls antipsychotic decisions and the Word document controls visit forms/other recommendations. These rules do not change existing drafts or assert implementation/clinical validation.
+
+**FR-70 — Identity and baseline:** Server-created new follow-ups use immutable `follow-up-v1`. Freeze the latest signed visit across all supported variants and a dated historical summary, separately from current editable values. Carry specified structured history/medications with provenance; missing/Unknown mandatory history requires completion. Preserve old workflows, signatures and hashes. Optional hospitalization count distinguishes missing from zero.
+
+**FR-71 — Seven-step visit:** PANSS (optional/unanswered), harm (two No-default booleans with five nested recent No-default C-SSRS questions), history/examination, medications, effects, considerations, proposal. No repeat diagnosis or mandatory old effect questionnaires. Enforce applicable prerequisites on forward/direct navigation, generation and signing while allowing incomplete autosave.
+
+**FR-72 — History and labs:** Use the specified psychiatric/substance selections, female-only pregnancy/lactation, required calculated/manual BMI, neurological findings, and carried seizure/QT risks. Reuse pinned New case lab units/references/warnings. Separate inherited values, new lab suggestions and persistent attributed current overrides. Require current-antidepressant confirmation when depression/PTSD is selected. Derive hyperprolactinemia from lab/prior data or require a physician answer on a reached oral-model branch.
+
+**FR-73 — Medication and effect inputs:** Use the pinned Lexicomp catalog with three-character English suggestions and editable carried list; empty list allowed. Select one main antipsychotic and oral/LAI formulation; no numeric dose/injection schedule. Collect sedation (No/tolerable/requires intervention) and six Yes/No effects, fresh No. Every Yes requires intervention except tolerable sedation. No main/current LAI produces physician review without automated antipsychotic change.
+
+**FR-74 — Decision pathway:** Require the three-way physician recovery answer and reached explicit switch/dose-reduction/resistance/persistent-risk/dystonia-resolution questions. Follow the supplied oral graph plus confirmed extensions: handle all effects at every recovery status, accumulate adjunct advice, route sedation requiring intervention/orthostasis/anticholinergic effects to oral replacement, and prioritize effect-driven oral replacement over clozapine/LAI/continuation. Do not invent clinical thresholds or specific adjunct doses.
+
+**FR-75 — Fixed model:** Reuse the trusted 16-factor/22-outcome oral model only on reached branches, with current effects and unavailable-drug settings. No LLM, MCP, generated CPT, worker or probability sliders. Preserve the complete original distribution and factor/source map. Unsupported branches record honest physician-review outcomes rather than fake results.
+
+**FR-76 — Interactions and exclusions:** Show current-list and candidate Lexicomp evidence on the proposal. Exclude every newly suggested antipsychotic with an explicit D/X interaction, including direct clozapine/LAI suggestions. Compare replacements against all current drugs, including the outgoing main because overlap may occur. Filter the full oral distribution before taking up to five, excluding the outgoing main as a replacement; preserve probabilities and removal reasons. Flag missing coverage distinctly. Excluded direct/no-eligible outcomes request physician review.
+
+**FR-77 — Other recommendations:** Apply care-setting triggers, antidepressant-use check, smoking cessation, routine labs, eligible Beta-HCG, neurological-trigger MRI without age-only trigger, and pregnancy/lactation advice per the specification. Contraception counseling requires female, nonpregnant, nonbreastfeeding and age <=55; show prior structured recommendations. Same oral drug means four weeks even with lower dose/uncontrolled symptoms; new oral drug means 2–4 weeks; LAI means next injection without a fabricated date.
+
+**FR-78 — Proposal and confirmation:** Preserve immutable original proposal, decision trace/exclusions, inputs/provenance, content/model/release/settings pins and independently edited final text. Revalidate ownership, required inputs, encounter/plan revisions and freshness before atomic explicit signing. Preserve edits/replays and supported physician-review outcomes; infrastructure failures cannot become a signing bypass. No fabricated legacy acceptance requirement.
+
+**FR-79 — Shared surfaces and recovery:** Support mixed old/New case/new-follow-up chronology, escaped reports, addenda, audit and full backup/restore with unchanged historical bytes. Package versioned content for normal offline startup. Retain bilingual/theme/accessibility, privacy, one-draft and concurrency contracts. See [packages A–H](follow-up-implementation-plan.md) for implementation and verification.
+
+### Legacy Reasoning Pipeline — Known Case and Existing Legacy Follow-up
+
+FR-30–FR-36 apply to the legacy pipeline, **not New case registration or planned `follow-up-v1`**. FR-37 remains shared administrator network management; physician CPT adjustments remain legacy-only.
 
 **FR-30:** Each clinical question has one Bayesian network.
 
@@ -123,7 +147,7 @@ FR-30–FR-36 apply to the unchanged legacy pipeline, **not New case registratio
 
 ### Legacy Interactive CPT Review and Adjustment
 
-FR-50–FR-59 apply only to unchanged Known case/follow-up clinical-question runs. New case uses FR-18 and FR-62, with no CPT sliders or physician probability acceptance.
+FR-50–FR-59 apply only to Known case and existing legacy follow-up clinical-question runs. New case uses FR-18/FR-62; planned new follow-up uses FR-70–FR-79. Neither deterministic workflow uses CPT sliders or physician probability acceptance.
 
 **FR-50 — Decision-specific probability controls:** At the point where the initial treatment proposal is presented, display a dedicated review panel for each completed clinical question and its Bayesian network. Each panel shows the question, recommendation, network version, and a grouped slider menu covering every CPT value, including root-node probability distributions. No CPT value is hidden or excluded from review and adjustment.
 

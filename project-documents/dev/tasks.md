@@ -1,5 +1,16 @@
 # X-INSIGHT coding sessions
 
+## Planned follow-up extension (2026-11-12)
+
+Implement the reconciled [follow-up specification](follow-up-specification.md)
+through [packages A–H](follow-up-implementation-plan.md): A content/decision
+contract → B persistence/recovery → C baseline/state → D rules → E candidates/
+interactions → F proposal/signing → G UI/read surfaces → H packaging/acceptance.
+All packages are pending; the linked plan gives exact dependencies, files, API
+contracts and exit checks. Existing S00–S62 IDs/reports remain historical and are
+not renumbered or marked complete by this planning work. Legacy follow-up task
+instructions below do not override the new version's agreed requirements.
+
 Aligned 2026-10-03 to [user-requirements.md](user-requirements.md), [system-design.md](system-design.md), and [system-architecture.md](system-architecture.md), with implementation detail in [plan.md](plan.md). Sessions and checks are future work, not completed implementation. Stack/test seams/numerical limits remain proposals; carry forward the unresolved policies in system-design.md §15 rather than claiming approval.
 
 Path shorthand: `B/` = `backend/src/x_insight/`, `BT/` = `backend/tests/`, `W/` = `web/src/`. Project documents are under `project-documents/dev/`. Medical/BN paths, counts, and named-source examples below are inherited drafting leads: verify actual supplied content before use. They are not findings established by this document review.

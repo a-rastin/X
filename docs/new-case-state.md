@@ -4,6 +4,11 @@ New registrations entered as **New case** use the deterministic `new-case-v1`
 wizard. Known case and follow-up keep the legacy workflow. The fixed oral model
 and clinical reference content are experimental; integration is not clinical validation.
 
+The [2026-11-12 follow-up specification](../project-documents/dev/follow-up-specification.md)
+and [implementation plan](../project-documents/dev/follow-up-implementation-plan.md)
+define a future deterministic `follow-up-v1` extension. It is not implemented;
+New case behavior and existing legacy drafts retain the contracts on this page.
+
 Normal migration/startup applies schema **0031**, installs the pinned Lexicomp
 release beside historical DDInter, and stores the fixed oral XML in the model
 registry. This path needs no provider credential, capability check, LLM, worker,

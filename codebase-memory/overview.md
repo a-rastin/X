@@ -66,6 +66,8 @@ Self-hosted, English/Persian desktop UI, one admin + a small physician team shar
 - **Why** decisions were made: `context/index.md` (Keep the Why topic files).
 - Recorded progress/handoffs (start here per `AGENTS.md`):
   `project-documents/dev/progress/README.md`.
+- Planned follow-up redesign: `project-documents/dev/follow-up-specification.md`
+  and `follow-up-implementation-plan.md` (reconciled 2026-11-12; runtime still legacy).
 - Tests: `backend/tests/` (http, worker, ddi, models, mcp, provider, recovery, …),
   `e2e/` Playwright specs. Note `signed-encounter-v3` in `cases/signing.py` vs docs still
   saying `v2` — README/design docs lag the code in places; treat source as authoritative.

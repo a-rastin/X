@@ -3,6 +3,12 @@
 This page describes the legacy workflow. For `new-case-v1` raw state, validation,
 diagnosis and preview contracts, see [New-case state](new-case-state.md).
 
+Newly created follow-ups are planned to move to a separate deterministic
+`follow-up-v1` contract; see the [reconciled specification](../project-documents/dev/follow-up-specification.md)
+and [implementation plan](../project-documents/dev/follow-up-implementation-plan.md).
+This change is not implemented. The legacy generation, readiness and probability
+review instructions below remain current for existing runtime follow-up.
+
 Step 7 checks the saved draft's proposal readiness before creating a generation
 batch. Core History completion covers only the applicable fields from the seven-field
 inventory below; it does not establish that the proposal-context answers are ready.

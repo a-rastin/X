@@ -39,6 +39,8 @@
 
 ## F
 
+- [follow-up.md](follow-up.md) — Planned follow-up versioning preserves old evidence; replacement checks retain the outgoing antipsychotic because overlap may occur.
+
 ## G
 
 ## H

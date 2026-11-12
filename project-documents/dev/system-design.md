@@ -1,5 +1,14 @@
 # X-INSIGHT — System Design
 
+Planned extension (2026-11-12; not implemented): newly created follow-ups use
+`follow-up-v1`, the deterministic oral decision graph/fixed model and Lexicomp,
+with seven simple effect questions and no LLM/CPT review. Existing drafts retain
+their workflow. The [follow-up specification](follow-up-specification.md) governs
+this scope; the [implementation plan](follow-up-implementation-plan.md) defines
+the additive proposal table, API, v5 signature and mixed-record recovery work.
+Legacy LLM/empty-evidence/questionnaire rules below apply to `legacy-v1`, not
+this new version. Current runtime follow-up still uses the legacy implementation.
+
 Current extension (2026-11-09): New case uses a fixed oral BN and Lexicomp, with
 no LLM/CPT review; shared UI is English/Persian. The dated legacy inference rules
 below remain scoped to Known case/follow-up. See the

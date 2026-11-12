@@ -1033,9 +1033,9 @@
         "backend",
         "cases"
       ],
-      "purpose": null,
-      "summary": null,
-      "source_sha256": null
+      "purpose": "Shared signed chart and author-only follow-up baseline preview; historical/current History separation remains absent.",
+      "summary": "files/backend/src/x_insight/cases/chart.py.md",
+      "source_sha256": "7ac0ff6cee108ccfcc638c4ba1591d0fa8f020f07336ac64054f76cc2c1097bf"
     },
     {
       "path": "backend/src/x_insight/cases/effects.py",
@@ -1053,9 +1053,9 @@
         "backend",
         "cases"
       ],
-      "purpose": "Encounter drafts: author-only access, one-open-draft rule, revision-fenced patching, discard.",
+      "purpose": "Encounter creation, workflow dispatch, author-only autosave and single-draft enforcement; legacy follow-up baseline copying.",
       "summary": "files/backend/src/x_insight/cases/encounters.py.md",
-      "source_sha256": "a2e761d1d791a8ce09b6b20cd1df46570cab0ae53b73fad17b0e60755f70a892"
+      "source_sha256": "b00be57fc9e60a2d8fea133999f5083447b46dea5470c25af93ee355698e77c0"
     },
     {
       "path": "backend/src/x_insight/cases/history.py",

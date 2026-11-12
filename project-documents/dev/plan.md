@@ -1,5 +1,17 @@
 # X-INSIGHT implementation plan
 
+## Current version-specific execution scope
+
+The reconciled [2026-11-12 follow-up specification](follow-up-specification.md)
+and [follow-up implementation packages A–H](follow-up-implementation-plan.md)
+govern planned `follow-up-v1`. They supersede the legacy follow-up step list,
+mandatory effect questionnaires, LLM/CPT and empty-evidence rules **only for
+newly created follow-ups after implementation**. Existing open drafts stay legacy;
+New case registration keeps its [implemented contract](../../docs/new-case-state.md).
+Do not implement this extension by changing shared legacy rules globally.
+The older numbered plan below remains the legacy implementation/historical plan;
+shared privacy, single-draft, concurrency, signing and recovery invariants still apply.
+
 ## 1. Basis, status, and content inputs
 
 Aligned 2026-10-03 to [user-requirements.md](user-requirements.md), [system-design.md](system-design.md), and [system-architecture.md](system-architecture.md). This is a future implementation plan, not implemented behavior or completed verification. Product rules and owner clarifications come from those documents; stack, numerical policy, queue limits, test seams, and capacity figures remain implementation proposals.

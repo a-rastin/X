@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[Follow-up planning (2026-11-12)](follow-up-planning-2026-11-12.md): requirements reconciled; specification, preserved sources and detailed agent plan complete; implementation packages A–H remain pending.
+
 [Academic UI implementation (2026-11-11)](ui-implementation-2026-11-11.md): approved Astryx direction applied; checks and focused Chromium workflows pass; remaining wireframe verification log committed on request; broader acceptance remains open.
 
 [UI/UX wireframe (2026-11-11)](ui-wireframe-2026-11-11.md): Astryx design proposal with seven views, light/dark and Persian RTL; isolated prototype only, awaiting user confirmation.

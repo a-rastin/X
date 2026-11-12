@@ -1,5 +1,11 @@
 # New case workflow rationale
 
+Scope note (2026-11-12): New case behavior below remains current. A separate
+[planned follow-up extension](../project-documents/dev/follow-up-specification.md)
+will reuse the fixed oral model with current effect inputs and D/X exclusions;
+existing legacy follow-up drafts retain their pipeline. This planned scope does
+not alter New case's interaction-annotation behavior or historical records.
+
 ## New case reads one exact conditional row, not LLM-estimated CPTs
 
 **Id:** c5207a93-050f-4600-8252-1a9a13dc58ad
