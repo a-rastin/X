@@ -2,6 +2,8 @@
 
 [Follow-up Package H partial checkpoint (2026-11-13)](follow-up-package-h-2026-11-13.md): image content packaging added; mixed v5 recovery and end-to-end acceptance await B/F/G.
 
+[Follow-up Package G partial checkpoint (2026-11-13)](follow-up-package-g-2026-11-13.md): typed state client added; wizard, signing integration and browser acceptance remain open.
+
 [Follow-up Package F partial checkpoint (2026-11-13)](follow-up-package-f-2026-11-13.md): internal fingerprint and pin verification added; proposal persistence, signing and acceptance remain open.
 
 [Follow-up Package E partial checkpoint (2026-11-12)](follow-up-package-e-2026-11-12.md): ranking and D/X policy added with focused tests; public integration and full acceptance remain open.
