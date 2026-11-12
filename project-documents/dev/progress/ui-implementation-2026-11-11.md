@@ -67,3 +67,10 @@ browser/deployed acceptance if those are required for a release.
 Commit preparation: `make check` and `cd web && npm run test-web` passed again;
 Vite continued to report its large-chunk advisory. The generated wireframe run log
 was left outside the commit.
+
+## Follow-up 2026-11-12 — commit remaining changes
+
+The user requested all remaining changes committed on `main`; the wireframe
+verification run log is included. Its recorded checks report no overflow, axe
+findings, page errors or external requests. No tests were rerun for this log-only
+follow-up; the implementation verification above remains the latest evidence.
