@@ -29,13 +29,15 @@ grep -Eq '^FROM [^ ]+@sha256:[0-9a-f]{64}' deploy/Dockerfile.edge \
 # and every content reader must resolve through the same X_INSIGHT_CONTENT_DIR.
 grep -Eq '^COPY content/new-case ' deploy/Dockerfile.app \
   || fail "Dockerfile.app must bundle content/new-case (fixed oral model + clinical JSON)"
+grep -Eq '^COPY content/follow-up ' deploy/Dockerfile.app \
+  || fail "Dockerfile.app must bundle content/follow-up"
 grep -Eq '^COPY content/ddi/lexicomp ' deploy/Dockerfile.app \
   || fail "Dockerfile.app must bundle content/ddi/lexicomp (pinned New case interaction dataset)"
 grep -Eq 'X_INSIGHT_CONTENT_DIR=' deploy/Dockerfile.app \
   || fail "Dockerfile.app must set X_INSIGHT_CONTENT_DIR for content readers"
 grep -Eq '^COPY project-documents/old-BNs/schema\.xml ' deploy/Dockerfile.app \
   || fail "Dockerfile.app must bundle the XMLBIF schema for generic network admission"
-pass "new-case content, X_INSIGHT_CONTENT_DIR and XMLBIF schema are packaged"
+pass "new-case and follow-up content, X_INSIGHT_CONTENT_DIR and XMLBIF schema are packaged"
 
 # --- §1: Compose topology ----------------------------------------------------
 [ -f compose.prod.yaml ] || fail "compose.prod.yaml is missing"
