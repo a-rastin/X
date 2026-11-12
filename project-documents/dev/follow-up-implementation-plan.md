@@ -190,7 +190,9 @@ tests to those values mechanically if intervening work changes the baseline.
 
 ## 4. Package A — Pin content and encode the decision contract
 
-Depends: none. Status: pending.
+Depends: none. Status: partial — pinned content and offline integrity checks added;
+proposal-generation and integrated packaging acceptance remain open. See
+[Package A checkpoint](progress/follow-up-package-a-2026-11-12.md).
 
 Read: specification §§1, 3–7; `content/new-case/v1/{manifest,labs,antipsychotic-formulations,oral-model-manifest}.json`;
 `B/models/oral_antipsychotic.py`; supplied original Mermaid.

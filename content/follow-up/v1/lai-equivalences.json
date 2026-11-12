@@ -1,0 +1,12 @@
+{
+  "version": "follow-up-lai-equivalences-v1",
+  "coverage": "Supported inventory only; missing catalog identity means interaction coverage unavailable.",
+  "equivalences": [
+    {"oral": "oral:aripiprazole", "lai": "lai:aripiprazole"},
+    {"oral": "oral:fluphenazine", "lai": "lai:fluphenazine"},
+    {"oral": "oral:haloperidol", "lai": "lai:haloperidol"},
+    {"oral": "oral:olanzapine", "lai": "lai:olanzapine"},
+    {"oral": "oral:paliperidone", "lai": "lai:paliperidone"},
+    {"oral": "oral:risperidone", "lai": "lai:risperidone"}
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "version": "follow-up-factors-v1",
+  "sources": {
+    "Smoking": "current tobacco answer",
+    "Marijuana_Smoking": "current substance use enabled and marijuana selected",
+    "Hepatic_Failure": "effective hepatic failure",
+    "Renal_Failure": "effective renal failure",
+    "Sedative_Effects_Concern": "sedation requires intervention",
+    "Seizure_Risk": "current seizure risk",
+    "Glucose_Abnormalities": "effective diabetes or prediabetes",
+    "Hyperlipidemia": "effective hyperlipidemia",
+    "Weight_Gain_Risk": "effective BMI category overweight or obesity",
+    "QTc_Prolongation_Risk": "current QT risk",
+    "Orthostatic_Hypotension_Risk": "current orthostatic hypotension effect",
+    "Hyperprolactinemia": "effective lab or prior answer, or physician override if unresolved",
+    "Tardive_Dyskinesia": "current tardive dyskinesia effect",
+    "Dystonia": "current acute dystonia effect",
+    "Parkinsonism": "current parkinsonism effect",
+    "Akathisia": "current akathisia effect"
+  }
+}

@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[Follow-up Package A checkpoint (2026-11-12)](follow-up-package-a-2026-11-12.md): content pins, factor/graph mappings and offline integrity loader added; proposal-generation and packaged-image acceptance remain open.
+
 [Follow-up planning (2026-11-12)](follow-up-planning-2026-11-12.md): requirements reconciled; specification and agent plan revised to remove legal, evidence, source and medical approval gates; implementation packages A–H remain pending.
 
 [Academic UI implementation (2026-11-11)](ui-implementation-2026-11-11.md): approved Astryx direction applied; checks and focused Chromium workflows pass; remaining wireframe verification log committed on request; broader acceptance remains open.

@@ -1,0 +1,58 @@
+{
+  "version": "follow-up-rules-v1",
+  "source": "project-documents/changes/follow-up-2026-11-12/decision-flow.original.mmd",
+  "graph_nodes": {
+    "a": "current formulation", "b": "oral", "n1": "current LAI",
+    "n2": "symptoms controlled", "n3": "effects require intervention", "n4": "switch needed",
+    "n5": "dose reduction possible", "n6": "same drug same dose", "n7": "same drug lower dose",
+    "n8": "LAI preference", "n10": "oral model", "n6_2": "new oral antipsychotic",
+    "n11": "supported LAI equivalent", "n6_3": "same drug LAI", "n13": "effect selection",
+    "n14": "partial improvement", "n15": "acute dystonia", "n16": "dystonia resolved",
+    "n17": "anticholinergic and possible dose reduction", "n18": "resolved effect terminal",
+    "n19": "parkinsonism", "n20": "akathisia", "n21": "tardive dyskinesia",
+    "n22": "VMAT2 advice", "n23": "treatment resistance", "n24": "clozapine",
+    "n25": "adherence", "n11_2": "supported LAI equivalent", "n6_3_2": "same drug LAI",
+    "n26": "persistent harm risk"
+  },
+  "graph_terminals": {
+    "n1": "physician_review_current_lai",
+    "n6": "same_drug_same_dose",
+    "n7": "same_drug_lower_dose",
+    "n6_2": "oral_model",
+    "n6_3": "same_drug_lai",
+    "n6_3_2": "same_drug_lai",
+    "n18": "no_change_from_resolved_dystonia",
+    "n22": "vmat2_advice",
+    "n24": "clozapine"
+  },
+  "priority": ["no_main_or_current_lai_review", "effect_oral_replacement", "symptom_adherence_pathway", "availability_and_interaction_exclusions"],
+  "oral_pathway": {
+    "controlled_no_effect_no_switch": {"dose_reduction_possible": "same_drug_lower_dose", "otherwise": "same_drug_same_dose"},
+    "controlled_no_effect_switch": {"no_lai_preference": "oral_model", "lai_preference_with_equivalent": "same_drug_lai", "otherwise": "oral_model"},
+    "partial_improvement": "adherence",
+    "no_improvement_or_worse": {"treatment_resistant": "clozapine", "otherwise": "adherence"},
+    "adherence": {"not_adherent_with_equivalent": "same_drug_lai", "not_adherent_without_equivalent": "oral_model", "adherent_with_persistent_harm_risk": "clozapine", "otherwise": "oral_model"}
+  },
+  "effects": {
+    "acute_dystonia": {"adjunct": "anticholinergic_and_reduce_dose_if_possible", "resolved": "no_change_from_effect", "unresolved": "oral_model"},
+    "parkinsonism": {"replacement": "oral_model"},
+    "akathisia": {"replacement": "oral_model"},
+    "tardive_dyskinesia": {"adjunct": "vmat2_advice", "replacement": "no_change_from_effect"},
+    "sedation_requires_intervention": {"replacement": "oral_model"},
+    "orthostatic_hypotension": {"replacement": "oral_model"},
+    "anticholinergic_effects": {"replacement": "oral_model"}
+  },
+  "overlays": ["effects_apply_at_all_recovery_statuses", "accumulate_and_deduplicate_adjuncts", "effect_replacement_supersedes_direct_changes", "controlled_adjunct_only_uses_effect_terminal", "no_generic_lai_network", "excluded_direct_output_requires_physician_review", "other_sections_are_independent"],
+  "independent_recommendations": {
+    "care_setting": "inpatient for self-harm, other-harm, recent CSSRS item 4 or 5, unmet basic needs or observation; otherwise outpatient; retain every reason",
+    "antidepressant": "consider if depression or PTSD and physician confirms no current antidepressant",
+    "smoking": "cessation if current tobacco",
+    "routine_labs": ["CBC", "Diff", "Na", "K", "BUN", "Cr", "AST", "ALT", "ALP", "PT", "PTT", "INR", "TSH", "FBS", "HbA1c"],
+    "beta_hcg": "female, not pregnant, age at most 55",
+    "imaging": "MRI for focal deficit, suspected brain lesion or possible autoimmune encephalitis; treatment must not be delayed",
+    "breastfeeding": "female and breastfeeding: advise stopping and pediatric consultation for formula",
+    "pregnancy": "female and pregnant: obstetric and neonatal consultation, lowest effective dose",
+    "contraception": "female, not pregnant, not breastfeeding, age at most 55; show prior structured recommendations with dates",
+    "next_visit": "same oral: four weeks; new oral: 2–4 weeks; LAI: next injection; no main or excluded/no eligible replacement: physician determines"
+  }
+}
