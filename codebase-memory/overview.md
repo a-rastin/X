@@ -30,8 +30,8 @@ Self-hosted, English/Persian desktop UI, one admin + a small physician team shar
   `new_case.py` owns typed new-case autosave, immutable content pins, attributed
   diagnosis assertion, step validation and deterministic projection; pure plan
   rules are in `new_case_rules.py`. Follow-up state and preview use pure decisions,
-  factors and independent sections in `follow_up_rules.py`; ranking and signing
-  remain separate. See `docs/new-case-state.md` for New case API boundaries.
+  factors and independent sections in `follow_up_rules.py`; `follow_up_candidates.py`
+  applies ranking and interaction exclusions. Proposal persistence and signing remain separate. See `docs/new-case-state.md` for New case API boundaries.
 - `assessments/` — declarative assessment engine + diagnosis / PANSS / C-SSRS.
 - `reasoning/` — batch/run/job queue, coordinator pipeline, provider (LLM), snapshots, readiness.
 - `models/` — XMLBIF validation, CPT validation, bounded inference, bundles, workflow release.
