@@ -1,7 +1,6 @@
 # backend/src/x_insight/probability_review/service.py
 
-Source SHA-256: ad38c8f0fad2135fef02057d494c832202306300e04f138fc22969084c246606
-Source commit: bad418cecdf013317df56751fec2c4a0158b305d
+Source SHA-256: 94a7e8b44fb9bed66ea6048f41d17a29b75810b89a63173f616fb650c9c5d0cf
 
 ## Purpose
 The physician's probability-review half: immutable CPT adjustments/resets, deterministic
@@ -30,3 +29,8 @@ local recalculation, and explicit acceptance of a current result.
 - `backend/src/x_insight/probability_review/redistribution.py` — integer redistribution rule.
 - `backend/src/x_insight/cases/signing.py` — signing requires acceptances for exactly the
   ready runs.
+
+## Version guard
+`_require_draft_encounter` explicitly requires `legacy-v1` before any adjustment,
+reset, retry or acceptance can mutate an encounter. Typed New case/follow-up
+workflows use their separate deterministic proposal/signing services.

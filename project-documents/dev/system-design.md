@@ -1,13 +1,13 @@
 # X-INSIGHT — System Design
 
-Planned extension (2026-11-12; not implemented): newly created follow-ups use
+Implemented extension (2026-11-13; B/F/G verified): newly created follow-ups use
 `follow-up-v1`, the deterministic oral decision graph/fixed model and Lexicomp,
 with seven simple effect questions and no LLM/CPT review. Existing drafts retain
 their workflow. The [follow-up specification](follow-up-specification.md) governs
 this scope; the [implementation plan](follow-up-implementation-plan.md) defines
 the additive proposal table, API, v5 signature and mixed-record recovery work.
 Legacy LLM/empty-evidence/questionnaire rules below apply to `legacy-v1`, not
-this new version. Current runtime follow-up still uses the legacy implementation.
+this new version. New drafts select the versioned workflow; existing legacy drafts retain their pipeline. Full public mixed-history recovery/release acceptance remains separate; see the [B/F/G checkpoint](progress/follow-up-bfg-2026-11-13.md) and [API reference](../../docs/follow-up-api.md).
 
 Current extension (2026-11-09): New case uses a fixed oral BN and Lexicomp, with
 no LLM/CPT review; shared UI is English/Persian. The dated legacy inference rules
@@ -130,7 +130,7 @@ Create the patient and registration draft atomically. Duplicate registration ret
 
 Register patient supports one editable `draft_data.working_note`, disabled until patient/draft creation and then saved with the normal approximately one-second debounce and navigation flush/retry/conflict handling. It is excluded from patient projections, prompts, MCP responses, applicability rules and all algorithms. There are no page-note controls or GET/POST note routes on registration or follow-up. Never turn the working note or legacy note keys into algorithm-visible history implicitly.
 
-### 4.2 Follow-up
+### 4.2 Existing legacy follow-up
 
 Any active physician may start a follow-up if no open draft exists for that patient. Prior signed history may be copied with provenance and reconciled; do not present prior severity/suicide scores as newly assessed. Allow phone update, severity and suicide reassessment, history/medication updates, adverse-effect recording, initial proposal review, CPT adjustment and signing.
 

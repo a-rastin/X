@@ -1,7 +1,6 @@
 # backend/src/x_insight/cases/signing.py
 
-Source SHA-256: 56f11af43eb84666724c0115334e9185beef812b8bce6415a74689e0c433d53a
-Source commit: bad418cecdf013317df56751fec2c4a0158b305d
+Source SHA-256: 0078f90669182340549be2b2ea46f3728cb043fb02c32377e2d0d22d375f37df
 
 ## Purpose
 Final-plan persistence, atomic signing with an immutable snapshot, and append-only addenda.
@@ -31,3 +30,11 @@ Final-plan persistence, atomic signing with an immutable snapshot, and append-on
 ## Related Files
 - `backend/src/x_insight/probability_review/service.py` — the acceptance state signing reads.
 - `backend/src/x_insight/cases/chart.py` — read-only shared chart from signed snapshots.
+
+## Versioned signing boundary
+`sign_encounter` remains the legacy v3 acceptance path. New case v4 and follow-up
+v5 confirmation live in `new_case_plans` and `follow_up_plans`. Both reuse
+secondary-plan storage and safe snapshot serialization; follow-up references are
+nullable alongside legacy and New case references. Follow-up final-text saves
+and any-physician addenda acquire the patient lock before the encounter lock.
+Addenda preserve the original snapshot bytes/hash.

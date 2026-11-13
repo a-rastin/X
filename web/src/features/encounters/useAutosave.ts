@@ -25,6 +25,7 @@
  * and resynchronize through `applySavedSlice` (same fence, other keys kept).
  */
 
+import {reconcileAutosave} from "./reconcileAutosave";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ApiError, newIdempotencyKey } from "../identity/api";
 import { getEncounter, patchEncounter, type DraftData } from "./api";
@@ -166,8 +167,11 @@ export function useAutosave(options: UseAutosaveOptions) {
           idempotencyKey: key,
         });
         if (!mountedRef.current) {
-          return { outcome: "saved", revision: result.revision, data, seqAtStart };
+          return { outcome: "saved", revision: result.revision, data: result.draft_data, seqAtStart };
         }
+        const acknowledged = reconcileAutosave(data, localRef.current, result.draft_data) as DraftData;
+        localRef.current = acknowledged;
+        setLocalData(acknowledged);
         attemptRef.current = null;
         baseRef.current = result.revision;
         setBaseRevision(result.revision);
@@ -183,7 +187,7 @@ export function useAutosave(options: UseAutosaveOptions) {
             if (stateRef.current.kind === "dirty") void saveNow();
           }, 0);
         }
-        return { outcome: "saved", revision: result.revision, data, seqAtStart };
+        return { outcome: "saved", revision: result.revision, data: result.draft_data, seqAtStart };
       } catch (err) {
         if (!mountedRef.current) {
           return attempted;

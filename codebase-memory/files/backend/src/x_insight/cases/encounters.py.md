@@ -1,6 +1,6 @@
 # backend/src/x_insight/cases/encounters.py
 
-Source SHA-256: 39f28e0c6af857f4f31972541b9ac8e4fa2e6a2f706526da79021da6c7579973
+Source SHA-256: c8a2535699bcf37a0f76215b6dfb64cf402ffadd45b0cd006f17284e5bab1104
 
 ## Purpose
 Encounter drafts: creation, author-only access, patching with revision fencing, discard, and
@@ -21,11 +21,7 @@ follow-up baseline reads. Owns the "at most one open draft per patient" rule.
   as answers**.
 
 ## Behavior and Constraints
-- `FOLLOWUP_V1_ACTIVE = False` gates typed `follow-up-v1` creation. When on, creation
-  resolves the latest signed source across all variants under the patient lock, refuses
-  client inline baselines, and builds a strict typed draft. Off (default) keeps legacy
-  follow-up behavior byte-identical: with no supplied baseline it selects the latest
-  signed **New case** snapshot only, which can miss a newer signed legacy follow-up.
+- New follow-ups use the typed workflow described below; existing legacy drafts retain their identity.
 - New case registration with birth year uses `new-case-v1`; PATCH applies typed state,
   content-pin and attributed-override checks. `follow-up-v1` PATCH routes through
   `cases/follow_up.prepare_autosave` (rejects forged version/pins/baseline/provenance).
@@ -40,3 +36,12 @@ follow-up baseline reads. Owns the "at most one open draft per patient" rule.
 ## Related Files
 - `backend/src/x_insight/cases/tables.py` — read model and `one_open_draft_per_patient`.
 - `backend/src/x_insight/cases/patients.py` — patient creation, archive policy.
+
+## Current follow-up contract
+`FOLLOWUP_V1_ACTIVE = True` selects `follow-up-v1` for newly created follow-ups.
+Creation freezes the latest supported signed source across v1–v5 under the patient
+lock, refuses client baselines, and uses `follow_up.content_pins`. Existing stored
+workflow identities are immutable. `lock_follow_up_patient` makes follow-up draft,
+plan and addendum writes take patient before encounter; proposal/signing also
+lock the account first to serialize deactivation. Overrides are attributed and
+audited, and the legacy command allowlist remains explicit.

@@ -619,6 +619,219 @@ def _check_patient_shape(tables: dict[str, Any]) -> str | None:
     return None
 
 
+def _check_follow_up_state(
+    tables: dict[str, Any], encounter: dict[str, Any], app_schema: str
+) -> str | None:
+    from x_insight.cases import encounters, follow_up, follow_up_baseline
+
+    if app_schema != "0032" or encounter.get("kind") != "follow_up":
+        return "Invalid follow-up workflow assignment."
+    try:
+        encounters.validate_draft_data(encounter["draft_data"])
+        draft = follow_up.structural_draft(encounter["draft_data"])
+        state = draft["follow_up"]
+        if state["visit_year"] != contracts.parse_utc(encounter["created_at"]).year:
+            return "Invalid follow-up visit year."
+        content = follow_up.verified_content()
+        pins = state["content_pins"]
+        expected = follow_up.content_pins(content)
+        if pins != expected:
+            return "Follow-up content pins differ from packaged identities."
+        releases = [
+            r
+            for r in tables.get("ddi_dataset_releases", [])
+            if r["version"] == pins["lexicomp_version"]
+            and r["content_hash"] == pins["lexicomp_content_hash"]
+        ]
+        models = [
+            r
+            for r in tables.get("model_network_versions", [])
+            if r["source_hash"] == pins["model_sha256"]
+            and r.get("review", {}).get("execution_profile") == "fully-observed-oral-row-lookup/1"
+            and r.get("review", {}).get("manifest_hash")
+            == contracts.canonical_hash(content["assets"]["new-case/v1/oral-model-manifest.json"])
+        ]
+        if (
+            len(releases) != 1
+            or len(models) != 1
+            or releases[0].get("terminology_checksum")
+            != content["manifest"]["files"]["ddi/lexicomp/v1/Lexicomp-cleaned.csv"]
+            or releases[0].get("parser_version") != content["manifest"]["lexicomp_parser_version"]
+        ):
+            return "Follow-up pinned dependencies are missing."
+        known = {
+            r["catalog_drug_id"]
+            for r in tables.get("ddi_concepts", [])
+            if r["release_id"] == releases[0]["id"]
+        }
+        if any(e["catalog_drug_id"] not in known for e in draft["medications"]["entries"]):
+            return "Follow-up medication is outside its pinned release."
+        if draft["medications"]["selection_dataset_version"] not in (
+            None,
+            pins["lexicomp_version"],
+        ):
+            return "Follow-up medication release mismatch."
+        baseline = state["baseline"]
+        if baseline.get("schema_version") != follow_up_baseline.BASELINE_SCHEMA_VERSION:
+            return "Invalid follow-up baseline schema."
+        source = baseline.get("source")
+        if baseline.get("has_source"):
+            snapshots = {r["id"]: r for r in tables.get("signed_encounter_snapshots", [])}
+            prior = snapshots[source["snapshot_id"]]
+            if (
+                prior["patient_id"] != encounter["patient_id"]
+                or prior["encounter_id"] != source["encounter_id"]
+                or prior["encounter_id"] == encounter["id"]
+                or prior["snapshot_hash"] != source["snapshot_hash"]
+                or contracts.canonical_hash(prior["snapshot"]) != prior["snapshot_hash"]
+                or follow_up_baseline.classify_variant(prior) == "unsupported"
+                or source.get("variant") != follow_up_baseline.classify_variant(prior)
+                or source.get("signature_schema_version") != prior["snapshot"].get("schema_version")
+                or source.get("signed_at") != prior["signed_at"]
+                or contracts.parse_utc(prior["signed_at"])
+                > contracts.parse_utc(encounter["created_at"])
+            ):
+                return "Follow-up baseline source ownership or hash mismatch."
+            for attribution in baseline["inherited"].values():
+                if (
+                    attribution.get("source_encounter_id") != prior["encounter_id"]
+                    or attribution.get("snapshot_hash") != prior["snapshot_hash"]
+                ):
+                    return "Invalid follow-up inherited provenance."
+            by_encounter = {r["encounter_id"]: r for r in snapshots.values()}
+            for lab in baseline["prior_labs"]:
+                lab_source = by_encounter[lab["source_encounter_id"]]
+                if (
+                    lab_source["patient_id"] != encounter["patient_id"]
+                    or lab["snapshot_hash"] != lab_source["snapshot_hash"]
+                ):
+                    return "Invalid follow-up historical lab source."
+        elif source is not None or baseline.get("inherited") or baseline.get("prior_labs"):
+            return "Empty follow-up baseline has a source."
+        for answer in state["history"]["conditions"].values():
+            if answer["manual"] is not None:
+                if answer["manual_actor_id"] != encounter["author_id"]:
+                    return "Follow-up override actor differs from author."
+                contracts.parse_utc(answer["manual_recorded_at"])
+            elif answer["manual_actor_id"] is not None or answer["manual_recorded_at"] is not None:
+                return "Automatic follow-up answer has manual attribution."
+    except (OSError, KeyError, TypeError, ValueError, contracts.ContractError):
+        return "Invalid follow-up draft or source identity."
+    return None
+
+
+def _check_follow_up_proposals(tables: dict[str, Any]) -> str | None:
+    from x_insight.assessments.released import get_released_definition
+    from x_insight.cases import follow_up, follow_up_plans
+
+    encounters = {r["id"]: r for r in tables.get("encounters", [])}
+    releases = {r["id"]: r for r in tables.get("ddi_dataset_releases", [])}
+    models = {r["id"]: r for r in tables.get("model_network_versions", [])}
+    rows = tables.get("follow_up_proposals", [])
+    if not isinstance(rows, list) or any(not isinstance(r, dict) for r in rows):
+        return "Malformed follow-up proposals."
+    proposals = {r.get("id"): r for r in rows}
+    try:
+        for row in rows:
+            encounter = encounters[row["encounter_id"]]
+            payload = row["payload"]
+            fingerprint = payload["fingerprint_payload"]
+            raw = follow_up.structural_draft(payload["raw_inputs"])
+            pins = raw["follow_up"]["content_pins"]
+            evaluated = follow_up.evaluate_state(raw, fingerprint["demographics"])
+            effective = {
+                key: evaluated[key]
+                for key in (
+                    "age",
+                    "flags",
+                    "calculated_bmi",
+                    "bmi_category",
+                    "model_factors",
+                    "decision",
+                    "sections",
+                )
+            }
+            if (
+                not evaluated["can_complete"]
+                or fingerprint["effective_inputs"] != effective
+                or payload["ranking"]["original_decision"] != evaluated["decision"]
+            ):
+                return "Invalid follow-up proposal evaluated inputs."
+            model_run = payload["ranking"]["original_decision"]["terminal"] == "oral_replacement"
+            content = follow_up.verified_content()
+            installed_model = fingerprint["installed_content"]["model_version_id"]
+            if (
+                payload["content_snapshot"]
+                != {"manifest": content["manifest"], "assets": content["assets"]}
+                or fingerprint["assessment_definitions"]
+                != {name: get_released_definition(name) for name in ("panss", "cssrs")}
+                or models[installed_model]["source_hash"] != pins["model_sha256"]
+                or payload["ranking"]["final_decision"]["terminal"]
+                not in follow_up_plans.SUPPORTED_TERMINALS
+                or payload["ranking"]["status"] not in follow_up_plans.SUPPORTED_STATUSES
+                or payload["sections"] != payload["ranking"]["sections"]
+                or not isinstance(row["source_encounter_revision"], int)
+                or not 1 <= row["source_encounter_revision"] <= encounter["revision"]
+            ):
+                return "Invalid follow-up proposal content or outcome."
+            contracts.parse_utc(row["created_at"])
+            if (
+                encounter["workflow_version"] != follow_up.WORKFLOW
+                or row["author_id"] != encounter["author_id"]
+                or payload["author_id"] != row["author_id"]
+                or payload["schema_version"] != "follow-up-proposal-v1"
+                or payload["workflow_version"] != follow_up.WORKFLOW
+                or contracts.canonical_hash(fingerprint) != row["input_hash"]
+                or payload["input_hash"] != row["input_hash"]
+                or fingerprint["raw_inputs"] != raw
+                or fingerprint["effective_inputs"] != payload["effective_inputs"]
+                or fingerprint["availability"] != payload["availability_snapshot"]
+                or fingerprint["content_pins"] != pins
+                or payload["versions"] != pins
+                or payload["baseline"] != raw["follow_up"]["baseline"]
+                or contracts.canonical_hash(payload["content_snapshot"]["manifest"])
+                != row["content_hash"]
+                or pins["workflow_manifest_hash"] != row["content_hash"]
+                or releases[row["ddi_release_id"]]["content_hash"] != pins["lexicomp_content_hash"]
+                or fingerprint["installed_content"]["ddi_release_id"] != row["ddi_release_id"]
+                or (row["model_version_id"] is not None) != model_run
+            ):
+                return "Invalid follow-up proposal identity or fingerprint."
+            if model_run and (
+                models[row["model_version_id"]]["source_hash"] != pins["model_sha256"]
+                or fingerprint["installed_content"]["model_version_id"] != row["model_version_id"]
+            ):
+                return "Follow-up proposal model mismatch."
+        for row in tables.get("signed_encounter_snapshots", []):
+            pid = row.get("follow_up_proposal_id")
+            if pid is None:
+                continue
+            proposal = proposals[pid]
+            payload = row["snapshot"]
+            if (
+                any(
+                    row.get(k) is not None
+                    for k in ("new_case_proposal_id", "proposal_id", "batch_id")
+                )
+                or proposal["encounter_id"] != row["encounter_id"]
+                or proposal["author_id"] != row["signer_id"]
+                or row["patient_id"] != encounters[row["encounter_id"]]["patient_id"]
+                or payload["schema_version"] != "signed-encounter-v5"
+                or payload["workflow_version"] != follow_up.WORKFLOW
+                or payload["proposal"]["id"] != pid
+                or payload["proposal"]["payload"] != proposal["payload"]
+                or payload["draft_data"] != proposal["payload"]["raw_inputs"]
+                or payload["secondary_plan"]["text"] != row["secondary_plan_text"]
+                or not row["secondary_plan_text"].strip()
+                or payload["secondary_plan"]["revision"] != row["secondary_plan_revision"]
+                or contracts.canonical_hash(payload) != row["snapshot_hash"]
+            ):
+                return "Invalid follow-up signed snapshot."
+    except (OSError, KeyError, TypeError, ValueError, contracts.ContractError):
+        return "Malformed follow-up proposal or signature."
+    return None
+
+
 def _check_new_case_state(tables: dict[str, Any], app_schema: str) -> str | None:
     from x_insight.cases import new_case
 
@@ -639,13 +852,18 @@ def _check_new_case_state(tables: dict[str, Any], app_schema: str) -> str | None
         workflow = encounter.get("workflow_version", "legacy-v1")
         if app_schema in ("0030", "0031", "0032") and "workflow_version" not in encounter:
             return "New-case workflow identity is missing."
+        if workflow == "follow-up-v1":
+            problem = _check_follow_up_state(tables, encounter, app_schema)
+            if problem:
+                return problem
+            continue
         if workflow not in ("legacy-v1", new_case.WORKFLOW):
             return "Unknown encounter workflow identity."
         draft = encounter.get("draft_data") or {}
         if not isinstance(draft, dict):
             return "Encounter draft must be an object."
         if workflow == "legacy-v1":
-            if "new_case" in draft:
+            if "new_case" in draft or "follow_up" in draft:
                 return "Legacy encounters cannot carry new-case state."
             continue
         if app_schema not in ("0030", "0031", "0032") or encounter.get("kind") != "registration":
@@ -823,10 +1041,9 @@ def _check_references(tables: dict[str, Any]) -> str | None:
                 continue
             if want not in target:
                 return f"staged references broken: {label} has no staged target"
-    # Follow-up payload validation is implemented with its state/proposal contract.
-    # Fail closed until that contract is available.
-    if tables.get("follow_up_proposals"):
-        return "Follow-up proposals are not yet supported by restore."
+    problem = _check_follow_up_proposals(tables)
+    if problem:
+        return problem
     proposal_rows = tables.get("new_case_proposals", [])
     if not isinstance(proposal_rows, list) or any(
         not isinstance(r, dict) or not isinstance(r.get("id"), str) for r in proposal_rows
@@ -885,7 +1102,7 @@ def _check_references(tables: dict[str, Any]) -> str | None:
             return "New-case proposal model mismatch."
     for row in tables.get("signed_encounter_snapshots", []):
         if row.get("follow_up_proposal_id") is not None:
-            return "Follow-up signatures are not yet supported by restore."
+            continue  # Validated with the v5 proposal contract above.
         new_id = row.get("new_case_proposal_id")
         legacy = row.get("batch_id") is not None and row.get("proposal_id") is not None
         new = row.get("batch_id") is None and row.get("proposal_id") is None and new_id is not None

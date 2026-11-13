@@ -272,6 +272,22 @@ def _cpt_tables_html(tables: Any) -> str:
     return "".join(parts) if parts else "<p>None recorded.</p>"
 
 
+def _follow_up_text(value: Any) -> str:
+    if value is None:
+        return "Not recorded"
+    if isinstance(value, bool):
+        return "Yes" if value else "No"
+    if isinstance(value, list):
+        return ", ".join(_follow_up_text(item) for item in value)
+    if isinstance(value, dict):
+        return "; ".join(
+            f"{key.replace('_', ' ').capitalize()}: {_follow_up_text(item)}"
+            for key, item in value.items()
+            if key != "prior" and not key.endswith("_id") and "hash" not in key
+        )
+    return str(value).replace("_", " ")
+
+
 def _posteriors_html(posteriors: Any) -> str:
     if not isinstance(posteriors, list) or not posteriors:
         return "<p>None recorded.</p>"
@@ -425,11 +441,36 @@ def build_patient_report_html(data: dict[str, Any], *, generated_at: str) -> str
             f"<pre>{_e(snap.get('secondary_plan_text', ''))}</pre>"
         )
         out.append("<h3>Original proposal</h3>")
-        if inner.get("schema_version") == "signed-encounter-v4":
+        if inner.get("schema_version") in ("signed-encounter-v4", "signed-encounter-v5"):
             original = _as_dict(proposal.get("payload"))
-            out.append("<h4>Deterministic new-case proposal</h4>")
+            follow_up = inner.get("schema_version") == "signed-encounter-v5"
+            out.append(
+                "<h4>Deterministic follow-up proposal</h4>"
+                if follow_up
+                else "<h4>Deterministic new-case proposal</h4>"
+            )
+            if follow_up:
+                ranking = _as_dict(original.get("ranking"))
+                decision = _as_dict(ranking.get("final_decision"))
+                out.append(f"<h4>{_e(str(decision.get('terminal', '')).replace('_', ' '))}</h4>")
+                out.append(f"<p>{_e(str(decision.get('reason', '')).replace('_', ' '))}</p>")
+                for adjunct in decision.get("adjuncts", []):
+                    out.append(f"<p>{_e(str(adjunct).replace('_', ' '))}</p>")
+                direct = _as_dict(ranking.get("direct"))
+                if direct:
+                    out.append(f"<p>{_e(direct.get('drug_id'))}</p>")
+                baseline = _as_dict(original.get("baseline"))
+                summary = _as_dict(baseline.get("summary")).get("text", "No prior signed visit")
+                out.append(f"<p>{_e(summary)}</p>")
+                out.append(f"<p>{_e(_follow_up_text(baseline.get('prior_labs', [])))}</p>")
             for key, section in _as_dict(original.get("sections")).items():
                 if key in ("antipsychotic_candidates", "drug_interactions"):
+                    continue
+                if follow_up:
+                    if key == "contraception" and not section.get("visible"):
+                        continue
+                    out.append(f"<h4>{_e(key.replace('_', ' ').capitalize())}</h4>")
+                    out.append(f"<p>{_e(_follow_up_text(section))}</p>")
                     continue
                 value = section.get("value")
                 if isinstance(value, bool):
@@ -447,13 +488,17 @@ def build_patient_report_html(data: dict[str, Any], *, generated_at: str) -> str
             out.append("<h4>Antipsychotic candidates</h4>")
             if ranking.get("status") == "model_unavailable":
                 out.append("<p>No LAI recommendation model is available.</p>")
-            elif not ranking.get("candidates"):
+            elif not ranking.get("candidates") and not follow_up:
                 out.append("<p>No eligible oral candidates remain after filtering.</p>")
             for candidate in ranking.get("candidates", []):
                 percentage = f"{100 * float(candidate['probability']):.2f}%"
                 out.append(f"<p>{_e(candidate['name'])}: {_e(percentage)}</p>")
             out.append("<p>Model ranking share / fit; not treatment-success probability.</p>")
-            report = _as_dict(original.get("candidate_interactions"))
+            report = _as_dict(
+                ranking.get("candidate_interactions")
+                if follow_up
+                else original.get("candidate_interactions")
+            )
             names = {
                 r["catalog_drug_id"]: r["canonical_name"]
                 for r in report.get("resolved_medications", [])
@@ -475,7 +520,10 @@ def build_patient_report_html(data: dict[str, Any], *, generated_at: str) -> str
             out.append(f"<pre>{_e(json.dumps(original.get('versions'), ensure_ascii=False))}</pre>")
             out.append("</details>")
         sections = _as_list(proposal.get("sections"))
-        if not sections and inner.get("schema_version") != "signed-encounter-v4":
+        if not sections and inner.get("schema_version") not in (
+            "signed-encounter-v4",
+            "signed-encounter-v5",
+        ):
             out.append("<p>No proposal sections recorded.</p>")
         for section in sections:
             if not isinstance(section, dict):

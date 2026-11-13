@@ -1,3 +1,5 @@
+import { latestProposal as latestFollowUpProposal } from "../follow-up/api";
+import { FollowUpWizard } from "../follow-up/FollowUpWizard";
 import { Text } from "@astryxdesign/core/Text";
 import { NewCaseWizard } from "../new-case/NewCaseWizard";
 import { useLanguage } from "../../shared/i18n";
@@ -286,6 +288,14 @@ export function EncounterPage({ encounterId }: { encounterId: string }) {
         return;
       }
       if (err instanceof ApiError && err.status === 404) {
+        // Recover a confirmation whose response was lost before this reload.
+        try {
+          const result = await latestFollowUpProposal(encounterId);
+          if (result.proposal?.signed_patient_id) {
+            window.location.hash = `#/patients/${result.proposal.signed_patient_id}/chart`;
+            return;
+          }
+        } catch { /* Missing, discarded and other workflows retain the normal 404. */ }
         setLoad({
           kind: "error",
           message: "Encounter not found. It may have been discarded.",
@@ -385,6 +395,9 @@ export function EncounterPage({ encounterId }: { encounterId: string }) {
     );
   }
 
+  if (load.encounter.workflow_version === "follow-up-v1") {
+    return <FollowUpWizard key={encounterId} encounter={load.encounter} initialData={load.initialData} initialRevision={load.initialRevision}/>;
+  }
   if (load.encounter.workflow_version === "new-case-v1") {
     return <NewCaseWizard key={encounterId} encounter={load.encounter} initialData={load.initialData} initialRevision={load.initialRevision}/>;
   }

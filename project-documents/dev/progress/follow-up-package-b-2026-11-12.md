@@ -26,3 +26,7 @@ disposable database superuser `x_insight` (the test expects only three roles
 with that prefix). The two corrected inventory tests passed on rerun; the role
 test passed against a second disposable database using `postgres` as superuser.
 No user database was migrated, and no commit or deployment was made.
+
+## Continuation — 2026-11-13
+
+The missing implementation is completed in the [B/F/G integration checkpoint](follow-up-bfg-2026-11-13.md), with exact verification and remaining Package H release work. The preceding partial status describes its earlier checkpoint.

@@ -66,11 +66,8 @@ KINDS = ("registration", "follow_up")
 DRAFT_LIFECYCLE = "draft"
 DISCARDED_LIFECYCLE = "discarded"
 
-# ponytail: one gate instead of a rollout framework. follow-up-v1 creation is
-# fully built and tested but stays off until packages F (v5 signing/proposals)
-# and G (versioned UI dispatch) land; flipping it now would hand physicians a
-# draft the running wizard cannot render or sign. Flip to True in F/G.
-FOLLOWUP_V1_ACTIVE = False
+# New drafts use the versioned workflow; stored legacy identities remain unchanged.
+FOLLOWUP_V1_ACTIVE = True
 
 # Autosave body bounds: generous for wizard pages, small enough to keep the
 # 1 MiB edge cap irrelevant. Depth/node limits stop pathological nesting.
@@ -372,17 +369,7 @@ def _new_follow_up_body(
     baseline = follow_up_baseline.project_baseline(
         session, source, patient_row, lexicomp_version=manifest["lexicomp_version"]
     )
-    pins = {
-        "workflow_manifest_hash": loaded["hash"],
-        "lexicomp_version": manifest["lexicomp_version"],
-        "lexicomp_content_hash": manifest["lexicomp_content_hash"],
-        "assessment_versions": manifest["assessment_versions"],
-        "model_sha256": manifest["files"]["new-case/v1/oral-antipsychotic.xml"],
-        "lab_content_hash": manifest["files"]["new-case/v1/labs.json"],
-        "formulation_content_hash": manifest["files"][
-            "new-case/v1/antipsychotic-formulations.json"
-        ],
-    }
+    pins = follow_up.content_pins(loaded)
     return follow_up.fresh_draft(visit_year, pins, baseline)
 
 
@@ -913,6 +900,12 @@ def create_open_draft(
             "actor_id": str(author.get("id")),
             "actor_display": str(author.get("username", "")),
             "kind": validated_kind,
+            "workflow_version": workflow,
+            **(
+                {"carry_source": initial_body["follow_up"]["baseline"].get("source")}
+                if new_follow_up
+                else {}
+            ),
         },
     )
     return encounter, contracts.serialize_utc(moment)
@@ -966,6 +959,21 @@ def registration_effects_for_save(stored_draft: Any, incoming: dict[str, Any]) -
     return incoming
 
 
+def lock_follow_up_patient(
+    session: Session, encounter_id: uuid.UUID, author: dict[str, Any] | None
+) -> None:
+    """All follow-up writers share creation/signing's patient → encounter lock order."""
+    initial = get_encounter(session, encounter_id)
+    if initial is not None and initial.get("workflow_version") == "follow-up-v1":
+        if author is not None:
+            require_author(initial, author)
+        session.execute(
+            select(tables.patients.c.id)
+            .where(tables.patients.c.id == initial["patient_id"])
+            .with_for_update()
+        ).one()
+
+
 def patch_draft(
     session: Session,
     *,
@@ -987,6 +995,7 @@ def patch_draft(
     audit — a failed save never looks saved because server truth (``GET`` +
     revision) only moves on success. Returns (encounter, server timestamp).
     """
+    lock_follow_up_patient(session, encounter_id, author)
     row = (
         session.execute(
             select(tables.encounters)
@@ -1075,6 +1084,23 @@ def patch_draft(
         .where(tables.encounters.c.id == encounter_id)
         .values(draft_data=validated, revision=expected_revision + 1, updated_at=moment)
     )
+    if is_follow_up:
+        old_follow_up = encounter["draft_data"]["follow_up"]
+        for name, answer in validated["follow_up"]["history"]["conditions"].items():
+            if answer["manual"] != old_follow_up["history"]["conditions"][name]["manual"]:
+                audit_module.record_audit(
+                    session,
+                    operation="follow_up.override.success",
+                    actor=str(author["username"]),
+                    request_id=request_id,
+                    details={
+                        "encounter_id": str(encounter_id),
+                        "field": name,
+                        "mode": "automatic" if answer["manual"] is None else "manual",
+                        "actor_id": str(author["id"]),
+                        "revision": expected_revision + 1,
+                    },
+                )
     updated = get_encounter(session, encounter_id)
     assert updated is not None
     audit_module.record_audit(
@@ -1123,6 +1149,7 @@ def discard_draft(
     longer occupies the slot). The patient row is untouched (never deleted).
     Returns (encounter, server timestamp).
     """
+    lock_follow_up_patient(session, encounter_id, author)
     row = (
         session.execute(
             select(tables.encounters)

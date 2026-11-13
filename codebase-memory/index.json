@@ -1053,9 +1053,29 @@
         "backend",
         "cases"
       ],
-      "purpose": "Encounter creation, workflow dispatch, author-only autosave and single-draft enforcement; legacy follow-up baseline copying.",
+      "purpose": "Encounter workflow dispatch, author-only autosave and single-draft enforcement; typed follow-up baselines under the patient lock.",
       "summary": "files/backend/src/x_insight/cases/encounters.py.md",
-      "source_sha256": "39f28e0c6af857f4f31972541b9ac8e4fa2e6a2f706526da79021da6c7579973"
+      "source_sha256": "c8a2535699bcf37a0f76215b6dfb64cf402ffadd45b0cd006f17284e5bab1104"
+    },
+    {
+      "path": "backend/src/x_insight/cases/follow_up.py",
+      "labels": [
+        "backend",
+        "cases"
+      ],
+      "purpose": "Typed follow-up defaults, strict autosave, exact content pins, conditional validation and saved-state previews.",
+      "summary": "files/backend/src/x_insight/cases/follow_up.py.md",
+      "source_sha256": "b24212b71d8936046e753795e00b7e2198299f4f1e55ccc5ef9a215e5cd2015e"
+    },
+    {
+      "path": "backend/src/x_insight/cases/follow_up_plans.py",
+      "labels": [
+        "backend",
+        "cases"
+      ],
+      "purpose": "Immutable follow-up proposal persistence, current freshness and replay-safe atomic v5 signing without a worker/provider.",
+      "summary": "files/backend/src/x_insight/cases/follow_up_plans.py.md",
+      "source_sha256": "44a9226fb8f3deb4d6830e8b70c2a8b0d8f80baeb1591600023b2bef37704154"
     },
     {
       "path": "backend/src/x_insight/cases/history.py",
@@ -1124,9 +1144,9 @@
         "backend",
         "cases"
       ],
-      "purpose": "Final-plan persistence, atomic signing with an immutable snapshot, and append-only addenda.",
+      "purpose": "Shared final-text revisions and append-only addenda; legacy atomic signing, with v4/v5 signing in their workflow modules.",
       "summary": "files/backend/src/x_insight/cases/signing.py.md",
-      "source_sha256": "56f11af43eb84666724c0115334e9185beef812b8bce6415a74689e0c433d53a"
+      "source_sha256": "0078f90669182340549be2b2ea46f3728cb043fb02c32377e2d0d22d375f37df"
     },
     {
       "path": "backend/src/x_insight/cases/tables.py",
@@ -1484,9 +1504,9 @@
         "backend",
         "operations"
       ],
-      "purpose": "Staged restore: validation, confirmation digest, maintenance lock, phased commit with rollback; schema 0017-0029 compatibility.",
+      "purpose": "Staged archive validation and transactional recovery, including legacy/v4/v5 workflow, proposal and signed-reference contracts.",
       "summary": "files/backend/src/x_insight/operations/restore.py.md",
-      "source_sha256": "0ece831a1c3dc68134faa656f56c81394ae71fb596d61e7ed40874d02cf53de0"
+      "source_sha256": "cd0f4a7e07c9b627c3dd52aa0996060be6a9f9b2ecaa0d6b387f13051a487a95"
     },
     {
       "path": "backend/src/x_insight/operations/router.py",
@@ -1546,7 +1566,7 @@
       ],
       "purpose": "CPT adjustments/resets, local recalculation, and exact-match acceptance of current results.",
       "summary": "files/backend/src/x_insight/probability_review/service.py.md",
-      "source_sha256": "ad38c8f0fad2135fef02057d494c832202306300e04f138fc22969084c246606"
+      "source_sha256": "94a7e8b44fb9bed66ea6048f41d17a29b75810b89a63173f616fb650c9c5d0cf"
     },
     {
       "path": "backend/src/x_insight/probability_review/tables.py",
@@ -5914,7 +5934,7 @@
         "project-docs",
         "progress"
       ],
-      "purpose": "Progress index and current handoff \u2014 read this first per AGENTS.md.",
+      "purpose": "Progress index and current handoff — read this first per AGENTS.md.",
       "summary": null,
       "source_sha256": null
     },
@@ -8560,9 +8580,9 @@
         "frontend",
         "encounters"
       ],
-      "purpose": "Wizard shell: step machine, native forward actions, author-only denial; working-note panel removed.",
+      "purpose": "Author-only encounter loader and immutable-version dispatch to legacy, New case and follow-up wizards.",
       "summary": "files/web/src/features/encounters/EncounterPage.tsx.md",
-      "source_sha256": "c102990893066a603b233c1b9501cc588b12bc91bb489def3df86d09ab2a6f1e"
+      "source_sha256": "ce223f1116e34e8245dfcaec3192413cde9517b3f4500c1c523ad7eec55c2ba1"
     },
     {
       "path": "web/src/features/encounters/api.ts",
@@ -8580,9 +8600,9 @@
         "frontend",
         "encounters"
       ],
-      "purpose": "Draft persistence: 250 ms debounce, revision fencing, attempt-object retries, flush barrier.",
+      "purpose": "Shared debounced revision/idempotency autosave, explicit conflict reconciliation and server-normalization rebasing over in-flight edits.",
       "summary": "files/web/src/features/encounters/useAutosave.ts.md",
-      "source_sha256": "5117e276b84ab9c10004b19e0435045c62088725c3bae7662a04a6a671df635f"
+      "source_sha256": "b5d44f9e16110aee4cdcf15a133a873b1ba5146d55890485d990f82ba9ba6cab"
     },
     {
       "path": "web/src/features/history/EffectsSection.tsx",

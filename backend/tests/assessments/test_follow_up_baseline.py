@@ -13,6 +13,7 @@ from datetime import timedelta
 from x_insight import contracts
 from x_insight.cases import follow_up as f
 from x_insight.cases import follow_up_baseline as b
+from x_insight.ddi.lexicomp import drug_id
 
 PATIENT = {"sex": "F", "age": 30, "clinical_status": "established", "birth_year": 1990}
 VERSION = "lexicomp-v1"
@@ -253,15 +254,25 @@ def _v5_draft():
     h["conditions"]["hyperlipidemia"]["inherited"] = True
     fu["considerations"]["seizure_risk"] = True
     fu["considerations"]["qtc_risk"] = False
-    fu["treatment"] = {"main_catalog_drug_id": "oral:olanzapine", "formulation": "oral"}
-    fresh["medications"]["entries"] = [{"catalog_drug_id": "oral:olanzapine"}]
+    fu["treatment"] = {
+        "main_catalog_drug_id": drug_id("Olanzapine"),
+        "formulation": "oral",
+    }
+    fresh["medications"]["entries"] = [{"catalog_drug_id": drug_id("Olanzapine")}]
     return fresh
 
 
 def test_follow_up_v5_carry_forward_keeps_fresh_labs_and_valid_main():
     row = _row("signed-encounter-v5", _v5_draft(), variant="follow-up-v5")
     baseline = b.project_baseline(
-        _Session(concept_rows=[("oral:olanzapine", "Olanzapine")]),
+        _Session(
+            concept_rows=[
+                (
+                    drug_id("Olanzapine"),
+                    "Olanzapine",
+                )
+            ]
+        ),
         _source(row),
         PATIENT,
         lexicomp_version=VERSION,
@@ -272,7 +283,7 @@ def test_follow_up_v5_carry_forward_keeps_fresh_labs_and_valid_main():
     assert carry["conditions"]["hyperlipidemia"] is True
     assert carry["conditions"]["hepatic_failure"] is None
     assert carry["seizure_risk"] is True
-    assert carry["main_catalog_drug_id"] == "oral:olanzapine"
+    assert carry["main_catalog_drug_id"] == drug_id("Olanzapine")
     assert carry["formulation"] == "oral"
     assert "labs" not in carry  # prior labs are frozen separately
     assert baseline["prior_labs"][0]["field"] == "ldl"
@@ -289,7 +300,7 @@ def test_v5_main_selection_dropped_when_not_valid_in_current_release():
     assert baseline["carry"]["main_catalog_drug_id"] is None
     assert baseline["carry"]["formulation"] is None
     assert baseline["unmatched_medications"][0]["status"] == "pending"
-    assert baseline["unmatched_medications"][0]["source_id"] == "oral:olanzapine"
+    assert baseline["unmatched_medications"][0]["source_id"] == drug_id("Olanzapine")
     draft = f.fresh_draft(2026, {}, baseline)
     assert draft["medications"]["entries"] == []  # never an invalid current id
     assert draft["medications"]["pending"][0]["resolution"] == "pending"

@@ -89,6 +89,8 @@ def _truncate_cases(engine) -> None:
 
 @pytest.fixture()
 def clean_registry(migrated_test_engine, monkeypatch):
+    # These fixtures exercise records created before follow-up-v1 rollout.
+    monkeypatch.setattr("x_insight.cases.encounters.FOLLOWUP_V1_ACTIVE", False)
     monkeypatch.setattr(db_module, "get_engine", lambda: migrated_test_engine)
     service.clear_login_throttle()
     _truncate_cases(migrated_test_engine)

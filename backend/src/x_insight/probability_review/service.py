@@ -248,6 +248,9 @@ def _require_draft_encounter(session: Session, batch: Mapping[str, Any]) -> None
     if row is None:
         return
     encounter = dict(row)
+    from x_insight.cases.encounters import require_legacy_workflow
+
+    require_legacy_workflow(encounter)
     if str(encounter.get("lifecycle")) != "draft":
         raise contracts.ContractError(409, "ENCOUNTER_SIGNED", "Encounter is signed and immutable.")
     patient_row = (

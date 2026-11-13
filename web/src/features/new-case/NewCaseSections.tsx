@@ -6,6 +6,22 @@ import { searchDrugs, type CatalogDrug } from "../medications/api";
 import type { ClinicalContent, Manual, NewCaseRaw, State } from "./api";
 import "./new-case.css";
 
+export function formatLabReference(
+  reference: Record<string, unknown>,
+  sex: string,
+): string {
+  const r = (reference[sex] ?? reference) as Record<string, unknown>;
+  return [
+    r.min !== undefined
+      ? `${r.min_inclusive === false ? ">" : "≥"} ${r.min}`
+      : "",
+    r.max !== undefined
+      ? `${r.max_inclusive === false ? "<" : "≤"} ${r.max}`
+      : "",
+  ]
+    .filter(Boolean)
+    .join(" — ");
+}
 export function useNewCaseText() {
   const { t } = useLanguage();
   return (key: string) => t(("nc." + key) as MessageKey);
@@ -75,16 +91,20 @@ function Magnifier({
     </span>
   );
 }
-export function HarmSection({
+export function HarmSection<
+  T extends { harm: { self: boolean; others: boolean } },
+>({
   raw,
   answers,
   onRaw,
   onAnswers,
+  result,
 }: {
-  raw: NewCaseRaw;
+  raw: T;
   answers: Record<string, string>;
-  onRaw: (v: NewCaseRaw) => void;
+  onRaw: (v: T) => void;
   onAnswers: (v: Record<string, string>) => void;
+  result?: number | null;
 }) {
   const n = useNewCaseText();
   const { language } = useLanguage();
@@ -127,6 +147,11 @@ export function HarmSection({
               <button type="button" onClick={() => setRetry((r) => r + 1)}>
                 {n("retry")}
               </button>
+            </p>
+          )}
+          {result != null && (
+            <p role="status">
+              C-SSRS: <bdi>{result}</bdi>
             </p>
           )}
           {items.map((item) => (
@@ -257,24 +282,7 @@ export function HistorySection({ raw, onRaw, state, content, sex }: Props) {
         />
         <small>
           {n("reference")}:{" "}
-          <bdi>
-            {(() => {
-              const r = (field.reference[sex] ?? field.reference) as Record<
-                string,
-                unknown
-              >;
-              return [
-                r.min !== undefined
-                  ? `${r.min_inclusive === false ? ">" : "≥"} ${r.min}`
-                  : "",
-                r.max !== undefined
-                  ? `${r.max_inclusive === false ? "<" : "≤"} ${r.max}`
-                  : "",
-              ]
-                .filter(Boolean)
-                .join(" — ");
-            })()}
-          </bdi>{" "}
+          <bdi>{formatLabReference(field.reference, sex)}</bdi>{" "}
           <a href={labs.sources[field.source]} target="_blank" rel="noreferrer">
             {n("source")}
           </a>

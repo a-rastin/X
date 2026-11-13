@@ -1,7 +1,6 @@
 # web/src/features/encounters/EncounterPage.tsx
 
-Source SHA-256: c102990893066a603b233c1b9501cc588b12bc91bb489def3df86d09ab2a6f1e
-Source commit: bad418cecdf013317df56751fec2c4a0158b305d
+Source SHA-256: ce223f1116e34e8245dfcaec3192413cde9517b3f4500c1c523ad7eec55c2ba1
 
 ## Purpose
 The wizard shell: step machine, step navigation, autosave wiring, discard, and the
@@ -35,3 +34,11 @@ author-only denial view.
 ## Related Files
 - `web/src/features/encounters/useAutosave.ts`, `DemographicsDraftPanels.tsx`.
 - `e2e/panss.spec.ts` — asserts "Continue navigates without completing the assessment".
+
+## Version dispatch and confirmation recovery
+`EncounterPage` dispatches `new-case-v1` to `NewCaseWizard` and `follow-up-v1` to
+`FollowUpWizard`; only `legacy-v1` enters the original step machine. Unknown
+versions fail closed. On a draft-read 404 it tries the author-owned follow-up
+proposal endpoint: `signed_patient_id` redirects to the signed chart after a lost
+confirmation response. Missing/discarded/other workflows keep the normal error.
+The step constants and diagnosis behavior above describe the legacy branch.

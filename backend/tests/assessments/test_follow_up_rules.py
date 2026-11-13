@@ -195,6 +195,11 @@ def test_reproductive_sections(case, sex, pregnant, breastfeeding, age, counsel,
     assert result["contraception"]["counsel"] is counsel
     assert ("Beta-HCG" in result["routine_labs"]) is beta
     assert result["pregnancy"] is (sex == "F" and pregnant)
+    assert ("obstetric_consultation" in result["actions"]) is (sex == "F" and pregnant)
+    assert ("pediatric_consultation_for_formula" in result["actions"]) is (
+        sex == "F" and breastfeeding
+    )
+    assert ("contraception_counseling" in result["actions"]) is counsel
     assert result["breastfeeding"] is (sex == "F" and breastfeeding)
 
 

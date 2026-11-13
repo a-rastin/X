@@ -5,3 +5,7 @@ Package F remains **incomplete**. Base revision `5e622d61d1b51803f31ab613a95f618
 Verification: `cd backend && .venv/bin/pytest -q tests/assessments/test_follow_up_plan_inputs.py` passed (1 test; synthetic database responses and actual packaged model/content). Ruff check and mypy passed for the new module. No database was migrated; no public HTTP, transaction or concurrency acceptance was run.
 
 Handoff: finish the fingerprint contract, including exact assessment definition identity and validation against the specification; persist and deduplicate immutable proposals; add author-owned reads/freshness, final-plan integration, replay-safe v5 signing and audit; audit every legacy command guard; test public interfaces, races and unchanged historical signatures. Package B recovery, C/D/E acceptance, G UI and H end-to-end work remain open. Do not enable creation or call this package complete. No deployment was made.
+
+## Continuation — 2026-11-13
+
+The missing implementation is completed in the [B/F/G integration checkpoint](follow-up-bfg-2026-11-13.md), with exact verification and remaining Package H release work. The preceding partial status describes its earlier checkpoint.

@@ -27,7 +27,7 @@ from sqlalchemy.orm import Session
 
 from x_insight import contracts
 from x_insight.assessments.engine import evaluate
-from x_insight.assessments.released import get_released_definition
+from x_insight.assessments.released import assessments_dir, get_released_definition
 from x_insight.cases import follow_up_content, follow_up_rules
 from x_insight.cases.medications import validate_entries_structure
 from x_insight.cases.new_case import _critical, _outside, decimal_text
@@ -65,6 +65,28 @@ def _verified_content_cached(root: str, fingerprint: str) -> dict[str, Any]:
 def verified_content() -> dict[str, Any]:
     """Hash-checked follow-up content, cached away from the autosave hot path."""
     return _verified_content_cached(*_content_fingerprint())
+
+
+def content_pins(content: dict[str, Any]) -> dict[str, Any]:
+    """One identity contract for creation, proposals, signing and archive validation."""
+    manifest = content["manifest"]
+    return {
+        "workflow_manifest_hash": content["hash"],
+        "lexicomp_version": manifest["lexicomp_version"],
+        "lexicomp_content_hash": manifest["lexicomp_content_hash"],
+        "assessment_versions": manifest["assessment_versions"],
+        "assessment_hashes": {
+            name: hashlib.sha256(
+                (assessments_dir() / f"{name}.{version}.json").read_bytes()
+            ).hexdigest()
+            for name, version in manifest["assessment_versions"].items()
+        },
+        "model_sha256": manifest["files"]["new-case/v1/oral-antipsychotic.xml"],
+        "lab_content_hash": manifest["files"]["new-case/v1/labs.json"],
+        "formulation_content_hash": manifest["files"][
+            "new-case/v1/antipsychotic-formulations.json"
+        ],
+    }
 
 
 def lab_fields() -> dict[str, Any]:
@@ -135,6 +157,7 @@ class FollowUpState(TypedDict):
     reached_questions: list[str]
     steps: list[str]
     proposal: None
+    cssrs_evaluation: dict[str, Any]
     decision: dict[str, Any]
     model_factors: dict[str, Any]
     sections: dict[str, Any]
@@ -462,6 +485,35 @@ def structural_draft(draft: dict[str, Any]) -> dict[str, Any]:
         elif entry["replacement_catalog_drug_id"] is not None:
             fail("medications.pending", "Only a replacement carries a catalog id")
     medications["pending"] = pending
+    treatment = result["follow_up"]["treatment"]
+    main = treatment["main_catalog_drug_id"]
+    if main is not None:
+        formulations = verified_content()["assets"]["new-case/v1/antipsychotic-formulations.json"][
+            "entries"
+        ]
+        matching = [entry for entry in formulations if entry.get("catalog_drug_id") == main]
+        oral_ids = {entry["id"] for entry in matching if entry["group"] == "oral"}
+        lai_supported = any(
+            pair["oral"] in oral_ids
+            for pair in verified_content()["assets"]["follow-up/v1/lai-equivalences.json"][
+                "equivalences"
+            ]
+        )
+        if (
+            main not in valid_ids
+            or not matching
+            or not (
+                treatment["formulation"] is None
+                or any(entry["group"] == treatment["formulation"] for entry in matching)
+                or (treatment["formulation"] == "lai" and lai_supported)
+            )
+        ):
+            fail(
+                "follow_up.treatment",
+                "Main treatment must be a selected supported antipsychotic formulation",
+            )
+    elif treatment["formulation"] is not None:
+        fail("follow_up.treatment.formulation", "No formulation without a main drug")
     return result
 
 
@@ -469,6 +521,21 @@ def prepare_autosave(
     stored: dict[str, Any], incoming: dict[str, Any], *, actor_id: str, recorded_at: str
 ) -> dict[str, Any]:
     """Strict autosave: reject forged identity/pins/baseline/provenance/results."""
+    incoming = deepcopy(incoming)
+    old_main = stored.get("follow_up", {}).get("treatment", {}).get("main_catalog_drug_id")
+    if (
+        old_main
+        and isinstance(incoming.get("medications"), dict)
+        and isinstance(incoming["medications"].get("entries"), list)
+        and isinstance(incoming.get("follow_up"), dict)
+        and incoming["follow_up"].get("treatment", {}).get("main_catalog_drug_id") == old_main
+        and not any(
+            isinstance(e, dict) and e.get("catalog_drug_id") == old_main
+            for e in incoming["medications"]["entries"]
+        )
+    ):
+        incoming["follow_up"]["treatment"] = {"main_catalog_drug_id": None, "formulation": None}
+        incoming["follow_up"]["branches"] = dict.fromkeys(BRANCH_ANSWERS)
     candidate = structural_draft(incoming)
     old = stored["follow_up"]
     new = candidate["follow_up"]
@@ -657,6 +724,9 @@ def evaluate_state(draft: dict[str, Any], patient: dict[str, Any]) -> FollowUpSt
     for field in ("psychiatric", "substances"):
         if raw[field]["present"] is None:
             required("history", "follow_up.history." + field + ".present", "carried_value_required")
+    for name in ("hepatic_failure", "renal_failure", "glucose_abnormality", "hyperlipidemia"):
+        if not flags[name]["established"]:
+            required("history", "follow_up.history.conditions." + name, "carried_value_required")
     for field in ("heart_failure", "tobacco"):
         if raw[field] is None:
             required("history", "follow_up.history." + field, "carried_value_required")
@@ -708,7 +778,8 @@ def evaluate_state(draft: dict[str, Any], patient: dict[str, Any]) -> FollowUpSt
         "can_complete": not any(errors.values()),
         "reached_questions": reached,
         "steps": list(STEPS),
-        "proposal": None,  # F owns proposals; reading never creates one.
+        "proposal": None,  # Reading never creates a proposal.
+        "cssrs_evaluation": evaluate(get_released_definition("cssrs"), state["cssrs"]["answers"]),
         "decision": {},
         "model_factors": {},
         "sections": {},
@@ -799,9 +870,17 @@ def config() -> dict[str, Any]:
                 "unit": spec["unit"],
                 "reference": spec["reference"],
                 "source": spec["source"],
+                "sex": spec.get("sex"),
                 "suggestion": spec.get("suggestion"),
             }
             for name, spec in labs["fields"].items()
+        },
+        "lab_labels": labs["labels"],
+        "lab_sources": labs["sources"],
+        "medication_names": {
+            e["catalog_drug_id"]: e["name"]
+            for e in formulations["entries"]
+            if e.get("catalog_drug_id")
         },
         "formulations": formulations["entries"],
         "lai_equivalences": equivalences["equivalences"],

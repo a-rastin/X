@@ -329,6 +329,7 @@ def save_secondary_plan(
         )
     expected = int(expected_plan_revision)
     validated = validate_secondary_text(text)
+    encounters_service.lock_follow_up_patient(session, encounter_id, author)
     row = (
         session.execute(
             select(cases_tables.encounters)
@@ -1027,6 +1028,7 @@ def create_addendum(
     inclusion = (
         validate_clozapine_included(clozapine_included) if clozapine_included is not None else None
     )
+    encounters_service.lock_follow_up_patient(session, encounter_id, None)
     row = (
         session.execute(
             select(cases_tables.encounters)

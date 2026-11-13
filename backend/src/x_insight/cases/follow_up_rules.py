@@ -222,7 +222,7 @@ def sections(evaluated: Mapping[str, Any], sex: str, result: dict[str, Any]) -> 
         terminal == "physician_review" and result["reason"] == "current_lai"
     ):
         timing = "next_injection"
-    return {
+    result_sections = {
         "care_setting": {"setting": "inpatient" if reasons else "outpatient", "reasons": reasons},
         "antidepressant": bool(
             h["psychiatric"]["present"]
@@ -245,3 +245,23 @@ def sections(evaluated: Mapping[str, Any], sex: str, result: dict[str, Any]) -> 
         },
         "next_visit": timing,
     }
+
+    result_sections["actions"] = (
+        (
+            ["obstetric_consultation", "neonatal_consultation_after_birth", "lowest_effective_dose"]
+            if pregnant
+            else []
+        )
+        + (
+            ["discontinue_breastfeeding", "pediatric_consultation_for_formula"]
+            if breastfeeding
+            else []
+        )
+        + (
+            ["contraception_counseling"]
+            if female and not pregnant and not breastfeeding and reproductive_age
+            else []
+        )
+        + (["mustNotDelay"] if any(h["neurological"].values()) else [])
+    )
+    return result_sections

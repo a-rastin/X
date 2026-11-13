@@ -18,7 +18,7 @@ A separate, experimental `new-case-v1` workflow for first-time registration is
 built around a fixed, hash-pinned oral-antipsychotic ranking model (an exact,
 fully observed conditional-row lookup) and a pinned Lexicomp interaction dataset.
 It uses no LLM, provider call, background generation job or probability slider;
-the legacy LLM/CPT pipeline is retained unchanged for Known case and follow-up.
+the legacy LLM/CPT pipeline is retained for Known case and existing legacy follow-up drafts.
 New case now has a bilingual seven-step wizard, personal formulation settings,
 immutable proposals and v4 confirmation. See [New-case state](docs/new-case-state.md).
 
@@ -50,12 +50,15 @@ every acceptance check has passed. See the current boundaries below.
 
 ## Current engineering status
 
-The [2026-11-12 follow-up redesign](project-documents/dev/follow-up-specification.md)
-is reconciled and **awaiting implementation**. Its
-[step-by-step agent plan](project-documents/dev/follow-up-implementation-plan.md)
-covers versioned baselines/forms, deterministic decisions, D/X exclusions,
-signing and mixed-history recovery. Current follow-up runtime remains legacy;
-this planning work does not claim the new workflow is available.
+New follow-up drafts now use the versioned seven-step deterministic workflow:
+frozen signed history, optional PANSS, nested C-SSRS, history/examination,
+medications, simple adverse effects, treatment considerations and an editable
+physician final plan. Generation and v5 signing require no provider or worker.
+Existing legacy drafts and signed records keep their original contracts. See the
+[specification](project-documents/dev/follow-up-specification.md),
+[user guide](docs/user-guide.md#start-a-follow-up-encounter) and
+[B/F/G implementation checkpoint](project-documents/dev/progress/follow-up-bfg-2026-11-13.md).
+Full mixed-history public restore/release acceptance remains Package H work.
 
 The [Issue 20 Status follow-up](project-documents/dev/progress/s58.md#follow-up-2026-11-02--issue-20-implementation)
 adds a terminal-generation-failure alert and distinguishes provider and Bayesian

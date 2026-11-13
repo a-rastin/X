@@ -1,8 +1,8 @@
 # Follow-up workflow specification
 
-Status: product requirements reconciled on 2026-11-12; implementation pending.
-This describes the planned `follow-up-v1` workflow, not current runtime behavior
-in the application. [Implementation plan](follow-up-implementation-plan.md) ·
+Status: product requirements reconciled on 2026-11-12; B/F/G integration implemented
+on 2026-11-13. New drafts select `follow-up-v1`; existing drafts retain their identity.
+Verification and remaining release gates: [B/F/G checkpoint](progress/follow-up-bfg-2026-11-13.md). [Implementation plan](follow-up-implementation-plan.md) ·
 [source files](../changes/follow-up-2026-11-12/README.md) ·
 [code investigation and decision record](progress/follow-up-planning-2026-11-12.md).
 

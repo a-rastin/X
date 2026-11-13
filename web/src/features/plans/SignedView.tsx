@@ -1,3 +1,4 @@
+import { FollowUpProposalView } from "../follow-up/FollowUpPlanPage";
 import { ProposalView } from "../new-case/NewCasePlanPage";
 import type { Proposal } from "../new-case/api";
 import { useLanguage } from "../../shared/i18n";
@@ -280,7 +281,8 @@ export function SignedEncounterView({
   onChanged: () => void;
 }) {
   const { text: uiText, t, errorText, language } = useLanguage();
-  const isNewCase = snapshot.snapshot.schema_version === "signed-encounter-v4";
+  const isFollowUp = snapshot.snapshot.schema_version === "signed-encounter-v5";
+  const isNewCase = snapshot.snapshot.schema_version === "signed-encounter-v4" || isFollowUp;
   const id = snapshot.encounter_id;
   const questions = snapshot.snapshot.questions ?? [];
   const [text, setText] = useState("");
@@ -398,7 +400,7 @@ export function SignedEncounterView({
         )}
       </div>
       {isNewCase ? (
-        <ProposalView proposal={snapshot.snapshot.proposal as Proposal} />
+        isFollowUp ? <FollowUpProposalView proposal={snapshot.snapshot.proposal as Proposal} /> : <ProposalView proposal={snapshot.snapshot.proposal as Proposal} />
       ) : (
         <>
           <p data-testid={`signed-view-clozapine-${id}`}>

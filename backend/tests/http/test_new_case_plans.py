@@ -204,12 +204,16 @@ def test_concurrent_confirmation_and_followup_baseline(clinician, clean_registry
     assert followup.status_code == 201, followup.text
     draft = followup.json()["draft_data"]
     assert draft["panss"]["answers"] == {}
-    assert draft["followup_baseline"]["prior_plan"] == "Frozen final plan"
+    assert followup.json()["encounter"]["workflow_version"] == "follow-up-v1"
     assert (
-        draft["medications"]["dataset_version"]
-        == proposal["payload"]["versions"]["lexicomp_version"]
+        draft["follow_up"]["baseline"]["source"]["signature_schema_version"]
+        == "signed-encounter-v4"
     )
-    assert not any("Tardive" in key for key in draft["history"]["values"])
+    assert draft["follow_up"]["baseline"]["source"]["encounter_id"] == body["draft"]["id"]
+    assert draft["cssrs"]["answers"] == {f"css_i{i}_recent": "no" for i in range(1, 6)}
+    assert not any(
+        draft["follow_up"]["effects"][k] for k in draft["follow_up"]["effects"] if k != "sedation"
+    )
 
 
 def test_signed_backup_and_reference_validation(clinician, clean_registry, tmp_path):

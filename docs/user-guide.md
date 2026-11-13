@@ -1,11 +1,10 @@
 # X-INSIGHT User Guide
 
-Last updated: 2026-11-09. This guide describes the current application for physicians and administrators. For installation and startup, use the [Installation and Running Guide](installation.md).
+Last updated: 2026-11-13. This guide describes the current application for physicians and administrators. For installation and startup, use the [Installation and Running Guide](installation.md).
 
-Planning note (2026-11-12): the [reconciled follow-up redesign](../project-documents/dev/follow-up-specification.md)
-and [implementation plan](../project-documents/dev/follow-up-implementation-plan.md)
-are future work. The follow-up instructions in this guide describe current
-runtime behavior; the redesigned seven-step workflow is not available yet.
+New follow-up drafts use the deterministic workflow described in
+[Start a follow-up encounter](#start-a-follow-up-encounter). Existing legacy
+follow-up drafts retain their earlier assessments and probability-review flow.
 
 X-INSIGHT is a research workspace for recording patient encounters, completing structured assessments, reviewing medication interactions, generating proposals, and signing physician plans. Its research status and clinical-content review limitations still apply; a generated proposal requires physician review. This guide explains application controls and does not provide treatment advice.
 
@@ -140,7 +139,7 @@ inputs, sources and signer. The original interaction evidence does not certify
 free-text medication changes. Corrections after signing use append-only addenda.
 
 New physician accounts require at least one Persian or English display name.
-Existing unnamed accounts fall back to username. Follow-up keeps its original
+Existing unnamed accounts fall back to username. Existing legacy follow-up keeps its original
 form and uses prior New case values only as historical assessments/plan and the
 explicit medication release pin; absent legacy History values remain unknown.
 
@@ -174,7 +173,7 @@ There are 30 items. The total appears only after all 30 have valid ratings. An u
 2. In registration, select **Yes** or **No** for each item. The current registration form defaults missing or older Unknown responses to **No** when opened. Check every response; a preselected No does not establish that a clinician assessed the item.
 3. Review the saved assessment summary before continuing.
 
-Follow-up retains **Yes**, **No**, and **Unknown** choices. Unknown is not a negative screen. The current form covers recent ideation; do not expect lifetime or behavior questions on this page.
+Legacy follow-up retains **Yes**, **No**, and **Unknown** choices. Unknown is not a negative screen. The current form covers recent ideation; do not expect lifetime or behavior questions on this page.
 
 ### History
 
@@ -206,7 +205,7 @@ The History page has no editable reconciliation section. Review and update its c
 
 Check the report's dataset/version and coverage information. Some source data supplies severity only; mechanism and management text may be absent. **Retry report** retries retrieval when available. If the dataset is unavailable, the saved medication list remains recorded; ask the administrator to investigate.
 
-For copied follow-up medications, review the entire list and select **Reconcile N medications** when shown. An ordinary save does not clear the reconciliation requirement, and the interaction report remains pending until reconciliation succeeds.
+For copied legacy follow-up medications, review the entire list and select **Reconcile N medications** when shown. An ordinary save does not clear the reconciliation requirement, and the interaction report remains pending until reconciliation succeeds.
 
 ## Generate and review a proposal
 
@@ -260,23 +259,51 @@ Signed content cannot be edited in place. An addendum adds a dated, attributed c
 
 1. Open the patient's chart and select the follow-up draft action. The directory also provides a follow-up entry action.
 2. If an open draft already exists, resume it if you are its author. Only one open draft is allowed per patient across physicians and encounter types.
-3. Review the **Follow-up baseline** panel and copied information from the signed baseline. Prior scores are historical references, not answers to the new assessment.
-4. Complete the current assessments, review/update History, record adverse effects, and reconcile the medications.
-5. Review the new proposal, accept current results, save the physician plan, and sign as described above.
+3. Review the frozen previous signed visit and its dated historical details. Missing prior records remain “not recorded”; current edits do not change that summary.
+4. Complete the seven steps below. Forward navigation validates saved required inputs; PANSS may remain incomplete. Back navigation preserves work.
+5. Generate the proposed plan, review the original recommendation and its limitations, edit the physician plan, then explicitly confirm and sign.
 
-Follow-up uses a different seven-step sequence:
-
-| Step | Page |
+| Step | Current follow-up workflow |
 | --- | --- |
-| 1 | Diagnosis |
-| 2 | PANSS |
-| 3 | C-SSRS |
-| 4 | History |
-| 5 | Adverse effects |
-| 6 | Medications |
-| 7 | Proposal review |
+| 1 | PANSS, initially unanswered; incomplete scores are allowed |
+| 2 | Self/other harm; expand the self-harm control for five recent C-SSRS questions, initially No |
+| 3 | History/examination, current labs, inherited conditions and manual overrides, BMI and applicable pregnancy/lactation answers |
+| 4 | Current medications, optional main antipsychotic and oral/LAI formulation |
+| 5 | Seven simple adverse-effect questions, initially No |
+| 6 | Required recovery answer, treatment considerations and reached physician branch questions |
+| 7 | Generate the original proposed plan, edit/save the physician plan and confirm/sign |
 
-PANSS starts unanswered; C-SSRS retains Unknown defaults rather than copying prior answers. On **Adverse effects**, complete the displayed effect and trial-context fields relevant to this encounter. Address any missing baseline or treatment-trial prerequisites named by proposal readiness. Creating a follow-up draft alone does not establish that every follow-up question can execute.
+Medication search starts after three characters. Select a catalog result or clear
+unmatched text before continuing. Historical medications outside the current
+catalog need an explicit replacement or removal. Deleting the main drug clears
+its main-treatment selection. No main drug and current LAI treatment produce
+physician review while other applicable recommendation sections still generate.
+
+Current manual condition answers override automatic lab suggestions until
+**Return to automatic** is selected. Switching the lab report off preserves the
+manual answers and entered measurements. Previous findings retain their dates
+and are never presented as today's measurements.
+
+The original proposal includes the drug action or physician-review outcome,
+adjunct advice, independent recommendations, ranking shares and interaction
+exclusions. D/X replacement checks include the outgoing main medication.
+Ranking shares are not treatment-success probabilities; unknown interaction
+coverage is disclosed. This workflow has no diagnosis, provider-setup, worker,
+CPT-slider or probability-acceptance step.
+
+The [follow-up API reference](follow-up-api.md) documents the saved-state and confirmation contracts.
+
+The final-plan editor is seeded once. Regeneration preserves physician edits;
+**Replace with current proposal** is the explicit way to replace them. Save a
+nonblank final plan and regenerate stale clinical inputs or availability settings
+before signing. A lost signing response can be recovered by reloading the visit;
+the application opens the signed chart after confirming the saved signature.
+Corrections use the chart's existing append-only addenda.
+
+Existing `legacy-v1` follow-up drafts retain Diagnosis → PANSS → C-SSRS →
+History → Adverse effects → Medications → Proposal review, including Unknown
+answers, medication reconciliation and the legacy probability-acceptance/signing
+requirements. Opening an old draft never migrates its answers or workflow.
 
 ## Save, resume, and discard drafts
 

@@ -147,7 +147,9 @@ def _contraception(snapshot: dict[str, Any]) -> list[dict[str, Any]]:
     source = snapshot.get("encounter") or {}
     return [
         {
-            "value": section.get("value"),
+            "value": section.get("counsel")
+            if snapshot.get("schema_version") == FOLLOW_UP_SCHEMA
+            else section.get("value"),
             "reasons": list(section.get("reasons") or [])[:MAX_SUMMARY_ITEMS],
             "visit_date": source.get("created_at"),
             "encounter_id": source.get("id"),
@@ -483,6 +485,11 @@ def project_baseline(
         "medication_names": medication_names[:MAX_SUMMARY_ITEMS],
         "hospitalization_count": carry.get("hospitalization_count"),
         "prior_scores": prior_scores,
+        "tobacco": carry.get("tobacco"),
+        "substances": carry.get("substances"),
+        "harm": (draft_data.get("follow_up") or draft_data.get("new_case") or {}).get(
+            "harm", {"self": None, "others": None}
+        ),
         "schizophrenia_context": patient.get("clinical_status"),
         "note": "recorded_visits_not_lifetime_count",
         "text": " ".join(parts)[:MAX_SUMMARY_TEXT],

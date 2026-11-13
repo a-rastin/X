@@ -15,6 +15,7 @@ import pytest
 from x_insight import contracts
 from x_insight.cases import follow_up as f
 from x_insight.cases import follow_up_baseline as b
+from x_insight.ddi.lexicomp import drug_id
 
 PATIENT = {"sex": "F", "age": 30, "birth_year": None, "clinical_status": "established"}
 PINS = {"workflow_manifest_hash": "abc"}
@@ -174,6 +175,8 @@ def _complete():
     draft = _fresh()
     fu = draft["follow_up"]
     h = fu["history"]
+    for name in ("hepatic_failure", "renal_failure", "glucose_abnormality", "hyperlipidemia"):
+        h["conditions"][name]["inherited"] = False
     h["psychiatric"]["present"] = False
     h["substances"]["present"] = False
     h["heart_failure"] = False
@@ -271,12 +274,21 @@ def test_reached_questions_recompute_from_current_sources():
     draft = _complete()
     fu = draft["follow_up"]
     assert f.reached_questions(draft) == []  # no main drug => physician review
-    draft["medications"]["entries"] = [{"catalog_drug_id": "oral:x"}]
-    fu["treatment"] = {"main_catalog_drug_id": "oral:x", "formulation": "oral"}
+    draft["medications"]["entries"] = [{"catalog_drug_id": drug_id("Olanzapine")}]
+    fu["treatment"] = {
+        "main_catalog_drug_id": drug_id("Olanzapine"),
+        "formulation": "oral",
+    }
     assert "switch_needed" in f.reached_questions(draft)
-    fu["treatment"] = {"main_catalog_drug_id": "oral:x", "formulation": "lai"}
+    fu["treatment"] = {
+        "main_catalog_drug_id": drug_id("Olanzapine"),
+        "formulation": "lai",
+    }
     assert f.reached_questions(draft) == []  # physician review
-    fu["treatment"] = {"main_catalog_drug_id": "oral:x", "formulation": "oral"}
+    fu["treatment"] = {
+        "main_catalog_drug_id": drug_id("Olanzapine"),
+        "formulation": "oral",
+    }
     fu["considerations"]["recovery"] = "none_or_worse"
     assert f.reached_questions(draft) == ["treatment_resistant"]
     assert "treatment_resistant" in f.reached_questions(draft)

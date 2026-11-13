@@ -170,8 +170,7 @@ def _open_follow_up(
     active=True,
     identifier="0012345678",
 ):
-    if active:
-        _activate(monkeypatch)
+    monkeypatch.setattr(encounters_service, "FOLLOWUP_V1_ACTIVE", active)
     _make_physician(admin_client, username)
     client, csrf = _physician_client(clean_registry, monkeypatch, username, "pw123")
     created = _create_patient(client, csrf, identifier=identifier)

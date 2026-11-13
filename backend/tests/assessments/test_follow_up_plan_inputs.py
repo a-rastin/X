@@ -52,20 +52,9 @@ class Session:
         return Rows(self.model if "model_network_versions" in str(query) else self.release)
 
 
-def test_fingerprint_and_content_failure():
+def test_fingerprint_and_content_failure(monkeypatch, tmp_path):
     content = follow_up_content.load_content()
-    manifest = content["manifest"]
-    pins = {
-        "workflow_manifest_hash": content["hash"],
-        "lexicomp_version": manifest["lexicomp_version"],
-        "lexicomp_content_hash": manifest["lexicomp_content_hash"],
-        "assessment_versions": manifest["assessment_versions"],
-        "model_sha256": manifest["files"]["new-case/v1/oral-antipsychotic.xml"],
-        "lab_content_hash": manifest["files"]["new-case/v1/labs.json"],
-        "formulation_content_hash": manifest["files"][
-            "new-case/v1/antipsychotic-formulations.json"
-        ],
-    }
+    pins = follow_up.content_pins(content)
     patient = {"sex": "F", "age": 30, "birth_year": None, "clinical_status": "established"}
     baseline = follow_up_baseline.project_baseline(
         None, None, patient, lexicomp_version=pins["lexicomp_version"]
@@ -85,6 +74,16 @@ def test_fingerprint_and_content_failure():
     changed = deepcopy(draft)
     changed["follow_up"]["harm"]["self"] = True
     assert digest != follow_up_plans.verified_inputs(session, changed, patient, user)[2]
+    # Even a same-version assessment byte change invalidates the frozen pins.
+    from x_insight.assessments.released import assessments_dir
+
+    for name, version in content["manifest"]["assessment_versions"].items():
+        filename = f"{name}.{version}.json"
+        (tmp_path / filename).write_bytes((assessments_dir() / filename).read_bytes() + b" ")
+    with monkeypatch.context() as patch:
+        patch.setattr(follow_up, "assessments_dir", lambda: tmp_path)
+        with pytest.raises(contracts.ContractError):
+            follow_up_plans.verified_inputs(session, draft, patient, user)
     session.model[0]["source_bytes"] = b"corrupt"
     with pytest.raises(contracts.ContractError, match="pinned follow-up content"):
         follow_up_plans.verified_inputs(session, draft, patient, user)

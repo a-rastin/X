@@ -135,6 +135,7 @@ export interface SignedSnapshotRow {
   batch_id: string | null;
   proposal_id: string | null;
   new_case_proposal_id?: string | null;
+  follow_up_proposal_id?: string | null;
   secondary_plan_revision: number;
   secondary_plan_text: string;
   snapshot: {

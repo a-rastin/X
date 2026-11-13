@@ -1,3 +1,9 @@
+import { useFollowUpText } from "../follow-up/text";
+import {
+  FollowUpProposalView,
+  followUpProposalText,
+} from "../follow-up/FollowUpPlanPage";
+import * as followUpApi from "../follow-up/api";
 import {
   useCallback,
   useEffect,
@@ -12,10 +18,14 @@ import {
   saveSecondaryPlan,
   type SecondaryPlanPayload,
 } from "../plans/api";
-import { command, latestProposal, type Proposal } from "./api";
+import {
+  command as newCaseCommand,
+  latestProposal as latestNewCaseProposal,
+  type Proposal,
+} from "./api";
 import { useNewCaseText } from "./NewCaseSections";
 
-export function proposalText(
+export function newCaseProposalText(
   proposal: Proposal,
   n: (s: string) => string,
 ): string {
@@ -64,7 +74,7 @@ export function ProposalView({ proposal }: { proposal: Proposal }) {
   return (
     <section className="xi-card nc-plan">
       <h3>{n("original")}</h3>
-      <pre>{proposalText(proposal, n)}</pre>
+      <pre>{newCaseProposalText(proposal, n)}</pre>
       <p>{n("rankingShare")}</p>
       {proposal.payload.ranking.status !== "model_unavailable" &&
         proposal.payload.ranking.candidates.length === 0 && (
@@ -103,8 +113,10 @@ export function NewCasePlanPage({
   dirtyRef,
   onSigned,
   onError,
+  workflow = "new-case",
 }: {
   encounterId: string;
+  workflow?: "new-case" | "follow-up";
   proposal: Proposal;
   onProposal: (p: Proposal) => void;
   flushInputs: () => Promise<{ ok: true; revision: number } | { ok: false }>;
@@ -113,7 +125,17 @@ export function NewCasePlanPage({
   onSigned: () => void;
   onError: (e: unknown) => void;
 }) {
-  const n = useNewCaseText();
+  const legacyText = useNewCaseText();
+  const followUpText = useFollowUpText();
+  const n = workflow === "follow-up" ? followUpText : legacyText;
+  const command =
+    workflow === "follow-up" ? followUpApi.command : newCaseCommand;
+  const latestProposal =
+    workflow === "follow-up"
+      ? followUpApi.latestProposal
+      : latestNewCaseProposal;
+  const proposalText =
+    workflow === "follow-up" ? followUpProposalText : newCaseProposalText;
   const { language } = useLanguage();
   const [text, setText] = useState("");
   const [loaded, setLoaded] = useState(false);
@@ -131,7 +153,7 @@ export function NewCasePlanPage({
     text: string;
     revision: number;
   } | null>(null);
-  const storageKey = "xi-new-case-plan:" + encounterId;
+  const storageKey = "xi-" + workflow + "-plan:" + encounterId;
   const setDraft = useCallback(
     (value: string) => {
       textRef.current = value;
@@ -256,6 +278,14 @@ export function NewCasePlanPage({
     window.addEventListener("focus", refresh);
     return () => window.removeEventListener("focus", refresh);
   }, [encounterId, proposal.id]);
+  const commandAttempt = useRef<{ signature: string; key: string } | null>(
+    null,
+  );
+  const stableKey = (signature: string) => {
+    if (commandAttempt.current?.signature !== signature)
+      commandAttempt.current = { signature, key: newIdempotencyKey() };
+    return commandAttempt.current.key;
+  };
   const regenerate = async () => {
     setBusy(true);
     try {
@@ -267,7 +297,9 @@ export function NewCasePlanPage({
         "proposals",
         input.revision,
         {},
+        stableKey(`generate:${input.revision}`),
       );
+      commandAttempt.current = null;
       onProposal(r.proposal);
     } catch (e) {
       onError(e);
@@ -286,10 +318,17 @@ export function NewCasePlanPage({
         onProposal({ ...proposal, stale: true });
         return;
       }
-      await command(encounterId, "sign", input.revision, {
-        proposal_id: proposal.id,
-        expected_plan_revision: revision.current,
-      });
+      await command(
+        encounterId,
+        "sign",
+        input.revision,
+        {
+          proposal_id: proposal.id,
+          expected_plan_revision: revision.current,
+        },
+        stableKey(`sign:${input.revision}:${proposal.id}:${revision.current}`),
+      );
+      commandAttempt.current = null;
       sessionStorage.removeItem(storageKey);
       dirtyRef.current = false;
       onSigned();
@@ -301,7 +340,11 @@ export function NewCasePlanPage({
   };
   return (
     <div className="nc-plan">
-      <ProposalView proposal={proposal} />
+      {workflow === "follow-up" ? (
+        <FollowUpProposalView proposal={proposal} />
+      ) : (
+        <ProposalView proposal={proposal} />
+      )}
       {proposal.stale && <p role="alert">{n("stale")}</p>}
       <div className="nc-actions">
         <button
@@ -398,3 +441,5 @@ export function NewCasePlanPage({
     </div>
   );
 }
+
+export { newCaseProposalText as proposalText };

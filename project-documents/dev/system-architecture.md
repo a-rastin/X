@@ -1,13 +1,14 @@
 # X-INSIGHT — System Architecture
 
-Planned 2026-11-12: the [new follow-up contract](follow-up-specification.md)
+Implemented B/F/G, 2026-11-13: the [new follow-up contract](follow-up-specification.md)
 keeps the four subsystems and current deployment architecture. Cases owns the
 versioned draft, frozen baseline and signing; Knowledge supplies pinned rule/model
 content; Decision Support executes the deterministic graph and optional fixed
 oral lookup plus Lexicomp filtering; Administration retains availability/audit/
 recovery. No new service or provider/worker dependency is added. Existing legacy
-drafts keep their pipeline. This extension is specified, not implemented; see
-the [execution plan](follow-up-implementation-plan.md). Global LLM/CPT statements
+drafts keep their pipeline. Implementation and focused acceptance are recorded in the
+[B/F/G checkpoint](progress/follow-up-bfg-2026-11-13.md); full public mixed-history
+commit/restore and release verification remain separate Package H work. Global LLM/CPT statements
 below describe the legacy pipeline within that scope.
 
 The `new-case-v1` registration branch uses a pinned fixed oral BN and Lexicomp

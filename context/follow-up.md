@@ -7,7 +7,7 @@
 **Status:** active
 **Evidence:** inferred
 **Source:** product requirements reconciliation, 2026-11-12; `project-documents/dev/follow-up-specification.md`
-**Verification:** corroborated — current `cases/encounters.py` and New case signing already separate workflow identity and immutable historical signatures; the new follow-up extension is planned, not implemented
+**Verification:** corroborated — current `cases/encounters.py`, `follow_up_plans.py` and migration `0032` separate follow-up identity and v5 signatures from the preserved legacy/v4 contracts
 **Revisit when:** migration of an existing draft or historical signature to the new follow-up workflow is explicitly requested
 
 The agreed follow-up redesign applies to newly created encounters through a

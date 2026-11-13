@@ -105,13 +105,13 @@ def test_only_exact_trusted_model_bypasses_generic_admission(monkeypatch):
     assert calls == [fake]
 
 
-def test_follow_up_archives_fail_closed_until_their_contract_is_validated():
+def test_malformed_follow_up_archives_fail_closed():
     from x_insight.operations.restore import _check_new_case_state, _check_references
 
     tables = {"users": [], "patients": [], "encounters": [], "follow_up_proposals": [{"id": "p"}]}
-    assert _check_references(tables) == "Follow-up proposals are not yet supported by restore."
+    assert _check_references(tables) == "Malformed follow-up proposal or signature."
     tables["follow_up_proposals"] = []
     tables["encounters"] = [
         {"workflow_version": "follow-up-v1", "kind": "follow_up", "draft_data": {}}
     ]
-    assert _check_new_case_state(tables, "0032") == "Unknown encounter workflow identity."
+    assert _check_new_case_state(tables, "0032") == "Invalid follow-up draft or source identity."

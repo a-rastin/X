@@ -2137,7 +2137,19 @@ def get_follow_up_config(request: Request, session: Session = Depends(get_sessio
         return error_response(
             403, "FORBIDDEN", "Physician access required.", get_request_id(request)
         )
-    return JSONResponse(content=follow_up.config())
+    from sqlalchemy import text
+
+    content = follow_up.config()
+    content["medication_names"] = dict(
+        session.execute(
+            text(
+                "SELECT c.catalog_drug_id, c.canonical_name FROM ddi_concepts c "
+                "JOIN ddi_dataset_releases r ON r.id=c.release_id WHERE r.version=:version"
+            ),
+            {"version": content["hashes"]["lexicomp_version"]},
+        ).all()
+    )
+    return JSONResponse(content=content)
 
 
 @router.get("/encounters/{encounter_id}/follow-up")
@@ -2184,4 +2196,139 @@ def validate_follow_up_step(
             expected_revision=expected,
             destination=payload.destination,
         )
+    )
+
+
+class FollowUpProposalRequest(NewCaseProposalRequest):
+    pass
+
+
+class FollowUpSignRequest(NewCaseSignRequest):
+    pass
+
+
+def _follow_up_command(
+    session: Session,
+    request: Request,
+    author: dict[str, Any],
+    encounter_id: uuid.UUID,
+    operation: str,
+    payload: dict[str, Any],
+    expected: int,
+) -> JSONResponse:
+    from sqlalchemy import text
+
+    from x_insight.cases import follow_up_plans
+
+    key = _idempotency_key_or_none(request)
+    digest = contracts.canonical_hash(
+        {"encounter_id": str(encounter_id), "revision": expected, "payload": payload}
+    )
+    if key:
+        session.execute(
+            text("SELECT pg_advisory_xact_lock(hashtextextended(:key,0))"),
+            {"key": f"{author['id']}:{operation}:{key}"},
+        )
+        stored = identity_service.lookup_idempotency(
+            session, operation=operation, actor_id=author["id"], key=key
+        )
+        if stored:
+            if stored["request_hash"] != digest:
+                return _idempotency_conflict(get_request_id(request))
+            return JSONResponse(content=stored["response_body"])
+    if operation == "follow_up.generate":
+        body = {
+            "proposal": follow_up_plans.generate_proposal(
+                session, author, encounter_id, expected, get_request_id(request)
+            )
+        }
+    else:
+        body = {
+            "snapshot": follow_up_plans.sign(
+                session,
+                author,
+                encounter_id,
+                expected,
+                payload["expected_plan_revision"],
+                uuid.UUID(payload["proposal_id"]),
+                get_request_id(request),
+            )
+        }
+    if key:
+        identity_service.store_idempotency(
+            session,
+            operation=operation,
+            actor_id=author["id"],
+            key=key,
+            request_hash=digest,
+            response_status=200,
+            response_body=body,
+        )
+    return JSONResponse(content=body)
+
+
+@router.post("/encounters/{encounter_id}/follow-up/proposals")
+def generate_follow_up(
+    encounter_id: uuid.UUID,
+    payload: FollowUpProposalRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    author = _require_physician_mutation(request, session)
+    if isinstance(author, JSONResponse):
+        return author
+    expected = encounters_service.require_if_match_revision(request.headers.get("If-Match"))
+    return _follow_up_command(
+        session, request, author, encounter_id, "follow_up.generate", {}, expected
+    )
+
+
+@router.get("/encounters/{encounter_id}/follow-up/proposals/latest")
+def latest_follow_up_proposal(
+    encounter_id: uuid.UUID, request: Request, session: Session = Depends(get_session)
+) -> JSONResponse:
+    from x_insight.cases.follow_up_plans import read_proposal
+
+    author = _require_user(request, session)
+    if isinstance(author, JSONResponse):
+        return author
+    return JSONResponse(content={"proposal": read_proposal(session, author, encounter_id)})
+
+
+@router.get("/encounters/{encounter_id}/follow-up/proposals/{proposal_id}")
+def get_follow_up_proposal(
+    encounter_id: uuid.UUID,
+    proposal_id: uuid.UUID,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    from x_insight.cases.follow_up_plans import read_proposal
+
+    author = _require_user(request, session)
+    if isinstance(author, JSONResponse):
+        return author
+    return JSONResponse(
+        content={"proposal": read_proposal(session, author, encounter_id, proposal_id)}
+    )
+
+
+@router.post("/encounters/{encounter_id}/follow-up/sign")
+def sign_follow_up(
+    encounter_id: uuid.UUID,
+    payload: FollowUpSignRequest,
+    request: Request,
+    session: Session = Depends(get_session),
+) -> JSONResponse:
+    author = _require_physician_mutation(request, session)
+    if isinstance(author, JSONResponse):
+        return author
+    expected = encounters_service.require_if_match_revision(request.headers.get("If-Match"))
+    return _follow_up_command(
+        session,
+        request,
+        author,
+        encounter_id,
+        "follow_up.sign",
+        payload.model_dump(mode="json"),
+        expected,
     )

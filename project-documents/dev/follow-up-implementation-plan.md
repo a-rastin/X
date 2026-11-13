@@ -1,8 +1,11 @@
 # Follow-up implementation plan for an AI agent
 
-Status: ready for implementation against the reconciled 2026-11-12 requirements;
-no implementation or runtime verification is claimed. Baseline inspected:
+Status: B/F/G implemented and verified in the 2026-11-13 working tree; see the
+[B/F/G checkpoint](progress/follow-up-bfg-2026-11-13.md) for commands, source
+identity and remaining release work. Original planning baseline:
 `b153b7b32f624a0c907362a7fe0bac7a6a67b181`, schema `0031`, 33 backup tables.
+Current schema is `0032`; Package H's full public mixed-history recovery/release
+drill remains separate.
 
 The [follow-up specification](follow-up-specification.md) is the behavioral
 authority. Read it in full, the [source archive](../changes/follow-up-2026-11-12/README.md),
@@ -47,7 +50,7 @@ Path shorthand: `B` = `backend/src/x_insight`; `BT` = `backend/tests`;
 
 | Existing source | Reuse/change |
 | --- | --- |
-| `B/cases/encounters.py:create_open_draft`, `patch_draft`, `safe_draft_for_author`, `require_legacy_workflow` | Dispatch immutable `follow-up-v1`, resolve signed baseline under the patient lock, strict typed autosave, reject cross-workflow commands. The legacy guard currently rejects only New case; extend it to an explicit `legacy-v1` allowlist. |
+| `B/cases/encounters.py:create_open_draft`, `patch_draft`, `safe_draft_for_author`, `require_legacy_workflow` | Dispatch immutable `follow-up-v1`, resolve signed baseline under the patient lock, strict typed autosave, reject cross-workflow commands. The legacy guard uses an explicit `legacy-v1` allowlist. |
 | `B/cases/chart.py:read_followup_baseline_for_author` | Preserve legacy response; add the frozen historical summary for the new version, not editable history mislabeled as baseline. |
 | `B/cases/new_case.py`, `new_case_rules.py` | Reuse finite decimal parsing, BMI, lab comparisons, override attribution patterns. Do not call the registration-only evaluator with a follow-up or copy its MRI/antidepressant/timing policies. |
 | `B/models/oral_antipsychotic.py:rank_oral` | Retain trusted loader and full 22-outcome distribution; implement follow-up filtering over `distribution`, not only its already sliced five candidates. |
@@ -231,7 +234,7 @@ human approval/evidence/source-confirmation gate.
 
 ## 5. Package B — Add versioned persistence and mixed-record recovery
 
-Depends: A for identities. Status: partial — additive schema and compatibility groundwork; follow-up archive validation and mixed-record recovery remain open. See [Package B checkpoint](progress/follow-up-package-b-2026-11-12.md).
+Depends: A for identities. Status: complete — additive schema, structural v5 archive validation, old variants and clone migration preservation verified. Full public mixed-history commit/restore remains H. See [B/F/G checkpoint](progress/follow-up-bfg-2026-11-13.md).
 
 Files: next `backend/migrations/versions/*`; `B/cases/tables.py`, `B/db.py`;
 `B/operations/{backup,restore}.py`; recovery schema/inventory fixtures.
@@ -261,7 +264,7 @@ remain byte/hash-identical. Full mixed-data public recovery drill occurs in H.
 Depends: A, B. Status: partial — backend state contract implemented and tested
 (latest signed source across variants, v1–v5 adapters/frozen summary, typed
 defaults/normalization/autosave, config/preview/validate-step); `follow-up-v1`
-creation stays gated off until F/G. See
+creation is now active following F/G integration; the remaining C matrix is separate. See
 [Package C checkpoint](progress/follow-up-package-c-2026-11-12.md).
 
 Files: proposed baseline/state modules; `B/cases/{encounters,chart,router}.py`;
@@ -303,7 +306,7 @@ round-trip without changed defaults, questionnaire gates or signed bytes.
 
 ## 7. Package D — Implement pure decisions and recommendation rules
 
-Depends: A, C. Status: partial — pure decisions, factor mapping and independent sections implemented; exhaustive matrix and E/F integration remain open. See [Package D checkpoint](progress/follow-up-package-d-2026-11-12.md).
+Depends: A, C. Status: partial — pure decisions, factor mapping and independent sections implemented; E/F integration is complete; exhaustive Package D acceptance remains separate. See [Package D checkpoint](progress/follow-up-package-d-2026-11-12.md).
 
 Files: proposed `B/cases/follow_up_rules.py`; `BT/assessments/test_follow_up_rules.py`.
 
@@ -340,7 +343,7 @@ or fake model result; each terminal has an explainable trace.
 
 ## 8. Package E — Implement ranking and D/X policy
 
-Depends: A, C, D. Status: pending.
+Depends: A, C, D. Status: partial — ranking and D/X filtering are integrated through F; independent exhaustive E acceptance remains separate. See [Package E checkpoint](progress/follow-up-package-e-2026-11-12.md) and [B/F/G continuation](progress/follow-up-bfg-2026-11-13.md).
 
 Files: proposed `B/cases/follow_up_candidates.py`;
 `BT/models/test_follow_up_candidates.py`; DDI public lookup regressions.
@@ -371,7 +374,7 @@ source distribution unchanged and no provider dependency.
 
 ## 9. Package F — Persist proposals and sign atomically
 
-Depends: B–E. Status: pending.
+Depends: B–E. Status: complete — immutable public proposals, freshness, independent final text, replay-safe v5 signing, workflow guards and concurrency checks pass. See [B/F/G checkpoint](progress/follow-up-bfg-2026-11-13.md).
 
 Files: proposed `B/cases/follow_up_plans.py`; Cases routes/serializers;
 `BT/http/test_follow_up_plans.py`; legacy reasoning guard regressions.
@@ -412,7 +415,7 @@ every accepted signature points to exactly one valid proposal variant.
 
 ## 10. Package G — Build the bilingual seven-step UI and signed views
 
-Depends: C–F. Status: pending.
+Depends: C–F. Status: complete — seven-step bilingual wizard, saved-state navigation/recovery, v5 signed views/reports and browser journeys/branch matrix pass. See [B/F/G checkpoint](progress/follow-up-bfg-2026-11-13.md).
 
 Proposed UI: `W/features/follow-up/{api.ts,FollowUpWizard.tsx,FollowUpSections.tsx,FollowUpPlanPage.tsx}`;
 existing encounter dispatch/chart/signed views/messages; tests under `web/` and
@@ -522,16 +525,16 @@ of acceptance.
   author evidence submission, source attestation or external medical approval.
 - [ ] A: immutable source manifest, rules, factor map and LAI equivalences verified
   mechanically; content works without human approval metadata.
-- [ ] B: additive schema, three signature variants, old archive compatibility.
+- [x] B: additive schema, three signature variants, old archive compatibility.
 - [ ] C: latest signed source across variants, frozen summary, typed autosave,
   exact defaults, missing-value/provenance/conditional validation.
 - [ ] D: all original graph paths and confirmed overlays covered; effect replacement
   priority, adjunct accumulation and independent recommendations are correct.
 - [ ] E: full-distribution D/X filtering/backfill; direct exclusions, coverage and
   outgoing-drug comparisons preserved; New case unchanged.
-- [ ] F: immutable proposal, editable final text, freshness, replay-safe atomic v5
+- [x] F: immutable proposal, editable final text, freshness, replay-safe atomic v5
   signing and explicit workflow guards; supported review outcomes remain honest.
-- [ ] G: seven-step bilingual UI, no diagnosis/CPT gate, both browsers, accessibility,
+- [x] G: seven-step bilingual UI, no diagnosis/CPT gate, both browsers, accessibility,
   error/reload recovery, signed chart/report and addenda.
 - [ ] H: packaged fresh/upgrade startup, full gates and real mixed-data recovery.
 

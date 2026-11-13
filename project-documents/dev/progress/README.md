@@ -1,18 +1,14 @@
 # X-INSIGHT progress tracker
 
-[Follow-up Package H partial checkpoint (2026-11-13)](follow-up-package-h-2026-11-13.md): image content packaging added; mixed v5 recovery and end-to-end acceptance await B/F/G.
+[Follow-up B/F/G integration (2026-11-13)](follow-up-bfg-2026-11-13.md): B/F/G complete in the working tree; schema preservation, proposals/signing, archive validation and both browsers pass; H release drill remains open.
 
-[Follow-up Package G partial checkpoint (2026-11-13)](follow-up-package-g-2026-11-13.md): typed state client added; wizard, signing integration and browser acceptance remain open.
+[Follow-up Package H partial checkpoint (2026-11-13)](follow-up-package-h-2026-11-13.md): image content packaging added; public mixed-v5 recovery and release acceptance remain open after B/F/G integration.
 
-[Follow-up Package F partial checkpoint (2026-11-13)](follow-up-package-f-2026-11-13.md): internal fingerprint and pin verification added; proposal persistence, signing and acceptance remain open.
+[Follow-up Package E partial checkpoint (2026-11-12)](follow-up-package-e-2026-11-12.md): ranking and D/X policy integrated through F; exhaustive Package E acceptance remains separate.
 
-[Follow-up Package E partial checkpoint (2026-11-12)](follow-up-package-e-2026-11-12.md): ranking and D/X policy added with focused tests; public integration and full acceptance remain open.
+[Follow-up Package D partial checkpoint (2026-11-12)](follow-up-package-d-2026-11-12.md): pure decisions, factors and independent sections integrated through E/F; exhaustive Package D acceptance remains separate.
 
-[Follow-up Package D partial checkpoint (2026-11-12)](follow-up-package-d-2026-11-12.md): pure decisions, factor mapping and independent sections added; focused checks pass, exhaustive matrix and E/F integration remain open.
-
-[Follow-up Package C partial checkpoint (2026-11-12)](follow-up-package-c-2026-11-12.md): typed state, latest-signed-source adapters, strict autosave and config/preview/validate-step APIs added and tested; creation stays gated off until F/G, and full race/compatibility acceptance remains open.
-
-[Follow-up Package B partial checkpoint (2026-11-12)](follow-up-package-b-2026-11-12.md): additive schema and archive compatibility groundwork; follow-up validation and mixed-record recovery remain open.
+[Follow-up Package C partial checkpoint (2026-11-12)](follow-up-package-c-2026-11-12.md): typed state, signed-source adapters and autosave integrated into the active new workflow; remaining Package C acceptance stays separate.
 
 [Follow-up Package A checkpoint (2026-11-12)](follow-up-package-a-2026-11-12.md): content pins, factor/graph mappings and offline integrity loader added; proposal-generation and packaged-image acceptance remain open.
 

@@ -8,9 +8,9 @@ X-INSIGHT is a research prototype helping physicians/psychiatrists explore treat
 
 **New case physician flow:** Register patient → establish diagnosis → optionally complete PANSS → assess self/other harm → enter medical history/examination → select current medications → enter treatment considerations → generate proposed plan → review and edit physician plan → explicitly confirm, save, and sign final plan.
 
-**Revision scope (2026-11-12; follow-up implementation pending):** New case registration uses its implemented `new-case-v1` contract. Newly created follow-ups will use the reconciled `follow-up-v1` contract in FR-70–FR-79 and the [follow-up specification](follow-up-specification.md); see the [implementation plan](follow-up-implementation-plan.md). Until implemented, runtime follow-up remains legacy. Known case registration and existing open legacy follow-up drafts retain their workflow. Existing signed records, historical datasets and legacy runs remain readable and unchanged. The version-specific requirements take precedence over legacy LLM, CPT-slider and questionnaire rules within their scopes.
+**Revision scope (2026-11-13; B/F/G integrated):** New case registration uses its implemented `new-case-v1` contract. Newly created follow-ups use the reconciled `follow-up-v1` contract in FR-70–FR-79 and the [follow-up specification](follow-up-specification.md); see the [implementation plan](follow-up-implementation-plan.md). Implementation and verification are recorded in the [B/F/G checkpoint](progress/follow-up-bfg-2026-11-13.md); full mixed-history release acceptance remains open. Known case registration and existing open legacy follow-up drafts retain their workflow. Existing signed records, historical datasets and legacy runs remain readable and unchanged. The version-specific requirements take precedence over legacy LLM, CPT-slider and questionnaire rules within their scopes.
 
-**Planned follow-up flow:** Historical summary → optional PANSS → self/other harm with nested C-SSRS → history/examination → medications and main antipsychotic/formulation → seven simple adverse effects → treatment considerations and conditional physician decisions → deterministic proposed plan → edit and explicitly confirm/sign the physician plan. No diagnosis step, LLM or probability sliders in `follow-up-v1`. Existing legacy drafts retain their older flow.
+**Current follow-up flow:** Historical summary → optional PANSS → self/other harm with nested C-SSRS → history/examination → medications and main antipsychotic/formulation → seven simple adverse effects → treatment considerations and conditional physician decisions → deterministic proposed plan → edit and explicitly confirm/sign the physician plan. No diagnosis step, LLM or probability sliders in `follow-up-v1`. Existing legacy drafts retain their older flow.
 
 The follow-up [research development policy](follow-up-specification.md#research-development-policy)
 removes legal confirmation, author evidence submission, source confirmation and
@@ -46,7 +46,7 @@ For Known case registration and existing `legacy-v1` follow-up drafts, MCP provi
 
 **FR-05 — Shared language support:** Labels, validation messages, help text, and new plan sections support Persian and English. English is the default. A language-switch button remains at the upper left in either language. Persian uses right-to-left layout, with readable drug names, lab abbreviations, units, numeric values, and IDs. User-entered names remain as entered; source Lexicomp notes retain their original text.
 
-**FR-06 — Unavailable drugs:** Add an “Unavailable drugs” physician settings section listing oral and injectable antipsychotic formulations. The physician may mark formulations that must not be recommended. Settings are persistent, physician-specific, and formulation-specific; excluding an injectable formulation does not automatically exclude its oral counterpart. Apply these settings to New case and planned `follow-up-v1` new antipsychotic recommendations. Existing legacy clinical workflows are unchanged.
+**FR-06 — Unavailable drugs:** Add an “Unavailable drugs” physician settings section listing oral and injectable antipsychotic formulations. The physician may mark formulations that must not be recommended. Settings are persistent, physician-specific, and formulation-specific; excluding an injectable formulation does not automatically exclude its oral counterpart. Apply these settings to New case and `follow-up-v1` new antipsychotic recommendations. Existing legacy clinical workflows are unchanged.
 
 ### New Case Registration
 
@@ -119,7 +119,7 @@ The [follow-up specification](follow-up-specification.md) is the complete normat
 
 ### Legacy Reasoning Pipeline — Known Case and Existing Legacy Follow-up
 
-FR-30–FR-36 apply to the legacy pipeline, **not New case registration or planned `follow-up-v1`**. FR-37 remains shared administrator network management; physician CPT adjustments remain legacy-only.
+FR-30–FR-36 apply to the legacy pipeline, **not New case registration or `follow-up-v1`**. FR-37 remains shared administrator network management; physician CPT adjustments remain legacy-only.
 
 **FR-30:** Each clinical question has one Bayesian network.
 
@@ -154,7 +154,7 @@ FR-30–FR-36 apply to the legacy pipeline, **not New case registration or plann
 
 ### Legacy Interactive CPT Review and Adjustment
 
-FR-50–FR-59 apply only to Known case and existing legacy follow-up clinical-question runs. New case uses FR-18/FR-62; planned new follow-up uses FR-70–FR-79. Neither deterministic workflow uses CPT sliders or physician probability acceptance.
+FR-50–FR-59 apply only to Known case and existing legacy follow-up clinical-question runs. New case uses FR-18/FR-62; new follow-up uses FR-70–FR-79. Neither deterministic workflow uses CPT sliders or physician probability acceptance.
 
 **FR-50 — Decision-specific probability controls:** At the point where the initial treatment proposal is presented, display a dedicated review panel for each completed clinical question and its Bayesian network. Each panel shows the question, recommendation, network version, and a grouped slider menu covering every CPT value, including root-node probability distributions. No CPT value is hidden or excluded from review and adjustment.
 

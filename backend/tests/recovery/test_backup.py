@@ -376,6 +376,8 @@ def _reset_deployment(engine) -> None:
 
 @pytest.fixture()
 def clean_registry(migrated_test_engine, monkeypatch, tmp_path):
+    # The mixed backup fixture recreates historical legacy encounters.
+    monkeypatch.setattr("x_insight.cases.encounters.FOLLOWUP_V1_ACTIVE", False)
     staging = tmp_path / "backups"
     staging.mkdir(parents=True, exist_ok=True)
     monkeypatch.setenv("BACKUP_STAGING_DIR", str(staging))
