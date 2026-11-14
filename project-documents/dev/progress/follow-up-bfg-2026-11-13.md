@@ -113,3 +113,15 @@ complete by this checkpoint. No legal/source/medical approval gate was introduce
 
 See [API contracts](../../../docs/follow-up-api.md) and the
 [user guide](../../../docs/user-guide.md#start-a-follow-up-encounter).
+
+
+## Follow-up 2026-11-15 — previous signed visit presentation
+
+The follow-up wizard now presents the frozen previous signed visit using Astryx
+metadata items, a compact visit header and a distinct historical-details
+disclosure. The visit number is shown once; stored values, translations and
+the read-only baseline remain unchanged. Styles reuse the shared light/dark
+tokens and support RTL through logical borders.
+
+The web production build and all 24 web tests passed; Vite retained its existing
+large-chunk warning. Browser and deployed visual acceptance were not run.

@@ -431,6 +431,61 @@ input[type="url"] {
   margin-top: 0;
 }
 
+.xi-visit-summary {
+  border-inline-start: var(--space-1) solid var(--primary-action);
+}
+
+:root[data-theme="dark"] .xi-visit-summary {
+  border-inline-start-color: var(--primary-action);
+}
+
+.xi-visit-summary-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.xi-visit-summary-header h2,
+.xi-visit-summary-header p {
+  margin: 0;
+}
+
+.xi-visit-summary-header p {
+  color: var(--ink-muted);
+}
+
+.xi-visit-summary .astryx-metadata-list-item {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.xi-visit-summary-details {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+}
+
+.xi-visit-summary-details summary {
+  color: var(--primary-action);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.xi-visit-summary-details section {
+  margin-top: var(--space-4);
+}
+
+.xi-visit-summary-details h4,
+.xi-visit-summary-details p {
+  margin: 0 0 var(--space-2);
+  overflow-wrap: anywhere;
+}
+
 .xi-card > h4.xi-section-title {
   font-size: 15px;
   margin: var(--space-5) 0 var(--space-2);

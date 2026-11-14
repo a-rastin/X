@@ -1,4 +1,5 @@
-import { Fragment, useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { MetadataList, MetadataListItem } from "@astryxdesign/core/MetadataList";
 import { useAuth } from "../identity/auth";
 import { ApiError, newIdempotencyKey } from "../identity/api";
 import { useAutosave } from "../encounters/useAutosave";
@@ -750,28 +751,27 @@ function FrozenSummary({
                 .join("; ")
             : (names[String(value)] ?? n(String(value)));
   return (
-    <section className="xi-card">
-      <h2>{n("prior")}</h2>
-      <p>
-        {n("recordedVisits")}: <bdi>{String(summary?.visit_ordinal ?? 1)}</bdi>
-      </p>
+    <section className="xi-card xi-visit-summary" aria-labelledby="prior-visit-heading">
+      <header className="xi-visit-summary-header">
+        <h2 id="prior-visit-heading">{n("prior")}</h2>
+        <p>
+          {n("recordedVisits")}: <bdi>{String(summary?.visit_ordinal ?? 1)}</bdi>
+        </p>
+      </header>
       {!baseline.has_source ? (
         <p>{n("noPrior")}</p>
       ) : (
         <>
-          <dl>
+          <MetadataList columns="multi" label={{ position: "top" }}>
             {Object.entries(summary ?? {})
-              .filter(([k]) => !["text", "note", "signed_at"].includes(k))
+              .filter(([k]) => !["text", "note", "signed_at", "visit_ordinal"].includes(k))
               .map(([k, v]) => (
-                <Fragment key={k}>
-                  <dt>{n(k)}</dt>
-                  <dd>
-                    <bdi>{display(v)}</bdi>
-                  </dd>
-                </Fragment>
+                <MetadataListItem key={k} label={n(k)}>
+                  <bdi>{display(v)}</bdi>
+                </MetadataListItem>
               ))}
-          </dl>
-          <details>
+          </MetadataList>
+          <details className="xi-visit-summary-details">
             <summary>{n("details")}</summary>
             {["prior_labs", "prior_scores", "prior_contraception"].map(
               (key) => (
