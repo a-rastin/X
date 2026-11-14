@@ -349,6 +349,17 @@ export function FollowUpWizard({
             autosave={autosave}
             onSessionExpired={sessionExpired}
             stepNumber={1}
+            reviewAction={
+              <div className="nc-actions">
+                <button
+                  className="xi-btn xi-btn-primary"
+                  disabled={busy || unmatched}
+                  onClick={() => void go(steps[1]!)}
+                >
+                  {n("continue")}
+                </button>
+              </div>
+            }
           />
         )}
         {step === "harm" && (
@@ -704,7 +715,7 @@ export function FollowUpWizard({
             {n("back")}
           </button>
         )}
-        {index < 5 && (
+        {index > 0 && index < 5 && (
           <button
             className="xi-btn xi-btn-primary"
             disabled={busy || unmatched}

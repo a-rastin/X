@@ -64,6 +64,7 @@ interface PanssSectionProps {
   onSessionExpired: () => void;
   /** 1-based wizard index (registration 3, follow-up 2). */
   stepNumber: number;
+  reviewAction?: React.ReactNode;
 }
 
 function answersOf(data: DraftData): Record<string, unknown> {
@@ -107,6 +108,7 @@ export function PanssSection({
   autosave,
   onSessionExpired,
   stepNumber,
+  reviewAction,
 }: PanssSectionProps) {
   const { text: uiText, t, errorText, language, text } = useLanguage();
   function translatedPrompt(item: { id: string; prompt: string }): string {
@@ -526,6 +528,7 @@ export function PanssSection({
           <p className="xi-hint">{t("notAssessedResume")}</p>
         </div>
       )}
+      {reviewAction}
       </aside>
       </div>
     </section>

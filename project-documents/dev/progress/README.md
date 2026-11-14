@@ -1,5 +1,7 @@
 # INSIGHT progress tracker
 
+[Follow-up PANSS continue placement (2026-11-15)](follow-up-bfg-2026-11-13.md#follow-up-2026-11-15--panss-continue-placement): action moved below assessment review; web build and tests pass.
+
 [Previous signed visit presentation (2026-11-15)](follow-up-bfg-2026-11-13.md#follow-up-2026-11-15--previous-signed-visit-presentation): Astryx summary refinement; web build and tests pass.
 
 [Clinical status wording (2026-11-14)](s07.md#follow-up-2026-11-14--clinical-status-wording-across-the-ui): labels unified; frontend build and web tests pass.

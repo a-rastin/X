@@ -125,3 +125,11 @@ tokens and support RTL through logical borders.
 
 The web production build and all 24 web tests passed; Vite retained its existing
 large-chunk warning. Browser and deployed visual acceptance were not run.
+
+## Follow-up 2026-11-15 — PANSS continue placement
+
+The follow-up PANSS Continue action now sits below the assessment review in
+the right column. It retains the existing navigation and disabled behavior;
+other workflows using the shared PANSS section keep their existing actions.
+The web production build and all 24 web tests passed. Vite retained its existing
+large-chunk warning; browser visual acceptance was not run.
