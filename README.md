@@ -4,7 +4,7 @@
 structured assessments, Bayesian networks, and physician review.**
 
 [![Keep the Why](https://keepthewhy.com/assets/badge.svg)](https://keepthewhy.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
 X-INSIGHT combines patient and encounter records with versioned clinical content,
 drug–drug interaction (DDI) checks, and a traceable reasoning pipeline. In the
@@ -405,4 +405,6 @@ to preserve decision rationale alongside procedural documentation.
 
 ## License
 
-The project is licensed under the [MIT License](LICENSE).
+The project is licensed under the [Apache License, Version 2.0](LICENSE).
+
+Copyright 2026 Amirali Hatami.
