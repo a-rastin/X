@@ -19,5 +19,5 @@ const css = readFileSync("dist/app.css", "utf8").replace(
   /([0-9.]+)(?:dvh|svh|lvh|vh)/g,
   (_, n) => `${Number(n) * 9}px`,
 );
-const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>X-INSIGHT · Design review</title><style>${css}</style></head><body><x-insight-preview id="root"></x-insight-preview><script>${js}</script></body></html>`;
+const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>INSIGHT · Design review</title><style>${css}</style></head><body><x-insight-preview id="root"></x-insight-preview><script>${js}</script></body></html>`;
 writeFileSync("wireframe.html", html);

@@ -3,7 +3,7 @@ import { RESEARCH_WARNING } from "./helpers";
 
 test.use({ locale: "fa-IR" });
 
-const warningVersion = "research-warning-v1";
+const warningVersion = "research-warning-v2";
 
 async function mockIdentity(page: Page, options: {
   role?: "admin" | "physician";
@@ -157,7 +157,7 @@ test("modal switch preserves focus containment and acknowledges the server versi
   const updatedSource = "Complete new server wording. It must remain visible without substitution.";
   const mutations = await mockIdentity(page, { warning: RESEARCH_WARNING, acknowledgement: async (route) => {
     attempts += 1;
-    await route.fulfill(attempts === 1 ? { status: 409, json: { code: "RESEARCH_WARNING_CHANGED", message: "Research warning changed.", research_warning: updatedSource, research_warning_version: "research-warning-v2" } } : { json: { research_warning: null, research_warning_version: null } });
+    await route.fulfill(attempts === 1 ? { status: 409, json: { code: "RESEARCH_WARNING_CHANGED", message: "Research warning changed.", research_warning: updatedSource, research_warning_version: "research-warning-v3" } } : { json: { research_warning: null, research_warning_version: null } });
   } });
   await page.goto("/");
   await signIn(page);
@@ -175,7 +175,7 @@ test("modal switch preserves focus containment and acknowledges the server versi
   await expect(dialog).toContainText("ترجمه در دسترس نیست");
   await dialog.getByRole("button", { name: "تأیید و ادامه" }).click();
   await expect(dialog).toBeHidden();
-  expect(mutations.filter((entry) => entry.path.endsWith("acknowledgement")).map((entry) => entry.body)).toEqual([{ version: warningVersion }, { version: "research-warning-v2" }]);
+  expect(mutations.filter((entry) => entry.path.endsWith("acknowledgement")).map((entry) => entry.body)).toEqual([{ version: warningVersion }, { version: "research-warning-v3" }]);
   await expect(page.getByRole("heading", { name: "داشبورد پزشک" })).toBeVisible();
   await page.getByRole("button", { name: "خروج", exact: true }).click();
   await expect(page.getByRole("heading", { name: "ورود", exact: true })).toBeVisible();

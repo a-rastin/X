@@ -1,4 +1,4 @@
-# X-INSIGHT
+# INSIGHT
 
 **A research prototype for exploring schizophrenia treatment options through
 structured assessments, Bayesian networks, and physician review.**
@@ -6,7 +6,7 @@ structured assessments, Bayesian networks, and physician review.**
 [![Keep the Why](https://keepthewhy.com/assets/badge.svg)](https://keepthewhy.com)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
-X-INSIGHT combines patient and encounter records with versioned clinical content,
+INSIGHT combines patient and encounter records with versioned clinical content,
 drug–drug interaction (DDI) checks, and a traceable reasoning pipeline. In the
 legacy registration and follow-up workflow, an LLM estimates conditional
 probability tables (CPTs); the application validates those tables, executes the
@@ -26,7 +26,7 @@ The application has an English/Persian desktop interface for one administrator a
 physician team sharing a patient pool. It is designed for self-hosted Linux or VPS
 deployment.
 
-> **Research status:** X-INSIGHT is not release-ready or clinically validated and
+> **Research status:** INSIGHT is not release-ready or clinically validated and
 > must not be used as the sole basis for treating patients. The release gate remains
 > open; one-host deployment packaging does not provide high availability.
 

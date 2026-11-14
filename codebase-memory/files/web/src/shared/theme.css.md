@@ -1,6 +1,6 @@
 # web/src/shared/theme.css
 
-Source SHA-256: 4624b644f4709b4f899d389484a9461cb2f901df4c414d7b7eda2e19cbbebba9
+Source SHA-256: 2de33ad16d4e5366bd8dd82a8bacd4f2e9fac57dcfa224aa03c94f0b5d9b73a7
 
 ## Purpose
 Defines semantic light/dark theme tokens and the shared `.xi-*` UI classes. This summary covers the research disclaimer styling investigated during the 2026-10-29 redesign.

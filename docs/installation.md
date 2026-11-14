@@ -1,4 +1,4 @@
-# X-INSIGHT Installation and Running Guide
+# INSIGHT Installation and Running Guide
 
 Last updated: 2026-10-18
 
@@ -7,7 +7,7 @@ checking readiness, and stopping or restarting it. Choose local development for
 code changes and isolated evaluation, or the Docker deployment for a Linux host.
 Upgrade and recovery procedures continue in the [operator runbook](../deploy/README.md).
 
-> X-INSIGHT is a research prototype. Installation does not establish clinical
+> INSIGHT is a research prototype. Installation does not establish clinical
 > validation or release readiness. Provider integration, clinical-content release,
 > and acceptance work remain open in the [current handoff](../project-documents/dev/progress/s62.md#follow-up-2026-10-18--documentation-assessment-and-next-work).
 

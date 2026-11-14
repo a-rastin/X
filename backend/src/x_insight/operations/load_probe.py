@@ -464,7 +464,7 @@ def _httpx_factory(base_url: str, username: str, password: str) -> Callable[[], 
 
 def main(argv: list[str] | None = None) -> int:
     """CLI for ``make test-load`` (synthetic data only, records results)."""
-    parser = argparse.ArgumentParser(description="X-INSIGHT synthetic load probe (S58 §1).")
+    parser = argparse.ArgumentParser(description="INSIGHT synthetic load probe (S58 §1).")
     parser.add_argument("--base-url", default=os.environ.get("LOAD_BASE_URL", DEFAULT_BASE_URL))
     parser.add_argument("--patients", type=int, default=int(os.environ.get("LOAD_PATIENTS", "50")))
     parser.add_argument("--workers", type=int, default=int(os.environ.get("LOAD_WORKERS", "4")))

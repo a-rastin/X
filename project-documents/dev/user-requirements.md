@@ -1,8 +1,8 @@
 # User Requirements
 
-## X-INSIGHT
+## INSIGHT
 
-X-INSIGHT is a research prototype helping physicians/psychiatrists explore treatment options for schizophrenia cases.
+INSIGHT is a research prototype helping physicians/psychiatrists explore treatment options for schizophrenia cases.
 
 **Users:** One administrator and fewer than 10 physicians, with a shared patient pool. The application supports English and Persian; English is the default.
 

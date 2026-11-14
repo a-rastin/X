@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 export const E2E_API_BASE_URL = process.env.E2E_API_BASE_URL ?? process.env.E2E_BASE_URL ?? "http://127.0.0.1:8000";
 
 export const RESEARCH_WARNING =
-  "X-INSIGHT is a research prototype intended to support the exploration and " +
+  "INSIGHT is a research prototype intended to support the exploration and " +
   "evaluation of clinical information. It has not been clinically validated, " +
   "and its assessments, analyses, and treatment proposals may be incomplete, " +
   "inaccurate, or inappropriate for an individual patient. " +

@@ -28,7 +28,7 @@ SESSION_COOKIE_NAME = "x_insight_session"
 CSRF_HEADER_NAME = "X-CSRF-Token"
 
 RESEARCH_WARNING = (
-    "X-INSIGHT is a research prototype intended to support the exploration and "
+    "INSIGHT is a research prototype intended to support the exploration and "
     "evaluation of clinical information. It has not been clinically validated, "
     "and its assessments, analyses, and treatment proposals may be incomplete, "
     "inaccurate, or inappropriate for an individual patient. "
@@ -40,7 +40,7 @@ RESEARCH_WARNING = (
 )
 # Bump whenever RESEARCH_WARNING wording changes: every account whose stored
 # acknowledged version differs (or is NULL) is asked to acknowledge the new text.
-RESEARCH_WARNING_VERSION = "research-warning-v1"
+RESEARCH_WARNING_VERSION = "research-warning-v2"
 
 # Login throttling (prototype-basic, plan.md §11): at most 5 failures per
 # 60s window per (client IP, normalized username); the 6th+ attempt is 429.

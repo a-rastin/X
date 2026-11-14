@@ -186,7 +186,7 @@ export function App() {
         <h1 className="xi-wordmark">
           <img className="xi-mark" src="/insight_logo.svg" alt="" />
           <span className="xi-brand-copy">
-            X-INSIGHT
+            INSIGHT
             <span className="xi-brand-caption">{t("researchWorkspace")}</span>
           </span>
         </h1>

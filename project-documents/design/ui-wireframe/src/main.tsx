@@ -1101,7 +1101,7 @@ function Login({ go }: { go: (v: View) => void }) {
     >
       <VStack className="login-intro" gap={6}>
         <Text className="brand-large" weight="bold">
-          X-INSIGHT
+          INSIGHT
         </Text>
         <Heading level={1}>
           {t(
@@ -1177,7 +1177,7 @@ function App() {
           >
             <VStack gap={1}>
               <Text weight="semibold">
-                {t("X-INSIGHT · Design review", "X-INSIGHT · مرور طراحی")}
+                {t("INSIGHT · Design review", "INSIGHT · مرور طراحی")}
               </Text>
               <Muted>
                 {t(
@@ -1230,7 +1230,7 @@ function App() {
                       header={
                         <VStack gap={2} padding={4}>
                           <SideNavHeading
-                            heading="X-INSIGHT"
+                            heading="INSIGHT"
                             subheading={t("Research workspace", "فضای پژوهشی")}
                           />
                         </VStack>

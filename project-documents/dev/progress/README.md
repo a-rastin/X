@@ -1,4 +1,6 @@
-# X-INSIGHT progress tracker
+# INSIGHT progress tracker
+
+[INSIGHT name update (2026-11-14)](rename-2026-11-14.md): app and project wording updated; checks pass; warning acknowledgement advances to v2.
 
 [App logo (2026-11-14)](ui-implementation-2026-11-11.md#follow-up-2026-11-14--app-logo): supplied SVG replaces the shared header mark; frontend build passed.
 

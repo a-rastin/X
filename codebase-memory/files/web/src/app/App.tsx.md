@@ -1,6 +1,6 @@
 # web/src/app/App.tsx
 
-Source SHA-256: dbd432f63d4ebf2edde7b3ff90f022330ab35942a6e7e9d504fb40118c6c42ea
+Source SHA-256: 612dc70eb5a65d19051a6b2ba8e67d1bd9ca54d8dd65eeb8dd83438392884c92
 
 ## Purpose
 Root component: resolves the hash route, guards roles, renders role-scoped navigation and the
@@ -21,7 +21,7 @@ page switch, and wraps the parametric routes.
   `hashchange` listener and uses `key={id}` so switching ids remounts cleanly.
 
 ## Behavior and Constraints
-- The shared header uses `web/public/insight_logo.svg` beside the X-INSIGHT wordmark on sign-in and authenticated pages.
+- The shared header uses `web/public/insight_logo.svg` beside the INSIGHT wordmark on sign-in and authenticated pages.
 - `Theme` uses the built academic Astryx theme and follows the session user’s persisted theme.
 - The shared CSS makes navigation a desktop rail and wraps it on narrow screens; the language switch remains physically top-left.
 - Route guards complement the server checks: anonymous users always land on login,

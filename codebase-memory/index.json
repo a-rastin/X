@@ -945,7 +945,7 @@
       ],
       "purpose": "FastAPI app factory and HTTP edge: correlation ids, size limits, maintenance fencing, standard error body.",
       "summary": "files/backend/src/x_insight/app.py.md",
-      "source_sha256": "dbcd2dc81a49b63b2f769c470ed36630ad86e18d570c5354783889e17117c8d1"
+      "source_sha256": "3a39265cd2ed91bcf13d717522a5aa8bfc061f8ddeeaf1002deafb688abbbffc"
     },
     {
       "path": "backend/src/x_insight/assessments/__init__.py",
@@ -8282,7 +8282,7 @@
       ],
       "purpose": "Root component: route guards, nav, warning gate, parametric wrappers.",
       "summary": "files/web/src/app/App.tsx.md",
-      "source_sha256": "dbd432f63d4ebf2edde7b3ff90f022330ab35942a6e7e9d504fb40118c6c42ea"
+      "source_sha256": "612dc70eb5a65d19051a6b2ba8e67d1bd9ca54d8dd65eeb8dd83438392884c92"
     },
     {
       "path": "web/src/app/navigationGuard.ts",
@@ -8953,7 +8953,7 @@
       ],
       "purpose": "Semantic light/dark tokens and shared UI styles, including the responsive clinical disclaimer.",
       "summary": "files/web/src/shared/theme.css.md",
-      "source_sha256": "4624b644f4709b4f899d389484a9461cb2f901df4c414d7b7eda2e19cbbebba9"
+      "source_sha256": "2de33ad16d4e5366bd8dd82a8bacd4f2e9fac57dcfa224aa03c94f0b5d9b73a7"
     },
     {
       "path": "web/src/vite-env.d.ts",

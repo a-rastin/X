@@ -1,4 +1,4 @@
-# X-INSIGHT one-host edge (S57, plan.md §§3.1, 11).
+# INSIGHT one-host edge (S57, plan.md §§3.1, 11).
 #
 # {$SITE_ADDRESS} defaults to http://localhost (loopback stays plain HTTP —
 # plan §11 requires HTTPS outside localhost only). Production:

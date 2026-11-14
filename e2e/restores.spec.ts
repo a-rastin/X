@@ -139,7 +139,7 @@ test("S55 §§1+4 admin stages a real backup zip with report, digest, commit gat
   await gotoRestoresViaNav(page);
 
   const { bytes, backupId } = await createBackupZipViaApi(request);
-  await stageZipViaUi(page, `x-insight-backup-${backupId}.zip`, bytes);
+  await stageZipViaUi(page, `insight-backup-${backupId}.zip`, bytes);
 
   // Terminal staged status: live data explicitly untouched.
   await expect(page.getByTestId("restores-status")).toContainText(
@@ -510,12 +510,12 @@ test("S55 restores work in dark theme via keyboard", async ({
   // choosers have no keyboard path), then focus + Enter drives the real
   // upload mutation and the re-check read.
   await page.getByTestId("restores-upload").setInputFiles({
-    name: `x-insight-backup-${backupId}.zip`,
+    name: `insight-backup-${backupId}.zip`,
     mimeType: "application/zip",
     buffer: bytes,
   });
   await expect(page.getByTestId("restores-status")).toContainText(
-    /Selected x-insight-backup-.*\.zip \(\d+ bytes\)\./,
+    /Selected insight-backup-.*\.zip \(\d+ bytes\)\./,
     { timeout: 15000 },
   );
   const validate = page.getByRole("button", { name: "Validate in staging" });
@@ -647,7 +647,7 @@ test("S56 §1 stale digest fails 409 with re-validate guidance, no mutation", as
   await gotoRestoresViaNav(page);
 
   const first = await createBackupZipViaApi(request);
-  await stageZipViaUi(page, `x-insight-backup-${first.backupId}.zip`, first.bytes);
+  await stageZipViaUi(page, `insight-backup-${first.backupId}.zip`, first.bytes);
   await expect(page.getByTestId("restores-status")).toContainText(
     /Archive staged and validated\. Live data unchanged/,
     { timeout: 120000 },
@@ -800,7 +800,7 @@ test("S56 §4 maintenance and reopen surfacing with rollback docs", async ({
   // Stage (no commit): still clear — no progress, no reopen, banner hidden.
   // The staged job itself reports maintenance_active:false + idle commit.
   const { bytes, backupId } = await createBackupZipViaApi(request);
-  await stageZipViaUi(page, `x-insight-backup-${backupId}.zip`, bytes);
+  await stageZipViaUi(page, `insight-backup-${backupId}.zip`, bytes);
   await expect(page.getByTestId("restores-status")).toContainText(
     /Archive staged and validated\. Live data unchanged/,
     { timeout: 120000 },
@@ -836,7 +836,7 @@ test("S56 §§1+3 admin commits exact digest with success panel and re-login", a
   await gotoRestoresViaNav(page);
 
   const { bytes, backupId } = await createBackupZipViaApi(request);
-  await stageZipViaUi(page, `x-insight-backup-${backupId}.zip`, bytes);
+  await stageZipViaUi(page, `insight-backup-${backupId}.zip`, bytes);
   await expect(page.getByTestId("restores-status")).toContainText(
     /Archive staged and validated\. Live data unchanged/,
     { timeout: 120000 },

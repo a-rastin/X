@@ -4,13 +4,13 @@ Aligned 2026-10-03 to [user-requirements.md](user-requirements.md), [system-desi
 
 ## Product Identity and Branding
 
-The product name is **X-INSIGHT**.
+The product name is **INSIGHT**.
 
-Use `X-INSIGHT` for the principal product wordmark. Product-logo treatments should use the uppercase form.
+Use `INSIGHT` for the principal product wordmark. Product-logo treatments should use the uppercase form.
 
 ## Current Design Character
 
-X-INSIGHT is an English-only research prototype and desktop-first decision-support workspace for psychiatrists using current Chrome/Firefox. Its dominant visual language is:
+INSIGHT is an English-only research prototype and desktop-first decision-support workspace for psychiatrists using current Chrome/Firefox. Its dominant visual language is:
 
 - bright and predominantly light;
 - white or near-white clinical surfaces;
@@ -237,7 +237,7 @@ Use subtle borders as the primary surface separator. Shadows should remain restr
 
 - Keep browser URLs relative to the gateway.
 
-- In unified deployment, use the gateway-owned application navigation for the `X-INSIGHT` wordmark, role-appropriate top-level routes, current-route state, authenticated identity, and sign-out. Module-local headers may retain workflow context, but must not reproduce role routing or authentication behavior.
+- In unified deployment, use the gateway-owned application navigation for the `INSIGHT` wordmark, role-appropriate top-level routes, current-route state, authenticated identity, and sign-out. Module-local headers may retain workflow context, but must not reproduce role routing or authentication behavior.
 
 - Scope CSS to the module root when embedding or when selector collision is possible.
 

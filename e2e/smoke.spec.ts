@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test("loads X-INSIGHT shell", async ({ page }) => {
+test("loads INSIGHT shell", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { name: "X-INSIGHT" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "INSIGHT" })).toBeVisible();
 });

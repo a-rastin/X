@@ -1,4 +1,4 @@
-# X-INSIGHT — MCP Server Design
+# INSIGHT — MCP Server Design
 
 Aligned 2026-10-03 to the three baseline documents. This is a component specification and future verification plan; proposed implementation/numerical choices are not tested behavior.
 

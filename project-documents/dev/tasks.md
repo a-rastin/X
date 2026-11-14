@@ -1,4 +1,4 @@
-# X-INSIGHT coding sessions
+# INSIGHT coding sessions
 
 ## Planned follow-up extension (2026-11-12)
 
@@ -50,7 +50,7 @@ The session IDs remain stable; active question sessions are S27 and S29–S38. E
 **Read:** plan.md §§3, 11–12. **Files:** `backend/pyproject.toml`, `backend/uv.lock`, `web/package.json`, npm lockfile, `B/app.py`, minimal `W/app/`, `compose.yaml`, `Makefile`, `.env.example`, minimal CI configuration.
 
 1. Select compatible Python/Node/PostgreSQL/library versions using primary documentation and a small installation smoke; pin them. Verify pgmpy and MCP SDK compatibility explicitly; do not copy an untested version from this plan.
-2. Create the minimum FastAPI process and React/Vite page. Add a failing public health check, then implement the response. Add a browser smoke that loads the X-INSIGHT shell; no fake clinical screens.
+2. Create the minimum FastAPI process and React/Vite page. Add a failing public health check, then implement the response. Add a browser smoke that loads the INSIGHT shell; no fake clinical screens.
 3. Create disposable local PostgreSQL and test databases, locked install commands and the Make targets in plan.md §12.2. Targets for not-yet-created suites must report that clearly rather than claim success.
 4. Wire formatting, lint/types, build and offline CI startup. Document local ports, environment placeholders and how to stop the stack. Do not seed clinical content.
 

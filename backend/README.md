@@ -1,4 +1,4 @@
-# X-INSIGHT backend
+# INSIGHT backend
 
 S01 bootstrap: minimal FastAPI process with public health check.
 

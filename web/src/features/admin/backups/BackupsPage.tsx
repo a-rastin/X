@@ -210,8 +210,8 @@ export function BackupsPage() {
     setError(null);
     try {
       const blob = await downloadBackupBlob(target.id);
-      saveBlob(blob, `x-insight-backup-${target.id}.zip`);
-      setStatus(`Downloaded x-insight-backup-${target.id}.zip (${blob.size} bytes).`);
+      saveBlob(blob, `insight-backup-${target.id}.zip`);
+      setStatus(`Downloaded insight-backup-${target.id}.zip (${blob.size} bytes).`);
     } catch (err) {
       if (err instanceof ApiError && err.status === 401) {
         sessionExpired();

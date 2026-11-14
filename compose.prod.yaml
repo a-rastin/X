@@ -1,4 +1,4 @@
-# X-INSIGHT one-host production topology (S57, plan.md §3.1).
+# INSIGHT one-host production topology (S57, plan.md §3.1).
 #
 #   edge   HTTPS edge + static bundle + same-origin /api proxy (ports 80/443)
 #   app    FastAPI HTTP interface (no published ports; ingress via edge only)

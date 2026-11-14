@@ -1,6 +1,6 @@
 # backend/src/x_insight/app.py
 
-Source SHA-256: dbcd2dc81a49b63b2f769c470ed36630ad86e18d570c5354783889e17117c8d1
+Source SHA-256: 3a39265cd2ed91bcf13d717522a5aa8bfc061f8ddeeaf1002deafb688abbbffc
 Source commit: bad418cecdf013317df56751fec2c4a0158b305d
 
 ## Purpose

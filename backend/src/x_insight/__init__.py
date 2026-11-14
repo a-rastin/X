@@ -1,4 +1,4 @@
-"""X-INSIGHT backend package (S01 bootstrap)."""
+"""INSIGHT backend package (S01 bootstrap)."""
 
 __all__ = ["__version__"]
 

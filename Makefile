@@ -1,4 +1,4 @@
-# X-INSIGHT development loop (S01 bootstrap).
+# INSIGHT development loop (S01 bootstrap).
 #
 # Local ports:
 #   backend API  http://localhost:8000  (health: /api/v1/health)

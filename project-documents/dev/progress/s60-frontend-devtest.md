@@ -37,7 +37,7 @@ Run from repository root unless noted:
   behavior assertions: **all 8 distinct browser/project cases fail setup**.
   Browser versions: Chromium **153.0.8010.12**, Firefox **155.0**.
 - `node /root/.claude/skills/browser-automation/browser.mjs http://localhost:5173 --snapshot --full`:
-  HTTP 200, title `X-INSIGHT`, login form renders. Expected anonymous
+  HTTP 200, title `INSIGHT`, login form renders. Expected anonymous
   `/api/v1/me` 401 appears in network/console; no mount failure observed.
 
 ## Reproducible blocker for backend owner

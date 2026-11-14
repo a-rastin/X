@@ -1,4 +1,4 @@
-# X-INSIGHT — System Design
+# INSIGHT — System Design
 
 Implemented extension (2026-11-13; B/F/G verified): newly created follow-ups use
 `follow-up-v1`, the deterministic oral decision graph/fixed model and Lexicomp,
@@ -20,7 +20,7 @@ Revision: 2026-09-28. This document defines the application in technical detail;
 
 The supplied `user_requirements.md`, including FR-50–FR-59 and NFR-06, is the product baseline. The project owner's clarifications below govern where the requirements leave policy unspecified. Technology and numerical implementation choices are proposed design decisions. Unresolved content and policies are identified in Section 15 rather than silently treated as approved requirements.
 
-X-INSIGHT is an English-only research prototype for one administrator and fewer than ten physicians sharing a patient pool. It supports schizophrenia assessment, an initial system-generated treatment proposal, optional physician adjustment of Bayesian probabilities, and a signed secondary treatment plan. Display the research warning after every successful physician login: “This application is a research prototype and must not be used as the sole basis for treating patients.”
+INSIGHT is an English-only research prototype for one administrator and fewer than ten physicians sharing a patient pool. It supports schizophrenia assessment, an initial system-generated treatment proposal, optional physician adjustment of Bayesian probabilities, and a signed secondary treatment plan. Display the research warning after every successful physician login: “This application is a research prototype and must not be used as the sole basis for treating patients.”
 
 ### 1.1 Confirmed product rules
 

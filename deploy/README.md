@@ -1,4 +1,4 @@
-# X-INSIGHT one-host production runbook (S57)
+# INSIGHT one-host production runbook (S57)
 
 For prerequisites, source checkout, environment setup, first startup and login,
 use the [Installation and Running Guide](../docs/installation.md). This runbook

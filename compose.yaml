@@ -1,4 +1,4 @@
-# X-INSIGHT local stack (S01 bootstrap).
+# INSIGHT local stack (S01 bootstrap).
 #
 # Services:
 #   db      disposable local PostgreSQL (database: x_insight) on host port 5432

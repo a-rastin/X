@@ -1192,7 +1192,7 @@ The architecture I recommend is:
                      API
                        │
                        ▼
-                  X-INSIGHT UI
+                  INSIGHT UI
 ```
 
 ## The key design principle

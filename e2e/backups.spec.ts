@@ -151,12 +151,12 @@ test("S54 §§1+3 admin creates a ready backup with inventory, key note, zip dow
   await page.getByTestId("backups-download").click();
   const attachment = await download;
   expect(attachment.suggestedFilename()).toMatch(
-    /^x-insight-backup-[0-9a-f-]{36}\.zip$/,
+    /^insight-backup-[0-9a-f-]{36}\.zip$/,
   );
   expect(attachment.suggestedFilename()).toContain(backupId);
   await expect(page.getByRole("status")).toContainText(
     new RegExp(
-      `Downloaded x-insight-backup-${backupId}\\.zip \\(\\d+ bytes\\)\\.`,
+      `Downloaded insight-backup-${backupId}\\.zip \\(\\d+ bytes\\)\\.`,
     ),
     { timeout: 30000 },
   );
@@ -238,7 +238,7 @@ test("S54 §4 second create mints a fresh archive and polling terminates ready",
   const attachment = await download;
   expect(attachment.suggestedFilename()).toContain(secondId);
   await expect(page.getByRole("status")).toContainText(
-    new RegExp(`Downloaded x-insight-backup-${secondId}\\.zip`),
+    new RegExp(`Downloaded insight-backup-${secondId}\\.zip`),
     { timeout: 30000 },
   );
 });
@@ -339,10 +339,10 @@ test("S54 backups work in dark theme via keyboard with print-safe manifest", asy
   await page.keyboard.press("Enter");
   const attachment = await download;
   expect(attachment.suggestedFilename()).toMatch(
-    /^x-insight-backup-[0-9a-f-]{36}\.zip$/,
+    /^insight-backup-[0-9a-f-]{36}\.zip$/,
   );
   await expect(page.getByRole("status")).toContainText(
-    /Downloaded x-insight-backup-.*\.zip \(\d+ bytes\)\./,
+    /Downloaded insight-backup-.*\.zip \(\d+ bytes\)\./,
     { timeout: 30000 },
   );
 

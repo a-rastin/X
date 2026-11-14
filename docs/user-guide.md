@@ -1,4 +1,4 @@
-# X-INSIGHT User Guide
+# INSIGHT User Guide
 
 Last updated: 2026-11-13. This guide describes the current application for physicians and administrators. For installation and startup, use the [Installation and Running Guide](installation.md).
 
@@ -6,7 +6,7 @@ New follow-up drafts use the deterministic workflow described in
 [Start a follow-up encounter](#start-a-follow-up-encounter). Existing legacy
 follow-up drafts retain their earlier assessments and probability-review flow.
 
-X-INSIGHT is a research workspace for recording patient encounters, completing structured assessments, reviewing medication interactions, generating proposals, and signing physician plans. Its research status and clinical-content review limitations still apply; a generated proposal requires physician review. This guide explains application controls and does not provide treatment advice.
+INSIGHT is a research workspace for recording patient encounters, completing structured assessments, reviewing medication interactions, generating proposals, and signing physician plans. Its research status and clinical-content review limitations still apply; a generated proposal requires physician review. This guide explains application controls and does not provide treatment advice.
 
 ## Contents
 

@@ -1,4 +1,4 @@
-# X-INSIGHT implementation plan
+# INSIGHT implementation plan
 
 ## Current version-specific execution scope
 
@@ -521,7 +521,7 @@ Required browser surfaces:
 | Model administration | XML import/edit/version history, validation report, read-only graph, workflow activation/rollback |
 | Administration | Physicians/deactivation confirmation, masked provider settings/test, theme, archive, audit filters, CSV, backup and staged restore |
 
-Use X-INSIGHT wordmark, restrained teal, dense clinical layout, semantic state labels, and the UI context's typography/spacing. Design dark tokens deliberately; do not invert colors. Both themes must support keyboard navigation, labels/error association, focus visibility, zoom, reduced motion, and text/non-text contrast. Existing teal/white contrast is insufficient for ordinary small button labels; choose a darker compliant action fill or compliant label treatment. Do not claim boldness alone fixes small text contrast. Urgent findings persist visibly; status never relies on color alone.
+Use INSIGHT wordmark, restrained teal, dense clinical layout, semantic state labels, and the UI context's typography/spacing. Design dark tokens deliberately; do not invert colors. Both themes must support keyboard navigation, labels/error association, focus visibility, zoom, reduced motion, and text/non-text contrast. Existing teal/white contrast is insufficient for ordinary small button labels; choose a darker compliant action fill or compliant label treatment. Do not claim boldness alone fixes small text contrast. Urgent findings persist visibly; status never relies on color alone.
 
 ## 10. Exports, audit, and recovery
 

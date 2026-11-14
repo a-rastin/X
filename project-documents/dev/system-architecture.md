@@ -1,4 +1,4 @@
-# X-INSIGHT — System Architecture
+# INSIGHT — System Architecture
 
 Implemented B/F/G, 2026-11-13: the [new follow-up contract](follow-up-specification.md)
 keeps the four subsystems and current deployment architecture. Cases owns the
@@ -20,11 +20,11 @@ Revision: 2026-09-28. Basis: the supplied `user_requirements.md` and the project
 
 ## 1. Purpose and vocabulary
 
-X-INSIGHT is an English-only research prototype helping physicians/psychiatrists explore treatment options for schizophrenia. It serves one administrator and fewer than ten physicians with a shared patient pool. The research warning appears after physician login; the application must not be the sole basis for treatment.
+INSIGHT is an English-only research prototype helping physicians/psychiatrists explore treatment options for schizophrenia. It serves one administrator and fewer than ten physicians with a shared patient pool. The research warning appears after physician login; the application must not be the sole basis for treatment.
 
 | Level | Definition | Application |
 |---|---|---|
-| System | The complete software serving the overall purpose | X-INSIGHT |
+| System | The complete software serving the overall purpose | INSIGHT |
 | Subsystem | An independent system holding independent value | A coherent capability with a useful outcome and owned information |
 | Module | A component of a subsystem that cannot function as a standalone system | A capability whose value depends on its parent subsystem's context |
 
@@ -148,7 +148,7 @@ Registration covers pharmacotherapy, high-suicide Clozapine, LAI discussion/revi
 | Backup and Restore | Coherent recovery of clinical records, baselines, revisions, calculations, signed snapshots and all referenced definitions |
 | Administrative Reporting | Physician-list exports and authorized operational views |
 
-These modules depend on X-INSIGHT's actors, domain events and consistency rules.
+These modules depend on INSIGHT's actors, domain events and consistency rules.
 
 **Boundary:** Administrator privileges do not include physician signing or ordinary draft clinical access. Required audit and full-backup access are separate administrative capabilities. Model editing remains owned by S2 and patient archiving by S1; S4 supplies their administrator authorization. An admin dashboard is not a fifth subsystem.
 

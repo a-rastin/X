@@ -29,10 +29,10 @@ test('both catalogs cover every key with the same named substitutions', () => {
 });
 
 test('warning presentation requires both the exact source and version', () => {
-  const translated = researchWarningPresentation('fa', 'research-warning-v1', researchWarningSource);
+  const translated = researchWarningPresentation('fa', 'research-warning-v2', researchWarningSource);
   assert.equal(translated.available, true);
   assert.ok(translated.text.includes('از نظر بالینی اعتبارسنجی نشده'));
-  for (const [version, source] of [['research-warning-v2', researchWarningSource], ['research-warning-v1', `${researchWarningSource} Changed.`]]) {
+  for (const [version, source] of [['research-warning-v3', researchWarningSource], ['research-warning-v2', `${researchWarningSource} Changed.`]]) {
     const result = researchWarningPresentation('fa', version, source);
     assert.equal(result.available, false);
     assert.equal(result.text, source);

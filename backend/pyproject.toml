@@ -1,7 +1,7 @@
 [project]
 name = "x-insight"
 version = "0.1.0"
-description = "X-INSIGHT backend (S01 bootstrap)"
+description = "INSIGHT backend (S01 bootstrap)"
 readme = "README.md"
 requires-python = "==3.12.*"
 dependencies = [

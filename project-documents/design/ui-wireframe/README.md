@@ -1,4 +1,4 @@
-# X-INSIGHT UI design review
+# INSIGHT UI design review
 
 Open [the interactive wireframe](wireframe.html). It is a self-contained HTML file;
 no server, sign-in, network, or app installation is needed to view it. Use the

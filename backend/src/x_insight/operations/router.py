@@ -453,7 +453,7 @@ def download_backup(
         content=blob,
         media_type="application/zip",
         headers={
-            "Content-Disposition": f'attachment; filename="x-insight-backup-{target}.zip"',
+            "Content-Disposition": f'attachment; filename="insight-backup-{target}.zip"',
             "Cache-Control": "private, no-store",
         },
     )
