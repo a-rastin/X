@@ -6,7 +6,7 @@ export const questionLabels: Record<string, string> = {
   high_suicide_clozapine: "Clozapine for high suicide risk",
   lai_indication_choice: "Long-acting injectable indication and choice",
   aggression_clozapine: "Clozapine for aggression",
-  established_case_clozapine: "Clozapine for an established case",
+  established_case_clozapine: "Clozapine for a known case",
   tardive_dyskinesia: "Tardive dyskinesia",
   akathisia: "Akathisia",
   parkinsonism: "Parkinsonism",

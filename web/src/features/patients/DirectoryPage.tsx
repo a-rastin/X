@@ -35,12 +35,8 @@ type LoadState =
   | { kind: "error"; message: string }
   | { kind: "ready"; data: DirectoryData };
 
-function statusLabel(status: Patient["clinical_status"]): string {
-  return status === "first_time" ? "First-time" : "Established";
-}
-
 export function PatientDirectory() {
-  const { text: uiText, t, errorText } = useLanguage();
+  const { t, errorText } = useLanguage();
   const { user, sessionExpired } = useAuth();
   const uid = useId();
   const searchId = `${uid}-search`;
@@ -255,7 +251,7 @@ export function PatientDirectory() {
                     <td><bdi>{patient.family_name}</bdi></td>
                     <td>{patient.sex}</td>
                     <td>{patient.age}</td>
-                    <td>{uiText(statusLabel(patient.clinical_status))}</td>
+                    <td>{t(patient.clinical_status === "first_time" ? "newCase" : "knownCase")}</td>
                     <td>
                       {patient.archived ? (
                         <span className="xi-badge" role="status">

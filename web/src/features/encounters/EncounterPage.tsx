@@ -184,8 +184,8 @@ function RegisteredDemographics({
     patient === null
       ? ""
       : patient.clinical_status === "first_time"
-        ? "First-time"
-        : "Established";
+        ? t("newCase")
+        : t("knownCase");
   return (
     <>
       <section className="xi-card" aria-labelledby="demographics-heading">

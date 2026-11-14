@@ -802,7 +802,7 @@ export const en = {
   loadingSavedSecondaryPlan: "Loading saved secondary plan…",
   thePhysicianEditedSecondaryPlanLandsIn: "The physician-edited secondary plan lands in S50 — edit and save it below. The successful proposal above stays unchanged system output; only acknowledged saves are durable.",
   physicianSecondaryPlan: "Physician secondary plan",
-  thisChoiceIsSavedWithThePlan: "This choice is saved with the plan and frozen when signed. A signed Yes enables the established-case questions at follow-up.",
+  thisChoiceIsSavedWithThePlan: "This choice is saved with the plan and frozen when signed. A signed Yes enables the known-case questions at follow-up.",
   planRevision: "Plan revision",
   characters: "characters",
   saveSecondaryPlan: "Save secondary plan",
@@ -1529,8 +1529,8 @@ export const en = {
   optionalPhone: "Phone (optional)",
   registering: "Registering…",
   register: "Register",
-  firstTime: "First-time",
-  established: "Established",
+  firstTime: "New case",
+  established: "Known case",
   patientDirectory: "Patient directory",
   searchPatients: "Search patients",
   searchNameId: "Search by name or ID",
@@ -3231,8 +3231,8 @@ export const fa: Record<MessageKey, string> = {
   optionalPhone: "تلفن (اختیاری)",
   registering: "در حال ثبت…",
   register: "ثبت",
-  firstTime: "بار اول",
-  established: "دارای سابقه",
+  firstTime: "بیمار جدید",
+  established: "بیمار با تشخیص قبلی",
   patientDirectory: "فهرست بیماران",
   searchPatients: "جست‌وجوی بیماران",
   searchNameId: "جست‌وجو بر اساس نام یا شناسه",
@@ -3508,7 +3508,7 @@ const clinicalMessages: Record<string, readonly [string, string]> = {
   "workflow/candidate/history/continue_or_adjust.v1/h_same_agent_lai_available/operationalization": ["No requires the documented finding at this follow-up encounter with baseline encounter attribution; otherwise record the assessed category. Unknown or not_assessed pauses. Copied baseline requires reconciliation. Page notes are never mapping input.","«خیر» نیازمند یافتهٔ مستند در این مراجعهٔ پیگیری با انتساب مراجعهٔ خط پایه است؛ در غیر این صورت دستهٔ ارزیابی‌شده را ثبت کنید. نامشخص یا ارزیابی‌نشده باعث توقف می‌شود. خط پایهٔ کپی‌شده نیاز به تطبیق دارد. یادداشت‌های صفحه هرگز ورودی نگاشت نیستند."],
   "workflow/candidate/history/continue_or_adjust.v1/h_baseline_encounter_ref/operationalization": ["documented_current requires a named signed baseline encounter; outdated_encounter or missing pauses for a fresh baseline choice and never silently reuses a stale baseline. No recency threshold is set here. Page notes are never mapping input.","documented_current نیازمند یک مراجعهٔ امضاشدهٔ مشخص خط پایه است؛ outdated_encounter یا missing برای انتخاب خط پایهٔ تازه باعث توقف می‌شود و هرگز خط پایهٔ قدیمی را بی‌اطلاع دوباره استفاده نمی‌کند. اینجا آستانهٔ تازگی تعیین نمی‌شود. یادداشت‌های صفحه هرگز ورودی نگاشت نیستند."],
   "workflow/candidate/history/continue_or_adjust.v1/h_baseline_window_validity/operationalization": ["current requires the referenced baseline window to cover this comparison; outdated pauses for a fresh baseline choice. No recency threshold is set here. Page notes are never mapping input.","current نیازمند پوشش این مقایسه توسط بازهٔ خط پایهٔ ارجاع‌شده است؛ outdated برای انتخاب خط پایهٔ تازه باعث توقف می‌شود. اینجا آستانهٔ تازگی تعیین نمی‌شود. یادداشت‌های صفحه هرگز ورودی نگاشت نیستند."],
-  "workflow/candidate/history/established_case_clozapine.v1/h_schizophrenia_established/operationalization": ["Yes requires a documented current schizophrenia diagnosis review at this encounter; No requires a documented assessment finding schizophrenia not established (first-time case). Unknown assessment pauses. Copied baseline requires reconciliation. Page notes are never mapping input.","«بله» نیازمند بازبینی مستند تشخیص جاری اسکیزوفرنی در این مراجعه است؛ «خیر» نیازمند ارزیابی مستند است که اسکیزوفرنی را تثبیت‌نشده یافته باشد (مورد نخستین). ارزیابی نامشخص باعث توقف می‌شود. خط پایهٔ کپی‌شده نیاز به تطبیق دارد. یادداشت‌های صفحه هرگز ورودی نگاشت نیستند."],
+  "workflow/candidate/history/established_case_clozapine.v1/h_schizophrenia_established/operationalization": ["Yes requires a documented current schizophrenia diagnosis review at this encounter; No requires a documented assessment finding schizophrenia not established (first-time case). Unknown assessment pauses. Copied baseline requires reconciliation. Page notes are never mapping input.","«بله» نیازمند بازبینی مستند تشخیص جاری اسکیزوفرنی در این مراجعه است؛ «خیر» نیازمند ارزیابی مستند است که اسکیزوفرنی را تثبیت‌نشده یافته باشد (بیمار جدید). ارزیابی نامشخص باعث توقف می‌شود. خط پایهٔ کپی‌شده نیاز به تطبیق دارد. یادداشت‌های صفحه هرگز ورودی نگاشت نیستند."],
   "workflow/candidate/history/established_case_clozapine.v1/h_persistent_symptoms/operationalization": ["Yes requires clinician-recorded persistent significant symptoms despite pharmacological treatment; No requires assessment finding no such persistence. Unknown pauses. Page notes are never mapping input.","«بله» نیازمند ثبت علائم قابل‌توجه پایدار با وجود درمان دارویی توسط پزشک است؛ «خیر» نیازمند ارزیابی بدون چنین تداومی است. نامشخص باعث توقف می‌شود. یادداشت‌های صفحه هرگز ورودی نگاشت نیستند."],
   "workflow/candidate/history/established_case_clozapine.v1/h_trial1_assessment/operationalization": ["Assessment cites the prior trial agent and window with exposure/response/intolerance category. Duration, dose and adherence thresholds require owner review; none are set here. Missing assessment pauses and is never coerced to an adequate-trial finding. No dose/route/frequency collected. Page notes are never mapping input.","ارزیابی، دارو و بازهٔ دورهٔ قبلی را همراه دستهٔ مواجهه، پاسخ یا عدم تحمل ذکر می‌کند. آستانه‌های مدت، دوز و پایبندی نیازمند بازبینی مالک‌اند؛ اینجا هیچ‌کدام تعیین نشده‌اند. نبود ارزیابی باعث توقف می‌شود و هرگز به یافتهٔ دورهٔ کافی تبدیل نمی‌شود. دوز، راه مصرف یا دفعات جمع‌آوری نمی‌شود. یادداشت‌های صفحه هرگز ورودی نگاشت نیستند."],
   "workflow/candidate/history/established_case_clozapine.v1/h_trial2_assessment/operationalization": ["Assessment cites the prior trial agent and window with exposure/response/intolerance category. Duration, dose and adherence thresholds require owner review; none are set here. Missing assessment pauses and is never coerced to an adequate-trial finding. No dose/route/frequency collected. Page notes are never mapping input.","ارزیابی، دارو و بازهٔ دورهٔ قبلی را همراه دستهٔ مواجهه، پاسخ یا عدم تحمل ذکر می‌کند. آستانه‌های مدت، دوز و پایبندی نیازمند بازبینی مالک‌اند؛ اینجا هیچ‌کدام تعیین نشده‌اند. نبود ارزیابی باعث توقف می‌شود و هرگز به یافتهٔ دورهٔ کافی تبدیل نمی‌شود. دوز، راه مصرف یا دفعات جمع‌آوری نمی‌شود. یادداشت‌های صفحه هرگز ورودی نگاشت نیستند."],
@@ -3739,8 +3739,12 @@ const clinicalMessages: Record<string, readonly [string, string]> = {
 };
 
 export function clinicalText(language: Language, definitionId: string, version: string, itemId: string, source: string): string {
-  if (language === "en") return source;
   const key = `${definitionId}/${version}/${itemId}`;
+  if (language === "en") {
+    return key === "workflow/candidate/history/established_case_clozapine.v1/h_schizophrenia_established/operationalization"
+      ? source.replace("(first-time case)", "(new case)")
+      : source;
+  }
   const translated = Object.hasOwn(clinicalMessages, key) ? clinicalMessages[key] : undefined;
   return translated?.[0] === source ? translated[1] : `${message(language, "translationUnavailable")} ${source}`;
 }

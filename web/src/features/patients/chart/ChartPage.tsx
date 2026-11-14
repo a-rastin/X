@@ -69,10 +69,6 @@ type LoadState =
   | { kind: "error"; message: string; status: number | null }
   | { kind: "ready"; chart: ChartResponse };
 
-function statusLabel(status: string): string {
-  return status === "first_time" ? "First-time" : "Established";
-}
-
 /* Admin-only archive/unarchive (S51 §1, provisional policy — NOT
  * owner-confirmed). Explicit confirmation shows the patient identifier +
  * current revision and POSTs with that revision as If-Match (412 stale
@@ -473,7 +469,7 @@ function DemographicsForm({
           <p style={{ marginTop: 0 }}>
             
             {t("currentServerValuesRevision")} {conflictServer.revision}): {conflictServer.sex} ·{" "}
-            {conflictServer.age} · {uiText(statusLabel(conflictServer.clinical_status))} ·{" "}
+            {conflictServer.age} · {t(conflictServer.clinical_status === "first_time" ? "newCase" : "knownCase")} ·{" "}
             {conflictServer.given_name} {conflictServer.family_name} ·{" "}
             {conflictServer.phone ?? "—"}.
           </p>
@@ -720,7 +716,7 @@ export function ChartPage({ patientId }: { patientId: string }) {
             <dt className="xi-hint">{t("sexAgeStatus")}</dt>
             <dd>
               {patient.sex} · {patient.age} ·{" "}
-              {uiText(statusLabel(patient.clinical_status))}
+              {t(patient.clinical_status === "first_time" ? "newCase" : "knownCase")}
             </dd>
           </div>
           <div>

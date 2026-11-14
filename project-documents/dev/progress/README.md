@@ -1,5 +1,7 @@
 # INSIGHT progress tracker
 
+[Clinical status wording (2026-11-14)](s07.md#follow-up-2026-11-14--clinical-status-wording-across-the-ui): labels unified; frontend build and web tests pass.
+
 [Unavailable drugs search and select-all removal (2026-11-14)](new-case-implementation-2026-11-09.md#follow-up-2026-11-14--remove-unavailable-drugs-select-all): individual selections remain; frontend build and web tests pass.
 
 [INSIGHT name update (2026-11-14)](rename-2026-11-14.md): app and project wording updated; checks pass; warning acknowledgement advances to v2.

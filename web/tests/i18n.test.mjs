@@ -100,7 +100,8 @@ test('every active workflow definition and assessment guidance has source-bound 
       for (const item of items) {
         count += 1;
         assert.notEqual(clinicalText('fa', 'workflow', field.source_path, item.id, item.prompt), item.prompt);
-        assert.equal(clinicalText('en', 'workflow', field.source_path, item.id, item.prompt), item.prompt);
+        assert.equal(clinicalText('en', 'workflow', field.source_path, item.id, item.prompt),
+          item.prompt.replace('(first-time case)', '(new case)'));
         assert.ok(clinicalText('fa', 'workflow', field.source_path, item.id, `${item.prompt} Changed.`).endsWith('Changed.'));
         assert.ok(clinicalText('fa', 'workflow', `${field.source_path}/future`, item.id, item.prompt).endsWith(item.prompt));
       }

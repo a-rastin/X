@@ -98,7 +98,7 @@ test("immediate final-plan Yes signing enables exact fifteen questions before no
   const followup = page.url().split("#/encounters/")[1]!.split("#")[0]!;
   await history(page, followup);
   const section = page.locator("section[aria-labelledby='history-workflow-established_case_clozapine']");
-  await expect(section.getByRole("heading")).toHaveText("Clozapine for an established case");
+  await expect(section.getByRole("heading")).toHaveText("Clozapine for a known case");
   await expect(page.locator("#history-workflow-no_improvement_clozapine")).toHaveText("Clozapine when there is no improvement");
   await expect(section.locator("select")).toHaveCount(15);
   for (const field of definition.fields) {
