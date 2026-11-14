@@ -1,5 +1,7 @@
 # INSIGHT progress tracker
 
+[Follow-up harm question presentation (2026-11-15)](follow-up-bfg-2026-11-13.md#follow-up-2026-11-15--harm-question-presentation): Astryx question controls; web build and tests pass.
+
 [Clinical summary title (2026-11-15)](follow-up-bfg-2026-11-13.md#follow-up-2026-11-15--clinical-summary-title): first follow-up page heading renamed.
 
 [Follow-up PANSS continue placement (2026-11-15)](follow-up-bfg-2026-11-13.md#follow-up-2026-11-15--panss-continue-placement): action moved below assessment review; web build and tests pass.

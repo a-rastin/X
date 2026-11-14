@@ -1,4 +1,6 @@
 import { useEffect, useState, useId } from "react";
+import { Button } from "@astryxdesign/core/Button";
+import { RadioList, RadioListItem } from "@astryxdesign/core/RadioList";
 import { useLanguage } from "../../shared/i18n";
 import { clinicalText, type MessageKey } from "../../shared/messages";
 import { getCssrsDefinition } from "../assessments/cssrs/api";
@@ -38,12 +40,27 @@ export function YesNo({
   label,
   value,
   onChange,
+  polished = false,
 }: {
   label: string;
   value: boolean;
   onChange: (v: boolean) => void;
+  polished?: boolean;
 }) {
   const n = useNewCaseText();
+  if (polished) {
+    return (
+      <RadioList
+        label={label}
+        value={String(value)}
+        orientation="horizontal"
+        onChange={(v) => onChange(v === "true")}
+      >
+        <RadioListItem value="true" label={n("yes")} />
+        <RadioListItem value="false" label={n("no")} />
+      </RadioList>
+    );
+  }
   return (
     <fieldset className="nc-answer">
       <legend>{label}</legend>
@@ -99,12 +116,14 @@ export function HarmSection<
   onRaw,
   onAnswers,
   result,
+  polished = false,
 }: {
   raw: T;
   answers: Record<string, string>;
   onRaw: (v: T) => void;
   onAnswers: (v: Record<string, string>) => void;
   result?: number | null;
+  polished?: boolean;
 }) {
   const n = useNewCaseText();
   const { language } = useLanguage();
@@ -127,19 +146,29 @@ export function HarmSection<
     };
   }, [retry]);
   return (
-    <section>
+    <section className={polished ? "nc-harm-assessment" : undefined}>
       <YesNo
+        polished={polished}
         label={n("self")}
         value={raw.harm.self}
         onChange={(self) => onRaw({ ...raw, harm: { ...raw.harm, self } })}
       />
-      <Magnifier
-        help={n("harmHelp")}
-        expanded={open}
-        onClick={() => setOpen(!open)}
-      />
+      {polished ? (
+        <Button
+          label={n("harmHelp")}
+          variant="secondary"
+          aria-expanded={open}
+          onClick={() => setOpen(!open)}
+        />
+      ) : (
+        <Magnifier
+          help={n("harmHelp")}
+          expanded={open}
+          onClick={() => setOpen(!open)}
+        />
+      )}
       {open && (
-        <div className="xi-card">
+        <div className={polished ? "nc-harm-questions" : "xi-card"}>
           <p>{n("harmHelp")}</p>
           {loadError && (
             <p role="alert">
@@ -157,6 +186,7 @@ export function HarmSection<
           {items.map((item) => (
             <YesNo
               key={item.id}
+              polished={polished}
               label={clinicalText(
                 language,
                 "cssrs",
@@ -173,6 +203,7 @@ export function HarmSection<
         </div>
       )}
       <YesNo
+        polished={polished}
         label={n("others")}
         value={raw.harm.others}
         onChange={(others) => onRaw({ ...raw, harm: { ...raw.harm, others } })}

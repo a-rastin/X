@@ -364,6 +364,7 @@ export function FollowUpWizard({
         )}
         {step === "harm" && (
           <HarmSection
+            polished
             raw={raw}
             answers={
               (autosave.localData.cssrs as { answers: Record<string, string> })

@@ -189,3 +189,23 @@
 }
 #nc-drug-options [aria-selected="true"] button { background: var(--selected-nav-bg); }
 .nc-plan pre { font: inherit; line-height: 1.65; }
+
+/* Follow-up risk questions use a quiet worksheet with a distinct assessment area. */
+.nc-harm-assessment {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 76ch;
+}
+.nc-harm-assessment > .astryx-button { justify-self: start; }
+.nc-harm-questions {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border-inline-start: var(--space-1) solid var(--primary-action);
+  background: var(--surface-1);
+}
+.nc-harm-questions > p { margin: 0; color: var(--ink-muted); }
+.nc-harm-questions > .astryx-radio-list + .astryx-radio-list {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+}
