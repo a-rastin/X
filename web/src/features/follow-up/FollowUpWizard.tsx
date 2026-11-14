@@ -764,7 +764,7 @@ function FrozenSummary({
   return (
     <section className="xi-card xi-visit-summary" aria-labelledby="prior-visit-heading">
       <header className="xi-visit-summary-header">
-        <h2 id="prior-visit-heading">{n("prior")}</h2>
+        <h2 id="prior-visit-heading">{n("clinicalSummary")}</h2>
         <p>
           {n("recordedVisits")}: <bdi>{String(summary?.visit_ordinal ?? 1)}</bdi>
         </p>

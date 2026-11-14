@@ -133,3 +133,11 @@ the right column. It retains the existing navigation and disabled behavior;
 other workflows using the shared PANSS section keep their existing actions.
 The web production build and all 24 web tests passed. Vite retained its existing
 large-chunk warning; browser visual acceptance was not run.
+
+## Follow-up 2026-11-15 — clinical summary title
+
+The first follow-up page calls the previous visit summary “Clinical summary”
+in English and Persian. Other references to the previous signed visit retain
+their existing wording.
+The web production build and all 24 web tests passed; Vite retained its existing
+large-chunk warning. Browser visual acceptance was not run.

@@ -1,5 +1,7 @@
 # INSIGHT progress tracker
 
+[Clinical summary title (2026-11-15)](follow-up-bfg-2026-11-13.md#follow-up-2026-11-15--clinical-summary-title): first follow-up page heading renamed.
+
 [Follow-up PANSS continue placement (2026-11-15)](follow-up-bfg-2026-11-13.md#follow-up-2026-11-15--panss-continue-placement): action moved below assessment review; web build and tests pass.
 
 [Previous signed visit presentation (2026-11-15)](follow-up-bfg-2026-11-13.md#follow-up-2026-11-15--previous-signed-visit-presentation): Astryx summary refinement; web build and tests pass.

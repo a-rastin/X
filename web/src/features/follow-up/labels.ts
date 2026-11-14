@@ -101,6 +101,7 @@ export const followUpLabels: Record<string, [string, string]> = {
   effects: ["Treatment adverse effects", "عوارض درمان"],
   considerations: ["Treatment considerations", "ملاحظات درمان"],
   history: ["History and physical examination", "شرح حال و معاینه جسمی"],
+  clinicalSummary: ["Clinical summary", "خلاصه بالینی"],
   prior: ["Previous signed visit", "ویزیت امضاشده قبلی"],
   noPrior: ["No prior signed visit", "ویزیت امضاشده قبلی وجود ندارد"],
   details: ["Historical details", "جزئیات سوابق"],
