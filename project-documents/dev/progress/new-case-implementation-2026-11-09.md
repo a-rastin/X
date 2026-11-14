@@ -1,5 +1,13 @@
 # New case implementation — 2026-11-09
 
+## Follow-up 2026-11-14 — remove Unavailable drugs select all
+
+Removed the select-all control and its English and Persian labels. Selection
+and saving of individual formulations remain available. The settings API has
+no select-all operation; its existing save contract remains necessary. The
+frontend build and 24 web tests passed. The browser journey now asserts that
+the button is absent; that journey was not run in this follow-up.
+
 ## Follow-up 2026-11-14 — remove Unavailable drugs search
 
 Removed the page's search field and client-side name filtering; formulations remain

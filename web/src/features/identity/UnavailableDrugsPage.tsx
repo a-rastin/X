@@ -94,12 +94,6 @@ export function UnavailableDrugsPage() {
       <div className="nc-actions">
         <button
           className="xi-btn xi-btn-secondary"
-          onClick={() => setSelected(settings?.catalog.map((d) => d.id) ?? [])}
-        >
-          {n("selectAll")}
-        </button>
-        <button
-          className="xi-btn xi-btn-secondary"
           onClick={() => setSelected([])}
         >
           {n("clear")}
