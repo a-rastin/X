@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 650" role="img" aria-labelledby="title desc">
+  <title id="title">INSIGHT symbol</title>
+  <desc id="desc">Minimalist profile of a human head containing a directed Bayesian network and the psychiatry psi symbol.</desc>
+  <g fill="none" stroke="#17365D" stroke-linecap="round" stroke-linejoin="round">
+    <!-- The silhouette is intentionally open where it meets the Greek psi -->
+    <path stroke-width="21" d="M 555,397
+      C 588,349 615,290 615,229
+      C 615,103 512,8 389,8
+      C 271,8 180,73 141,158
+      C 125,193 124,218 134,254
+      C 143,285 126,303 107,331
+      L 83,364
+      C 71,382 75,391 92,397
+      L 104,402
+      C 119,407 121,417 112,433
+      C 107,443 111,451 124,458
+      C 108,468 109,480 123,489
+      C 136,499 131,509 128,525
+      C 119,568 140,585 184,580
+      L 244,573
+      C 289,568 307,584 313,624"/>
+    <!-- Bayesian-network directed edges -->
+    <path stroke-width="8" d="M 351 146 L 281 211 M 409 146 L 475 209"/>
+    <path stroke-width="8" d="M 379 165 L 379 285"/>
+    <path stroke-width="8" d="M 281 255 L 333 307 M 475 255 L 424 306"/>
+  </g>
+  <!-- Arrowheads, deliberately distinct from the nodes -->
+  <g fill="#17365D">
+    <path d="M 379 304 L 364 279 L 375 282 L 379 285 L 385 280 L 394 279 Z"/>
+    <path d="M 348 318 L 315 307 L 334 303 L 333 286 Z"/>
+    <path d="M 410 318 L 421 286 L 426 303 L 445 307 Z"/>
+  </g>
+  <!-- Discrete evidence and outcome variables -->
+  <g stroke="#17365D" stroke-width="9">
+    <circle cx="380" cy="125" r="37" fill="#A6CEFC"/>
+    <circle cx="256" cy="228" r="35" fill="#C5E2FF"/>
+    <circle cx="503" cy="228" r="35" fill="#C5E2FF"/>
+  </g>
+  <circle cx="380" cy="349" r="42" fill="#7550B1"/>
+  <!-- The Greek letter psi is drawn as a path, not as font text -->
+  <path fill="#17365D" d="M 332,423
+    L 356,423
+    C 380,423 381,440 386,472
+    C 392,505 407,526 432,527
+    L 432,444
+    C 432,434 427,429 413,429
+    L 413,423 L 478,423 L 478,429
+    C 466,429 458,433 458,445
+    L 458,527
+    C 483,526 502,505 506,473
+    C 511,438 512,423 537,423
+    L 556,423 L 556,429
+    C 540,429 538,440 535,463
+    C 528,509 505,530 458,536
+    L 458,578
+    C 458,591 468,595 479,595
+    L 479,600 L 412,600 L 412,595
+    C 426,595 432,590 432,578
+    L 432,536
+    C 386,532 361,509 355,464
+    C 352,442 350,429 332,429 Z"/>
+</svg>

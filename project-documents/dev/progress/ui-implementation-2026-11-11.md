@@ -74,3 +74,11 @@ The user requested all remaining changes committed on `main`; the wireframe
 verification run log is included. Its recorded checks report no overflow, axe
 findings, page errors or external requests. No tests were rerun for this log-only
 follow-up; the implementation verification above remains the latest evidence.
+
+## Follow-up 2026-11-14 — app logo
+
+The supplied INSIGHT SVG replaces the X mark in the shared header on sign-in and
+authenticated pages. A white background keeps the dark artwork visible in dark
+mode. The frontend production build and `git diff --check` passed; browser
+verification was not run. No new rationale entry was needed for this requested
+visual replacement.

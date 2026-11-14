@@ -271,16 +271,15 @@ input[type="url"] {
 }
 
 .xi-mark {
-  display: grid;
-  place-items: center;
   width: 36px;
   height: 36px;
   flex: 0 0 36px;
-  background: var(--primary-action);
-  color: var(--on-action);
-  border-radius: 10px;
-  font-size: 20px;
-  font-weight: 500;
+  object-fit: contain;
+}
+
+:root[data-theme="dark"] .xi-mark {
+  background: white;
+  border-radius: 4px;
 }
 
 .xi-nav {

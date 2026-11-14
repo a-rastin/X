@@ -184,7 +184,7 @@ export function App() {
       <div className="xi-header-language"><LanguageButton /></div>
       <header className="xi-header">
         <h1 className="xi-wordmark">
-          <span className="xi-mark" aria-hidden="true">X</span>
+          <img className="xi-mark" src="/insight_logo.svg" alt="" />
           <span className="xi-brand-copy">
             X-INSIGHT
             <span className="xi-brand-caption">{t("researchWorkspace")}</span>

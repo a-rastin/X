@@ -1,5 +1,7 @@
 # X-INSIGHT progress tracker
 
+[App logo (2026-11-14)](ui-implementation-2026-11-11.md#follow-up-2026-11-14--app-logo): supplied SVG replaces the shared header mark; frontend build passed.
+
 [Apache 2.0 license (2026-11-14)](license-2026-11-14.md): project license and README updated; official license text and whitespace checks pass.
 
 [Follow-up B/F/G integration (2026-11-13)](follow-up-bfg-2026-11-13.md): B/F/G complete in the working tree; schema preservation, proposals/signing, archive validation and both browsers pass; H release drill remains open.
