@@ -143,6 +143,7 @@ test("personal formulation settings stale proposals without replacing physician 
   await loginAs(page, "physician", user, "secret123");
   await acknowledgeWarning(page);
   await page.goto("/#/unavailable-drugs");
+  await expect(page.getByRole("textbox")).toHaveCount(0);
   const oral = page.getByRole("group", { name: "Oral", exact: true });
   await oral
     .getByRole("checkbox", { name: "Chlorpromazine", exact: true })

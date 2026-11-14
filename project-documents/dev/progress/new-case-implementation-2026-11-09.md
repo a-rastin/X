@@ -1,5 +1,13 @@
 # New case implementation — 2026-11-09
 
+## Follow-up 2026-11-14 — remove Unavailable drugs search
+
+Removed the page's search field and client-side name filtering; formulations remain
+grouped and selectable. The settings API already returns the complete catalog and
+has no search implementation. The shared medication search elsewhere is unchanged.
+The frontend build and 24 web tests passed; the existing browser journey now checks
+that the page has no textbox, but was not run against the existing local database.
+
 ## Status: implementation complete; committed to main
 
 This implements the missing work identified by the

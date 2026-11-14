@@ -12,7 +12,6 @@ export function UnavailableDrugsPage() {
   const { user, sessionExpired } = useAuth();
   const [settings, setSettings] = useState<Settings | null>(null);
   const [selected, setSelected] = useState<string[]>([]);
-  const [query, setQuery] = useState("");
   const [status, setStatus] = useState("");
   const [busy, setBusy] = useState(false);
   const [conflict, setConflict] = useState(false);
@@ -65,26 +64,12 @@ export function UnavailableDrugsPage() {
   return (
     <section className="xi-card">
       <h2>{n("unavailableDrugs")}</h2>
-      <label>
-        {n("search")}
-        <input
-          className="xi-input"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-      </label>
       {settings ? (
         [...new Set(settings.catalog.map((d) => d.group))].map((group) => (
           <fieldset key={group}>
             <legend>{n(group === "lai" ? "laiGroup" : group)}</legend>
             {settings.catalog
-              .filter(
-                (d) =>
-                  d.group === group &&
-                  (d.name ?? d.label ?? d.id)
-                    .toLowerCase()
-                    .includes(query.toLowerCase()),
-              )
+              .filter((d) => d.group === group)
               .map((d) => (
                 <label className="nc-choice" key={d.id}>
                   <input

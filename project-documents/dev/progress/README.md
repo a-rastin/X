@@ -1,5 +1,7 @@
 # INSIGHT progress tracker
 
+[Unavailable drugs search removal (2026-11-14)](new-case-implementation-2026-11-09.md#follow-up-2026-11-14--remove-unavailable-drugs-search): full catalog remains visible; frontend build and web tests pass.
+
 [INSIGHT name update (2026-11-14)](rename-2026-11-14.md): app and project wording updated; checks pass; warning acknowledgement advances to v2.
 
 [App logo (2026-11-14)](ui-implementation-2026-11-11.md#follow-up-2026-11-14--app-logo): supplied SVG replaces the shared header mark; frontend build passed.
