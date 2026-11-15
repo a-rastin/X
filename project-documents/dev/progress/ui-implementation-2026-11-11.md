@@ -105,3 +105,11 @@ Replaced the role menu with an Astryx administrator switch, retaining physician
 as the default and updating the shared browser login helpers. The web build and
 23 web tests passed. Focused mocked login tests passed for both roles in Chromium
 and Firefox; one initial Firefox launch failed and passed on a serial retry.
+
+## Follow-up 2026-11-15 — live workspace timestamp
+
+Added an Astryx date and time to the shared authenticated navigation rail, updating
+continuously in the viewer's local time zone and matching the English or Persian
+interface language. Sign-in remains unchanged. The web production build and 23
+web tests passed; the existing Vite large-chunk advisory remains. Browser
+verification was not run. No new rationale entry was needed for this requested UI.

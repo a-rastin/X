@@ -2,6 +2,8 @@ import { UnavailableDrugsPage } from "../features/identity/UnavailableDrugsPage"
 import { LanguageButton, useLanguage } from "../shared/i18n";
 import React from "react";
 import { Button } from "@astryxdesign/core/Button";
+import { Timestamp } from "@astryxdesign/core/Timestamp";
+import { InternationalizationProvider } from "@astryxdesign/core/i18n";
 import { SideNavItem } from "@astryxdesign/core/SideNav";
 import { Theme } from "@astryxdesign/core/theme";
 import { academicTheme } from "../shared/astryx/built/academic.js";
@@ -36,6 +38,21 @@ import {
   RestoresRoutePage,
   StatusRoutePage,
 } from "./pages";
+
+function CurrentTimestamp({ language }: { language: string }) {
+  const [now, setNow] = React.useState(() => new Date().toISOString());
+
+  React.useEffect(() => {
+    const timer = window.setInterval(() => setNow(new Date().toISOString()), 1000);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  return (
+    <InternationalizationProvider locale={language === "fa" ? "fa-IR" : "en-US"}>
+      <Timestamp className="xi-current-timestamp" value={now} format="date_time" />
+    </InternationalizationProvider>
+  );
+}
 
 function NavLink({
   route,
@@ -236,6 +253,7 @@ export function App() {
         )}
         {user !== null && (
           <div className="xi-header-meta">
+            <CurrentTimestamp language={language} />
             <span className="xi-identity">
               <bdi className="xi-identity-name">{(language === "fa" ? user.name_fa || user.name_en : user.name_en || user.name_fa) || user.username}</bdi>
               <span className="xi-identity-role">{t(user.role === "admin" ? "administrator" : "physician")}</span>

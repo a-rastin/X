@@ -1,5 +1,7 @@
 # INSIGHT progress tracker
 
+[Live workspace timestamp (2026-11-15)](ui-implementation-2026-11-11.md#follow-up-2026-11-15--live-workspace-timestamp): localized Astryx date and time in the authenticated rail; web build and tests pass.
+
 [Sign-in role switch (2026-11-15)](ui-implementation-2026-11-11.md#follow-up-2026-11-15--sign-in-role-switch): Astryx switch replaces role menu; web build, tests and focused browser checks pass.
 
 [Sign-in network background (2026-11-15)](ui-implementation-2026-11-11.md#follow-up-2026-11-15--sign-in-network-background): rotating background added; web build and tests pass.
