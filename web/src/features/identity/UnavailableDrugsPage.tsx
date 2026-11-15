@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+import { Button } from "@astryxdesign/core/Button";
+import { CheckboxList, CheckboxListItem } from "@astryxdesign/core/CheckboxList";
+import { VStack } from "@astryxdesign/core/VStack";
+import "./unavailable-drugs.css";
 import { ApiError, newIdempotencyKey, request } from "./api";
 import { useAuth } from "./auth";
 import { useNewCaseText } from "../new-case/NewCaseSections";
@@ -62,65 +66,55 @@ export function UnavailableDrugsPage() {
   };
   if (user?.role !== "physician") return null;
   return (
-    <section className="xi-card">
-      <h2>{n("unavailableDrugs")}</h2>
+    <VStack as="section" className="unavailable-drugs" gap={5}>
+      <header>
+        <h2 className="xi-page-title">{n("unavailableDrugs")}</h2>
+        <p className="unavailable-drugs-intro">{n("availabilityHelp")}</p>
+      </header>
       {settings ? (
-        [...new Set(settings.catalog.map((d) => d.group))].map((group) => (
-          <fieldset key={group}>
-            <legend>{n(group === "lai" ? "laiGroup" : group)}</legend>
-            {settings.catalog
-              .filter((d) => d.group === group)
-              .map((d) => (
-                <label className="nc-choice" key={d.id}>
-                  <input
-                    type="checkbox"
-                    checked={selected.includes(d.id)}
-                    onChange={(e) =>
-                      setSelected(
-                        e.target.checked
-                          ? [...selected, d.id]
-                          : selected.filter((id) => id !== d.id),
-                      )
-                    }
-                  />
-                  <bdi>{d.label ?? d.name ?? d.id}</bdi>
-                </label>
-              ))}
-          </fieldset>
-        ))
-      ) : (
-        <p>{n("loading")}</p>
-      )}
-      <div className="nc-actions">
-        <button
-          className="xi-btn xi-btn-secondary"
-          onClick={() => setSelected([])}
-        >
-          {n("clear")}
-        </button>
-        <button
-          className="xi-btn xi-btn-primary"
-          disabled={busy || !settings}
-          onClick={() => void save()}
-        >
-          {n("save")}
-        </button>
-      </div>
-      {status && <p role="status">{n(status)}</p>}
-      {conflict && (
-        <div role="alert">
-          <p>{n("planConflict")}</p>
-          <button
-            onClick={() => {
-              setSelected(settings!.selected_ids);
-              setConflict(false);
-            }}
-          >
-            {n("reload")}
-          </button>
-          <button onClick={() => void save()}>{n("reconcile")}</button>
+        <VStack gap={4}>
+          {[...new Set(settings.catalog.map((d) => d.group))].map((group) => {
+            const drugs = settings.catalog.filter((d) => d.group === group);
+            const ids = drugs.map((d) => d.id);
+            return (
+              <section className="xi-card unavailable-drugs-group" key={group}>
+                <CheckboxList
+                  label={n(group === "lai" ? "laiGroup" : group)}
+                  value={selected.filter((id) => ids.includes(id))}
+                  onChange={(values) => {
+                    setSelected((current) => [...current.filter((id) => !ids.includes(id)), ...values]);
+                    setStatus("");
+                  }}
+                  hasDividers
+                >
+                  {drugs.map((d) => (
+                    <CheckboxListItem key={d.id} value={d.id} label={<bdi>{d.label ?? d.name ?? d.id}</bdi>} />
+                  ))}
+                </CheckboxList>
+              </section>
+            );
+          })}
+        </VStack>
+      ) : !status ? (
+        <p role="status">{n("loading")}</p>
+      ) : null}
+      <VStack className="xi-card unavailable-drugs-footer" gap={3}>
+        <p>{n("availabilityScope")}</p>
+        <div className="nc-actions">
+          <Button label={n("clear")} isDisabled={!settings || busy} onClick={() => { setSelected([]); setStatus(""); }} />
+          <Button label={n("save")} variant="primary" isDisabled={!settings} isLoading={busy} onClick={() => void save()} />
         </div>
-      )}
-    </section>
+        {status && <p role="status">{n(status)}</p>}
+        {conflict && (
+          <div role="alert">
+            <p>{n("planConflict")}</p>
+            <div className="nc-actions">
+              <Button label={n("reload")} onClick={() => { setSelected(settings!.selected_ids); setConflict(false); setStatus(""); }} />
+              <Button label={n("reconcile")} onClick={() => void save()} />
+            </div>
+          </div>
+        )}
+      </VStack>
+    </VStack>
   );
 }

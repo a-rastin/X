@@ -1,5 +1,9 @@
 # New case implementation — 2026-11-09
 
+## Follow-up 2026-11-15 — Unavailable drugs presentation
+
+Reorganized the physician availability settings into Astryx checkbox groups and action controls, with bilingual guidance on their scope. Individual formulation selection and the existing save and conflict workflow remain in place. The web production build and all 24 web tests pass; browser verification was not run.
+
 ## Follow-up 2026-11-14 — remove Unavailable drugs select all
 
 Removed the select-all control and its English and Persian labels. Selection

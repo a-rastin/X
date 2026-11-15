@@ -1,0 +1,19 @@
+.unavailable-drugs {
+  max-width: 60rem;
+}
+
+.unavailable-drugs-intro,
+.unavailable-drugs-footer > p {
+  color: var(--ink-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.unavailable-drugs-group,
+.unavailable-drugs-footer {
+  margin-bottom: 0;
+}
+
+.unavailable-drugs-group .astryx-checkbox-list {
+  width: 100%;
+}
