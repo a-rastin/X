@@ -644,6 +644,7 @@ export function MedicationsSection({
   version,
   onChange,
   onUnmatched,
+  presentation,
 }: {
   storageKey: string;
   ids: string[];
@@ -651,6 +652,7 @@ export function MedicationsSection({
   version: string;
   onChange: (ids: string[]) => void;
   onUnmatched: (v: boolean) => void;
+  presentation?: { list: string; empty: string };
 }) {
   const n = useNewCaseText();
   const [query, setQuery] = useState(
@@ -686,18 +688,34 @@ export function MedicationsSection({
     setOptions([]);
   };
   return (
-    <section className="nc-medications">
+    <section
+      className={presentation ? "nc-medications fu-medications-list" : "nc-medications"}
+    >
+      {presentation && <h3>{presentation.list}</h3>}
+      {presentation && ids.length === 0 && (
+        <p className="fu-medications-empty">{presentation.empty}</p>
+      )}
       <ul className="nc-medication-list">
         {ids.map((id) => (
           <li key={id}>
             <bdi>{names[id] ?? id}</bdi>{" "}
-            <button
-              className="xi-btn xi-btn-secondary"
-              type="button"
-              onClick={() => onChange(ids.filter((v) => v !== id))}
-            >
-              {n("remove")}
-            </button>
+            {presentation ? (
+              <Button
+                label={n("remove")}
+                variant="secondary"
+                aria-label={`${n("remove")} ${names[id] ?? id}`}
+                onClick={() => onChange(ids.filter((v) => v !== id))}
+              />
+            ) : (
+              <button
+                className="xi-btn xi-btn-secondary"
+                type="button"
+                aria-label={`${n("remove")} ${names[id] ?? id}`}
+                onClick={() => onChange(ids.filter((v) => v !== id))}
+              >
+                {n("remove")}
+              </button>
+            )}
           </li>
         ))}
       </ul>

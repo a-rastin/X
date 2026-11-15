@@ -386,8 +386,12 @@ export function FollowUpWizard({
             sex={sex}
           />
         )}
-        <div hidden={step !== "medications"}>
+        <div className="fu-medications" hidden={step !== "medications"}>
           <MedicationsSection
+            presentation={{
+              list: n("medicationList"),
+              empty: n("medicationEmpty"),
+            }}
             storageKey={"xi-follow-up-medication:" + id}
             ids={meds.entries.map((e) => e.catalog_drug_id)}
             names={content.medication_names}
@@ -412,87 +416,90 @@ export function FollowUpWizard({
             }}
             onUnmatched={setUnmatched}
           />
-          <label>
-            {n("main")}
-            <select
-              className="xi-input"
-              value={raw.treatment.main_catalog_drug_id ?? ""}
-              onChange={(e) =>
-                update({
-                  ...raw,
-                  treatment: {
-                    main_catalog_drug_id: e.target.value || null,
-                    formulation: null,
-                  },
-                })
-              }
-            >
-              <option value="">{n("none")}</option>
-              {content.formulations
-                .filter(
-                  (f) =>
-                    f.catalog_drug_id &&
-                    meds.entries.some(
-                      (e) => e.catalog_drug_id === f.catalog_drug_id,
-                    ),
-                )
-                .filter(
-                  (f, i, all) =>
-                    all.findIndex(
-                      (e) => e.catalog_drug_id === f.catalog_drug_id,
-                    ) === i,
-                )
-                .map((f) => (
-                  <option key={f.id} value={f.catalog_drug_id!}>
-                    {f.name}
-                  </option>
-                ))}
-            </select>
-          </label>
-          {raw.treatment.main_catalog_drug_id ? (
+          <section className="fu-medications-treatment">
+            <h3>{n("treatmentDetails")}</h3>
             <label>
-              {n("formulation")} ({n("required")})
+              {n("main")}
               <select
                 className="xi-input"
-                value={raw.treatment.formulation ?? ""}
+                value={raw.treatment.main_catalog_drug_id ?? ""}
                 onChange={(e) =>
                   update({
                     ...raw,
                     treatment: {
-                      ...raw.treatment,
-                      formulation: e.target.value as "oral" | "lai",
+                      main_catalog_drug_id: e.target.value || null,
+                      formulation: null,
                     },
                   })
                 }
               >
-                <option value="">{n("select")}</option>
-                {["oral", "lai"]
-                  .filter((group) =>
-                    content.formulations.some(
-                      (f) =>
-                        f.catalog_drug_id ===
-                          raw.treatment.main_catalog_drug_id &&
-                        (f.group === group ||
-                          (group === "lai" &&
-                            content.lai_equivalences.some(
-                              (pair) => pair.oral === f.id,
-                            ))),
-                    ),
+                <option value="">{n("none")}</option>
+                {content.formulations
+                  .filter(
+                    (f) =>
+                      f.catalog_drug_id &&
+                      meds.entries.some(
+                        (e) => e.catalog_drug_id === f.catalog_drug_id,
+                      ),
                   )
-                  .map((group) => (
-                    <option value={group} key={group}>
-                      {n(group)}
+                  .filter(
+                    (f, i, all) =>
+                      all.findIndex(
+                        (e) => e.catalog_drug_id === f.catalog_drug_id,
+                      ) === i,
+                  )
+                  .map((f) => (
+                    <option key={f.id} value={f.catalog_drug_id!}>
+                      {f.name}
                     </option>
                   ))}
               </select>
             </label>
-          ) : (
-            <p>{n("noMain")}</p>
-          )}
+            {raw.treatment.main_catalog_drug_id ? (
+              <label>
+                {n("formulation")} ({n("required")})
+                <select
+                  className="xi-input"
+                  value={raw.treatment.formulation ?? ""}
+                  onChange={(e) =>
+                    update({
+                      ...raw,
+                      treatment: {
+                        ...raw.treatment,
+                        formulation: e.target.value as "oral" | "lai",
+                      },
+                    })
+                  }
+                >
+                  <option value="">{n("select")}</option>
+                  {["oral", "lai"]
+                    .filter((group) =>
+                      content.formulations.some(
+                        (f) =>
+                          f.catalog_drug_id ===
+                            raw.treatment.main_catalog_drug_id &&
+                          (f.group === group ||
+                            (group === "lai" &&
+                              content.lai_equivalences.some(
+                                (pair) => pair.oral === f.id,
+                              ))),
+                      ),
+                    )
+                    .map((group) => (
+                      <option value={group} key={group}>
+                        {n(group)}
+                      </option>
+                    ))}
+                </select>
+              </label>
+            ) : (
+              <p>{n("noMain")}</p>
+            )}
+          </section>
           {meds.pending
             .filter((e) => e.resolution === "pending")
             .map((item) => (
-              <section key={item.source_id}>
+              <section className="fu-medications-pending" key={item.source_id}>
                 <p>
                   {n("pending")}:{" "}
                   {String(
@@ -506,6 +513,8 @@ export function FollowUpWizard({
                   )}
                 </p>
                 <button
+                  type="button"
+                  className="xi-btn xi-btn-secondary"
                   onClick={() =>
                     autosave.setDraftValue("medications", {
                       ...meds,
@@ -526,6 +535,7 @@ export function FollowUpWizard({
                 <label>
                   {n("replacement")}
                   <select
+                    className="xi-input"
                     value=""
                     onChange={(event) => {
                       const id = event.target.value;

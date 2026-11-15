@@ -166,3 +166,12 @@ explicit override and automatic reset behavior, including reselecting an
 inherited value. Existing translations and clinical data handling are unchanged.
 The web production build and all 24 web tests passed; Vite retained its existing
 large-chunk warning. Browser visual acceptance was not run.
+
+## Follow-up 2026-11-15 — current medications presentation
+
+The fourth follow-up step separates the current medication list, antipsychotic
+treatment choices and unresolved previous medications. It adds a bilingual empty
+state and uses Astryx buttons for medication removal while preserving catalog
+search, reconciliation and treatment behavior. The production web build and all
+24 web tests passed; Vite retained its existing large-chunk warning. Browser
+visual acceptance was not run.
