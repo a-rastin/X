@@ -149,3 +149,10 @@ C-SSRS disclosure, with a separate, token-based assessment worksheet. The
 shared New case presentation and existing answer handling remain unchanged.
 The web production build and all 24 web tests passed; Vite retained its existing
 large-chunk warning. Browser visual acceptance was not run.
+
+## Follow-up 2026-11-15 — risk of harm title
+
+The second follow-up step is titled “Risk of harm” in English and Persian;
+the New case step retains its existing label.
+The web production build and all 24 web tests passed; Vite retained its existing
+large-chunk warning.

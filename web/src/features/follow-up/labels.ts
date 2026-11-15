@@ -1,5 +1,6 @@
 import type { Language } from "../../shared/messages";
 export const followUpLabels: Record<string, [string, string]> = {
+  harm: ["Risk of harm", "خطر آسیب"],
   panss_total: ["Prior PANSS total", "مجموع قبلی PANSS"],
   panss_severity: ["Prior informational severity", "شدت اطلاع‌رسان قبلی"],
   cssrs_severity: [

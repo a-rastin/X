@@ -266,7 +266,7 @@ Signed content cannot be edited in place. An addendum adds a dated, attributed c
 | Step | Current follow-up workflow |
 | --- | --- |
 | 1 | PANSS, initially unanswered; incomplete scores are allowed |
-| 2 | Self/other harm; expand the self-harm control for five recent C-SSRS questions, initially No |
+| 2 | Risk of harm; expand the self-harm control for five recent C-SSRS questions, initially No |
 | 3 | History/examination, current labs, inherited conditions and manual overrides, BMI and applicable pregnancy/lactation answers |
 | 4 | Current medications, optional main antipsychotic and oral/LAI formulation |
 | 5 | Seven simple adverse-effect questions, initially No |
