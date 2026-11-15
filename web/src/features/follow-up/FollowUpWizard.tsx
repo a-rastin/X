@@ -603,8 +603,8 @@ export function FollowUpWizard({
           </section>
         )}
         {step === "considerations" && (
-          <section>
-            <label>
+          <section className="fu-considerations">
+            <label className="fu-considerations-recovery">
               {n("recovery")} ({n("required")})
               <select
                 className="xi-input"
@@ -636,6 +636,7 @@ export function FollowUpWizard({
               .filter((key) => key !== "recovery")
               .map((key) => (
                 <Answer
+                  polished
                   key={key}
                   label={n(key)}
                   value={raw.considerations[key] as boolean | null}
@@ -649,6 +650,7 @@ export function FollowUpWizard({
               ))}
             {state?.reached_questions.map((key) => (
               <Answer
+                polished
                 key={key}
                 label={n(key)}
                 value={raw.branches[key]}
@@ -661,6 +663,7 @@ export function FollowUpWizard({
               e.field.includes("Hyperprolactinemia"),
             ) && (
               <Answer
+                polished
                 label={n("hyperprolactinemia")}
                 value={raw.history.conditions.hyperprolactinemia.manual}
                 onChange={(manual) =>

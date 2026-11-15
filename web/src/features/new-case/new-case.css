@@ -254,15 +254,21 @@
 .fu-history-hospitalizations { max-width: 18rem; }
 
 /* Follow-up effects use the same readable worksheet rhythm as history. */
-.fu-effects {
+.fu-effects,
+.fu-considerations {
   max-width: 76ch;
   padding: var(--space-2) var(--space-5);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   background: var(--surface-1);
 }
-.fu-effects > .astryx-radio-list { padding: var(--space-4) 0; }
-.fu-effects > .astryx-radio-list + .astryx-radio-list { border-top: 1px solid var(--border); }
+.fu-effects > .astryx-radio-list,
+.fu-considerations > .astryx-radio-list,
+.fu-considerations-recovery { padding: var(--space-4) 0; }
+.fu-effects > .astryx-radio-list + .astryx-radio-list,
+.fu-considerations > .astryx-radio-list { border-top: 1px solid var(--border); }
+.fu-considerations-recovery { display: grid; gap: var(--space-2); font-weight: 600; }
+.fu-considerations-recovery .xi-input { width: 100%; }
 
 /* Follow-up medication reconciliation keeps the list and treatment choices distinct. */
 .fu-medications:not([hidden]) {

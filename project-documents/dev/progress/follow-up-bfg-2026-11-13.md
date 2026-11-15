@@ -183,3 +183,12 @@ effects as Astryx radio groups in a clinical worksheet. Existing values,
 translations and autosave behavior are retained. The production web build and
 all 24 web tests passed; Vite retained its existing large-chunk warning. Browser
 visual acceptance was not run.
+
+## Follow-up 2026-11-15 — treatment considerations presentation
+
+The sixth follow-up step presents treatment considerations and conditional
+questions in the same clinical worksheet as adverse effects, with Astryx radio
+groups and a clearly spaced recovery selector. Existing answers, conditional
+questions and autosave behavior remain unchanged. The production web build and
+all 24 web tests passed; Vite retained its existing large-chunk warning. Browser
+visual acceptance was not run.
