@@ -129,11 +129,11 @@ def validate_registration_payload(
             raise contracts.ContractError(
                 422, "VALIDATION_FAILED", str(exc), {"birth_year": [str(exc)]}
             ) from exc
-        if clinical_status != "first_time" or age is not None:
+        if age is not None:
             raise contracts.ContractError(
                 422,
                 "VALIDATION_FAILED",
-                "Birth-year registration requires New case without a supplied age.",
+                "Birth-year registration cannot include a supplied age.",
             )
         normalized["birth_year"] = birth_year
         normalized["age"] = computed_age
@@ -143,7 +143,7 @@ def validate_registration_payload(
         errors.update(exc.field_errors)
 
     def registration_name(value: Any, field: str) -> str:
-        if birth_year is None:
+        if birth_year is None or clinical_status != "first_time":
             return normalize_person_name(value, field)
         from x_insight.cases.new_case_demographics import normalize_name
 
@@ -277,7 +277,7 @@ def create_patient_with_draft(
     encounter_id = uuid.uuid4()
     workflow = "legacy-v1"
     initial_draft: dict[str, Any] = {}
-    if fields.get("birth_year") is not None:
+    if fields.get("birth_year") is not None and fields["clinical_status"] == "first_time":
         from x_insight.cases import new_case
 
         workflow = new_case.WORKFLOW
@@ -677,7 +677,7 @@ def update_patient_demographics(
         raise contracts.ContractError(
             422, "VALIDATION_FAILED", "Only recorded birth years can be corrected."
         )
-    if patient.get("birth_year") is not None:
+    if patient.get("birth_year") is not None and patient["clinical_status"] == "first_time":
         from x_insight.cases.new_case_demographics import normalize_name
 
         name_fields: dict[str, Any] = {
@@ -690,7 +690,7 @@ def update_patient_demographics(
     if patient.get("birth_year") is not None:
         from x_insight.cases.new_case_demographics import age_at_registration, normalize_name
 
-        for field in ("given_name", "family_name"):
+        for field in name_fields:
             if field in fields:
                 try:
                     normalized[field] = normalize_name(fields[field])
@@ -730,7 +730,7 @@ def update_patient_demographics(
         raise contracts.ContractError(
             422,
             "VALIDATION_FAILED",
-            "New-case age is computed from its birth year.",
+            "Age is computed from its birth year.",
             {"age": ["Cannot override computed age."]},
         )
     moment = contracts.utcnow()

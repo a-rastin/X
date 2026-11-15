@@ -1,5 +1,7 @@
 # INSIGHT progress tracker
 
+[Registration birth year (2026-11-15)](s07.md#follow-up-2026-11-15--registration-birth-year-for-all-statuses): all statuses use birth year; web and validation checks pass; database-backed test blocked by credentials.
+
 [Unavailable drugs columns (2026-11-15)](new-case-implementation-2026-11-09.md#follow-up-2026-11-15--unavailable-drugs-three-column-groups): responsive three-column groups; web build and tests pass.
 
 [Sidebar controls (2026-11-15)](ui-implementation-2026-11-11.md#follow-up-2026-11-15--sidebar-controls): language, appearance and sign out grouped with Astryx buttons; web build and tests pass.

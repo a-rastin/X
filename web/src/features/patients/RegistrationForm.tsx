@@ -32,7 +32,6 @@ const EMPTY: DemographicsFields = {
   familyName: "",
   identifier: "",
   sex: "",
-  age: "",
   birthYear: "",
   clinicalStatus: "",
   phone: "",
@@ -190,7 +189,6 @@ function RegistrationForm() {
   const familyNameError = errorFor("familyName");
   const identifierError = errorFor("identifier");
   const sexError = errorFor("sex");
-  const ageError = errorFor("age");
   const clinicalStatusError = errorFor("clinicalStatus");
   const phoneError = errorFor("phone");
   const registrationSteps =
@@ -375,67 +373,45 @@ function RegistrationForm() {
                 </p>
               )}
             </fieldset>
-            {fields.clinicalStatus === "first_time" ? (
-              <div className="xi-field">
-                <label className="xi-label" htmlFor="reg-birth-year">
-                  {t("nc.birthYear")}{" "}
-                  <span className="nc-required" aria-label={t("nc.required")}>
-                    *
-                  </span>
-                </label>
-                <select
-                  id="reg-birth-year"
-                  className="xi-input"
-                  required
-                  value={fields.birthYear}
-                  onChange={(e) => setField("birthYear", e.target.value)}
-                  aria-invalid={errorFor("birthYear") !== null}
-                >
-                  <option value="">—</option>
-                  {registrationYear &&
-                    Array.from(
-                      { length: 83 },
-                      (_, i) => registrationYear - 18 - i,
-                    ).map((year) => (
-                      <option key={year} value={year}>
-                        {year}
-                      </option>
-                    ))}
-                </select>
-                {fields.birthYear && registrationYear && (
-                  <p>
-                    {t("age")}:{" "}
-                    <bdi>{registrationYear - Number(fields.birthYear)}</bdi>
-                  </p>
-                )}
-                {errorFor("birthYear") && (
-                  <p role="alert">
-                    {t("nc.birthYear")}: {t("nc.required")}
-                  </p>
-                )}
-              </div>
-            ) : (
-              <div className="xi-field">
-                <label className="xi-label" htmlFor="reg-age">
-                  {t("age")}
-                </label>
-                <input
-                  className="xi-input"
-                  id="reg-age"
-                  inputMode="numeric"
-                  autoComplete="off"
-                  value={fields.age}
-                  onChange={(event) => setField("age", event.target.value)}
-                  aria-invalid={ageError !== null}
-                  aria-describedby={describedBy("age", ageError)}
-                />
-                {ageError !== null && (
-                  <p className="xi-field-error" id="age-error">
-                    {errorText(ageError)}
-                  </p>
-                )}
-              </div>
-            )}
+            <div className="xi-field">
+              <label className="xi-label" htmlFor="reg-birth-year">
+                {t("nc.birthYear")}{" "}
+                <span className="nc-required" aria-label={t("nc.required")}>
+                  *
+                </span>
+              </label>
+              <select
+                id="reg-birth-year"
+                className="xi-input"
+                required
+                value={fields.birthYear}
+                onChange={(e) => setField("birthYear", e.target.value)}
+                aria-invalid={errorFor("birthYear") !== null}
+                aria-describedby={errorFor("birthYear") ? "birthYear-error" : undefined}
+              >
+                <option value="">—</option>
+                {registrationYear &&
+                  Array.from(
+                    { length: 83 },
+                    (_, i) => registrationYear - 18 - i,
+                  ).map((year) => (
+                    <option key={year} value={year}>
+                      {year}
+                    </option>
+                  ))}
+              </select>
+              {fields.birthYear && registrationYear && (
+                <p>
+                  {t("age")}:{" "}
+                  <bdi>{registrationYear - Number(fields.birthYear)}</bdi>
+                </p>
+              )}
+              {errorFor("birthYear") && (
+                <p className="xi-field-error" id="birthYear-error" role="alert">
+                  {errorText(errorFor("birthYear")!)}
+                </p>
+              )}
+            </div>
             <fieldset
               className="xi-field"
               aria-describedby={
