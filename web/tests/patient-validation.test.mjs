@@ -31,7 +31,9 @@ test("new-case birth-year variant uses strict names and frozen server year bound
   assert.equal(validateDemographics(fields, 2026).valid, true);
   assert.equal(toRegistrationPayload(fields).birth_year, 1926);
   assert.equal("age" in toRegistrationPayload(fields), false);
-  for (const name of ["Anne-Marie", "O'Neil", "Ali1", "Ali\tReza"]) assert.equal(validateDemographics({...fields,givenName:name},2026).valid,false);
+  for (const clinicalStatus of ["", "first_time", "established"]) {
+    for (const name of ["Anne-Marie", "O'Neil", "Ali1", "Ali\tReza"]) assert.ok(validateDemographics({...fields, clinicalStatus, givenName:name},2026).errors.givenName);
+  }
   assert.equal(validateDemographics({...fields,birthYear:"2008"},2026).valid,true);
   for (const birthYear of ["1925","2009","","2008.0","۲۰۰۸"]) assert.equal(validateDemographics({...fields,birthYear},2026).valid,false);
   assert.equal(validateDemographics(fields).valid,false);

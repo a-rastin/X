@@ -9,6 +9,31 @@ import {
 } from "./helpers";
 import { message, type MessageKey } from "../web/src/shared/messages";
 
+test("registration steps stay the same for either clinical status", async ({ page, request }) => {
+  const user = uniqueName("statuspath");
+  await ensurePhysician(request, user, "secret123");
+  await loginAs(page, "physician", user, "secret123");
+  await acknowledgeWarning(page);
+  await page.goto("/#/patients/new");
+  const steps = ["1. Register patient", "2. Diagnosis", "3. PANSS", "4. Self/other harm", "5. Medical history and examination", "6. Current medications", "7. Treatment considerations"];
+  await expect(page.locator("#wizard-pages a")).toHaveText(steps);
+  await page.locator("#reg-status-established").check();
+  await expect(page.locator("#wizard-pages a")).toHaveText(steps);
+  await page.locator("#reg-status-first").check();
+  await expect(page.locator("#wizard-pages a")).toHaveText(steps);
+  await page.locator("#reg-status-established").check();
+  await page.locator("#reg-given-name").fill("Ali");
+  await page.locator("#reg-family-name").fill("Reza");
+  await page.locator("#reg-identifier").fill(uniquePatientId());
+  await page.locator("#reg-sex-f").check();
+  const year = await page.locator("#reg-birth-year option").nth(13).getAttribute("value");
+  await page.locator("#reg-birth-year").selectOption(year!);
+  await page.getByRole("button", { name: "Register", exact: true }).click();
+  await expect(page.getByRole("button", { name: message("en", "nc.definite"), exact: true })).toBeVisible();
+  await page.reload();
+  await expect(page.getByRole("button", { name: message("en", "nc.definite"), exact: true })).toBeVisible();
+});
+
 for (const language of ["en", "fa"] as const) {
   for (const lai of [false, true]) {
     test(`new case ${language} ${lai ? "LAI" : "oral"}: register, reload, edit and sign`, async ({

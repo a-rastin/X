@@ -56,47 +56,18 @@ Where available, use **Edit demographics**, change the required values, and sele
 
 As a physician, select **Register new patient** from the patient directory. The page title is **Add New Patient**.
 
-1. Complete the demographics form using the current field rules:
+Enter the patient's given and family names (letters and ordinary spaces),
+ten-digit Patient ID, sex, Gregorian birth year and clinical status. Birth year
+permits ages 18–100. Phone is optional. Select **Register** to create the
+patient and open the diagnosis step. If the identifier already exists, find
+the existing patient in the directory instead.
 
-   | Field | Accepted input |
-   | --- | --- |
-   | Given name and family name | 1–100 characters after Unicode normalization, including at least one letter. Spaces, hyphens (`-`), and straight apostrophes (`'`) are allowed; spaces cannot lead, trail, or occur consecutively. Digits and other symbols are rejected. |
-   | Patient ID | Exactly 10 digits, using `0`–`9`. Leading zeros are preserved. |
-   | Sex | Select M or F from the available choices. |
-   | Age | A whole number from 18 through 99. |
-   | Clinical status | Select new case or known case. |
-   | Phone | Optional free text. |
+Both New case and Known case use the same registration workflow. Existing
+legacy drafts retain their original workflow.
 
-2. Resolve any field errors. **Register patient** remains disabled while the form is invalid.
-3. Select **Register patient** once. Successful registration creates the patient and a registration draft, then opens **Diagnosis** directly.
-4. Use the first wizard step to return to the saved demographics and working note when needed.
+## Patient registration workflow (experimental, deterministic)
 
-If the identifier already exists, find the existing patient in the directory instead of registering another record.
-
-The registration wizard has seven steps:
-
-| Step | Page | Purpose |
-| --- | --- | --- |
-| 1 | Register patient | Create the record and access the working note. |
-| 2 | Diagnosis | Record the diagnostic worksheet responses. |
-| 3 | PANSS | Record symptom ratings. |
-| 4 | C-SSRS | Record recent-ideation responses. |
-| 5 | History | Enter clinical history and proposal context. |
-| 6 | Medications | Select medications and review interactions. |
-| 7 | Proposal review | Review generated results, accept them, and prepare/sign the physician plan. |
-
-Use the numbered wizard links or **Back to…** and **Continue to…** controls to move between pages. Moving forward does not certify that an assessment is complete. Adverse effects are collected during follow-up, rather than as a registration step.
-
-The **Working note** becomes editable once a draft exists and autosaves. It is a workspace note: its text does not enter proposal prompts, probability estimation, inference, applicability decisions, or interaction checking. Enter information needed for those functions in the corresponding structured fields.
-
-## New case (experimental, deterministic)
-
-Select **New case** when registering a patient. Enter the patient's given/family
-names, ten-digit identifier, sex and Gregorian birth year. The year list comes
-from the server and permits ages 18–100. Required items have a red asterisk.
-Known case continues to use the existing age-based workflow.
-
-The New case wizard has seven input steps: registration, diagnosis, PANSS,
+The registration wizard has seven input steps: registration, diagnosis, PANSS,
 self/other harm, medical history/examination, current medications and treatment
 considerations. The following page shows the original proposal and a separately
 editable **Final treatment plan**.

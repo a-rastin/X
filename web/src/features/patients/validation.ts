@@ -49,9 +49,6 @@ export function isValidIdentifier(value: string): boolean {
   return IDENTIFIER_RE.test(value);
 }
 
-const NAME_MESSAGE =
-  "may contain letters, spaces, hyphens and apostrophes. Use 1–100 characters, with no leading, trailing or double spaces.";
-
 export function validateDemographics(
   fields: DemographicsFields,
   registrationYear?: number,
@@ -60,23 +57,15 @@ export function validateDemographics(
   errors: ClientFieldErrors;
 } {
   const errors: ClientFieldErrors = {};
-  const isNew = fields.clinicalStatus === "first_time";
   const validName = (value: string) =>
-    isNew
-      ? Array.from(value.normalize("NFC").replace(/^ +| +$/g, "")).length <=
-          100 &&
-        /^[\p{L} ]+$/u.test(value.normalize("NFC")) &&
-        /\p{L}/u.test(value)
-      : isValidPersonName(value);
+    Array.from(value.normalize("NFC").replace(/^ +| +$/g, "")).length <= 100 &&
+    /^[\p{L} ]+$/u.test(value.normalize("NFC")) &&
+    /\p{L}/u.test(value);
   if (!validName(fields.givenName)) {
-    errors.givenName = isNew
-      ? "Name must contain only letters and ordinary spaces."
-      : `Given name ${NAME_MESSAGE}`;
+    errors.givenName = "Name must contain only letters and ordinary spaces.";
   }
   if (!validName(fields.familyName)) {
-    errors.familyName = isNew
-      ? "Name must contain only letters and ordinary spaces."
-      : `Family name ${NAME_MESSAGE}`;
+    errors.familyName = "Name must contain only letters and ordinary spaces.";
   }
   if (!isValidIdentifier(fields.identifier)) {
     errors.identifier = "Patient ID must be exactly 10 ASCII digits (0-9).";

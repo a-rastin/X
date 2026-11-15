@@ -3,7 +3,7 @@
 INSIGHT is a **research prototype** (not clinically validated, release gate open) for
 exploring schizophrenia treatment options: structured assessments → versioned Bayesian
 networks → LLM-estimated CPTs → deterministic inference → physician review and signed plans
-(Known case/follow-up); New case instead uses a fixed, hash-pinned oral BN with no LLM.
+(legacy drafts); current registration and follow-up use a fixed, hash-pinned oral BN with no LLM.
 Self-hosted, English/Persian desktop UI, one admin + a small physician team sharing a patient pool.
 
 ## Stack and entry points

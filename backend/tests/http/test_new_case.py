@@ -96,15 +96,16 @@ def test_creation_and_ordinary_diagnosis_gate(clinician):
     )
 
 
-def test_known_case_birth_year_keeps_legacy_workflow(clinician):
+def test_known_case_birth_year_uses_new_case_workflow(clinician):
     client, csrf, _ = clinician
     year = contracts.utcnow().year - 30
-    body, _ = create(
-        client, csrf, birth_year=year, clinical_status="established", given_name="Anne-Marie"
-    )
+    body, url = create(client, csrf, birth_year=year, clinical_status="established")
     assert body["patient"]["birth_year"] == year
     assert body["patient"]["age"] == 30
-    assert body["draft"]["workflow_version"] == "legacy-v1"
+    assert body["draft"]["workflow_version"] == "new-case-v1"
+    draft = client.get(url).json()["draft_data"]
+    assert draft["new_case"]["registration_year"] == contracts.utcnow().year
+    assert client.get(url + "/new-case/preview").status_code == 200
 
 
 def test_autosave_metadata_pins_catalog_and_overrides(clinician):

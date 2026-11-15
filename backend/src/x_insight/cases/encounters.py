@@ -832,7 +832,6 @@ def create_open_draft(
     elif (
         validated_kind == "registration"
         and patient_row.get("birth_year") is not None
-        and patient_row.get("clinical_status") == "first_time"
     ):
         from x_insight.cases import new_case
 

@@ -16,7 +16,6 @@ import { newCaseConfig } from "../new-case/api";
 import { ApiError } from "../identity/api";
 import { useAuth } from "../identity/auth";
 import { createPatient } from "./api";
-import { REGISTRATION_WIZARD_STEPS } from "../encounters/EncounterPage";
 import { stageRegistrationNotice } from "../encounters/DemographicsDraftPanels";
 import {
   toClientField,
@@ -191,25 +190,13 @@ function RegistrationForm() {
   const sexError = errorFor("sex");
   const clinicalStatusError = errorFor("clinicalStatus");
   const phoneError = errorFor("phone");
-  const registrationSteps =
-    fields.clinicalStatus === "first_time"
-      ? [
-          { id: "register", label: t("registerPatient") },
-          ...[
-            "diagnosis",
-            "panss",
-            "harm",
-            "history",
-            "medications",
-            "considerations",
-          ].map((id) => ({
-            id,
-            label: t(
-              ("nc." + id) as import("../../shared/messages").MessageKey,
-            ),
-          })),
-        ]
-      : REGISTRATION_WIZARD_STEPS;
+  const registrationSteps = [
+    { id: "register", label: t("registerPatient") },
+    ...["diagnosis", "panss", "harm", "history", "medications", "considerations"].map((id) => ({
+      id,
+      label: t(("nc." + id) as import("../../shared/messages").MessageKey),
+    })),
+  ];
 
   return (
     <div>
@@ -241,7 +228,7 @@ function RegistrationForm() {
         id="wizard-page"
         role="region"
         aria-label={t("registerPatientStep1OfValue1", {
-          value1: REGISTRATION_WIZARD_STEPS.length,
+          value1: registrationSteps.length,
         })}
       >
         <section className="xi-card" aria-labelledby="demographics-heading">

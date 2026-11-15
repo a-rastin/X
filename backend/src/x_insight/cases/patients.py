@@ -143,7 +143,7 @@ def validate_registration_payload(
         errors.update(exc.field_errors)
 
     def registration_name(value: Any, field: str) -> str:
-        if birth_year is None or clinical_status != "first_time":
+        if birth_year is None:
             return normalize_person_name(value, field)
         from x_insight.cases.new_case_demographics import normalize_name
 
@@ -277,7 +277,7 @@ def create_patient_with_draft(
     encounter_id = uuid.uuid4()
     workflow = "legacy-v1"
     initial_draft: dict[str, Any] = {}
-    if fields.get("birth_year") is not None and fields["clinical_status"] == "first_time":
+    if fields.get("birth_year") is not None:
         from x_insight.cases import new_case
 
         workflow = new_case.WORKFLOW
@@ -677,7 +677,7 @@ def update_patient_demographics(
         raise contracts.ContractError(
             422, "VALIDATION_FAILED", "Only recorded birth years can be corrected."
         )
-    if patient.get("birth_year") is not None and patient["clinical_status"] == "first_time":
+    if patient.get("birth_year") is not None:
         from x_insight.cases.new_case_demographics import normalize_name
 
         name_fields: dict[str, Any] = {

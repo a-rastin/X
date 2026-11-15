@@ -14,11 +14,11 @@ Bayesian networks, and renders recommendations from templates. Physicians can
 inspect and adjust probabilities, compare results, and sign a separate final
 treatment plan while retaining the original system proposal.
 
-A separate, experimental `new-case-v1` workflow for first-time registration is
+A separate, experimental `new-case-v1` workflow for new patient registration is
 built around a fixed, hash-pinned oral-antipsychotic ranking model (an exact,
 fully observed conditional-row lookup) and a pinned Lexicomp interaction dataset.
 It uses no LLM, provider call, background generation job or probability slider;
-the legacy LLM/CPT pipeline is retained for Known case and existing legacy follow-up drafts.
+the legacy LLM/CPT pipeline is retained for existing legacy drafts.
 New case now has a bilingual seven-step wizard, personal formulation settings,
 immutable proposals and v4 confirmation. See [New-case state](docs/new-case-state.md).
 
