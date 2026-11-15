@@ -156,3 +156,13 @@ The second follow-up step is titled “Risk of harm” in English and Persian;
 the New case step retains its existing label.
 The web production build and all 24 web tests passed; Vite retained its existing
 large-chunk warning.
+
+## Follow-up 2026-11-15 — history question presentation
+
+The third follow-up step presents history and examination questions as a
+spaced clinical worksheet, using Astryx radio groups and grouped conditional
+details, laboratory inputs and measurements. Condition answers retain their
+explicit override and automatic reset behavior, including reselecting an
+inherited value. Existing translations and clinical data handling are unchanged.
+The web production build and all 24 web tests passed; Vite retained its existing
+large-chunk warning. Browser visual acceptance was not run.

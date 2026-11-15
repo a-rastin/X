@@ -209,3 +209,46 @@
   padding-top: var(--space-4);
   border-top: 1px solid var(--border);
 }
+
+/* Follow-up history: keep answers and their clinical context together. */
+.fu-history {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 76ch;
+}
+.fu-history > h3 { margin: 0; }
+.fu-history > .astryx-radio-list,
+.fu-history > .nc-answer,
+.fu-history-condition {
+  margin: 0;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--border);
+}
+.fu-history-condition .nc-answer { margin: 0; }
+.fu-history-condition p { margin: var(--space-2) 0; color: var(--ink-muted); }
+.fu-history-details,
+.fu-history-measurements,
+.fu-history-labs {
+  min-width: 0;
+  margin: 0;
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-1);
+}
+.fu-history-details label { display: inline-flex; align-items: center; gap: var(--space-2); margin-block: var(--space-2); margin-inline-end: var(--space-4); }
+.fu-history-details label:has(.xi-input) { display: grid; }
+.fu-history-labs,
+.fu-history-measurements {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: var(--space-4);
+}
+.fu-history-measurements label,
+.fu-history-hospitalizations { display: grid; gap: var(--space-2); }
+.fu-history-measurements p { margin: 0; align-self: end; }
+.fu-history-labs small { color: var(--ink-muted); }
+.fu-history-help { padding: var(--space-4); background: var(--surface-1); border-inline-start: var(--space-1) solid var(--primary-action); }
+.fu-history-help summary { cursor: pointer; font-weight: 600; }
+.fu-history-help p { margin-bottom: 0; }
+.fu-history-hospitalizations { max-width: 18rem; }

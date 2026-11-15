@@ -1,5 +1,7 @@
 # INSIGHT progress tracker
 
+[Follow-up history question presentation (2026-11-15)](follow-up-bfg-2026-11-13.md#follow-up-2026-11-15--history-question-presentation): Astryx controls and clinical worksheet; web build and tests pass.
+
 [Follow-up risk of harm title (2026-11-15)](follow-up-bfg-2026-11-13.md#follow-up-2026-11-15--risk-of-harm-title): second step renamed.
 
 [Follow-up harm question presentation (2026-11-15)](follow-up-bfg-2026-11-13.md#follow-up-2026-11-15--harm-question-presentation): Astryx question controls; web build and tests pass.

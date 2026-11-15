@@ -1,5 +1,6 @@
 import { formatLabReference } from "../new-case/NewCaseSections";
 import { useId } from "react";
+import { RadioList, RadioListItem } from "@astryxdesign/core/RadioList";
 import { useLanguage } from "../../shared/i18n";
 import type { FollowUpConfig, FollowUpRaw, FollowUpState } from "./api";
 import { useFollowUpText } from "./text";
@@ -9,14 +10,30 @@ export function Answer({
   value,
   onChange,
   required = true,
+  polished = false,
 }: {
   label: string;
   value: boolean | null;
   onChange: (v: boolean) => void;
   required?: boolean;
+  polished?: boolean;
 }) {
   const id = useId();
   const n = useFollowUpText();
+  if (polished) {
+    return (
+      <RadioList
+        label={required ? `${label} (${n("required")})` : label}
+        value={value === null ? "" : String(value)}
+        orientation="horizontal"
+        isRequired={required}
+        onChange={(v) => onChange(v === "true")}
+      >
+        <RadioListItem value="true" label={n("yes")} />
+        <RadioListItem value="false" label={n("no")} />
+      </RadioList>
+    );
+  }
   return (
     <fieldset className="nc-answer">
       <legend>
@@ -63,9 +80,10 @@ export function FollowUpHistory({
     onRaw({ ...raw, history: { ...h, ...value } });
   const conditions = Object.keys(h.conditions) as (keyof typeof h.conditions)[];
   return (
-    <section>
+    <section className="fu-history">
       <h3>{n("current")}</h3>
       <Answer
+        polished
         label={n("psychiatric")}
         value={h.psychiatric.present}
         onChange={(present) =>
@@ -73,7 +91,7 @@ export function FollowUpHistory({
         }
       />
       {h.psychiatric.present && (
-        <fieldset>
+        <fieldset className="fu-history-details">
           <legend>{n("psychiatric")}</legend>
           {(["depression", "ptsd", "adhd", "other"] as const).map((key) => (
             <label key={key}>
@@ -119,6 +137,7 @@ export function FollowUpHistory({
           (k) => k === "depression" || k === "ptsd",
         ) && (
           <Answer
+            polished
             label={n("current_antidepressant")}
             value={h.current_antidepressant}
             onChange={(current_antidepressant) =>
@@ -127,12 +146,13 @@ export function FollowUpHistory({
           />
         )}
       <Answer
+        polished
         label={n("labs")}
         value={h.labs.present}
         onChange={(present) => change({ labs: { ...h.labs, present } })}
       />
       {h.labs.present && (
-        <section className="nc-labs-grid">
+        <section className="fu-history-labs">
           {Object.entries(config.lab_fields)
             .filter(([key]) => key !== "beta_hcg" || sex === "F")
             .map(([key, spec]) => (
@@ -189,7 +209,7 @@ export function FollowUpHistory({
             | undefined;
           const answer = h.conditions[key];
           return (
-            <section key={key}>
+            <section className="fu-history-condition" key={key}>
               <Answer
                 label={n(key)}
                 value={
@@ -240,6 +260,7 @@ export function FollowUpHistory({
         })}
       {(["heart_failure", "tobacco"] as const).map((key) => (
         <Answer
+          polished
           key={key}
           label={n(key)}
           value={h[key]}
@@ -247,6 +268,7 @@ export function FollowUpHistory({
         />
       ))}
       <Answer
+        polished
         label={n("substances")}
         value={h.substances.present}
         onChange={(present) =>
@@ -254,7 +276,7 @@ export function FollowUpHistory({
         }
       />
       {h.substances.present && (
-        <fieldset>
+        <fieldset className="fu-history-details">
           <legend>{n("substances")}</legend>
           {(["marijuana", "opioids", "methamphetamine", "other"] as const).map(
             (key) => (
@@ -292,13 +314,14 @@ export function FollowUpHistory({
       {sex === "F" &&
         (["pregnant", "breastfeeding"] as const).map((key) => (
           <Answer
+            polished
             key={key}
             label={n(key)}
             value={h[key]}
             onChange={(v) => change({ [key]: v })}
           />
         ))}
-      <fieldset>
+      <fieldset className="fu-history-measurements">
         <legend>
           {n("bmi")} ({n("required")})
         </legend>
@@ -364,6 +387,7 @@ export function FollowUpHistory({
       {(Object.keys(h.neurological) as (keyof typeof h.neurological)[]).map(
         (key) => (
           <Answer
+            polished
             key={key}
             label={n(key)}
             value={h.neurological[key]}
@@ -373,11 +397,11 @@ export function FollowUpHistory({
           />
         ),
       )}
-      <details>
+      <details className="fu-history-help">
         <summary>{n("suspected_autoimmune_encephalitis")}</summary>
         <p>{n("encephalitisHelp")}</p>
       </details>
-      <label>
+      <label className="fu-history-hospitalizations">
         {n("hospitalization_count")}
         <input
           className="xi-input"
