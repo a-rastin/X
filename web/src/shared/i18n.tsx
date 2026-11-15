@@ -1,3 +1,4 @@
+import { Button } from "@astryxdesign/core/Button";
 import { createContext, useContext, useLayoutEffect, useState, type ReactNode } from "react";
 import { message, present, presentError, type Language, type MessageKey } from "./messages";
 
@@ -26,15 +27,13 @@ export function useLanguage() {
 export function LanguageButton() {
   const { language, setLanguage, t } = useLanguage();
   return (
-    <button
-      type="button"
-      className="xi-btn xi-btn-secondary xi-language-button"
-      aria-label={`${language === "en" ? "فارسی" : "English"}: ${t(language === "en" ? "switchToPersian" : "switchToEnglish")}`}
+    <Button
+      variant="secondary"
+      label={`${language === "en" ? "فارسی" : "English"}: ${t(language === "en" ? "switchToPersian" : "switchToEnglish")}`}
+      className="xi-language-button"
       onClick={() => setLanguage(language === "en" ? "fa" : "en")}
-      lang={language === "en" ? "fa" : "en"}
-      dir={language === "en" ? "rtl" : "ltr"}
     >
-      {language === "en" ? "فارسی" : "English"}
-    </button>
+      <span lang={language === "en" ? "fa" : "en"} dir={language === "en" ? "rtl" : "ltr"}>{language === "en" ? "فارسی" : "English"}</span>
+    </Button>
   );
 }

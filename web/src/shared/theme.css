@@ -1551,7 +1551,7 @@ code {
   min-height: 100vh;
   max-height: 100vh;
   overflow-y: auto;
-  padding: var(--space-12) var(--space-3) var(--space-5);
+  padding: var(--space-5) var(--space-3) var(--space-5);
   border: 0;
   border-inline-end: 1px solid var(--border);
   background: var(--surface-1);
@@ -1600,6 +1600,16 @@ code {
   justify-content: flex-start;
 }
 
+.xi-shell:not(.xi-shell-gate) .xi-header-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+.xi-shell:not(.xi-shell-gate) .xi-identity { grid-column: 1 / -1; margin-bottom: var(--space-2); }
+.xi-shell:not(.xi-shell-gate) .xi-header-meta button { width: 100%; }
+.xi-shell:not(.xi-shell-gate) .xi-rail-action[data-variant="ghost"] { grid-column: 1 / -1; }
+
 .xi-shell:not(.xi-shell-gate) .xi-identity {
   width: 100%;
   align-items: flex-start;
@@ -1640,7 +1650,7 @@ code {
     min-height: 0;
     max-height: none;
     overflow: visible;
-    padding: var(--space-12) var(--space-4) var(--space-3);
+    padding: var(--space-4) var(--space-4) var(--space-3);
     border-inline-end: 0;
     border-bottom: 1px solid var(--border);
   }
@@ -1652,11 +1662,13 @@ code {
   }
   .xi-shell:not(.xi-shell-gate) .xi-nav a { width: auto; }
   .xi-shell:not(.xi-shell-gate) .xi-header-meta {
+    display: flex;
     width: 100%;
     margin: 0;
     padding: var(--space-3) 0 0;
   }
-  .xi-shell:not(.xi-shell-gate) .xi-identity { width: auto; }
+  .xi-shell:not(.xi-shell-gate) .xi-identity { width: auto; margin: 0; }
+  .xi-shell:not(.xi-shell-gate) .xi-header-meta button { width: auto; }
   .xi-shell:not(.xi-shell-gate) .xi-main { padding: var(--space-6) var(--space-4); }
 }
 

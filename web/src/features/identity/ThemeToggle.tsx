@@ -1,3 +1,4 @@
+import { Button } from "@astryxdesign/core/Button";
 import { useLanguage } from "../../shared/i18n";
 import { useRef, useState } from "react";
 import { ApiError } from "./api";
@@ -25,8 +26,7 @@ export function ThemeToggle() {
     setBusy(true);
     try {
       await applyTheme(next);
-      // Saving briefly disables the button, which drops keyboard focus by
-      // design; hand it back so keyboard users keep their place.
+      // Keep keyboard focus on the control after the preference is saved.
       buttonRef.current?.focus();
     } catch (err) {      if (err instanceof ApiError && err.status === 401) {
         sessionExpired();
@@ -39,17 +39,17 @@ export function ThemeToggle() {
   }
 
   return (
-    <span>
-      <button
+    <span className="xi-theme-control">
+      <Button
         ref={buttonRef}
-        className="xi-btn xi-btn-secondary"
-        type="button"
+        className="xi-rail-action"
+        variant="secondary"
+        label={`${t(theme === "dark" ? "dark" : "light")}: ${t(theme === "dark" ? "switchLight" : "switchDark")}`}
         onClick={handleToggle}
-        disabled={busy}
-        aria-label={`${t(theme === "dark" ? "dark" : "light")}: ${t(theme === "dark" ? "switchLight" : "switchDark")}`}
+        isDisabled={busy}
       >
-        <span aria-hidden="true">{theme === "dark" ? t("dark") : t("light")}</span>
-      </button>{" "}
+        {t(theme === "dark" ? "dark" : "light")}
+      </Button>
       {error !== null && (
         <span className="xi-field-error" role="alert">
           {errorText(error)}

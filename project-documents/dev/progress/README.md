@@ -1,5 +1,7 @@
 # INSIGHT progress tracker
 
+[Sidebar controls (2026-11-15)](ui-implementation-2026-11-11.md#follow-up-2026-11-15--sidebar-controls): language, appearance and sign out grouped with Astryx buttons; web build and tests pass.
+
 [Unavailable drugs presentation (2026-11-15)](new-case-implementation-2026-11-09.md#follow-up-2026-11-15--unavailable-drugs-presentation): Astryx settings refinement; web build and tests pass.
 
 [Follow-up proposal plan presentation (2026-11-15)](follow-up-bfg-2026-11-13.md#follow-up-2026-11-15--proposal-plan-presentation): seventh-step review polished; web build and tests pass.

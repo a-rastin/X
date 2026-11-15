@@ -1,6 +1,7 @@
 import { UnavailableDrugsPage } from "../features/identity/UnavailableDrugsPage";
 import { LanguageButton, useLanguage } from "../shared/i18n";
 import React from "react";
+import { Button } from "@astryxdesign/core/Button";
 import { SideNavItem } from "@astryxdesign/core/SideNav";
 import { Theme } from "@astryxdesign/core/theme";
 import { academicTheme } from "../shared/astryx/built/academic.js";
@@ -181,7 +182,7 @@ export function App() {
     <div className={user === null ? "xi-shell xi-shell-gate" : "xi-shell"}>
       <a className="xi-skip-link" href="#main-content">
         {t("skipToContent")}</a>
-      <div className="xi-header-language"><LanguageButton /></div>
+      {user === null && <div className="xi-header-language"><LanguageButton /></div>}
       <header className="xi-header">
         <h1 className="xi-wordmark">
           <img className="xi-mark" src="/insight_logo.svg" alt="" />
@@ -239,17 +240,18 @@ export function App() {
               <bdi className="xi-identity-name">{(language === "fa" ? user.name_fa || user.name_en : user.name_en || user.name_fa) || user.username}</bdi>
               <span className="xi-identity-role">{t(user.role === "admin" ? "administrator" : "physician")}</span>
             </span>
+            <LanguageButton />
             <ThemeToggle />
-            <button
-              className="xi-btn xi-btn-secondary"
-              type="button"
+            <Button
+              className="xi-rail-action"
+              variant="ghost"
+              label={t("signOut")}
               onClick={() => {
                 void saveBeforeNavigation().then((ok) => {
                   if (ok) void logout().then(() => navigate("login"));
                 });
               }}
-            >
-              {t("signOut")}</button>
+            />
           </div>
         )}
       </header>

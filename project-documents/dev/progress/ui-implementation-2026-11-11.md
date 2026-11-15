@@ -82,3 +82,12 @@ authenticated pages. A white background keeps the dark artwork visible in dark
 mode. The frontend production build and `git diff --check` passed; browser
 verification was not run. No new rationale entry was needed for this requested
 visual replacement.
+
+
+## Follow-up 2026-11-15 — sidebar controls
+
+Moved the authenticated language switch beside the appearance control in the
+sidebar account area, with sign out below, and applied Astryx buttons. The
+sign-in and research-warning language switches remain available. Responsive
+wrapping and English/Persian labels are retained. The web production build,
+24 web tests, and `git diff --check` passed; browser verification was not run.
