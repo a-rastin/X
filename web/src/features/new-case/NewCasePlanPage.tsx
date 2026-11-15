@@ -1,3 +1,4 @@
+import { Button } from "@astryxdesign/core/Button";
 import { useFollowUpText } from "../follow-up/text";
 import {
   FollowUpProposalView,
@@ -339,7 +340,7 @@ export function NewCasePlanPage({
     }
   };
   return (
-    <div className="nc-plan">
+    <div className={workflow === "follow-up" ? "nc-plan fu-plan" : "nc-plan"}>
       {workflow === "follow-up" ? (
         <FollowUpProposalView proposal={proposal} />
       ) : (
@@ -347,23 +348,19 @@ export function NewCasePlanPage({
       )}
       {proposal.stale && <p role="alert">{n("stale")}</p>}
       <div className="nc-actions">
-        <button
-          className="xi-btn xi-btn-secondary"
-          disabled={busy}
-          onClick={() => void regenerate()}
-        >
-          {n("generate")}
-        </button>
-        <button
-          className="xi-btn xi-btn-secondary"
-          onClick={() =>
-            void navigator.clipboard.writeText(proposalText(proposal, n))
-          }
-        >
-          {n("copy")}
-        </button>
+        {workflow === "follow-up" ? (
+          <>
+            <Button label={n("generate")} isDisabled={busy} onClick={() => void regenerate()} />
+            <Button label={n("copy")} onClick={() => void navigator.clipboard.writeText(proposalText(proposal, n))} />
+          </>
+        ) : (
+          <>
+            <button className="xi-btn xi-btn-secondary" disabled={busy} onClick={() => void regenerate()}>{n("generate")}</button>
+            <button className="xi-btn xi-btn-secondary" onClick={() => void navigator.clipboard.writeText(proposalText(proposal, n))}>{n("copy")}</button>
+          </>
+        )}
       </div>
-      <section className="xi-card">
+      <section className={workflow === "follow-up" ? "xi-card fu-final-plan" : "xi-card"}>
         <h3>{n("finalPlan")}</h3>
         <label htmlFor="nc-final-plan">{n("finalPlan")}</label>
         <textarea
@@ -420,7 +417,7 @@ export function NewCasePlanPage({
             {n("save")}
           </button>
         </div>
-        <label>
+        <label className={workflow === "follow-up" ? "fu-plan-confirmation" : undefined}>
           <input
             type="checkbox"
             checked={confirmed}
@@ -428,15 +425,22 @@ export function NewCasePlanPage({
           />
           {n("confirmHelp")}
         </label>
-        <button
-          className="xi-btn xi-btn-primary"
-          disabled={
-            busy || !loaded || !confirmed || proposal.stale || !text.trim()
-          }
-          onClick={() => void sign()}
-        >
-          {n("confirm")}
-        </button>
+        {workflow === "follow-up" ? (
+          <Button
+            label={n("confirm")}
+            variant="primary"
+            isDisabled={busy || !loaded || !confirmed || proposal.stale || !text.trim()}
+            onClick={() => void sign()}
+          />
+        ) : (
+          <button
+            className="xi-btn xi-btn-primary"
+            disabled={busy || !loaded || !confirmed || proposal.stale || !text.trim()}
+            onClick={() => void sign()}
+          >
+            {n("confirm")}
+          </button>
+        )}
       </section>
     </div>
   );

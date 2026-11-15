@@ -303,3 +303,40 @@
 .fu-medications-treatment p,
 .fu-medications-pending p { margin: 0; color: var(--ink-muted); }
 .fu-medications-pending button { justify-self: start; }
+
+/* Follow-up proposal review keeps generated evidence separate from the signed plan. */
+.fu-plan .fu-proposal,
+.fu-plan .fu-final-plan {
+  padding: var(--space-6);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+.fu-plan .fu-proposal h3,
+.fu-plan .fu-final-plan h3 { margin: 0 0 var(--space-4); }
+.fu-proposal-summary {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--canvas);
+  border-inline-start: var(--space-1) solid var(--primary-action);
+  overflow-wrap: anywhere;
+}
+.fu-proposal-summary p { margin: 0; line-height: 1.6; white-space: pre-wrap; }
+.fu-proposal-summary p:first-child { font-weight: 700; }
+.fu-proposal > p { line-height: 1.6; }
+.fu-proposal details { border-top: 1px solid var(--border); padding: var(--space-3) 0; }
+.fu-proposal summary { cursor: pointer; font-weight: 600; }
+.fu-proposal details p { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.6; }
+.fu-plan .fu-final-plan { background: var(--canvas); }
+.fu-final-plan textarea { line-height: 1.6; resize: vertical; }
+.fu-plan .fu-final-plan > .fu-plan-confirmation {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin-block: var(--space-5);
+  padding: var(--space-4);
+  background: var(--surface-1);
+  line-height: 1.5;
+}
+.fu-plan-confirmation input { flex: none; margin-block-start: var(--space-1); }
+.fu-plan > [role="alert"] { color: var(--ink); background: var(--warning-bg); padding: var(--space-3); }

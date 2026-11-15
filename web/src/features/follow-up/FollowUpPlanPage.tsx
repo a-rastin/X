@@ -84,9 +84,13 @@ export function FollowUpProposalView({ proposal }: { proposal: Proposal }) {
   const n = useFollowUpText();
   const ranking = proposal.payload.ranking as unknown as Ranking;
   return (
-    <section className="xi-card nc-plan">
+    <section className="xi-card nc-plan fu-proposal">
       <h3>{n("original")}</h3>
-      <pre>{followUpProposalText(proposal, n)}</pre>
+      <div className="fu-proposal-summary">
+        {followUpProposalText(proposal, n).split("\n\n").map((item, index) => (
+          <p key={index} dir="auto">{item}</p>
+        ))}
+      </div>
       <p>{n(ranking.final_decision.reason)}</p>
       {ranking.direct && (
         <p>

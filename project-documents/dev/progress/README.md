@@ -1,5 +1,7 @@
 # INSIGHT progress tracker
 
+[Follow-up proposal plan presentation (2026-11-15)](follow-up-bfg-2026-11-13.md#follow-up-2026-11-15--proposal-plan-presentation): seventh-step review polished; web build and tests pass.
+
 [Follow-up treatment considerations presentation (2026-11-15)](follow-up-bfg-2026-11-13.md#follow-up-2026-11-15--treatment-considerations-presentation): sixth-step questions polished; web build and tests pass.
 
 [Follow-up adverse effects presentation (2026-11-15)](follow-up-bfg-2026-11-13.md#follow-up-2026-11-15--adverse-effects-presentation): fifth-step questions polished; web build and tests pass.

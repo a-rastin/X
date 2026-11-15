@@ -192,3 +192,12 @@ groups and a clearly spaced recovery selector. Existing answers, conditional
 questions and autosave behavior remain unchanged. The production web build and
 all 24 web tests passed; Vite retained its existing large-chunk warning. Browser
 visual acceptance was not run.
+
+## Follow-up 2026-11-15 — proposal plan presentation
+
+The seventh follow-up step presents the generated plan as a readable summary
+with supporting evidence disclosures and a separate final-plan workspace.
+Astryx actions and a distinct confirmation area clarify review and signing;
+proposal text, autosave, regeneration and signing behavior remain unchanged.
+The web production build and all 24 web tests passed; Vite retained its existing
+large-chunk warning. Browser visual acceptance was not run.
