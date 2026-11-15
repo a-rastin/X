@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@astryxdesign/core/Button";
 import { CheckboxList, CheckboxListItem } from "@astryxdesign/core/CheckboxList";
+import { Grid } from "@astryxdesign/core/Grid";
 import { VStack } from "@astryxdesign/core/VStack";
 import "./unavailable-drugs.css";
 import { ApiError, newIdempotencyKey, request } from "./api";
@@ -85,11 +86,12 @@ export function UnavailableDrugsPage() {
                     setSelected((current) => [...current.filter((id) => !ids.includes(id)), ...values]);
                     setStatus("");
                   }}
-                  hasDividers
                 >
-                  {drugs.map((d) => (
-                    <CheckboxListItem key={d.id} value={d.id} label={<bdi>{d.label ?? d.name ?? d.id}</bdi>} />
-                  ))}
+                  <Grid columns={{ minWidth: 200, max: 3 }} columnGap={4} rowGap={1} width="100%">
+                    {drugs.map((d) => (
+                      <CheckboxListItem key={d.id} value={d.id} align="first-line" label={<bdi>{d.label ?? d.name ?? d.id}</bdi>} />
+                    ))}
+                  </Grid>
                 </CheckboxList>
               </section>
             );
