@@ -1,3 +1,4 @@
+import { NetworkBackground } from "./NetworkBackground";
 import { useLanguage } from "../../shared/i18n";
 import { useState } from "react";
 import { ApiError } from "./api";
@@ -34,6 +35,7 @@ export function LoginPage() {
 
   return (
     <div className="xi-auth-layout">
+      <NetworkBackground />
       <div className="xi-auth-intro">
         <span className="xi-eyebrow">{t("connectedWorkflow")}</span>
         <h2 className="xi-auth-title">{t("psychiatristSupport")}</h2>

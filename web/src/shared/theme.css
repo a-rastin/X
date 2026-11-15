@@ -360,12 +360,25 @@ input[type="url"] {
 }
 
 .xi-auth-layout {
+  position: relative;
+  isolation: isolate;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
   gap: var(--space-10) var(--space-12);
   align-items: start;
   max-width: 980px;
   margin: var(--space-8) auto 0;
+}
+
+.xi-auth-network {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  color: var(--ink-muted);
+  opacity: 0.38;
 }
 
 .xi-auth-intro {

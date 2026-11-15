@@ -91,3 +91,10 @@ sidebar account area, with sign out below, and applied Astryx buttons. The
 sign-in and research-warning language switches remain available. Responsive
 wrapping and English/Persian labels are retained. The web production build,
 24 web tests, and `git diff --check` passed; browser verification was not run.
+
+## Follow-up 2026-11-15 — sign-in network background
+
+Added a rotating, perspective-projected node and link canvas behind the sign-in
+layout, inspired by the supplied reference. It follows the shared theme, is
+decorative to assistive technology, and renders still for reduced motion. The
+web production build and 23 web tests passed; browser verification was not run.

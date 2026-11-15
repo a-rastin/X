@@ -1,5 +1,7 @@
 # INSIGHT progress tracker
 
+[Sign-in network background (2026-11-15)](ui-implementation-2026-11-11.md#follow-up-2026-11-15--sign-in-network-background): rotating background added; web build and tests pass.
+
 [Shared registration workflow (2026-11-15)](s07.md#follow-up-2026-11-15--shared-registration-workflow): both statuses use the deterministic path; web checks pass; database and browser verification remain open.
 
 [Registration birth year (2026-11-15)](s07.md#follow-up-2026-11-15--registration-birth-year-for-all-statuses): all statuses use birth year; web and validation checks pass; database-backed test blocked by credentials.

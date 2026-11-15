@@ -1,11 +1,12 @@
 # web/src/shared/theme.css
 
-Source SHA-256: e37b2095f5dd8a930cb7b04ddf33fd38435fd9ec4092f6cca910fbca58f87d47
+Source SHA-256: f60376b546d2bf4a54270798ba77f099329fa46f342afd1afacca0018fe241dd
 
 ## Purpose
 Defines semantic light/dark theme tokens and the shared `.xi-*` UI classes. This summary covers the research disclaimer styling investigated during the 2026-10-29 redesign.
 
 ## Behavior and Constraints
+- `.xi-auth-network` positions the sign-in-only decorative canvas behind the login layout using the shared muted ink token.
 - `.xi-visit-summary` styles the read-only previous signed visit and its historical-details disclosure in the follow-up wizard.
 - `.xi-mark` sizes the shared SVG logo and gives it a white background in dark mode for visibility.
 - The academic workspace rules near the end define the desktop navigation rail, narrow wrapped navigation, shared typography and wizard progress track; clinical feature CSS supplies the assessment and medication layouts.
