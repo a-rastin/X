@@ -56,7 +56,7 @@ for (const role of ["admin", "physician"] as const) {
     await page.goto("/?source=history#/account");
     await page.evaluate(() => { window.location.hash = "#/login"; });
     await expect(page).toHaveURL(/\?source=history#\/login$/);
-    await page.getByLabel("Role").selectOption(role);
+    await page.getByLabel("Administrator", { exact: true }).setChecked(role === "admin");
     await page.getByLabel("Username").fill(username);
     await page.getByLabel("Password").fill(password);
     await page.getByRole("button", { name: "Sign in" }).click();
@@ -98,7 +98,7 @@ test("login URL: authenticated login route redirects while deep links survive re
 
 test("login URL: login from an anonymous protected route redirects", async ({ page }) => {
   await page.goto("/#/account");
-  await page.getByLabel("Role").selectOption("admin");
+  await page.getByLabel("Administrator", { exact: true }).check();
   await page.getByLabel("Username").fill("admin");
   await page.getByLabel("Password").fill("admin");
   await page.getByRole("button", { name: "Sign in" }).click();
@@ -126,7 +126,7 @@ test("login page shows Register guidance without a self-registration route", asy
 
 test("login failure is generic and grants nothing", async ({ page }) => {
   await page.goto("/");
-  await page.getByLabel("Role").selectOption("physician");
+  await expect(page.getByLabel("Administrator", { exact: true })).not.toBeChecked();
   await page.getByLabel("Username").fill(uniqueName("nosuchuser"));
   await page.getByLabel("Password").fill("wrong-password");
   await page.getByRole("button", { name: "Sign in" }).click();
@@ -146,7 +146,7 @@ test("wrong password for a real user shows the identical generic error", async (
   const username = uniqueName("e2eenum");
   await ensurePhysician(request, username, "secret123");
   await page.goto("/");
-  await page.getByLabel("Role").selectOption("physician");
+  await expect(page.getByLabel("Administrator", { exact: true })).not.toBeChecked();
   await page.getByLabel("Username").fill(username);
   await page.getByLabel("Password").fill("not-the-password");
   await page.getByRole("button", { name: "Sign in" }).click();
@@ -165,7 +165,7 @@ test("wrong password for a real user shows the identical generic error", async (
 
 test("login error is announced and tied to its inputs", async ({ page }) => {
   await page.goto("/");
-  await page.getByLabel("Role").selectOption("physician");
+  await expect(page.getByLabel("Administrator", { exact: true })).not.toBeChecked();
   await page.getByLabel("Username").fill(uniqueName("nosuchuser"));
   await page.getByLabel("Password").fill("wrong-password");
   await page.getByRole("button", { name: "Sign in" }).click();
@@ -325,7 +325,7 @@ test("tabs keep mutation CSRF aligned with the shared session cookie", async ({
 
   // The second login replaces the cookie shared by both tabs. Its token must
   // become the token used by the first tab's next mutation as well.
-  await otherTab.getByLabel("Role").selectOption("admin");
+  await otherTab.getByLabel("Administrator", { exact: true }).check();
   await otherTab.getByLabel("Username").fill("admin");
   await otherTab.getByLabel("Password").fill("admin");
   await otherTab.getByRole("button", { name: "Sign in" }).click();

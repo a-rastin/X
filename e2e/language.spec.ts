@@ -46,6 +46,21 @@ async function signIn(page: Page) {
   await page.getByRole("button", { name: "Sign in", exact: true }).click();
 }
 
+for (const role of ["physician", "admin"] as const) {
+  test(`role switch submits ${role} credentials`, async ({ page }) => {
+    const mutations = await mockIdentity(page, { role });
+    await page.goto("/");
+    const administrator = page.getByLabel("Administrator", { exact: true });
+    await expect(administrator).not.toBeChecked();
+    await administrator.check();
+    await expect(administrator).toBeChecked();
+    if (role === "physician") await administrator.uncheck();
+    await signIn(page);
+    await expect(page.getByRole("button", { name: "Sign out" })).toBeVisible();
+    expect(mutations).toEqual([{ path: "/api/v1/auth/login", body: { username: "Syntheticپزشک", password: "synthetic-password", role } }]);
+  });
+}
+
 test("Persian browser starts English, switches without losing login input and resets on reload", async ({ page }) => {
   const mutations = await mockIdentity(page);
   await page.goto("/");
@@ -118,7 +133,7 @@ for (const role of ["physician", "admin"] as const) {
   test(`${role} header switch stays physically left in both directions, themes, and desktop zoom width`, async ({ page }) => {
     const mutations = await mockIdentity(page, { role });
     await page.goto("/");
-    await page.getByLabel("Role", { exact: true }).selectOption(role);
+    await page.getByLabel("Administrator", { exact: true }).setChecked(role === "admin");
     await signIn(page);
     await expect(page.getByRole("heading", { name: role === "admin" ? "Administrator dashboard" : "Physician dashboard" })).toBeVisible();
     for (const width of [1440, 640]) {

@@ -1,4 +1,5 @@
 import { NetworkBackground } from "./NetworkBackground";
+import { Switch } from "@astryxdesign/core/Switch";
 import { useLanguage } from "../../shared/i18n";
 import { useState } from "react";
 import { ApiError } from "./api";
@@ -63,17 +64,17 @@ export function LoginPage() {
         <p className="xi-auth-subtitle">{t("workspaceAccess")}</p>
         <form onSubmit={handleSubmit} noValidate>
         <div className="xi-field">
-          <label className="xi-label" htmlFor="login-role">
-            {t("role")}</label>
-          <select
-            className="xi-select"
-            id="login-role"
-            value={role}
-            onChange={(event) => setRole(event.target.value as Role)}
-          >
-            <option value="physician">{t("physician")}</option>
-            <option value="admin">{t("administrator")}</option>
-          </select>
+          <span className="xi-label">{t("role")}</span>
+          <div className="xi-auth-role">
+            <span className={role === "physician" ? "xi-auth-role-active" : undefined}>
+              {t("physician")}
+            </span>
+            <Switch
+              label={t("administrator")}
+              value={role === "admin"}
+              onChange={(checked) => setRole(checked ? "admin" : "physician")}
+            />
+          </div>
         </div>
         <div className="xi-field">
           <label className="xi-label" htmlFor="login-username">

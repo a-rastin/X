@@ -98,3 +98,10 @@ Added a rotating, perspective-projected node and link canvas behind the sign-in
 layout, inspired by the supplied reference. It follows the shared theme, is
 decorative to assistive technology, and renders still for reduced motion. The
 web production build and 23 web tests passed; browser verification was not run.
+
+## Follow-up 2026-11-15 — sign-in role switch
+
+Replaced the role menu with an Astryx administrator switch, retaining physician
+as the default and updating the shared browser login helpers. The web build and
+23 web tests passed. Focused mocked login tests passed for both roles in Chromium
+and Firefox; one initial Firefox launch failed and passed on a serial retry.
