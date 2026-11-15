@@ -1,5 +1,7 @@
 # INSIGHT progress tracker
 
+[Follow-up adverse effects presentation (2026-11-15)](follow-up-bfg-2026-11-13.md#follow-up-2026-11-15--adverse-effects-presentation): fifth-step questions polished; web build and tests pass.
+
 [Follow-up history question presentation (2026-11-15)](follow-up-bfg-2026-11-13.md#follow-up-2026-11-15--history-question-presentation): Astryx controls and clinical worksheet; web build and tests pass.
 
 [Follow-up risk of harm title (2026-11-15)](follow-up-bfg-2026-11-13.md#follow-up-2026-11-15--risk-of-harm-title): second step renamed.

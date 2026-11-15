@@ -253,6 +253,17 @@
 .fu-history-help p { margin-bottom: 0; }
 .fu-history-hospitalizations { max-width: 18rem; }
 
+/* Follow-up effects use the same readable worksheet rhythm as history. */
+.fu-effects {
+  max-width: 76ch;
+  padding: var(--space-2) var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-1);
+}
+.fu-effects > .astryx-radio-list { padding: var(--space-4) 0; }
+.fu-effects > .astryx-radio-list + .astryx-radio-list { border-top: 1px solid var(--border); }
+
 /* Follow-up medication reconciliation keeps the list and treatment choices distinct. */
 .fu-medications:not([hidden]) {
   display: grid;

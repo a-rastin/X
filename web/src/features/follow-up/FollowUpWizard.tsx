@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { MetadataList, MetadataListItem } from "@astryxdesign/core/MetadataList";
+import { RadioList, RadioListItem } from "@astryxdesign/core/RadioList";
 import { useAuth } from "../identity/auth";
 import { ApiError, newIdempotencyKey } from "../identity/api";
 import { useAutosave } from "../encounters/useAutosave";
@@ -567,34 +568,30 @@ export function FollowUpWizard({
             ))}
         </div>
         {step === "effects" && (
-          <section>
-            <label>
-              {n("sedation")}
-              <select
-                className="xi-input"
-                value={raw.effects.sedation}
-                onChange={(e) =>
-                  update({
-                    ...raw,
-                    effects: {
-                      ...raw.effects,
-                      sedation: e.target
-                        .value as FollowUpRaw["effects"]["sedation"],
-                    },
-                  })
-                }
-              >
-                {["none", "tolerable", "intervention"].map((key) => (
-                  <option value={key} key={key}>
-                    {n(key)}
-                  </option>
-                ))}
-              </select>
-            </label>
+          <section className="fu-effects">
+            <RadioList
+              label={n("sedation")}
+              value={raw.effects.sedation}
+              orientation="horizontal"
+              onChange={(value) =>
+                update({
+                  ...raw,
+                  effects: {
+                    ...raw.effects,
+                    sedation: value as FollowUpRaw["effects"]["sedation"],
+                  },
+                })
+              }
+            >
+              {["none", "tolerable", "intervention"].map((key) => (
+                <RadioListItem value={key} key={key} label={n(key)} />
+              ))}
+            </RadioList>
             {(Object.keys(raw.effects) as (keyof FollowUpRaw["effects"])[])
               .filter((key) => key !== "sedation")
               .map((key) => (
                 <Answer
+                  polished
                   key={key}
                   label={n(key)}
                   value={raw.effects[key] as boolean}

@@ -175,3 +175,11 @@ state and uses Astryx buttons for medication removal while preserving catalog
 search, reconciliation and treatment behavior. The production web build and all
 24 web tests passed; Vite retained its existing large-chunk warning. Browser
 visual acceptance was not run.
+
+## Follow-up 2026-11-15 — adverse effects presentation
+
+The fifth follow-up step presents sedation and the other treatment adverse
+effects as Astryx radio groups in a clinical worksheet. Existing values,
+translations and autosave behavior are retained. The production web build and
+all 24 web tests passed; Vite retained its existing large-chunk warning. Browser
+visual acceptance was not run.
