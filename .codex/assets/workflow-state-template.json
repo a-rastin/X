@@ -1,0 +1,126 @@
+{
+  "version": "1.3",
+  "task_id": "",
+  "task_slug": "",
+  "run_mode": "auto",
+  "runtime_mode": "ide",
+  "size_class": null,
+  "current_stage": "PHASE-0",
+  "last_event": null,
+  "next_target": null,
+  "last_error": null,
+  "workspace_root": "",
+  "artifacts_dir": "",
+  "created_at": "",
+  "updated_at": "",
+
+  "project_config": {
+    "name": "",
+    "default_branch": "master",
+    "coding_standards": ""
+  },
+
+  "stages": {
+    "SOLO": {
+      "status": "pending",
+      "executor": "solo-developer",
+      "description": "单 agent 全流程（仅当 size_class==small 时启用，否则保持 skipped）",
+      "artifact_path": null,
+      "artifact_http": null,
+      "review_result": null,
+      "review_comment": null,
+      "retry_count": 0,
+      "started_at": null,
+      "completed_at": null,
+      "self_check": null
+    },
+    "TASK-01": {
+      "status": "pending",
+      "executor": "main",
+      "description": "需求分析 + superpowers:brainstorming 澄清",
+      "artifact_path": null,
+      "artifact_http": null,
+      "review_result": null,
+      "review_comment": null,
+      "retry_count": 0,
+      "started_at": null,
+      "completed_at": null,
+      "self_check": null
+    },
+    "TASK-02": {
+      "status": "pending",
+      "executor": "architect",
+      "description": "技术方案设计 + 执行计划文档",
+      "artifact_path": null,
+      "artifact_http": null,
+      "execution_plan_path": null,
+      "review_result": null,
+      "review_comment": null,
+      "retry_count": 0,
+      "started_at": null,
+      "completed_at": null,
+      "self_check": null
+    },
+    "TASK-03": {
+      "status": "pending",
+      "executor": "developer",
+      "description": "代码实现（并行 spawn sub-developer）",
+      "artifact_path": null,
+      "artifact_http": null,
+      "parallel_tasks_summary": null,
+      "review_result": null,
+      "review_comment": null,
+      "retry_count": 0,
+      "started_at": null,
+      "completed_at": null,
+      "self_check": null
+    },
+    "CODE-REVIEW": {
+      "status": "pending",
+      "executor": "code-reviewer",
+      "description": "代码审查（规范、安全、性能、SQL 等）",
+      "artifact_path": null,
+      "artifact_http": null,
+      "review_result": null,
+      "review_comment": null,
+      "retry_count": 0,
+      "started_at": null,
+      "completed_at": null,
+      "self_check": null
+    },
+    "TASK-04": {
+      "status": "pending",
+      "executor": "test-engineer",
+      "description": "根据项目现有体系补充并执行必要测试",
+      "artifact_path": null,
+      "artifact_http": null,
+      "review_result": null,
+      "review_comment": null,
+      "retry_count": 0,
+      "started_at": null,
+      "completed_at": null,
+      "self_check": null
+    },
+    "TASK-05": {
+      "status": "pending",
+      "executor": "knowledge-engineer",
+      "description": "知识沉淀",
+      "artifact_path": null,
+      "artifact_http": null,
+      "review_result": null,
+      "review_comment": null,
+      "retry_count": 0,
+      "started_at": null,
+      "completed_at": null,
+      "self_check": null
+    }
+  },
+
+  "decisions": [],
+
+  "summary": {
+    "status": "not_started",
+    "report_path": null,
+    "completed_at": null
+  }
+}

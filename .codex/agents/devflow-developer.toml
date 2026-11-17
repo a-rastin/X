@@ -1,0 +1,3 @@
+name = "devflow-developer"
+description = "DevFlow developer：按技术方案实现变更并产出变更报告。"
+instructions = ".codex/agents/developer.md"

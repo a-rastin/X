@@ -1,0 +1,81 @@
+# === Codex devflow 默认配置 ===
+
+artifacts:
+  root_dir: "{project_root}/artifacts"
+
+e2e:
+  search_dirs:
+    - "e2e"
+    - "tests/e2e"
+    - "test/e2e"
+    - "__tests__/e2e"
+    - "tests/integration"
+
+solo:
+  auto_mode: true
+multi:
+  auto_mode: true
+  # Token 优化：需求澄清完成后压缩主线程上下文，
+  # 丢弃调研摘要 + brainstorming 对话历史（产物已落盘 requirement-report.md），
+  # 让派发循环从轻量上下文起步，避免一次性重上下文随 6+ 次派发反复重放。
+  compact_after_brainstorming: true
+
+manual_gates:
+  - TASK-02_completed
+  - CODE-REVIEW_passed
+  - TASK-04_completed
+
+knowledge:
+  global_dir: "{project_root}/artifacts/knowledge"
+
+# compatibility field for workflow-state.json.
+# Codex runtime uses the main Codex thread as orchestrator and does not use
+# CodeBuddy team_create/send_message/team_delete.
+runtime_mode: ide
+
+max_parallel_sub_developers: 6
+
+routing_table:
+  workflow_initialized_small: solo-developer
+  workflow_initialized_other: main
+  TASK-01_completed: architect
+  SOLO_failed: solo-developer
+  SOLO_overflow: main
+  TASK-02_completed: developer
+  TASK-02_failed: architect
+  TASK-03_completed: code-reviewer
+  TASK-03_failed: developer
+  CODE-REVIEW_passed: test-engineer
+  CODE-REVIEW_failed: developer
+  TASK-04_completed: knowledge-engineer
+  TASK-04_failed: test-engineer
+  TASK-05_completed: leader
+  TASK-05_failed: knowledge-engineer
+  workflow_completed: main
+
+global_agent_rules: |
+  【Codex devflow 全局规则】
+  1. 每个阶段开始前必须读取 workflow-state.json。
+  2. 阶段执行只读取 .codex 下的工作流资产，不读取 .codebuddy 作为运行时依赖。
+  3. 不调用 CodeBuddy 的 team_create、send_message、team_delete。
+  4. 完成阶段后写回 workflow-state.json，并向主 Codex 线程返回阶段报告。
+  5. 主 Codex 线程根据 routing_table 决定下一阶段。
+  6. 阶段报告必须是紧凑结构化格式（≤500 字），带全 event、stage、status、
+     next_target、artifact_paths 和关键约束摘要；禁止回传大段源码/完整日志。
+  7. 主线程派发决策以 routing_table + 阶段报告为准；禁止为取字段反复全量
+     回读 workflow-state.json，仅在校验不符、失败重试、中断恢复时回读复核。
+
+team_members:
+  - leader
+  - architect
+  - developer
+  - code-reviewer
+  - test-engineer
+  - knowledge-engineer
+  - solo-developer
+
+dependencies:
+  skills:
+    - superpowers:brainstorming
+    - knowledge-distillation
+  mcp_tools: []

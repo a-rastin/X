@@ -1,0 +1,221 @@
+{
+  "version": 1,
+  "installer_version": "0.2.2",
+  "installations": {
+    "classic:codex": {
+      "host": "codex",
+      "edition": "classic",
+      "package_version": "0.2.2",
+      "files": [
+        {
+          "path": ".agents/skills/devflow-codex/SKILL.md",
+          "sha256": "6abd3a958a90e91ff04749c09cc15ad9740c40705e0470f760af77d16cd8ba7a"
+        },
+        {
+          "path": ".agents/skills/knowledge-distillation/SKILL.md",
+          "sha256": "b64919e396ca0f7c55793bdfe3c30bb14db0cf07dbc4e104e3e445cdeda28741"
+        },
+        {
+          "path": ".agents/skills/superpowers-brainstorming/SKILL.md",
+          "sha256": "d0731fa63f0b67b7712baca34772f5d47abfa05980b07b03c16ba8a380cda775"
+        },
+        {
+          "path": ".agents/skills/superpowers-brainstorming/scripts/frame-template.html",
+          "sha256": "fb22ba9d47f3b83b56e0a95d52a3c2727db03b0d4365078d92c850293a62457b"
+        },
+        {
+          "path": ".agents/skills/superpowers-brainstorming/scripts/helper.js",
+          "sha256": "e763d82f32b4ebb320be2f0d08449d3e5a0585778edf5c407c1fdab3f39976a5"
+        },
+        {
+          "path": ".agents/skills/superpowers-brainstorming/scripts/server.cjs",
+          "sha256": "df2953886eec4c5b6120214f10f5bee5d126425de603b02596d295d1637a1aaf"
+        },
+        {
+          "path": ".agents/skills/superpowers-brainstorming/scripts/start-server.sh",
+          "sha256": "954498e4d4919ee573026fdda262dcefcc52d54f30b52e59b38d31ed0c1e68dc"
+        },
+        {
+          "path": ".agents/skills/superpowers-brainstorming/scripts/stop-server.sh",
+          "sha256": "7256ea6c091979fbba38e6b62f63110bd56e70e59b11fc4b4c722e8f04ec695d"
+        },
+        {
+          "path": ".agents/skills/superpowers-brainstorming/spec-document-reviewer-prompt.md",
+          "sha256": "12cb5ed58aef41b8da6fbb505547c71ca3f5658c83b66ca6e556c936308b3189"
+        },
+        {
+          "path": ".agents/skills/superpowers-brainstorming/visual-companion.md",
+          "sha256": "3e774626a9f9791ac1697cf9bfb7e31e205ffa228b5fa4fe4f35d2c0398ebc44"
+        },
+        {
+          "path": ".codex/README.md",
+          "sha256": "b2563c5c7f5ce346418b65acc1aca330436c03a12290cf7104afe1e02b7d648f"
+        },
+        {
+          "path": ".codex/agents/architect.md",
+          "sha256": "861c6bc223fc3d2a380de9cde07ee01ad640f97e57b9ed1b8bd2abb5eb86bd65"
+        },
+        {
+          "path": ".codex/agents/code-reviewer.md",
+          "sha256": "2bd007975f3e405676af180ef7111844580ce9ea818e2c256f8e98d28bb431aa"
+        },
+        {
+          "path": ".codex/agents/developer.md",
+          "sha256": "128e49a4fb9e247ac4bde8c67d98c32299bd1f28a4112c3f65383b80bfd2292c"
+        },
+        {
+          "path": ".codex/agents/devflow-architect.toml",
+          "sha256": "d4f68aba9dc39044a42dffbccb0db768f54b728e64b6d6a815ae27510f5f6fda"
+        },
+        {
+          "path": ".codex/agents/devflow-code-reviewer.toml",
+          "sha256": "8027096923800afea8b7e9a0c06e5ecb8585d5fec288da9f30e07cfd431da0e3"
+        },
+        {
+          "path": ".codex/agents/devflow-developer.toml",
+          "sha256": "0b8fa0351d004209156d48a0e067fc3c4b5072ee48ef760d74bdf146c113b620"
+        },
+        {
+          "path": ".codex/agents/devflow-knowledge-engineer.toml",
+          "sha256": "28b9f698bbf3d8adeb5b3927dd54268d8f65795d7818216ba93115017e4374e4"
+        },
+        {
+          "path": ".codex/agents/devflow-leader.toml",
+          "sha256": "e64b76dc33db7427bd2f4ba4d920a74f32ca5811acf6951cc6a93ff152ff5d03"
+        },
+        {
+          "path": ".codex/agents/devflow-solo-developer.toml",
+          "sha256": "b18aa3f493e203fe2a00b53ef7893b9af5957a3fd732c91da89850cdf0655958"
+        },
+        {
+          "path": ".codex/agents/devflow-test-engineer.toml",
+          "sha256": "e04d7b419d4391c9c537e064e328b162404fa5e12c4f278b69dd883ba42d4240"
+        },
+        {
+          "path": ".codex/agents/knowledge-engineer.md",
+          "sha256": "3ec0d4b92991ce9164575a64a1bcde26e807ea182be6af147549ee3149c10788"
+        },
+        {
+          "path": ".codex/agents/leader.md",
+          "sha256": "903347e4fd5c9fbbd797b7f97db01bc96c83cb5550851db4e7fd7d7a7b26ce02"
+        },
+        {
+          "path": ".codex/agents/solo-developer.md",
+          "sha256": "d71f2200af7ca0d52e930d9a36ccfb42fe2ebe4fe245f181484958599255d195"
+        },
+        {
+          "path": ".codex/agents/test-engineer.md",
+          "sha256": "2cca7fba0372415fa16cd3849d1ebdf692996315eb6c8b105aa770de6e18640f"
+        },
+        {
+          "path": ".codex/assets/devflow.defaults.yaml",
+          "sha256": "8b3c3b89cfb4d4d686ec7b39180db0d48c44c065d249bb1a54a914d2cfbd4a3f"
+        },
+        {
+          "path": ".codex/assets/sub-developer-prompt.md",
+          "sha256": "778407114f340d8061599b2dec32c5c49a1c6d66c58f18755b3b7d13aae7c12d"
+        },
+        {
+          "path": ".codex/assets/workflow-state-template.json",
+          "sha256": "543fac660cf2d706f0ceb9220abd8dd9aee10572b19e4c3cce78b6c54566c91b"
+        },
+        {
+          "path": ".codex/checklists/gate-code-review.md",
+          "sha256": "d13690066ed103f53eeeacac4eca1267999ea4b8601ea6c0c085af14b9aa2fb4"
+        },
+        {
+          "path": ".codex/checklists/gate-task-03.md",
+          "sha256": "d3727c165fceff1a7c28ba45b9a7416642d919d1925fb704a615fa1e417623a1"
+        },
+        {
+          "path": ".codex/rules/architect.mdc",
+          "sha256": "cc026290e80bfaf1268faa525cec58bff98e4ea6aea3bf42afd34bf036ab12fc"
+        },
+        {
+          "path": ".codex/rules/code-review.mdc",
+          "sha256": "917ab84cd5c04cc8bfc0d3f389c076ce0f277790f408d6d443308edb6193f80f"
+        },
+        {
+          "path": ".codex/rules/developer.mdc",
+          "sha256": "d02f3320db38656b659d80ebc7d63b1fb5d5ca5d1a4bf38fea30fb2bbba96b96"
+        },
+        {
+          "path": ".codex/rules/global.mdc",
+          "sha256": "711c2290463fe963bd3e34a57ef14678dacb9e9d01e3acb0e241f6d29fae9f48"
+        },
+        {
+          "path": ".codex/rules/knowledge-engineer.mdc",
+          "sha256": "1c81551ef564a1f0721a111818cd9421cb9969c2ccd526fde1f62116b63b3794"
+        },
+        {
+          "path": ".codex/rules/lang-golang.mdc",
+          "sha256": "824f16ad83f3d7f1052b62cfca5c0ab08646a19bfa4ac97634503c3ebb20b981"
+        },
+        {
+          "path": ".codex/rules/leader.mdc",
+          "sha256": "6517315c036980c0ae10cecc072edb35f2f9de5e4fda7fd8e8d65b0b4768088f"
+        },
+        {
+          "path": ".codex/rules/sql-standard.mdc",
+          "sha256": "8b4f26852b0a624e97e07f8a665c08818c9f94eb2bb6dd6dcc7f77281d88d092"
+        },
+        {
+          "path": ".codex/rules/tester.mdc",
+          "sha256": "f51f1916e3cad64879f45ca88f23949e5d1a3e4c4d5f2659539f225bc6c65b80"
+        },
+        {
+          "path": ".codex/runtime/start-workflow.md",
+          "sha256": "c73c773e2677c7758b78502e0bf7392be231dc45c86a36762bee0a5088b58632"
+        },
+        {
+          "path": ".codex/runtime/workflow-state-spec.md",
+          "sha256": "4837871d77dc18f46e04cdfa1b439951d0c5162419b2902f61ef54b72ef0cce4"
+        },
+        {
+          "path": ".codex/skills/devflow-codex/SKILL.md",
+          "sha256": "6abd3a958a90e91ff04749c09cc15ad9740c40705e0470f760af77d16cd8ba7a"
+        },
+        {
+          "path": ".codex/skills/knowledge-distillation/SKILL.md",
+          "sha256": "b64919e396ca0f7c55793bdfe3c30bb14db0cf07dbc4e104e3e445cdeda28741"
+        },
+        {
+          "path": ".codex/skills/superpowers/brainstorming/SKILL.md",
+          "sha256": "d0731fa63f0b67b7712baca34772f5d47abfa05980b07b03c16ba8a380cda775"
+        },
+        {
+          "path": ".codex/skills/superpowers/brainstorming/scripts/frame-template.html",
+          "sha256": "fb22ba9d47f3b83b56e0a95d52a3c2727db03b0d4365078d92c850293a62457b"
+        },
+        {
+          "path": ".codex/skills/superpowers/brainstorming/scripts/helper.js",
+          "sha256": "e763d82f32b4ebb320be2f0d08449d3e5a0585778edf5c407c1fdab3f39976a5"
+        },
+        {
+          "path": ".codex/skills/superpowers/brainstorming/scripts/server.cjs",
+          "sha256": "df2953886eec4c5b6120214f10f5bee5d126425de603b02596d295d1637a1aaf"
+        },
+        {
+          "path": ".codex/skills/superpowers/brainstorming/scripts/start-server.sh",
+          "sha256": "954498e4d4919ee573026fdda262dcefcc52d54f30b52e59b38d31ed0c1e68dc"
+        },
+        {
+          "path": ".codex/skills/superpowers/brainstorming/scripts/stop-server.sh",
+          "sha256": "7256ea6c091979fbba38e6b62f63110bd56e70e59b11fc4b4c722e8f04ec695d"
+        },
+        {
+          "path": ".codex/skills/superpowers/brainstorming/spec-document-reviewer-prompt.md",
+          "sha256": "12cb5ed58aef41b8da6fbb505547c71ca3f5658c83b66ca6e556c936308b3189"
+        },
+        {
+          "path": ".codex/skills/superpowers/brainstorming/visual-companion.md",
+          "sha256": "3e774626a9f9791ac1697cf9bfb7e31e205ffa228b5fa4fe4f35d2c0398ebc44"
+        },
+        {
+          "path": ".codex/workflows/devflow.md",
+          "sha256": "7412a4a5379a0d62b897a525a5b8014b64061f69c4b46a7d06322f495df1f1c2"
+        }
+      ]
+    }
+  }
+}

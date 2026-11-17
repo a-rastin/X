@@ -1,5 +1,7 @@
 # INSIGHT progress tracker
 
+[Codex workflow handoff (2026-11-17)](local-run-checkpoint-2026-11-14.md#follow-up-2026-11-17--codex-workflow-handoff): workflow assets and the earlier local-run checkpoint prepared for version control.
+
 [Live workspace timestamp (2026-11-15)](ui-implementation-2026-11-11.md#follow-up-2026-11-15--live-workspace-timestamp): localized Astryx date and time in the authenticated rail; web build and tests pass.
 
 [Sign-in role switch (2026-11-15)](ui-implementation-2026-11-11.md#follow-up-2026-11-15--sign-in-role-switch): Astryx switch replaces role menu; web build, tests and focused browser checks pass.
@@ -45,6 +47,8 @@
 [Apache 2.0 license (2026-11-14)](license-2026-11-14.md): project license and README updated; official license text and whitespace checks pass.
 
 [Follow-up current medications presentation (2026-11-15)](follow-up-bfg-2026-11-13.md#follow-up-2026-11-15--current-medications-presentation): fourth-step UI polished; web build and tests pass.
+
+[Local run checkpoint (2026-11-14)](local-run-checkpoint-2026-11-14.md): committed `b8518be` builds and runs locally at schema `0032`; pre-existing volume auth mismatch resolved without data loss.
 
 [Follow-up B/F/G integration (2026-11-13)](follow-up-bfg-2026-11-13.md): B/F/G complete in the working tree; schema preservation, proposals/signing, archive validation and both browsers pass; H release drill remains open.
 
