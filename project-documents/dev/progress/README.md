@@ -272,6 +272,8 @@ The [clinical disclaimer presentation (2026-10-29)](s05.md#follow-up-2026-10-29-
 
 [Registration C-SSRS Yes/No (issue 12)](../../../issues/issue-12.md) is implemented; Chromium passed and Firefox remains pending ([S11 handoff](s11.md#follow-up-2026-10-28--registration-c-ssrs-yesno-implementation-issue-12)).
 
+The [registration segmented controls (2026-11-17)](s07.md#follow-up-2026-11-17--registration-segmented-controls) replace the Sex and Clinical status radios; build, web tests and desktop preview checks passed.
+
 ## Reading and updating progress
 
 [Discard button presentation (issue 11)](../../../issues/issue-11.md) is implemented; browser verification remains pending ([S07 handoff](s07.md#follow-up-2026-10-28--discard-button-presentation-implementation)).

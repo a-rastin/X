@@ -1,4 +1,6 @@
 import { useLanguage } from "../../shared/i18n";
+import { Field } from "@astryxdesign/core/Field";
+import { SegmentedControl, SegmentedControlItem } from "@astryxdesign/core/SegmentedControl";
 /* Demographics registration form (S06, plan.md §2.2, FR-10).
  *
  * Physician-only: administrators see a denial (no create button), matching
@@ -30,9 +32,9 @@ const EMPTY: DemographicsFields = {
   givenName: "",
   familyName: "",
   identifier: "",
-  sex: "",
+  sex: "M",
   birthYear: "",
-  clinicalStatus: "",
+  clinicalStatus: "first_time",
   phone: "",
 };
 
@@ -58,7 +60,7 @@ export function RegistrationPage() {
   return <RegistrationForm />;
 }
 
-function RegistrationForm() {
+export function RegistrationForm() {
   const { t, text, errorText } = useLanguage();
   const { sessionExpired } = useAuth();
   const [registrationYear, setRegistrationYear] = useState<number>();
@@ -316,50 +318,17 @@ function RegistrationForm() {
                 </p>
               )}
             </div>
-            <fieldset
-              className="xi-field"
-              aria-describedby={sexError ? "sex-error" : undefined}
-            >
-              <legend className="xi-label">
-                {t("sex")}{" "}
-                <span className="nc-required" aria-label={t("nc.required")}>
-                  *
-                </span>
-              </legend>
-              <div
-                className="xi-radio-group"
-                role="radiogroup"
-                aria-label={t("sex")}
-              >
-                <label htmlFor="reg-sex-m">
-                  <input
-                    id="reg-sex-m"
-                    type="radio"
-                    name="sex"
-                    value="M"
-                    checked={fields.sex === "M"}
-                    onChange={() => setField("sex", "M")}
-                  />
-                  M
-                </label>
-                <label htmlFor="reg-sex-f">
-                  <input
-                    id="reg-sex-f"
-                    type="radio"
-                    name="sex"
-                    value="F"
-                    checked={fields.sex === "F"}
-                    onChange={() => setField("sex", "F")}
-                  />
-                  F
-                </label>
-              </div>
+            <Field className="xi-field" label={t("sex")} inputID="reg-sex" labelID="reg-sex-label" isGroupLabel isRequired>
+              <SegmentedControl id="reg-sex" aria-labelledby="reg-sex-label" aria-describedby={sexError ? "sex-error" : undefined} label={t("sex")} value={fields.sex} onChange={(value) => setField("sex", value)}>
+                <SegmentedControlItem value="M" label="M" />
+                <SegmentedControlItem value="F" label="F" />
+              </SegmentedControl>
               {sexError !== null && (
                 <p className="xi-field-error" id="sex-error">
                   {errorText(sexError)}
                 </p>
               )}
-            </fieldset>
+            </Field>
             <div className="xi-field">
               <label className="xi-label" htmlFor="reg-birth-year">
                 {t("nc.birthYear")}{" "}
@@ -399,52 +368,17 @@ function RegistrationForm() {
                 </p>
               )}
             </div>
-            <fieldset
-              className="xi-field"
-              aria-describedby={
-                clinicalStatusError ? "clinicalStatus-error" : undefined
-              }
-            >
-              <legend className="xi-label">
-                {t("clinicalStatus")}{" "}
-                <span className="nc-required" aria-label={t("nc.required")}>
-                  *
-                </span>
-              </legend>
-              <div
-                className="xi-radio-group"
-                role="radiogroup"
-                aria-label={t("clinicalStatus")}
-              >
-                <label htmlFor="reg-status-first">
-                  <input
-                    id="reg-status-first"
-                    type="radio"
-                    name="clinical_status"
-                    value="first_time"
-                    checked={fields.clinicalStatus === "first_time"}
-                    onChange={() => setField("clinicalStatus", "first_time")}
-                  />
-                  {t("newCase")}
-                </label>
-                <label htmlFor="reg-status-established">
-                  <input
-                    id="reg-status-established"
-                    type="radio"
-                    name="clinical_status"
-                    value="established"
-                    checked={fields.clinicalStatus === "established"}
-                    onChange={() => setField("clinicalStatus", "established")}
-                  />
-                  {t("knownCase")}
-                </label>
-              </div>
+            <Field className="xi-field" label={t("clinicalStatus")} inputID="reg-status" labelID="reg-status-label" isGroupLabel isRequired>
+              <SegmentedControl id="reg-status" aria-labelledby="reg-status-label" aria-describedby={clinicalStatusError ? "clinicalStatus-error" : undefined} label={t("clinicalStatus")} value={fields.clinicalStatus} onChange={(value) => setField("clinicalStatus", value)}>
+                <SegmentedControlItem value="first_time" label={t("newCase")} />
+                <SegmentedControlItem value="established" label={t("knownCase")} />
+              </SegmentedControl>
               {clinicalStatusError !== null && (
                 <p className="xi-field-error" id="clinicalStatus-error">
                   {errorText(clinicalStatusError)}
                 </p>
               )}
-            </fieldset>
+            </Field>
             <div className="xi-field">
               <label className="xi-label" htmlFor="reg-phone">
                 {t("optionalPhone")}
