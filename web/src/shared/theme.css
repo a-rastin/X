@@ -1183,22 +1183,9 @@ code {
   margin: 0 0 var(--space-6);
 }
 
-.xi-auth-role {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-3);
-  padding: var(--space-3) var(--space-4);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  background: var(--surface-1);
-  color: var(--ink-muted);
-  font-size: 14px;
-}
-
-.xi-auth-role-active {
-  color: var(--ink);
-  font-weight: 600;
+.xi-role-selector { width: 15rem; max-width: 100%; margin-bottom: var(--space-4); }
+@media (max-width: 639px) {
+  .xi-role-selector { width: 100%; }
 }
 
 .xi-auth-workflow {

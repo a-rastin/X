@@ -113,3 +113,7 @@ continuously in the viewer's local time zone and matching the English or Persian
 interface language. Sign-in remains unchanged. The web production build and 23
 web tests passed; the existing Vite large-chunk advisory remains. Browser
 verification was not run. No new rationale entry was needed for this requested UI.
+
+## Follow-up 2026-11-17 — sign-in segmented control
+
+Replaced the role switch with an Astryx segmented control, preserving the role submitted to authentication and English/Persian labels. The 1280px preview exposed clipped text, corrected before integration; mobile layout fills the field. The web build, 23 web tests, and two mocked Chromium role sign-in tests passed. Astryx doctor reported no failures and a CLI PATH warning.

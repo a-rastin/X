@@ -56,7 +56,7 @@ export async function loginAs(
   password: string,
 ): Promise<void> {
   await page.goto("/");
-  await page.getByLabel("Administrator", { exact: true }).setChecked(role === "admin");
+  await page.getByRole("radio", { name: role === "admin" ? "Admin" : "Physician", exact: true }).click();
   await page.getByLabel("Username").fill(username);
   await page.getByLabel("Password").fill(password);
   await page.getByRole("button", { name: "Sign in" }).click();

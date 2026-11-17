@@ -1,5 +1,7 @@
 # INSIGHT progress tracker
 
+[Sign-in segmented control (2026-11-17)](ui-implementation-2026-11-11.md#follow-up-2026-11-17--sign-in-segmented-control): desktop preview and mobile layout checked; role submission tests pass.
+
 [Codex workflow handoff (2026-11-17)](local-run-checkpoint-2026-11-14.md#follow-up-2026-11-17--codex-workflow-handoff): workflow assets and the earlier local-run checkpoint prepared for version control.
 
 [Live workspace timestamp (2026-11-15)](ui-implementation-2026-11-11.md#follow-up-2026-11-15--live-workspace-timestamp): localized Astryx date and time in the authenticated rail; web build and tests pass.
