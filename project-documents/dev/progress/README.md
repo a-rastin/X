@@ -1,5 +1,7 @@
 # INSIGHT progress tracker
 
+[Linked reasoning explorer (2026-11-18)](bayesian-linked-explorer-2026-11-18.md) implements step 6 with active pathways, structured comparisons, and local reset.
+
 [Live reasoning sandbox (2026-11-18)](bayesian-live-sandbox-2026-11-18.md) implements step 5. Both proposal workflows share live controls and a fixed patient baseline.
 
 [Bayesian reasoning charts (2026-11-18)](bayesian-charts-2026-11-18.md) implements step 4. The comparison and tornado passed Chromium and Firefox checks with real simulation responses.

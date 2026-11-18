@@ -63,7 +63,7 @@ type Intent = {
 
 export function useReasoningSimulation(encounterId: string, proposalId: string, workflow: Workflow) {
   const intent = useRef<Intent>({ changes: [], selected: null, epoch: 0, delay: 0 });
-  const [wanted, setWanted] = useState(intent.current);
+  const [wanted, setWanted] = useState<Intent | null>(intent.current);
   const baseline = useRef<SimulationResponse | null>(null);
   const selected = useRef<OralTreatmentId | null>(null);
   const controller = useRef<AbortController | null>(null);
@@ -80,6 +80,7 @@ export function useReasoningSimulation(encounterId: string, proposalId: string, 
   }
 
   useEffect(() => {
+    if (!wanted) return;
     const active = new AbortController();
     controller.current = active;
     const request: SimulationRequest = {
@@ -114,7 +115,7 @@ export function useReasoningSimulation(encounterId: string, proposalId: string, 
   }, [encounterId, proposalId, workflow, wanted]);
 
   return {
-    result, status, changes: wanted.changes,
+    result, status, changes: wanted?.changes ?? [],
     setChange(id: string, change: Change | null, continuous = false) {
       const changes = intent.current.changes.filter((existing) => changeId(existing) !== id);
       if (change) changes.push(change);
@@ -124,5 +125,17 @@ export function useReasoningSimulation(encounterId: string, proposalId: string, 
       if (selected.current !== id) update(intent.current.changes, id);
     },
     retry() { update(intent.current.changes); },
+    reset() {
+      const initial = baseline.current;
+      if (!initial) return;
+      selected.current = initial.identity.selected_treatment_id;
+      intent.current = {
+        changes: [], selected: selected.current, epoch: intent.current.epoch + 1, delay: 0,
+      };
+      controller.current?.abort();
+      setWanted(null);
+      setResult(initial);
+      setStatus("ready");
+    },
   };
 }

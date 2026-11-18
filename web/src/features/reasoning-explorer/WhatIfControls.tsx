@@ -19,6 +19,21 @@ const sourceLabels: Record<string, string> = {
   "bmi.manual_category": "bmiCategory",
 };
 
+export function simulationControlLabel(control: Control, label: (key: string) => string) {
+  const id = control.control_id;
+  if (control.kind === "panss") return `PANSS ${id}`;
+  if (control.kind === "cssrs") {
+    const item = id.split("_")[1].slice(1);
+    return item === "4" || item === "5" ? label(`cssrs_${item}`) : `C-SSRS ${item}`;
+  }
+  return label(sourceLabels[id] ?? id.replace(/\.manual$/, "").split(".").at(-1)!);
+}
+
+export function usesAutomaticValue(control: Control) {
+  return control.control_id === "bmi.source" ||
+    (control.kind === "nullable_boolean" && !control.control_id.startsWith("branches."));
+}
+
 const conditionFactors: Record<string, FactorId> = {
   "conditions.hepatic_failure.manual": "Hepatic_Failure",
   "conditions.renal_failure.manual": "Renal_Failure",
@@ -36,10 +51,12 @@ function asChange(control: Control, value: ControlValue): Change {
     : { kind, control_id, value }) as Change;
 }
 
-export function WhatIfControls({ result, changes, onChange }: {
+export function WhatIfControls({ result, changes, onChange, highlightedSources, selectedFactor }: {
   result: SimulationResponse;
   changes: Change[];
   onChange: (id: string, change: Change | null, continuous?: boolean) => void;
+  highlightedSources: ReadonlySet<string>;
+  selectedFactor: FactorId | null;
 }) {
   const heading = useId();
   const { language } = useLanguage();
@@ -63,8 +80,8 @@ export function WhatIfControls({ result, changes, onChange }: {
   const automatic = en ? "Automatic" : "خودکار";
   const revert = en ? "Revert" : "بازگردانی";
   const effective = en ? "Evaluated" : "ارزیابی‌شده";
-  const isAutomatic = (control: Control) => control.control_id === "bmi.source" ||
-    (control.kind === "nullable_boolean" && !control.control_id.startsWith("branches."));
+  const highlighted = (control: Control) => highlightedSources.has(control.source_path) ||
+    conditionFactors[control.control_id] === selectedFactor;
 
   function prompt(control: Control, instrument: "panss" | "cssrs") {
     const definition = instrument === "panss" ? panss : cssrs;
@@ -76,13 +93,12 @@ export function WhatIfControls({ result, changes, onChange }: {
   }
 
   function controlLabel(control: Control) {
-    const id = control.control_id;
     if (control.kind === "panss" || control.kind === "cssrs") return prompt(control, control.kind);
-    return label(sourceLabels[id] ?? id.replace(/\.manual$/, "").split(".").at(-1)!);
+    return simulationControlLabel(control, label);
   }
 
   function valueLabel(value: ControlValue, control: Control) {
-    if (value === null) return isAutomatic(control) ? automatic : chart.unrecorded;
+    if (value === null) return usesAutomaticValue(control) ? automatic : chart.unrecorded;
     if (typeof value === "boolean") return value ? chart.yes : chart.no;
     if (typeof value === "number") return chart.count(value);
     return value === "unknown" ? label("unknown") : label(value);
@@ -119,8 +135,10 @@ export function WhatIfControls({ result, changes, onChange }: {
       <Stack gap={2} key={id} align="start" style={{ width: "100%", minWidth: 0 }}>
         <Stack gap={1} width="100%">
           <label htmlFor={fieldId}>{name}</label>
+          {highlighted(control) && <strong id={`${fieldId}-linked`}>{en ? "Linked factor" : "عامل مرتبط"}</strong>}
           <select id={fieldId} className="xi-input" value={choiceIndex < 0 ? "" : choiceIndex}
             aria-invalid={issue || undefined}
+            aria-describedby={highlighted(control) ? `${fieldId}-linked` : undefined}
             onChange={(event) => choose(choices[Number(event.target.value)])}>
             {choiceIndex < 0 && <option value="" disabled>{valueLabel(value, control)}</option>}
             {choices.map((choice, index) => <option key={index} value={index}>{valueLabel(choice, control)}</option>)}
@@ -133,7 +151,7 @@ export function WhatIfControls({ result, changes, onChange }: {
             onChange={(next: number) => choose(next, true)} />
         )}
         <small>{chart.patient} · {valueLabel(control.patient_value, control)}</small>
-        {isAutomatic(control) && (
+        {usesAutomaticValue(control) && (
           <small>
             {id === "bmi.source"
               ? en ? "Automatic uses recorded height and weight." : "حالت خودکار از قد و وزن ثبت‌شده استفاده می‌کند."
@@ -156,7 +174,7 @@ export function WhatIfControls({ result, changes, onChange }: {
   const group = (title: string, includes: (control: Control) => boolean, open = false) => {
     const controls = active.filter(includes);
     return controls.length > 0 && (
-      <details open={open || undefined}>
+      <details open={open || controls.some(highlighted) || undefined}>
         <summary>{title}</summary>
         <Stack gap={3} paddingBlockStart={3}>{controls.map((control) => renderControl(control))}</Stack>
       </details>

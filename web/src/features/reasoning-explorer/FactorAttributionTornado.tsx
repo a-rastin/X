@@ -111,7 +111,6 @@ export function FactorAttributionTornado({
   const headingId = useId();
   const listId = useId();
   const [expanded, setExpanded] = useState(false);
-  const [focusedFactor, setFocusedFactor] = useState<FactorId | null>(null);
 
   // Both payloads use the pinned parent order. Stable sorting preserves it on ties.
   const patient = new Map(attribution?.patient?.contributions.map((factor) => [factor.factor_id, factor.contribution]));
@@ -173,7 +172,7 @@ export function FactorAttributionTornado({
             </Stack>
             <ul id={listId} role="list" style={{ listStyle: "none", padding: 0, margin: 0 }}>
               {(expanded ? ordered : visible).map((row) => {
-                const showDetails = (focusedFactor ?? selectedFactorId) === row.id;
+                const showDetails = row.id === selectedFactorId;
                 const detailId = `${listId}-${row.id}`;
                 return (
                   <li key={row.id} style={{ borderBlockStart: "1px solid var(--border)" }}>
@@ -183,7 +182,7 @@ export function FactorAttributionTornado({
                           style={{ whiteSpace: "normal", textAlign: "start", height: "auto", minHeight: "2em" }}
                           label={label.factor(row.id)} aria-pressed={row.id === selectedFactorId}
                           aria-describedby={showDetails ? detailId : undefined}
-                          onFocus={() => setFocusedFactor(row.id)} onBlur={() => setFocusedFactor(null)}
+                          onFocus={() => onSelectFactor(row.id)}
                           onClick={() => onSelectFactor(row.id)} />
                       </Stack>
                       <ContributionMarks patient={row.patient} scenario={row.scenario} extent={extent} />
