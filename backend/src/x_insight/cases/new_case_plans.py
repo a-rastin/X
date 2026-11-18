@@ -114,6 +114,31 @@ def require_complete(state: new_case.NewCaseState) -> None:
         )
 
 
+def load_pinned_model(session: Session, model_version_id: str) -> bytes:
+    source_bytes = session.execute(
+        text("SELECT source_bytes FROM model_network_versions WHERE id=:id"),
+        {"id": uuid.UUID(model_version_id)},
+    ).scalar_one_or_none()
+    if source_bytes is None:
+        raise contracts.ContractError(
+            409, "NEW_CASE_MODEL_UNAVAILABLE", "The pinned new-case model is unavailable."
+        )
+    return bytes(source_bytes)
+
+
+def proposal_sections(state: new_case.NewCaseState, ranking: dict[str, Any]) -> dict[str, Any]:
+    return {
+        **state["sections"],
+        "drug_interactions": {
+            "status": "available" if ranking["interactions"] is not None else "no_candidates"
+        },
+        "antipsychotic_candidates": {
+            "status": ranking["status"],
+            "candidates": ranking["candidates"],
+        },
+    }
+
+
 def generate_proposal(
     session: Session,
     author: dict[str, Any],
@@ -143,18 +168,13 @@ def generate_proposal(
     raw = state["raw"]
     pins = raw["new_case"]["content_pins"]
     lai = raw["new_case"]["considerations"]["lai"]
-    model = None
-    if not lai:
-        model = session.execute(
-            text("SELECT source_bytes FROM model_network_versions WHERE id=:id"),
-            {"id": uuid.UUID(pins["model_version_id"])},
-        ).scalar_one()
+    model = None if lai else load_pinned_model(session, pins["model_version_id"])
     try:
         ranking = calculate_candidates(
             session.get_bind(),
             lai=lai,
             evidence=state["evidence"],
-            model_bytes=bytes(model) if model is not None else None,
+            model_bytes=model,
             model_sha256=pins["model_sha256"],
             formulations=content["antipsychotic-formulations.json"]["entries"],
             unavailable=frozenset(user["unavailable_antipsychotics"]),
@@ -187,16 +207,7 @@ def generate_proposal(
         "bn_evidence": state["evidence"],
         "evidence_sources": state["evidence_sources"],
         "ranking": ranking,
-        "sections": {
-            **state["sections"],
-            "drug_interactions": {
-                "status": "available" if ranking["interactions"] is not None else "no_candidates"
-            },
-            "antipsychotic_candidates": {
-                "status": ranking["status"],
-                "candidates": ranking["candidates"],
-            },
-        },
+        "sections": proposal_sections(state, ranking),
         "candidate_interactions": ranking["interactions"],
         "availability_snapshot": {
             "revision": user["revision"],

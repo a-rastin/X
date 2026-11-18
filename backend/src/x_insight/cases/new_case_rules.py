@@ -71,6 +71,27 @@ class Section:
     reasons: tuple[str, ...] = ()
 
 
+CARE_SETTING_SOURCES = {
+    "self_harm": "new_case.harm.self",
+    "other_harm": "new_case.harm.others",
+    "cssrs_item_4": "cssrs.answers.css_i4_recent",
+    "cssrs_item_5": "cssrs.answers.css_i5_recent",
+    "basic_needs_unmet": "new_case.considerations.basic_needs_met",
+    "needs_observation": "new_case.considerations.needs_observation",
+}
+
+# Source fields for independent sections that the explorer's controls can change.
+SECTION_SOURCES = {
+    "antidepressant": ("new_case.psychiatric.present", "new_case.psychiatric.conditions"),
+    "smoking_cessation": ("new_case.tobacco",),
+    "breastfeeding": ("new_case.breastfeeding",),
+    "contraception_counseling": ("new_case.breastfeeding",),
+}
+PREGNANCY_SECTIONS = frozenset(
+    ("pregnancy", "contraception_recommendation", "baseline_tests", "contraception_counseling")
+)
+
+
 def plan_sections(inputs: PlanInputs) -> dict[str, Section]:
     if (
         inputs.sex not in ("female", "male")

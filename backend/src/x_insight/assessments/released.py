@@ -11,6 +11,7 @@ approval is recorded for these experimental releases.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -44,14 +45,18 @@ def get_released_definition(assessment_type: str) -> dict[str, Any]:
     Raises :class:`KeyError` for unknown types and
     :class:`DefinitionError` for invalid payloads.
     """
-    if assessment_type not in RELEASED_TYPES:
-        raise KeyError(assessment_type)
-    path = assessments_dir() / _RELEASED_FILES[assessment_type]
-    with open(path, encoding="utf-8") as handle:
-        raw = json.load(handle)
-    definition = load_definition(raw)
+    return get_released_snapshot(assessment_type)[0]
+
+
+def get_released_snapshot(
+    assessment_type: str, *, directory: Path | None = None
+) -> tuple[dict[str, Any], str]:
+    """Return the definition and SHA-256 of the exact bytes parsed."""
+    root = assessments_dir() if directory is None else directory
+    raw = (root / _RELEASED_FILES[assessment_type]).read_bytes()
+    definition = load_definition(json.loads(raw))
     if definition["id"] != assessment_type:
         raise DefinitionError(f"definition id {definition['id']!r} mismatches {assessment_type!r}")
     if assessment_type == "cssrs":
         require_live_cssrs_definition(definition)
-    return definition
+    return definition, hashlib.sha256(raw).hexdigest()

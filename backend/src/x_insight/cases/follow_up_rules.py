@@ -21,6 +21,48 @@ LABS = [
     "HbA1c",
 ]
 
+# Graph source paths keyed by the reasons actually emitted in decision().
+# Branch answers are supplied by reached_questions, which also covers pending answers.
+DECISION_REASON_SOURCES = {
+    "no_main": ("treatment.main_catalog_drug_id", "medications.entries"),
+    "current_lai": ("treatment.formulation",),
+    "incomplete": ("treatment.formulation", "considerations.recovery"),
+    "controlled_effect_terminal": ("considerations.recovery",),
+    "switch_needed_required": ("considerations.recovery",),
+    "n4_n8_n11": ("considerations.recovery", "considerations.lai_preference"),
+    "n4_n8": ("considerations.recovery", "considerations.lai_preference"),
+    "n4_n5": ("considerations.recovery",),
+    "treatment_resistant_required": ("considerations.recovery",),
+    "n23_n24": ("considerations.recovery",),
+    "n25_n11_2": ("considerations.recovery", "considerations.adherence"),
+    "n25_n26": ("considerations.recovery", "considerations.adherence"),
+    "n21_n22": ("effects.tardive_dyskinesia",),
+    "n15_n17": ("effects.acute_dystonia",),
+    "dystonia_response_required": ("effects.acute_dystonia",),
+}
+
+CARE_SETTING_SOURCES = {
+    "self_harm": "follow_up.harm.self",
+    "other_harm": "follow_up.harm.others",
+    "cssrs_4": "cssrs.answers.css_i4_recent",
+    "cssrs_5": "cssrs.answers.css_i5_recent",
+    "basic_needs_unmet": "follow_up.considerations.basic_needs_met",
+    "observation": "follow_up.considerations.needs_observation",
+}
+
+# Source fields for independent sections that the explorer's controls can change.
+SECTION_SOURCES = {
+    "antidepressant": (
+        "follow_up.history.psychiatric.present",
+        "follow_up.history.psychiatric.conditions",
+        "follow_up.history.current_antidepressant",
+    ),
+    "smoking_cessation": ("follow_up.history.tobacco",),
+    "breastfeeding": ("follow_up.history.breastfeeding",),
+    "contraception": ("follow_up.history.breastfeeding",),
+}
+PREGNANCY_SECTIONS = frozenset(("pregnancy", "routine_labs", "contraception"))
+
 
 def decision(
     state: dict[str, Any], equivalences: list[dict[str, str]], formulations: list[dict[str, Any]]

@@ -1,5 +1,7 @@
 # INSIGHT progress tracker
 
+[Frozen proposal evaluation and active pathways (2026-11-18)](bayesian-pathways-2026-11-18.md) implements step 2 for New case and follow-up.
+
 [Oral Bayesian attribution (2026-11-18)](bayesian-attribution-2026-11-18.md) implements step 1, with exact root-prior Shapley attribution and verified ranking parity.
 
 [Sign-in segmented control (2026-11-17)](ui-implementation-2026-11-11.md#follow-up-2026-11-17--sign-in-segmented-control): desktop preview and mobile layout checked; role submission tests pass.

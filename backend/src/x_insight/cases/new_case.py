@@ -11,7 +11,7 @@ from decimal import Decimal, InvalidOperation
 from functools import lru_cache
 from typing import Any, Literal, NoReturn, NotRequired, TypedDict
 
-from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, ValidationInfo, field_validator
 from sqlalchemy import select, text, update
 from sqlalchemy.orm import Session
 
@@ -118,7 +118,12 @@ def clinical_content() -> dict[str, Any]:
     return deepcopy(_content(str(content_directory())))
 
 
-def resolve_pins(session: Session, content: dict[str, Any]) -> dict[str, Any]:
+def resolve_pins(
+    session: Session,
+    content: dict[str, Any],
+    *,
+    definitions: dict[str, dict[str, Any]] | None = None,
+) -> dict[str, Any]:
     manifest = content["manifest"]
     model = (
         session.execute(
@@ -160,7 +165,10 @@ def resolve_pins(session: Session, content: dict[str, Any]) -> dict[str, Any]:
             "Install the pinned new-case model and Lexicomp release.",
         )
     versions = {
-        name: get_released_definition(name)["version"] for name in ("diagnosis", "panss", "cssrs")
+        name: (definitions[name] if definitions is not None else get_released_definition(name))[
+            "version"
+        ]
+        for name in ("diagnosis", "panss", "cssrs")
     }
     if versions != manifest["assessment_versions"]:
         raise contracts.ContractError(
@@ -230,10 +238,14 @@ class Labs(StrictModel):
 
     @field_validator("values", mode="before")
     @classmethod
-    def measurements(cls, value: Any) -> dict[str, str | None]:
+    def measurements(cls, value: Any, info: ValidationInfo) -> dict[str, str | None]:
         if not isinstance(value, dict):
             raise ValueError("Lab values must be an object")
-        fields = clinical_content()["labs.json"]["fields"]
+        fields = (
+            info.context["lab_fields"]
+            if info.context is not None
+            else clinical_content()["labs.json"]["fields"]
+        )
         if set(value) - set(fields):
             raise ValueError("Unknown laboratory field")
         return {
@@ -312,9 +324,17 @@ def fresh_draft(registration_year: int, pins: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def structural_draft(draft: dict[str, Any]) -> dict[str, Any]:
+def structural_draft(
+    draft: dict[str, Any],
+    *,
+    content: dict[str, Any] | None = None,
+    definitions: dict[str, dict[str, Any]] | None = None,
+) -> dict[str, Any]:
     try:
-        state = NewCase.model_validate(draft.get("new_case"))
+        state = NewCase.model_validate(
+            draft.get("new_case"),
+            context={"lab_fields": content["labs.json"]["fields"]} if content is not None else None,
+        )
     except ValidationError as exc:
         raise contracts.ContractError(
             422,
@@ -341,7 +361,7 @@ def structural_draft(draft: dict[str, Any]) -> dict[str, Any]:
         ):
             fail(name, "Invalid assessment section")
         answers = section["answers"]
-        definition = get_released_definition(name)
+        definition = definitions[name] if definitions is not None else get_released_definition(name)
         item_ids = {item["id"] for item in definition["items"]}
         if set(answers) - item_ids:
             fail(name, "Unknown assessment answer")
@@ -415,8 +435,14 @@ def prepare_autosave(
     return candidate
 
 
-def validate_pins(session: Session, draft: dict[str, Any], content: dict[str, Any]) -> None:
-    if draft["new_case"]["content_pins"] != resolve_pins(session, content):
+def validate_pins(
+    session: Session,
+    draft: dict[str, Any],
+    content: dict[str, Any],
+    *,
+    definitions: dict[str, dict[str, Any]] | None = None,
+) -> None:
+    if draft["new_case"]["content_pins"] != resolve_pins(session, content, definitions=definitions):
         fail(
             "new_case.content_pins",
             "Pinned content identity does not match installed immutable content",
@@ -574,7 +600,13 @@ def _critical(value: Decimal, bounds: dict[str, Any]) -> bool:
     )
 
 
-def assertion_valid(assertion: Any, answers: dict[str, Any], author_id: str) -> bool:
+def assertion_valid(
+    assertion: Any,
+    answers: dict[str, Any],
+    author_id: str,
+    *,
+    definition_version: str | None = None,
+) -> bool:
     if not isinstance(assertion, dict) or set(assertion) != {
         "status",
         "actor_id",
@@ -588,7 +620,7 @@ def assertion_valid(assertion: Any, answers: dict[str, Any], author_id: str) -> 
         assertion["status"] != "definite_diagnosis"
         or assertion["actor_id"] != author_id
         or assertion["answers_hash"] != diagnosis.answers_hash(answers)
-        or assertion["definition_version"] != diagnosis.definition_version()
+        or assertion["definition_version"] != (definition_version or diagnosis.definition_version())
         or type(assertion["revision"]) is not int
         or assertion["revision"] < 1
         or not isinstance(assertion["recorded_at"], str)
@@ -611,10 +643,23 @@ def evaluate_new_case(
         raise contracts.ContractError(
             409, "WRONG_WORKFLOW", "This encounter is not a new-case registration."
         )
-    draft = structural_draft(draft_data)
+    return evaluate_frozen_inputs(
+        patient, str(encounter["author_id"]), draft_data, clinical_content
+    )
+
+
+def evaluate_frozen_inputs(
+    demographics: dict[str, Any],
+    author_id: str,
+    draft_data: dict[str, Any],
+    content: dict[str, Any],
+    *,
+    definitions: dict[str, dict[str, Any]] | None = None,
+) -> NewCaseState:
+    draft = structural_draft(draft_data, content=content, definitions=definitions)
     raw = draft["new_case"]
-    sex = patient["sex"]
-    age = age_at_registration(patient.get("birth_year"), raw["registration_year"])
+    sex = demographics["sex"]
+    age = age_at_registration(demographics.get("birth_year"), raw["registration_year"])
     errors: dict[str, list[FieldError]] = {name: [] for name in STEPS}
 
     def required(step: str, field: str, code: str) -> None:
@@ -622,14 +667,25 @@ def evaluate_new_case(
             {"field": field, "code": code, "message_key": "new_case.errors." + code}
         )
 
-    diagnosis_evaluation = diagnosis.evaluate_answers(draft["diagnosis"]["answers"])
+    diagnosis_definition = definitions["diagnosis"] if definitions is not None else None
+    diagnosis_answers = draft["diagnosis"]["answers"]
+    diagnosis_evaluation = (
+        diagnosis.evaluate_answers(diagnosis_answers)
+        if diagnosis_definition is None
+        else evaluate(diagnosis_definition, diagnosis_answers)
+    )
     positive = (
         diagnosis_evaluation.get("status") == "complete"
         and diagnosis_evaluation.get("findings", {}).get("overall") == "criteria_satisfied"
     )
     assertion = draft["diagnosis"].get("new_case_assertion")
     asserted = assertion_valid(
-        assertion, draft["diagnosis"]["answers"], str(encounter["author_id"])
+        assertion,
+        diagnosis_answers,
+        author_id,
+        definition_version=diagnosis_definition["version"]
+        if diagnosis_definition is not None
+        else None,
     )
     if not positive and not asserted:
         required("diagnosis", "diagnosis.answers", "diagnosis_not_positive")
@@ -649,7 +705,7 @@ def evaluate_new_case(
     findings: dict[str, list[str]] = {name: [] for name in (*CONDITIONS, "orthostatic_risk")}
     warnings = []
     for name, value in measurements.items():
-        spec = clinical_content["labs.json"]["fields"][name]
+        spec = content["labs.json"]["fields"][name]
         reference = spec["reference"].get(sex, spec["reference"])
         abnormal = _outside(value, reference)
         if abnormal:
@@ -681,7 +737,7 @@ def evaluate_new_case(
     if raw["heart_failure"]:
         findings["orthostatic_risk"].append("heart_failure")
     medication_ids = {entry["catalog_drug_id"] for entry in draft["medications"]["entries"]}
-    for entry in clinical_content["blood-pressure-lowering-drugs.json"]["entries"]:
+    for entry in content["blood-pressure-lowering-drugs.json"]["entries"]:
         if entry["catalog_drug_id"] in medication_ids:
             findings["orthostatic_risk"].append(entry["catalog_drug_id"])
     flags = {}
@@ -700,13 +756,13 @@ def evaluate_new_case(
         triggering_findings = []
         for reason in reasons:
             if reason in measurements:
-                spec = clinical_content["labs.json"]["fields"][reason]
+                spec = content["labs.json"]["fields"][reason]
                 triggering_findings.append(
                     {
                         "field": reason,
                         "value": str(measurements[reason]),
                         "unit": spec["unit"],
-                        "source": clinical_content["labs.json"]["sources"][spec["source"]],
+                        "source": content["labs.json"]["sources"][spec["source"]],
                     }
                 )
             elif reason == "heart_failure":
@@ -714,7 +770,7 @@ def evaluate_new_case(
             else:
                 triggering_findings.extend(
                     entry
-                    for entry in clinical_content["blood-pressure-lowering-drugs.json"]["entries"]
+                    for entry in content["blood-pressure-lowering-drugs.json"]["entries"]
                     if entry["catalog_drug_id"] == reason
                 )
         flag["triggering_findings"] = triggering_findings

@@ -10,7 +10,7 @@ from sqlalchemy import insert, select, text, update
 from sqlalchemy.orm import Session
 
 from x_insight import contracts
-from x_insight.assessments.released import get_released_definition
+from x_insight.assessments.released import get_released_snapshot
 from x_insight.cases import encounters, follow_up, follow_up_content, patients, signing, tables
 from x_insight.cases.follow_up_candidates import calculate_candidates
 from x_insight.identity import tables as identity_tables
@@ -39,20 +39,21 @@ SUPPORTED_TERMINALS = frozenset(
 )
 
 
-def verified_inputs(
-    session: Session, draft: dict[str, Any], patient: dict[str, Any], user: dict[str, Any]
-) -> tuple[follow_up.FollowUpState, dict[str, Any], str]:
-    """Resolve exact installed content and hash the saved clinical inputs.
+def resolve_pinned_content(session: Session, draft: dict[str, Any]) -> dict[str, Any]:
+    """Read and verify the immutable model, assessment and interaction sources."""
 
-    Unlike the autosave cache, proposal generation and signing must verify the
-    asset bytes on every operation. The draft's original manifest is authoritative.
-    """
     try:
         content = follow_up_content.load_content()
         pins = draft["follow_up"]["content_pins"]
         manifest = content["manifest"]
-        expected = follow_up.content_pins(content)
-        versions = {name: get_released_definition(name)["version"] for name in ("panss", "cssrs")}
+        directory = follow_up.assessments_dir()
+        snapshots = {
+            name: get_released_snapshot(name, directory=directory) for name in ("panss", "cssrs")
+        }
+        definitions = {name: definition for name, (definition, _) in snapshots.items()}
+        versions = {name: definition["version"] for name, definition in definitions.items()}
+        hashes = {name: digest for name, (_, digest) in snapshots.items()}
+        expected = follow_up.content_pins(content, assessment_hashes=hashes)
         if pins != expected or versions != pins["assessment_versions"]:
             raise ValueError("Content or assessment identity does not match the draft")
         model = (
@@ -110,8 +111,28 @@ def verified_inputs(
             )
             if found != ids:
                 raise ValueError("Medication is absent from the pinned release")
-        state = follow_up.evaluate_state(draft, patient)
-        identity = {"model_version_id": str(model[0]["id"]), "ddi_release_id": str(release["id"])}
+        return {
+            **content,
+            "model_version_id": str(model[0]["id"]),
+            "model_bytes": bytes(model[0]["source_bytes"]),
+            "ddi_release_id": str(release["id"]),
+            "definitions": definitions,
+        }
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        raise contracts.ContractError(
+            409, "FOLLOW_UP_CONTENT_UNAVAILABLE", "The pinned follow-up content is unavailable."
+        ) from exc
+
+
+def verified_inputs(
+    session: Session, draft: dict[str, Any], patient: dict[str, Any], user: dict[str, Any]
+) -> tuple[follow_up.FollowUpState, dict[str, Any], str]:
+    """Resolve exact installed content and hash the saved clinical inputs."""
+    content = resolve_pinned_content(session, draft)
+    try:
+        state = follow_up.evaluate_state(
+            draft, patient, assets=content["assets"], definitions=content["definitions"]
+        )
         fingerprint = {
             "raw_inputs": state["raw"],
             "demographics": {
@@ -129,21 +150,17 @@ def verified_inputs(
                     "sections",
                 )
             },
-            "content_pins": pins,
-            "installed_content": identity,
-            "assessment_definitions": {
-                name: get_released_definition(name) for name in ("panss", "cssrs")
+            "content_pins": draft["follow_up"]["content_pins"],
+            "installed_content": {
+                key: content[key] for key in ("model_version_id", "ddi_release_id")
             },
+            "assessment_definitions": content["definitions"],
             "availability": {
                 "revision": user["revision"],
                 "selected_ids": sorted(user["unavailable_antipsychotics"]),
             },
         }
-        return (
-            state,
-            {**content, **identity, "fingerprint": fingerprint},
-            contracts.canonical_hash(fingerprint),
-        )
+        return state, {**content, "fingerprint": fingerprint}, contracts.canonical_hash(fingerprint)
     except (OSError, ValueError, KeyError, TypeError) as exc:
         raise contracts.ContractError(
             409, "FOLLOW_UP_CONTENT_UNAVAILABLE", "The pinned follow-up content is unavailable."
@@ -250,21 +267,14 @@ def generate_proposal(
         return safe_proposal(existing)
     pins = state["raw"]["follow_up"]["content_pins"]
     model_run = state["decision"]["terminal"] == "oral_replacement"
-    model = (
-        session.execute(
-            text("SELECT source_bytes FROM model_network_versions WHERE id=:id"),
-            {"id": uuid.UUID(content["model_version_id"])},
-        ).scalar_one()
-        if model_run
-        else None
-    )
+    model = content["model_bytes"] if model_run else None
     try:
         ranking = calculate_candidates(
             session.get_bind(),
             evaluated=dict(state),
             decision=state["decision"],
             sex=patient["sex"],
-            model_bytes=bytes(model) if model is not None else None,
+            model_bytes=model,
             model_sha256=pins["model_sha256"],
             formulations=content["assets"]["new-case/v1/antipsychotic-formulations.json"][
                 "entries"

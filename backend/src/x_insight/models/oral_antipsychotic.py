@@ -181,6 +181,27 @@ def load_model(model_bytes: bytes, expected_sha256: str) -> None:
     _load_cached(expected_sha256, model_bytes)
 
 
+def dependent_parents(
+    model_bytes: bytes, expected_sha256: str, treatment_id: str
+) -> tuple[str, ...]:
+    """Find CPT parents that can change one outcome when toggled in isolation."""
+    try:
+        column = _TREATMENT_IDS.index(treatment_id)
+    except ValueError as exc:
+        raise ValueError("Unknown oral treatment ID") from exc
+    table = _load_cached(expected_sha256, model_bytes).table
+    values = table[column :: len(OUTCOMES)]
+    dependent = []
+    for index, parent in enumerate(PARENTS):
+        bit = 1 << (len(PARENTS) - index - 1)
+        if any(
+            values[base : base + bit] != values[base + bit : base + 2 * bit]
+            for base in range(0, len(values), 2 * bit)
+        ):
+            dependent.append(parent)
+    return tuple(dependent)
+
+
 def _evidence_row(evidence: Mapping[str, bool | str]) -> int:
     if set(evidence) != set(PARENTS):
         raise ValueError("Evidence must contain exactly the 16 factors")

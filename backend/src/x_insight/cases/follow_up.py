@@ -22,7 +22,7 @@ from decimal import Decimal
 from functools import lru_cache
 from typing import Any, Literal, NoReturn, NotRequired, TypedDict
 
-from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, ValidationInfo, field_validator
 from sqlalchemy.orm import Session
 
 from x_insight import contracts
@@ -67,7 +67,9 @@ def verified_content() -> dict[str, Any]:
     return _verified_content_cached(*_content_fingerprint())
 
 
-def content_pins(content: dict[str, Any]) -> dict[str, Any]:
+def content_pins(
+    content: dict[str, Any], *, assessment_hashes: dict[str, str] | None = None
+) -> dict[str, Any]:
     """One identity contract for creation, proposals, signing and archive validation."""
     manifest = content["manifest"]
     return {
@@ -75,7 +77,9 @@ def content_pins(content: dict[str, Any]) -> dict[str, Any]:
         "lexicomp_version": manifest["lexicomp_version"],
         "lexicomp_content_hash": manifest["lexicomp_content_hash"],
         "assessment_versions": manifest["assessment_versions"],
-        "assessment_hashes": {
+        "assessment_hashes": assessment_hashes
+        if assessment_hashes is not None
+        else {
             name: hashlib.sha256(
                 (assessments_dir() / f"{name}.{version}.json").read_bytes()
             ).hexdigest()
@@ -193,10 +197,10 @@ class Labs(StrictModel):
 
     @field_validator("values", mode="before")
     @classmethod
-    def measurements(cls, value: Any) -> dict[str, str | None]:
+    def measurements(cls, value: Any, info: ValidationInfo) -> dict[str, str | None]:
         if not isinstance(value, dict):
             raise ValueError("Lab values must be an object")
-        fields = lab_fields()
+        fields = info.context["lab_fields"] if info.context is not None else lab_fields()
         if set(value) - set(fields):
             raise ValueError("Unknown laboratory field")
         return {
@@ -399,12 +403,20 @@ def _require_complete_shape(raw: dict[str, Any], normalized: dict[str, Any], pat
             _require_complete_shape(raw[key], value, path + "." + key)
 
 
-def structural_draft(draft: dict[str, Any]) -> dict[str, Any]:
+def structural_draft(
+    draft: dict[str, Any],
+    *,
+    assets: dict[str, Any] | None = None,
+    definitions: dict[str, dict[str, Any]] | None = None,
+) -> dict[str, Any]:
     """Normalize and strictly validate a full typed follow-up draft (422)."""
     if not isinstance(draft, dict) or set(draft) - DRAFT_SECTIONS or "follow_up" not in draft:
         fail("draft_data", "Invalid follow-up draft sections")
     try:
-        state = FollowUp.model_validate(draft.get("follow_up"))
+        state = FollowUp.model_validate(
+            draft.get("follow_up"),
+            context={"lab_fields": assets[LABS_PATH]["fields"]} if assets is not None else None,
+        )
     except ValidationError as exc:
         raise contracts.ContractError(
             422,
@@ -431,7 +443,7 @@ def structural_draft(draft: dict[str, Any]) -> dict[str, Any]:
         ):
             fail(name, "Invalid assessment section")
         answers = section["answers"]
-        definition = get_released_definition(name)
+        definition = definitions[name] if definitions is not None else get_released_definition(name)
         item_ids = {item["id"] for item in definition["items"]}
         if set(answers) - item_ids:
             fail(name, "Unknown assessment answer")
@@ -488,16 +500,13 @@ def structural_draft(draft: dict[str, Any]) -> dict[str, Any]:
     treatment = result["follow_up"]["treatment"]
     main = treatment["main_catalog_drug_id"]
     if main is not None:
-        formulations = verified_content()["assets"]["new-case/v1/antipsychotic-formulations.json"][
-            "entries"
-        ]
+        assets = assets if assets is not None else verified_content()["assets"]
+        formulations = assets["new-case/v1/antipsychotic-formulations.json"]["entries"]
         matching = [entry for entry in formulations if entry.get("catalog_drug_id") == main]
         oral_ids = {entry["id"] for entry in matching if entry["group"] == "oral"}
         lai_supported = any(
             pair["oral"] in oral_ids
-            for pair in verified_content()["assets"]["follow-up/v1/lai-equivalences.json"][
-                "equivalences"
-            ]
+            for pair in assets["follow-up/v1/lai-equivalences.json"]["equivalences"]
         )
         if (
             main not in valid_ids
@@ -584,9 +593,16 @@ def reached_questions(state: dict[str, Any]) -> list[str]:
     )["reached_questions"]
 
 
-def evaluate_state(draft: dict[str, Any], patient: dict[str, Any]) -> FollowUpState:
+def evaluate_state(
+    draft: dict[str, Any],
+    patient: dict[str, Any],
+    *,
+    assets: dict[str, Any] | None = None,
+    definitions: dict[str, dict[str, Any]] | None = None,
+) -> FollowUpState:
     """Pure effective-state evaluation (no proposal, no model, no DB writes)."""
-    state = structural_draft(draft)
+    assets = assets if assets is not None else verified_content()["assets"]
+    state = structural_draft(draft, assets=assets, definitions=definitions)
     fu = state["follow_up"]
     raw = fu["history"]
     sex = patient["sex"]
@@ -604,7 +620,7 @@ def evaluate_state(draft: dict[str, Any], patient: dict[str, Any]) -> FollowUpSt
             {"field": field, "code": code, "message_key": "follow_up.errors." + code}
         )
 
-    content = verified_content()["assets"][LABS_PATH]
+    content = assets[LABS_PATH]
     lab_field_specs = content["fields"]
     measurements = {
         name: Decimal(value)
@@ -759,7 +775,12 @@ def evaluate_state(draft: dict[str, Any], patient: dict[str, Any]) -> FollowUpSt
             required(
                 "considerations", "follow_up.considerations." + field, "carried_value_required"
             )
-    reached = reached_questions(state)
+    decision = follow_up_rules.decision(
+        state,
+        assets["follow-up/v1/lai-equivalences.json"]["equivalences"],
+        assets["new-case/v1/antipsychotic-formulations.json"]["entries"],
+    )
+    reached = decision["reached_questions"]
     for name in reached:
         if fu["branches"][name] is None:
             required("considerations", "follow_up.branches." + name, "branch_answer_required")
@@ -779,17 +800,14 @@ def evaluate_state(draft: dict[str, Any], patient: dict[str, Any]) -> FollowUpSt
         "reached_questions": reached,
         "steps": list(STEPS),
         "proposal": None,  # Reading never creates a proposal.
-        "cssrs_evaluation": evaluate(get_released_definition("cssrs"), state["cssrs"]["answers"]),
+        "cssrs_evaluation": evaluate(
+            definitions["cssrs"] if definitions is not None else get_released_definition("cssrs"),
+            state["cssrs"]["answers"],
+        ),
         "decision": {},
         "model_factors": {},
         "sections": {},
     }
-    assets = verified_content()["assets"]
-    decision = follow_up_rules.decision(
-        state,
-        assets["follow-up/v1/lai-equivalences.json"]["equivalences"],
-        assets["new-case/v1/antipsychotic-formulations.json"]["entries"],
-    )
     factors = follow_up_rules.model_factors(result)
     if decision["terminal"] == "oral_replacement":
         for name, factor in factors.items():
