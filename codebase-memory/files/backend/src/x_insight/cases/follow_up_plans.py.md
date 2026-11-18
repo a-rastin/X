@@ -1,21 +1,15 @@
 # backend/src/x_insight/cases/follow_up_plans.py
 
-Source SHA-256: 44a9226fb8f3deb4d6830e8b70c2a8b0d8f80baeb1591600023b2bef37704154
+Source SHA-256: da47d8db87edf88fb8f766e41e4091a11a5d3e42c6ae4d3bd1c194b7fd0a4845
 
 ## Purpose
-Immutable follow-up proposal persistence, current freshness and replay-safe atomic v5 signing without a worker/provider.
+Generate immutable follow-up proposals and sign v5 snapshots.
 
 ## Behavior and constraints
-`verified_inputs` re-hashes pinned content, installed model and assessment
-bytes and checks DDI/catalog identities. Its fingerprint includes raw/effective
-inputs, baseline, demographics and physician availability, excluding final text
-and presentation language. `generate_proposal` deduplicates by immutable input
-and content hashes and stores the full distribution, exclusions and sections.
-`context` locks account before patient/encounter, matching deactivation discard;
-`sign` then locks final text, rechecks completeness/freshness/outcome and writes
-one v5 signature plus lifecycle/audit atomically. Identical confirmations replay.
-`read_proposal` prefers a matching current fingerprint and exposes
-`signed_patient_id` only for owned signed encounters to recover lost responses.
-
-## Evidence
-Current source and `backend/tests/http/test_follow_up_plans.py`; see the B/F/G progress checkpoint.
+`resolve_pinned_content` verifies installed assets, model bytes, exact
+assessment bytes, DDI release and catalog IDs with reads. `verified_inputs`
+uses those assets to evaluate and fingerprint saved state. `generate_proposal`
+deduplicates by input and content hashes. Command-level `context` locks
+account, patient and encounter before generation or signing. `sign` checks
+completeness and freshness, persists one replay-safe v5 signature and advances
+lifecycle.

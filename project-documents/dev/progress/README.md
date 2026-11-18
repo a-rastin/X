@@ -12,6 +12,8 @@
 
 [Oral Bayesian attribution (2026-11-18)](bayesian-attribution-2026-11-18.md) implements step 1, with exact root-prior Shapley attribution and verified ranking parity.
 
+[Bayesian visualization plan (2026-11-17)](bayesian-visualization-plan-2026-11-17.md) records the implementation plan and the 2026-11-18 version-control handoff.
+
 [Sign-in segmented control (2026-11-17)](ui-implementation-2026-11-11.md#follow-up-2026-11-17--sign-in-segmented-control): desktop preview and mobile layout checked; role submission tests pass.
 
 [Codex workflow handoff (2026-11-17)](local-run-checkpoint-2026-11-14.md#follow-up-2026-11-17--codex-workflow-handoff): workflow assets and the earlier local-run checkpoint prepared for version control.

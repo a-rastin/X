@@ -1,10 +1,9 @@
 # web/src/features/identity/api.ts
 
-Source SHA-256: 926d24d19d7899cd44ed8e27a08c0f7cc839f55cd6441cf97e757052f1f7c401
+Source SHA-256: 27f4b1daca72887a5b6e1db25a4ffa3be89f44338068e8adc2b33a2f32c5aba5
 
 ## Purpose
-The de-facto shared HTTP client. Every other `features/*/api.ts` (~15 copies) duplicates this
-`request<T>` rather than importing it — a real invariant when adding a call.
+Shared HTTP transport. The reasoning explorer imports request<T> and passes an optional AbortSignal.
 
 ## Important Symbols
 - `ApiError {status, code, message, fieldErrors, researchWarning, researchWarningVersion}` —
@@ -23,8 +22,8 @@ The de-facto shared HTTP client. Every other `features/*/api.ts` (~15 copies) du
 - `CSRF_HEADER = "X-CSRF-Token"`, stored in **`localStorage`** under `xi_csrf_token` and read
   on every mutation, because the HttpOnly session cookie is shared across browser tabs. A
   legacy `sessionStorage` copy is cleared on upgrade.
-- `request<T>` — always `credentials: "include"`; mutations add `If-Match: "<revision>"` and a
-  fresh `Idempotency-Key` per attempt.
+- `request<T>` — always `credentials: "include"`; callers provide any revision or
+  idempotency headers required by their endpoint.
 - `getCsrfToken` / `setCsrfToken`, `newIdempotencyKey`.
 
 ## Behavior and Constraints

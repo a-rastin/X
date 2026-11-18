@@ -1063,9 +1063,9 @@
         "backend",
         "cases"
       ],
-      "purpose": "Typed follow-up defaults, strict autosave, exact content pins, conditional validation and saved-state previews.",
+      "purpose": "Validate follow-up drafts and evaluate current history, effects and branch questions.",
       "summary": "files/backend/src/x_insight/cases/follow_up.py.md",
-      "source_sha256": "b24212b71d8936046e753795e00b7e2198299f4f1e55ccc5ef9a215e5cd2015e"
+      "source_sha256": "9d86e36c195efd02e9fed7beb8c632b647a16b8be14e4924312785e172b4bd04"
     },
     {
       "path": "backend/src/x_insight/cases/follow_up_plans.py",
@@ -1073,9 +1073,9 @@
         "backend",
         "cases"
       ],
-      "purpose": "Immutable follow-up proposal persistence, current freshness and replay-safe atomic v5 signing without a worker/provider.",
+      "purpose": "Generate immutable follow-up proposals and sign v5 snapshots.",
       "summary": "files/backend/src/x_insight/cases/follow_up_plans.py.md",
-      "source_sha256": "44a9226fb8f3deb4d6830e8b70c2a8b0d8f80baeb1591600023b2bef37704154"
+      "source_sha256": "da47d8db87edf88fb8f766e41e4091a11a5d3e42c6ae4d3bd1c194b7fd0a4845"
     },
     {
       "path": "backend/src/x_insight/cases/history.py",
@@ -1104,9 +1104,9 @@
         "cases",
         "new-case"
       ],
-      "purpose": "Typed new-case state, pinned content, diagnosis assertion and deterministic preview; proposal persistence/signing remain absent.",
+      "purpose": "Validate typed new-case state and derive fixed-model evidence.",
       "summary": "files/backend/src/x_insight/cases/new_case.py.md",
-      "source_sha256": "64fdc6236dd720e079c444366cc9f57696b191668326962c38413619b577ed00"
+      "source_sha256": "e86c01440eb09c78c4dcb6c969acb9fe8f0c985a69f2033c30990b1c67a1b90c"
     },
     {
       "path": "backend/src/x_insight/cases/patients.py",
@@ -1117,6 +1117,37 @@
       "purpose": null,
       "summary": null,
       "source_sha256": null
+    },
+    {
+      "path": "backend/src/x_insight/cases/reasoning_contracts.py",
+      "labels": [
+        "backend",
+        "cases",
+        "reasoning"
+      ],
+      "purpose": "Strict simulation wire models and stable response projection.",
+      "summary": "files/backend/src/x_insight/cases/reasoning_contracts.py.md",
+      "source_sha256": "c2bf041818b9038141cfc37c99548f4b3cd9f036c4318725e7eb3db5b68fe132"
+    },
+    {
+      "path": "backend/src/x_insight/cases/reasoning_exploration.py",
+      "labels": [
+        "cases",
+        "reasoning"
+      ],
+      "purpose": "Replays an immutable proposal and evaluates transient source overrides.",
+      "summary": "files/backend/src/x_insight/cases/reasoning_exploration.py.md",
+      "source_sha256": "d81f899901a232f5c454392c48ffe657f87b18820e48a3d2a2db6206627e4953"
+    },
+    {
+      "path": "backend/src/x_insight/cases/reasoning_paths.py",
+      "labels": [
+        "cases",
+        "reasoning"
+      ],
+      "purpose": "Build deterministic active graphs for frozen proposal comparisons.",
+      "summary": "files/backend/src/x_insight/cases/reasoning_paths.py.md",
+      "source_sha256": "6f7220fb1885531828013e0aba81499dfc7201301e794c17d8dacda89e1503e1"
     },
     {
       "path": "backend/src/x_insight/cases/reporting.py",
@@ -1134,7 +1165,7 @@
         "backend",
         "cases"
       ],
-      "purpose": "Largest HTTP surface: patients, encounters, history, effects, medications, plans, signing.",
+      "purpose": "HTTP routes for patients, encounters, proposals, simulation, plans and signing.",
       "summary": null,
       "source_sha256": null
     },
@@ -1799,6 +1830,13 @@
       "source_sha256": null
     },
     {
+      "path": "backend/tests/assessments/test_reasoning_exploration.py",
+      "labels": [],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
       "path": "backend/tests/ddi/__init__.py",
       "labels": [
         "test",
@@ -2143,6 +2181,15 @@
       "labels": [
         "test",
         "http"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "backend/tests/http/test_reasoning_simulation.py",
+      "labels": [
+        "reasoning"
       ],
       "purpose": null,
       "summary": null,
@@ -4973,6 +5020,15 @@
       "source_sha256": null
     },
     {
+      "path": "docs/reasoning-simulation-api.md",
+      "labels": [
+        "reasoning"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
       "path": "docs/user-guide.md",
       "labels": [
         "docs",
@@ -5935,6 +5991,22 @@
         "progress"
       ],
       "purpose": "Progress index and current handoff — read this first per AGENTS.md.",
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "project-documents/dev/progress/bayesian-pathways-2026-11-18.md",
+      "labels": [],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "project-documents/dev/progress/bayesian-simulation-api-2026-11-18.md",
+      "labels": [
+        "reasoning"
+      ],
+      "purpose": null,
       "summary": null,
       "source_sha256": null
     },
@@ -8700,9 +8772,9 @@
         "frontend",
         "identity"
       ],
-      "purpose": "Shared HTTP client pattern: CSRF in localStorage, idempotency, warning fields; me() uses the anonymous probe.",
+      "purpose": "Shared HTTP client for CSRF, errors, and optional cancellation.",
       "summary": "files/web/src/features/identity/api.ts.md",
-      "source_sha256": "926d24d19d7899cd44ed8e27a08c0f7cc839f55cd6441cf97e757052f1f7c401"
+      "source_sha256": "27f4b1daca72887a5b6e1db25a4ffa3be89f44338068e8adc2b33a2f32c5aba5"
     },
     {
       "path": "web/src/features/identity/auth.tsx",
@@ -8886,6 +8958,26 @@
       "source_sha256": null
     },
     {
+      "path": "web/src/features/reasoning-explorer/api.ts",
+      "labels": [
+        "frontend",
+        "reasoning"
+      ],
+      "purpose": "Typed simulation POST through the shared cancellable request wrapper.",
+      "summary": "files/web/src/features/reasoning-explorer/api.ts.md",
+      "source_sha256": "ba2d59822fbd03602ab513d702995154a0621848464be963d594ee7b8aa4c882"
+    },
+    {
+      "path": "web/src/features/reasoning-explorer/types.ts",
+      "labels": [
+        "frontend",
+        "reasoning"
+      ],
+      "purpose": "TypeScript wire models matching the versioned FastAPI simulation contract.",
+      "summary": "files/web/src/features/reasoning-explorer/types.ts.md",
+      "source_sha256": "9460db394f8e34414bffde89ac60ef83fa67f2d9e482b4d1b03c6c3763a28e6f"
+    },
+    {
       "path": "web/src/features/reasoning/CptReviewPanel.tsx",
       "labels": [
         "frontend",
@@ -8980,6 +9072,24 @@
       "labels": [
         "test",
         "frontend"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "web/tests/reasoning-simulation-contract.json",
+      "labels": [
+        "reasoning"
+      ],
+      "purpose": null,
+      "summary": null,
+      "source_sha256": null
+    },
+    {
+      "path": "web/tests/reasoning-simulation.test.mjs",
+      "labels": [
+        "reasoning"
       ],
       "purpose": null,
       "summary": null,
