@@ -1,4 +1,5 @@
 import { Button } from "@astryxdesign/core/Button";
+import { ReasoningExplorer } from "../reasoning-explorer/ReasoningExplorer";
 import { useFollowUpText } from "../follow-up/text";
 import {
   FollowUpProposalView,
@@ -360,6 +361,12 @@ export function NewCasePlanPage({
           </>
         )}
       </div>
+      <ReasoningExplorer
+        key={JSON.stringify([encounterId, workflow, proposal.id])}
+        encounterId={encounterId}
+        workflow={workflow === "follow-up" ? "follow-up-v1" : "new-case-v1"}
+        proposalId={proposal.id}
+      />
       <section className={workflow === "follow-up" ? "xi-card fu-final-plan" : "xi-card"}>
         <h3>{n("finalPlan")}</h3>
         <label htmlFor="nc-final-plan">{n("finalPlan")}</label>
