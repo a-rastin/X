@@ -1,4 +1,5 @@
 import hashlib
+import math
 from pathlib import Path
 
 import pytest
@@ -41,6 +42,11 @@ def test_exact_rows_and_filtering(model):
     original = oral.rank_oral(model, SHA, evidence)
     unavailable = frozenset(item.drug_id for item in original.candidates[:2])
     filtered = oral.rank_oral(model, SHA, evidence, unavailable | {"lai:haloperidol"})
+    assert len(filtered.distribution) == 22
+    assert math.fsum(item.probability for item in filtered.distribution) == pytest.approx(1)
+    assert [item.probability for item in filtered.distribution] == [
+        item.probability for item in original.distribution
+    ]
     assert filtered.candidates == original.candidates[2:] + original.distribution[5:7]
     assert (
         oral.rank_oral(
@@ -61,11 +67,16 @@ def test_rejects_invalid_inputs_and_corrupt_model(model):
     ):
         with pytest.raises(ValueError):
             oral.rank_oral(model, SHA, invalid)
+        with pytest.raises(ValueError):
+            oral.explain_oral(model, SHA, invalid, "oral:aripiprazole")
     with pytest.raises(ValueError):
         oral.load_model(model + b" ", SHA)
     swapped = model.replace(b"<GIVEN>Smoking</GIVEN>", b"<GIVEN>Akathisia</GIVEN>", 1)
     with pytest.raises(ValueError):
         oral.load_model(swapped, hashlib.sha256(swapped).hexdigest())
+    bad_prior = model.replace(b"<TABLE>0.43 0.57</TABLE>", b"<TABLE>0.43 0.5</TABLE>", 1)
+    with pytest.raises(ValueError, match="Probability row is not normalized"):
+        oral.load_model(bad_prior, hashlib.sha256(bad_prior).hexdigest())
     hostile = b'<!DOCTYPE BIF [<!ENTITY x "bad">]>' + model
     with pytest.raises(ValueError):
         oral.load_model(hostile, hashlib.sha256(hostile).hexdigest())

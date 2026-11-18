@@ -1,4 +1,5 @@
 import json
+import math
 from pathlib import Path
 
 import pytest
@@ -65,6 +66,10 @@ def test_full_distribution_filters_backfills_and_preserves_coverage(monkeypatch)
     monkeypatch.setattr(subject.checker, "check_candidates", candidate_check)
     result = subject.calculate_candidates(**options)
     assert len(result["distribution"]) == 22
+    assert math.fsum(item["probability"] for item in result["distribution"]) == pytest.approx(1)
+    assert [item["probability"] for item in result["distribution"]] == [
+        item.probability for item in ranking.distribution
+    ]
     assert result["candidates"][0]["rank"] == 6
     assert result["candidates"][0]["probability"] == ranking.distribution[5].probability
     assert result["distribution"][0]["offending_pairs"]
