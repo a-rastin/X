@@ -97,6 +97,7 @@ interface RequestOptions {
   body?: unknown;
   csrf?: boolean;
   headers?: Record<string, string>;
+  signal?: AbortSignal;
 }
 
 export async function request<T>(path: string, options: RequestOptions = {}): Promise<T> {
@@ -115,6 +116,7 @@ export async function request<T>(path: string, options: RequestOptions = {}): Pr
     credentials: "include",
     headers,
     body: options.body === undefined ? undefined : JSON.stringify(options.body),
+    signal: options.signal,
   });
   const text = await response.text();
   let payload: unknown = null;

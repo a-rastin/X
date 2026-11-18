@@ -69,6 +69,7 @@ from fastapi import APIRouter, Depends, Request
 from fastapi.responses import JSONResponse, Response
 from fastapi.responses import JSONResponse as _JSONResponse
 from pydantic import BaseModel, Field, StrictInt
+from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
@@ -80,6 +81,12 @@ from x_insight.cases import history as history_service
 from x_insight.cases import medications as medications_service
 from x_insight.cases import patients as patients_service
 from x_insight.cases import reporting as reporting_module
+from x_insight.cases.reasoning_contracts import (
+    SimulationRequest,
+    SimulationResponse,
+    simulation_response,
+    source_overrides,
+)
 from x_insight.db import CommittedRoute, get_session
 from x_insight.identity import service as identity_service
 from x_insight.operations import audit as audit_module
@@ -2051,6 +2058,76 @@ def generate_new_case(
     return _new_case_command(
         session, request, author, encounter_id, "new_case.generate", {}, expected
     )
+
+
+@router.post(
+    "/encounters/{encounter_id}/reasoning/simulate",
+    response_model=SimulationResponse,
+)
+def simulate_reasoning(
+    encounter_id: uuid.UUID,
+    body: SimulationRequest,
+    request: Request,
+    response: Response,
+    session: Session = Depends(get_session),
+) -> SimulationResponse | JSONResponse:
+    from x_insight.cases import (
+        follow_up,
+        follow_up_plans,
+        new_case,
+        new_case_plans,
+        tables,
+    )
+    from x_insight.cases.reasoning_exploration import explore_proposal
+
+    author = _require_physician_mutation(request, session)
+    if isinstance(author, JSONResponse):
+        return author
+    encounter = encounters_service.get_encounter(session, encounter_id)
+    if encounter is None:
+        raise contracts.ContractError(404, "NOT_FOUND", "Encounter not found.")
+    encounters_service.require_author(encounter, author)
+    workflow = encounter["workflow_version"]
+    if workflow == new_case.WORKFLOW:
+        table, serialize = tables.new_case_proposals, new_case_plans.safe_proposal
+    elif workflow == follow_up.WORKFLOW:
+        table, serialize = tables.follow_up_proposals, follow_up_plans.safe_proposal
+    else:
+        raise contracts.ContractError(409, "WORKFLOW_MISMATCH", "Unsupported reasoning workflow.")
+    row = (
+        session.execute(
+            select(
+                table.c.id,
+                table.c.encounter_id,
+                table.c.source_encounter_revision,
+                table.c.input_hash,
+                table.c.content_hash,
+                table.c.payload,
+                table.c.created_at,
+            ).where(
+                table.c.id == body.baseline_proposal_id,
+                table.c.encounter_id == encounter_id,
+                table.c.author_id == encounter["author_id"],
+            )
+        )
+        .mappings()
+        .one_or_none()
+    )
+    if row is None:
+        raise contracts.ContractError(404, "NOT_FOUND", "Proposal not found in this encounter.")
+    proposal = serialize(row)
+    if proposal["payload"].get("workflow_version") != workflow:
+        raise contracts.ContractError(
+            409, "REASONING_BASELINE_UNAVAILABLE", "The frozen proposal workflow is inconsistent."
+        )
+    result = explore_proposal(
+        session,
+        proposal,
+        overrides=source_overrides(body, workflow),
+        selected_treatment_id=body.selected_treatment_id,
+    )
+    response.headers["Cache-Control"] = "no-store"
+    return simulation_response(body, proposal, result)
 
 
 @router.get("/encounters/{encounter_id}/new-case/proposals/latest")

@@ -1,0 +1,55 @@
+{
+  "schema_version": "reasoning-simulation-v1",
+  "algorithm_version": "oral-root-prior-shapley-v1",
+  "workflows": [
+    "new-case-v1",
+    "follow-up-v1"
+  ],
+  "treatment_ids": [
+    "oral:chlorpromazine",
+    "oral:fluphenazine",
+    "oral:haloperidol",
+    "oral:loxapine",
+    "oral:molindone",
+    "oral:perphenazine",
+    "oral:pimozide",
+    "oral:thioridazine",
+    "oral:thiothixene",
+    "oral:trifluoperazine",
+    "oral:aripiprazole",
+    "oral:asenapine",
+    "oral:brexpiprazole",
+    "oral:cariprazine",
+    "oral:clozapine",
+    "oral:iloperidone",
+    "oral:lurasidone",
+    "oral:olanzapine",
+    "oral:paliperidone",
+    "oral:quetiapine",
+    "oral:risperidone",
+    "oral:ziprasidone"
+  ],
+  "change_kinds": [
+    "boolean",
+    "choice",
+    "cssrs",
+    "nullable_boolean",
+    "panss"
+  ],
+  "evaluation_statuses": [
+    "complete",
+    "partial",
+    "non_model"
+  ],
+  "response_fields": [
+    "identity",
+    "controls",
+    "patient",
+    "scenario",
+    "comparison_rows",
+    "selected_attribution",
+    "diff",
+    "active_graph",
+    "evaluation"
+  ]
+}

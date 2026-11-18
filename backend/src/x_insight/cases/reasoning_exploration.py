@@ -6,6 +6,7 @@ import hashlib
 from collections.abc import Mapping
 from copy import deepcopy
 from dataclasses import asdict, dataclass
+from types import MappingProxyType
 from typing import Any, Literal, TypedDict
 
 from sqlalchemy.orm import Session
@@ -168,11 +169,16 @@ def _resolve(session: Session, proposal: dict[str, Any]) -> _Sources:
     )
 
 
+def source_controls(workflow: str) -> Mapping[str, tuple[SimulationValue, ...]]:
+    """Return the allowed source fields for the given exploration workflow."""
+    return MappingProxyType(_CONTROLS[workflow])
+
+
 def _apply_overrides(
     source: _Sources, overrides: Mapping[str, SimulationValue]
 ) -> tuple[dict[str, Any], dict[str, SimulationValue]]:
     draft = deepcopy(source.payload["raw_inputs"])
-    allowed: dict[str, tuple[SimulationValue, ...]] = {**_CONTROLS[source.workflow]}
+    allowed: dict[str, tuple[SimulationValue, ...]] = dict(source_controls(source.workflow))
     for instrument, values in (("panss", tuple(range(1, 8))), ("cssrs", ("yes", "no", *_BOOLEAN))):
         allowed.update(
             {
@@ -457,7 +463,12 @@ def explore_proposal(
 ) -> Exploration:
     """Recompute both sides of a stored, already access-checked proposal."""
     try:
-        source = _resolve(session, proposal)
+        try:
+            source = _resolve(session, proposal)
+        except contracts.ContractError as exc:
+            if exc.code == "REASONING_BASELINE_UNAVAILABLE":
+                raise
+            raise _unavailable("The proposal's pinned calculation inputs are unavailable.") from exc
         scenario_raw, applied = _apply_overrides(source, overrides or {})
         patient = _evaluate(session, source, source.payload["raw_inputs"])
         _check_patient(source, patient)

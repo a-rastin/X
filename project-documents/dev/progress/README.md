@@ -1,5 +1,7 @@
 # INSIGHT progress tracker
 
+[Reasoning simulation API (2026-11-18)](bayesian-simulation-api-2026-11-18.md) implements step 3 with a typed stateless endpoint, cancellable web transport, and PostgreSQL verification.
+
 [Frozen proposal evaluation and active pathways (2026-11-18)](bayesian-pathways-2026-11-18.md) implements step 2 for New case and follow-up.
 
 [Oral Bayesian attribution (2026-11-18)](bayesian-attribution-2026-11-18.md) implements step 1, with exact root-prior Shapley attribution and verified ranking parity.
