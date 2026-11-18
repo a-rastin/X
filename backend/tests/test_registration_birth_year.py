@@ -24,6 +24,10 @@ def test_birth_year_computes_age_for_each_clinical_status(status):
 def test_birth_year_registration_uses_same_name_rules(status):
     with pytest.raises(contracts.ContractError):
         validate_registration_payload(
-            identifier="0012345678", given_name="Anne-Marie", family_name="Reza",
-            sex="M", birth_year=contracts.utcnow().year - 30, clinical_status=status,
+            identifier="0012345678",
+            given_name="Anne-Marie",
+            family_name="Reza",
+            sex="M",
+            birth_year=contracts.utcnow().year - 30,
+            clinical_status=status,
         )

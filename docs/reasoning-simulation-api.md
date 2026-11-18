@@ -89,6 +89,19 @@ identities. Changing request ID, selected treatment, override order or a
 no-op override preserves this hash. The selected treatment can change the
 attribution and graph. Simulation calls do not write clinical domain records.
 
+Capture the empty-change response for the displayed proposal as the patient
+baseline. Its chart values anchor the patient marks throughout the session.
+The attribution's model reference is a separate probability calculated under
+the network's root priors. For an evaluated side, adding that side's signed
+contributions to the model reference reconstructs its posterior within
+floating-point precision.
+
+Apply each successful response as a unit across controls, comparisons,
+attribution and pathways. Use the echoed request ID and baseline proposal ID
+to discard superseded responses. A client can restore its captured baseline
+locally and discard outstanding requests when the user resets. Successful
+simulation responses include `Cache-Control: no-store`.
+
 Probabilities use the interval 0–1, at full precision. A delta of `0.03`
 represents 3 percentage points. Raw rank follows the unfiltered distribution.
 Eligible rank follows the distribution after exclusions. The candidate list

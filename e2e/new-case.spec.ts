@@ -17,15 +17,15 @@ test("registration steps stay the same for either clinical status", async ({ pag
   await page.goto("/#/patients/new");
   const steps = ["1. Register patient", "2. Diagnosis", "3. PANSS", "4. Self/other harm", "5. Medical history and examination", "6. Current medications", "7. Treatment considerations"];
   await expect(page.locator("#wizard-pages a")).toHaveText(steps);
-  await page.locator("#reg-status-established").check();
+  await page.getByRole("radio", { name: "Known case", exact: true }).check();
   await expect(page.locator("#wizard-pages a")).toHaveText(steps);
-  await page.locator("#reg-status-first").check();
+  await page.getByRole("radio", { name: "New case", exact: true }).check();
   await expect(page.locator("#wizard-pages a")).toHaveText(steps);
-  await page.locator("#reg-status-established").check();
+  await page.getByRole("radio", { name: "Known case", exact: true }).check();
   await page.locator("#reg-given-name").fill("Ali");
   await page.locator("#reg-family-name").fill("Reza");
   await page.locator("#reg-identifier").fill(uniquePatientId());
-  await page.locator("#reg-sex-f").check();
+  await page.getByRole("radio", { name: "F", exact: true }).check();
   const year = await page.locator("#reg-birth-year option").nth(13).getAttribute("value");
   await page.locator("#reg-birth-year").selectOption(year!);
   await page.getByRole("button", { name: "Register", exact: true }).click();
@@ -53,8 +53,8 @@ for (const language of ["en", "fa"] as const) {
       await page.locator("#reg-given-name").fill("علی");
       await page.locator("#reg-family-name").fill("رضایی");
       await page.locator("#reg-identifier").fill(uniquePatientId());
-      await page.locator("#reg-sex-f").check();
-      await page.locator("#reg-status-first").check();
+      await page.getByRole("radio", { name: "F", exact: true }).check();
+      await page.getByRole("radio", { name: message(language, "newCase"), exact: true }).check();
       const year = await page
         .locator("#reg-birth-year option")
         .nth(13)
@@ -179,7 +179,7 @@ test("personal formulation settings stale proposals without replacing physician 
     .getByRole("checkbox", { name: /^haloperidol$/i })
     .check();
   await page.getByRole("button", { name: "Save", exact: true }).click();
-  await expect(page.getByRole("status")).toHaveText("Saved");
+  await expect(page.getByRole("status").filter({ hasText: /^Saved$/ })).toBeVisible();
   await page.reload();
   await expect(
     oral.getByRole("checkbox", { name: "Chlorpromazine", exact: true }),

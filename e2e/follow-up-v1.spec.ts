@@ -1,5 +1,5 @@
 import AxeBuilder from "@axe-core/playwright";
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
 import {
   acknowledgeWarning,
   ensurePhysician,
@@ -9,6 +9,11 @@ import {
 } from "./helpers";
 import { message, type MessageKey } from "../web/src/shared/messages";
 import { followUpLabels } from "../web/src/features/follow-up/labels";
+
+function requiredQuestion(page: Page, label: string) {
+  return page.getByRole("group", { name: label, exact: true })
+    .or(page.getByRole("radiogroup", { name: label }));
+}
 
 for (const language of ["en", "fa"] as const) {
   for (const model of [false, true]) {
@@ -98,11 +103,7 @@ for (const language of ["en", "fa"] as const) {
         await page.locator("body").innerText(),
       ).toBeVisible();
       const answer = async (key: string, value = false) =>
-        page
-          .getByRole("group", {
-            name: `${n(key)} (${n("required")})`,
-            exact: true,
-          })
+        requiredQuestion(page, `${n(key)} (${n("required")})`)
           .getByRole("radio", { name: n(value ? "yes" : "no"), exact: true })
           .check();
       for (const key of [
@@ -181,7 +182,7 @@ for (const language of ["en", "fa"] as const) {
       await expect(
         page.getByRole("heading", { name: n("original"), exact: true }),
       ).toBeVisible();
-      await expect(page.locator("pre").first()).toContainText(
+      await expect(page.locator(".fu-proposal-summary")).toContainText(
         n(model ? "oral_replacement" : "physician_review"),
       );
       await page
@@ -393,11 +394,7 @@ for (const language of ["en", "fa"] as const) {
         })
       ).ok(),
     ).toBeTruthy();
-    const tobacco = page
-      .getByRole("group", {
-        name: `${n("tobacco")} (${n("required")})`,
-        exact: true,
-      })
+    const tobacco = requiredQuestion(page, `${n("tobacco")} (${n("required")})`)
       .getByRole("radio", { name: n("yes"), exact: true });
     await tobacco.check();
     await expect(
@@ -726,10 +723,7 @@ for (const language of ["en", "fa"] as const) {
           page.getByRole("heading", { name: n("considerations"), exact: true }),
         ).toBeVisible();
         for (const key of Object.keys(fu.branches)) {
-          const question = page.getByRole("group", {
-            name: `${n(key)} (${n("required")})`,
-            exact: true,
-          });
+          const question = requiredQuestion(page, `${n(key)} (${n("required")})`);
           if (scenario.reached.includes(key))
             await expect(question).toBeVisible();
           else await expect(question).toHaveCount(0);
@@ -737,11 +731,11 @@ for (const language of ["en", "fa"] as const) {
         await page
           .getByRole("button", { name: n("generate"), exact: true })
           .click();
-        await expect(page.locator("pre").first()).toContainText(
+        await expect(page.locator(".fu-proposal-summary")).toContainText(
           n(scenario.terminal),
         );
         if (scenario.adjunct)
-          await expect(page.locator("pre").first()).toContainText(
+          await expect(page.locator(".fu-proposal-summary")).toContainText(
             n(scenario.adjunct),
           );
         await page

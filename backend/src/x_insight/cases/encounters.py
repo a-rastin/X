@@ -829,10 +829,7 @@ def create_open_draft(
         from x_insight.cases import follow_up
 
         workflow = follow_up.WORKFLOW
-    elif (
-        validated_kind == "registration"
-        and patient_row.get("birth_year") is not None
-    ):
+    elif validated_kind == "registration" and patient_row.get("birth_year") is not None:
         from x_insight.cases import new_case
 
         workflow = new_case.WORKFLOW

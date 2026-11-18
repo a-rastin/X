@@ -17,6 +17,7 @@ INSIGHT is a research workspace for recording patient encounters, completing str
 - [Complete the registration assessments](#complete-the-registration-assessments)
 - [Select medications and review interactions](#select-medications-and-review-interactions)
 - [Generate and review a proposal](#generate-and-review-a-proposal)
+- [Explore a proposal with What-if simulation](#explore-a-proposal-with-what-if-simulation)
 - [Review and adjust probabilities](#review-and-adjust-probabilities)
 - [Write and sign the physician plan](#write-and-sign-the-physician-plan)
 - [Review signed records and add corrections](#review-signed-records-and-add-corrections)
@@ -117,6 +118,33 @@ explicit medication release pin; absent legacy History values remain unknown.
 The clinical content remains experimental and is not clinically validated.
 [The workflow API and recovery contract](new-case-state.md) documents implementation
 boundaries. The LLM/CPT steps below apply to the legacy workflow.
+
+## Explore a proposal with What-if simulation
+
+Generate a proposed plan in New case or in the current follow-up workflow,
+then open **What-if simulation** on the proposal page.
+
+1. Change a value under **Scenario inputs**. Each input shows the proposal's
+   recorded value. The comparison summarizes changes to rankings, eligibility,
+   decisions and assessments. Answer any newly reached decision questions to
+   complete the affected scenario outputs.
+2. In **Treatment probabilities**, compare the solid scenario bar with the
+   fixed dotted tick for the patient proposal. Expand **Show all treatments**
+   to inspect excluded treatments and their reasons. These percentages describe
+   the model's ranking shares.
+3. Select a treatment to update **Factor attribution**. The model reference
+   comes from the network's prior. Signed contributions show how each factor
+   shifts that reference, in percentage points. Select or focus a factor to
+   highlight its source controls and links in **Active reasoning pathways**.
+   Open **Table of values** for the chart's numeric values.
+4. Use an input's **Revert** button to restore its recorded value, or select
+   **Reset to Patient Data** to restore the full proposal baseline. If an
+   update fails, the previous result stays visible and **Retry** reruns the
+   pending changes.
+
+Simulation edits are temporary. Use the encounter's clinical forms to record
+actual changes, then generate a fresh proposal. The final-plan editor and
+signing use the saved encounter workflow.
 
 ## Complete the registration assessments
 
@@ -263,6 +291,8 @@ coverage is disclosed. This workflow has no diagnosis, provider-setup, worker,
 CPT-slider or probability-acceptance step.
 
 The [follow-up API reference](follow-up-api.md) documents the saved-state and confirmation contracts.
+Use [What-if simulation](#explore-a-proposal-with-what-if-simulation) to
+explore changes to the displayed proposal.
 
 The final-plan editor is seeded once. Regeneration preserves physician edits;
 **Replace with current proposal** is the explicit way to replace them. Save a

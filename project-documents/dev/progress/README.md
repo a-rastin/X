@@ -1,5 +1,7 @@
 # INSIGHT progress tracker
 
+[Bayesian reasoning verification (2026-11-18)](bayesian-reasoning-verification-2026-11-18.md) adds Step 7 browser coverage and documentation. Focused regressions and timing ran. Final browser and broad regression runs remain open.
+
 [Linked reasoning explorer (2026-11-18)](bayesian-linked-explorer-2026-11-18.md) implements step 6 with active pathways, structured comparisons, and local reset.
 
 [Live reasoning sandbox (2026-11-18)](bayesian-live-sandbox-2026-11-18.md) implements step 5. Both proposal workflows share live controls and a fixed patient baseline.
