@@ -1,5 +1,7 @@
 # INSIGHT progress tracker
 
+[Bayesian reasoning charts (2026-11-18)](bayesian-charts-2026-11-18.md) implements step 4. The comparison and tornado passed Chromium and Firefox checks with real simulation responses.
+
 [Reasoning simulation API (2026-11-18)](bayesian-simulation-api-2026-11-18.md) implements step 3 with a typed stateless endpoint, cancellable web transport, and PostgreSQL verification.
 
 [Frozen proposal evaluation and active pathways (2026-11-18)](bayesian-pathways-2026-11-18.md) implements step 2 for New case and follow-up.
