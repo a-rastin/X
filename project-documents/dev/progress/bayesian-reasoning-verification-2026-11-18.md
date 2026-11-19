@@ -62,3 +62,37 @@ disposable PostgreSQL cluster uses a development role name, while that probe
 requires the production-style migration, runtime and readonly role names.
 The backend run continued, with the recovery command queued after it. Git
 staging also hit the approval service error.
+
+## Follow-up 2026-11-19 — Tornado and regression verification
+
+Step 7 now checks all 16 patient and scenario tornado marks against the
+live attribution response. The browser test verifies a shared reference
+position, signed direction, relative bar widths, and posterior reconstruction
+from the model prior. The fixture allows 15 seconds for the proposal page
+and its first simulation result to load.
+
+- Node 22 passed all eight web test files and TypeScript compilation.
+  Ruff, mypy, and the production build passed `make check`.
+- All four explorer cases passed against the production preview in
+  Chromium and Firefox with one Playwright worker. The fixture used the
+  Lexicomp catalog and pinned oral model from the proposal HTTP tests.
+- All 30 New case and follow-up browser regressions passed across both
+  browser projects. Playwright ran the four branch matrix cases separately
+  from the other 26.
+- The follow-up browser regression now locates the medication-removal
+  button by its full accessible name and verifies that the server saved
+  the final-plan text before the branch matrix reloads. The four signing
+  journeys with a model result and the four branch matrix cases passed in
+  English and Persian across Chromium and Firefox.
+- The audit, contract, and draft privilege probes passed on fresh
+  PostgreSQL 16 with the expected migration, app, and readonly roles.
+- The full backend check used `--maxfail=1` and stopped after 386 passes.
+  `test_followup_new_encounter_preserves_prior_and_signs` submits a legacy
+  draft shape to a current follow-up encounter. The draft PATCH returned
+  HTTP 422 for invalid follow-up sections before the test reached signing.
+- An earlier parallel browser run lost its API process. Its trace shows
+  HTTP 502 from the proxy for secondary-plan loading and simulation.
+- All 58 recovery tests passed in a fresh database after the earlier
+  recovery run exited with status 137.
+- The previously measured warm HTTP p95 remains 880 ms against the
+  plan's approximate 500 ms target.

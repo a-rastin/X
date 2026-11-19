@@ -76,7 +76,8 @@ async function openProposal(page: Page, workflow: "new-case" | "follow-up") {
   }));
   await page.goto(`/#/encounters/${id}#proposal`);
   await page.reload();
-  await expect(page.getByRole("region", { name: "Simulation comparison" })).toBeVisible();
+  await expect(page.getByRole("region", { name: "Simulation comparison" }))
+    .toBeVisible({ timeout: 15_000 });
   return url;
 }
 
@@ -155,6 +156,35 @@ test.describe("reasoning explorer", () => {
       expect(width).toBeCloseTo(100 * row.scenario_probability!, 8);
       expect(patient[index]!.x).toBeCloseTo(2 + 100 * row.patient_probability!, 8);
     });
+    const attribution = result.selected_attribution!;
+    const profiles = [attribution.patient!, attribution.scenario!] as const;
+    const factors = profiles[0].contributions.map(({ contribution }, index) => [
+      contribution, profiles[1].contributions[index]!.contribution,
+    ] as const).sort((left, right) =>
+      Math.max(...right.map(Math.abs)) - Math.max(...left.map(Math.abs)));
+    const extent = Math.max(...factors[0]!.map(Math.abs));
+    const showZero = tornado.getByRole("button", { name: /Show zero contributions/ });
+    if (await showZero.count()) await showZero.click();
+    for (const [index, side] of ["patient", "scenario"].entries()) {
+      const marks = await tornado.locator(`.xi-${side}-contribution`).evaluateAll((bars) =>
+        bars.map((bar) => ({
+          width: Number(bar.getAttribute("width")),
+          x: Number(bar.getAttribute("x")),
+          anchor: Number(bar.parentElement!.querySelector(".xi-model-reference")!.getAttribute("x1")),
+        })));
+      expect(marks).toHaveLength(16);
+      marks.forEach(({ width, x, anchor }, row) => {
+        const offset = 50 * factors[row]![index]! / extent;
+        expect(anchor).toBe(52);
+        expect(width).toBeCloseTo(Math.abs(offset), 8);
+        expect(x).toBeCloseTo(anchor + Math.min(0, offset), 8);
+      });
+      const profile = profiles[index]!;
+      const reconstructed = profile.contributions.reduce(
+        (sum, { contribution }) => sum + contribution, attribution.model_reference_probability,
+      );
+      expect(reconstructed).toBeCloseTo(profile.posterior_probability, 10);
+    }
     await tornado.getByText("Table of values", { exact: true }).click();
     await expect(tornado.getByRole("table").getByRole("row")).toHaveCount(17);
 

@@ -277,7 +277,7 @@ for (const language of ["en", "fa"] as const) {
           page.getByRole("heading", { name: n("medications"), exact: true }),
         ).toBeVisible();
         await page
-          .getByRole("button", { name: n("remove"), exact: true })
+          .getByRole("button", { name: `${n("remove")} Olanzapine`, exact: true })
           .click();
         await expect(
           page.getByRole("combobox", { name: n("main"), exact: true }),
@@ -738,9 +738,17 @@ for (const language of ["en", "fa"] as const) {
           await expect(page.locator(".fu-proposal-summary")).toContainText(
             n(scenario.adjunct),
           );
+        const finalPlan = page.locator("#nc-final-plan");
+        await expect(finalPlan).toBeEnabled();
+        const finalText = await finalPlan.inputValue();
         await page
           .getByRole("button", { name: n("save"), exact: true })
           .click();
+        await expect.poll(async () => {
+          const response = await page.request.get(`${url}/secondary-plan`);
+          expect(response.ok()).toBe(true);
+          return (await response.json()).text;
+        }).toBe(finalText);
       });
   });
 }
