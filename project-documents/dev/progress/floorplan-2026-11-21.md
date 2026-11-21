@@ -1,0 +1,7 @@
+# Interactive codebase floorplan (2026-11-21)
+
+The Floorplan plugin built `floorplan/index.html` from the INSIGHT working tree at `16e64df3`. The build assigned and described all 437 mapped files and 102 detected endpoints. The map covers the clinical workspace, main server, PostgreSQL, legacy generation, installation and research tools, and automatic checks. The tour and three flows trace New case registration and signing, follow-up proposal exploration, and legacy generation. Recent work highlights the Bayesian reasoning explorer.
+
+The map is local and ignored by Git. Its inputs are `floorplan/architecture.json`, `floorplan/descriptions/`, and `floorplan/recent-work.json`. Refresh after source changes to carry forward existing descriptions. The map focuses on code and leaves out repository agent tooling, documentation, configuration and datasets. The app uses a custom hash router, so browse its screens under Clinical workspace.
+
+The local preview rendered in Chromium with the tour, flows, and Health controls present and no page errors. Floorplan’s static Health scan flagged translation labels, a synthetic load-probe password, and seven groups of requests. The flagged handlers check access through shared helpers or session lookups that the scanner did not recognize. The scan checked sign-in for 93 of 102 detected endpoints and skipped two oversized research model files during secret scanning.

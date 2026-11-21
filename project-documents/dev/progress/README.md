@@ -1,5 +1,7 @@
 # INSIGHT progress tracker
 
+[Interactive codebase floorplan (2026-11-21)](floorplan-2026-11-21.md) maps the workspace, current and legacy workflows, storage and automatic checks.
+
 [Bayesian reasoning verification (2026-11-19)](bayesian-reasoning-verification-2026-11-18.md#follow-up-2026-11-19--tornado-and-regression-verification) checks rendered tornado values against the simulation response and records the Step 7 regression reruns.
 
 [Linked reasoning explorer (2026-11-18)](bayesian-linked-explorer-2026-11-18.md) implements step 6 with active pathways, structured comparisons, and local reset.
